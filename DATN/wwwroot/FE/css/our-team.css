@@ -1,0 +1,149 @@
+/*MANAGE TEAM*/
+.manage-team{
+	background-image: var(--lightBG);
+	border-bottom: 1px solid #ccc;
+}
+.manage-team .title p{
+	color: black;
+}
+.manage-team .info{
+	margin-top: 30px;
+	padding-bottom: 50px;
+}
+.manage-team .info .itemBox .item .img{
+	height: 300px;
+}
+.manage-team .manage-name{
+	width: 100%;
+	margin-top: 15px;
+	height: 30px;
+	line-height: 30px;
+	font-weight: bold;
+	font-size: 20px;
+	text-align: center;
+}
+.manage-team .manage-name a{
+	text-decoration: none;
+	color: black;
+}
+.manage-team .manage-name a:hover{
+	color: #d7b38c;
+}
+.manage-team .itemBox{
+	background-image: var(--lightBG);
+}
+.manage-team .item{
+	position: relative;
+}
+.manage-team .individual-contact{
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-color: rgb(0,0,0,0.7);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	opacity: 0;
+	pointer-events: none;
+	animation-fill-mode: forwards;
+	animation-duration: 0.3s;
+	animation-timing-function: linear;
+}
+@keyframes contactShowUp{
+	0%{
+		opacity: 0;
+		pointer-events: none;
+	}
+	100%{
+		opacity: 1;
+		pointer-events: all;
+	}
+}
+@keyframes contactShowDown{
+	100%{
+		opacity: 0;
+		pointer-events: none;
+	}
+	0%{
+		opacity: 1;
+		pointer-events: all;
+	}
+}
+.manage-team .individual-contact .icon{
+	text-align: center;
+	width: 100%;
+	height: 50px;
+	margin-top: 100px;
+	opacity: 0;
+	pointer-events: none;
+	animation-fill-mode: forwards;
+	animation-duration: 0.3s;
+	animation-timing-function: linear;
+}
+@keyframes iconShowUp{
+	0%{
+		margin-top: 100px;
+		opacity: 0;
+		pointer-events: none;
+	}
+	100%{
+		margin-top: 0px;
+		opacity: 1;
+		pointer-events: all;
+	}
+}
+@keyframes iconShowDown{
+	100%{
+		margin-top: 100px;
+		opacity: 0;
+		pointer-events: none;
+	}
+	0%{
+		margin-top: 0px;
+		opacity: 1;
+		pointer-events: all;
+	}
+}
+.manage-team .individual-contact .icon a{
+	color: rgb(255,255,255,0.7);
+	text-decoration: none;
+	font-size: 40px;
+	margin-right: 10px;
+	margin-left: 10px;
+}
+.manage-team .individual-contact .icon a:hover{
+	color: #d7b38c;
+}
+/*END MANAGE TEAM*/
+
+
+/*PROFESSIONALS*/
+.professionals .info{
+	padding-bottom: 40px;
+}
+.professionals .professional-name{
+	width: 100%;
+	height: 30px;
+	line-height: 30px;
+	text-align: center;
+	margin-top: 20px;
+	font-size: 22px;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+.professionals .professional-name a{
+	text-decoration: none;
+	color: black;
+}
+.professionals .professional-name a:hover{
+	color: #d7b38c;
+	font-style: italic;
+	font-weight: bold;
+}
+.professionals .info .itemBox .item .img{
+	height: 300px;
+}
+
+/*END PROFESSIONALS*/

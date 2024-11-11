@@ -1,0 +1,230 @@
+.tab-content {
+  padding-bottom: 40px; }
+
+.nav-tabs {
+  border-bottom: none; }
+
+.single-breadcrumb {
+  margin: 51px 0 30px 0;
+  padding: 30px 0;
+  background-color: #f6f6f6;
+  position: relative; }
+  .single-breadcrumb h1 {
+    font-size: 16px;
+    margin-bottom: 0;
+    font-weight: 700;
+    line-height: 20px;
+    color: #000; }
+
+.main__navTabs ul {
+  padding-bottom: 40px; }
+  .main__navTabs ul li a {
+    color: #999; }
+    .main__navTabs ul li a:hover {
+      color: #c59d5f; }
+  .main__navTabs ul li a.active {
+    color: #ffb400; }
+
+.font-style, .information h1,
+.amenities h1,
+.service h1,
+#location h1,
+.review__review h1,
+.review__comments h1,
+.review__postComments h1 {
+  font-size: 16px;
+  margin-bottom: 0;
+  font-weight: 700;
+  line-height: 20px;
+  color: #000; }
+
+.padding-bottom {
+  padding-bottom: 30px; }
+
+.padding-top-bottom {
+  padding: 30px 0; }
+
+.slide-list {
+  margin: 15px 0; }
+  .slide-list .slide-list-img {
+    padding: 5px; }
+
+.information h1,
+.amenities h1,
+.service h1,
+#location h1,
+.review__review h1,
+.review__comments h1,
+.review__postComments h1 {
+  padding-bottom: 15px; }
+.information__line,
+.amenities__line,
+.service__line,
+#location__line,
+.review__review__line,
+.review__comments__line,
+.review__postComments__line {
+  background-color: #ddd;
+  height: 2px;
+  width: 100%;
+  margin: 20px 0; }
+
+.service {
+  padding-bottom: 30px; }
+
+.service__item {
+  display: flex;
+  justify-content: space-between; }
+
+.point {
+  height: 180px;
+  width: 180px;
+  border-radius: 50%;
+  background: #ddd;
+  color: #000;
+  font-size: 50px;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  justify-content: center;
+  align-items: center; }
+
+.review__item {
+  padding-bottom: 15px; }
+
+.review__center,
+.comments__center {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  justify-content: center;
+  align-items: center; }
+
+.review__item-title {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  justify-content: space-between; }
+
+.review__comments span {
+  font-style: italic;
+  color: #c5c5c5; }
+.review__comments .comments__center img {
+  border-radius: 50%; }
+
+.review__postComments {
+  padding-bottom: 40px; }
+
+.review__comment-list {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  align-items: center;
+  justify-content: space-between; }
+
+.review__input textarea {
+  width: 100%;
+  height: 100px;
+  text-indent: 10px;
+  border: 1px solid #d0d0d0; }
+.review__input button {
+  padding: 10px 25px;
+  border: none;
+  background-color: #ffb400;
+  color: #fff; }
+  .review__input button:hover {
+    background-color: #c59d5f; }
+.review__input label {
+  cursor: pointer; }
+  .review__input label input {
+    margin-right: 5px; }
+
+.review__input-item {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  justify-content: space-between; }
+  .review__input-item input {
+    width: 48%;
+    height: 46px;
+    text-indent: 10px;
+    border: 1px solid #d0d0d0; }
+
+.progress {
+  height: 5px; }
+  .progress .progress-bar {
+    background-color: #ffb400; }
+
+.reservation {
+  background-color: #333132;
+  padding: 0 20px;
+  margin-bottom: 30px; }
+  .reservation__title {
+    font-size: 16px;
+    padding: 27px 0;
+    margin: 0 0 19px;
+    color: #fff;
+    border-bottom: 1px solid #555;
+    text-align: center;
+    line-height: 20px; }
+  .reservation__input-list {
+    padding-bottom: 20px; }
+    .reservation__input-list input,
+    .reservation__input-list select {
+      width: 100%;
+      height: 46px;
+      background-color: transparent;
+      border: 1px solid #555;
+      font-size: 15px;
+      line-height: 30px;
+      font-weight: inherit;
+      color: #afafaf;
+      text-indent: 10px; }
+    .reservation__input-list span {
+      position: relative; }
+      .reservation__input-list span::after {
+        position: absolute;
+        bottom: -3px;
+        right: 11px;
+        font-family: "Font Awesome 5 Pro";
+        z-index: 0;
+        content: "\f073";
+        font-size: 20px;
+        color: #c59d5f; }
+  .reservation__input-item {
+    width: 48%; }
+  .reservation__checkbox {
+    padding-bottom: 20px; }
+    .reservation__checkbox h3 {
+      font-size: 15px;
+      line-height: 27px; }
+    .reservation__checkbox label {
+      width: 100%;
+      cursor: pointer; }
+      .reservation__checkbox label input {
+        padding-right: 5px; }
+  .reservation__btn {
+    padding: 20px 0; }
+    .reservation__btn button {
+      width: 100%;
+      border: none;
+      background-color: #ffb400;
+      color: #fff;
+      padding: 10px 25px;
+      -webkit-transition: 0.3s ease-in-out;
+      -moz-transition: 0.3s ease-in-out;
+      transition: 0.3s ease-in-out; }
+      .reservation__btn button:hover {
+        background-color: #c59d5f; }
+
+/*# sourceMappingURL=singleRoom.css.map */

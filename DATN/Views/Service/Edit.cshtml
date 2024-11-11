@@ -1,0 +1,108 @@
+﻿@model DATN.Models.Service
+
+@{
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<h1>Sửa dịch vụ</h1>
+
+<hr />
+<form asp-action="Edit" enctype="multipart/form-data">
+<div class="row">
+    <div class="col-md-6">
+
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="Id" />
+
+            <div class="form-group">
+                <label class="control-label">Tên dịch vụ</label>
+                <input asp-for="Title" class="form-control" />
+                <span asp-validation-for="Title" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="Description" class="control-label"></label>
+                <input asp-for="Description" class="form-control" />
+                <span asp-validation-for="Description" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="Price" class="control-label"></label>
+                <input asp-for="Price" class="form-control" />
+                <span asp-validation-for="Price" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="ImageFile" class="control-label"></label>
+                <br />
+                <input asp-for="ImageFile" id="Profileimg" accept="image/*" />
+                <span asp-validation-for="ImageFile" class="text-danger"></span>
+
+                <!-- Hiển thị hình ảnh hiện tại nếu đã có -->
+                @if (Model.Image != null)
+                {
+                    <img src="@("~/Images/Service/" + Model.Image)" asp-append-version="true" width="60px" height="80px" />
+                }
+
+                <!-- Bản xem trước khi chọn ảnh mới -->
+                <img id="imgpreview" src="#" style="display:none" width="60px" height="80px" alt="Preview Img" />
+            </div>        
+    </div>
+
+    <div class="col-md-6">
+        <div class="form-group">
+            <label asp-for="Content" class="control-label"></label>
+            <textarea asp-for="Content" class="form-control" id="editor" rows="10"></textarea>
+            <span asp-validation-for="Content" class="text-danger"></span>
+        </div>
+    </div>
+
+        <div class="form-group">
+            <input type="submit" value="Sửa" class="btn btn-primary" />
+            <a asp-action="Index" class="btn btn-warning"><i class="fa-solid fa-arrow-left"></i> Trở lại</a>
+        </div>
+</div>
+</form>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+
+    <script src="https://cdn.ckeditor.com/4.16.2/full/ckeditor.js"></script> <!-- Sử dụng CKEditor 4 -->
+    <script>
+        // Khởi tạo CKEditor với các tùy chọn cho thanh công cụ chi tiết
+        CKEDITOR.replace('editor', {
+            toolbar: [
+                { name: 'document', items: ['Source', '-', 'NewPage', 'Preview', '-', 'Templates'] },
+                { name: 'clipboard', items: ['Cut', 'Copy', 'Paste', 'PasteText', 'PasteFromWord', '-', 'Undo', 'Redo'] },
+                { name: 'editing', items: ['Find', 'Replace', '-', 'SelectAll', '-', 'Scayt'] },
+                '/',
+                { name: 'basicstyles', items: ['Bold', 'Italic', 'Underline', 'Strike', 'Subscript', 'Superscript', '-', 'RemoveFormat'] },
+                { name: 'paragraph', items: ['NumberedList', 'BulletedList', '-', 'Outdent', 'Indent', '-', 'Blockquote', 'CreateDiv', '-', 'JustifyLeft', 'JustifyCenter', 'JustifyRight', 'JustifyBlock', '-', 'BidiLtr', 'BidiRtl', 'Language'] },
+                { name: 'links', items: ['Link', 'Unlink', 'Anchor'] },
+                { name: 'insert', items: ['Image', 'Table', 'HorizontalRule', 'SpecialChar', 'PageBreak'] },
+                '/',
+                { name: 'styles', items: ['Styles', 'Format', 'Font', 'FontSize'] },
+                { name: 'colors', items: ['TextColor', 'BGColor'] },
+                { name: 'tools', items: ['Maximize', 'ShowBlocks'] }
+            ],
+            height: 300, // Chiều cao của CKEditor
+            removePlugins: 'elementspath', // Loại bỏ đường dẫn phần tử ở cuối CKEditor
+            resize_enabled: false // Không cho phép thay đổi kích thước CKEditor
+        });
+
+        // Preview uploaded image
+        $("#Profileimg").change(function () {
+            if (this.files && this.files[0]) {
+                $('#imgpreview').show();
+
+                var reader = new FileReader();
+                reader.onload = function (e) {
+                    $('#imgpreview').attr('src', e.target.result);
+                };
+                reader.readAsDataURL(this.files[0]);
+            }
+        });
+    </script>
+}

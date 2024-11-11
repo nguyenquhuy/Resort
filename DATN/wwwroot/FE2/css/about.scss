@@ -1,0 +1,623 @@
+@import "./mixin.scss";
+.about-banner {
+  position: relative;
+  p {
+    font-size: 15px;
+    color: $hover-color;
+    font-style: italic;
+  }
+  h2 {
+    font-size: 35px;
+    color: #fff;
+  }
+  &__line {
+    background-color: $hover-color;
+    height: 1px;
+    width: 125px;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    margin-top: 15px;
+  }
+  &__center {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    position: absolute;
+    text-align: center;
+  }
+}
+
+.paralax {
+  background-image: url(../images/about/about-banner.jpeg);
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  min-height: 600px;
+}
+
+// for director
+.about-director__content {
+  position: relative;
+  padding-top: 70px;
+  img {
+    width: auto;
+    padding: 35px 0 15px 0;
+  }
+  span {
+    font-style: italic;
+    color: $main-color;
+  }
+  h2 {
+    font-size: 35px;
+    color: #000;
+    padding: 15px 0 25px 0;
+  }
+  p {
+    font-size: 18px;
+  }
+  .director-line {
+    background-color: #c59d5f;
+    height: 2px;
+    width: 180px;
+    position: absolute;
+    top: 208px;
+  }
+}
+
+// for We are
+.weAre {
+  background-color: #f7f5f6;
+  padding: 70px 0 50px 0;
+  &__item {
+    span {
+      font-size: 14px;
+      color: $main-color;
+      font-style: italic;
+    }
+    h1 {
+      font-size: 16px;
+      line-height: 20px;
+      color: #000;
+      font-weight: 700;
+    }
+    p {
+      margin: 20px 0;
+    }
+  }
+}
+
+// for cake
+.cake__list {
+  display: flex;
+  padding: 50px 0;
+  svg {
+    height: 60px;
+    width: 60px !important;
+    border-radius: 50%;
+    padding: 15px;
+    background-color: #000;
+    margin-right: 30px;
+    color: #fff;
+    &:hover {
+      background-color: $hover-color;
+    }
+  }
+}
+.cake__list-content {
+  h3 {
+    font-size: 15px;
+    line-height: 20px;
+    color: #000;
+    font-weight: 700;
+  }
+}
+.cake__position {
+  img {
+    width: auto;
+  }
+}
+
+// for hospitality
+.hospitality {
+  .right {
+    background-color: #f7f5f6;
+  }
+  display: block;
+  &__item {
+    width: 100%;
+  }
+  &__padding {
+    padding: 70px;
+    position: relative;
+  }
+  &__line {
+    background-color: #c59d5f;
+    height: 2px;
+    width: 180px;
+    position: absolute;
+  }
+
+  span {
+    font-size: 16px;
+    color: $main-color;
+    font-style: italic;
+  }
+  h1 {
+    font-size: 35px;
+
+    color: #000;
+  }
+  p {
+    font-size: 18px;
+    padding-top: 25px;
+  }
+  button {
+    border: none;
+    padding: 15px 25px;
+    background-color: $main-color;
+    color: #fff;
+    margin: 25px 0;
+    font-size: 16px;
+    line-height: 20px;
+    letter-spacing: 1px;
+    @include transition();
+    svg {
+      margin-left: 5px;
+      @include transition();
+      font-size: 18px;
+    }
+    &:hover {
+      background-color: $hover-color;
+      svg {
+        transform: translate3d(5px, 0, 0);
+      }
+    }
+  }
+}
+
+// for vintage
+.about-vintage {
+  background-color: $hover-color;
+  padding: 70px 0;
+
+  img {
+    width: auto;
+    padding: 0 30px;
+  }
+  &__content {
+    position: relative;
+    padding: 0 30px;
+    h1 {
+      color: #fff;
+      line-height: 1.4em;
+    }
+    p {
+      font-size: 18px;
+      padding-top: 20px;
+      line-height: 28px;
+      color: #fff;
+    }
+  }
+  &__line {
+    background-color: #fff;
+    height: 2px;
+    width: 180px;
+    position: absolute;
+    top: 60px;
+  }
+  &__flex {
+    display: block;
+    align-items: center;
+  }
+}
+
+// for icon logo
+.iconSlick {
+  background-color: #f7f5f6;
+  padding: 60px 0;
+}
+
+// for we are story
+.story {
+  padding: 60px 0;
+  span {
+    font-size: 16px;
+    color: $main-color;
+    font-style: italic;
+  }
+  h1 {
+    font-size: 25px;
+    color: #000;
+  }
+  p {
+    font-size: 18px;
+    padding-top: 15px;
+  }
+  &__list {
+    padding: 20px 0;
+    h1 {
+      font-size: 16px;
+      line-height: 20px;
+      color: #000;
+      font-weight: 600;
+      letter-spacing: 1px;
+    }
+  }
+  &__list--adobe {
+    position: relative;
+    height: 5px;
+    overflow: hidden;
+    background-color: #ebebeb;
+  }
+  &__list-percentIllustrator {
+    height: 5px;
+    max-width: 100%;
+    overflow: hidden;
+    background-color: #c59d5f;
+    width: 80%;
+    animation: illustrator 4s;
+    -moz-animation: illustrator 4s;
+    -webkit-animation: illustrator 4s;
+    -o-animation: illustrator 4s;
+  }
+  &__list-percentPhotoshop {
+    height: 5px;
+    max-width: 100%;
+    overflow: hidden;
+    background-color: #c59d5f;
+    width: 68%;
+    animation: photoshop 4s;
+    -moz-animation: photoshop 4s;
+    -webkit-animation: photoshop 4s;
+    -o-animation: photoshop 4s;
+  }
+  &__list-percentFeatures {
+    height: 5px;
+    max-width: 100%;
+    overflow: hidden;
+    background-color: #c59d5f;
+    width: 96%;
+    animation: features 5s;
+    -moz-animation: features 5s;
+    -webkit-animation: features 5s;
+    -o-animation: features 5s;
+  }
+
+  &__list-percentPHP {
+    height: 5px;
+    max-width: 100%;
+    overflow: hidden;
+    background-color: #c59d5f;
+    width: 77%;
+    animation: php 4s;
+    -moz-animation: php 4s;
+    -webkit-animation: php 4s;
+    -o-animation: php 4s;
+  }
+
+  span#illustrator {
+    animation: spanIllustrator 4s;
+    -moz-animation: spanIllustrator 4s;
+    -webkit-animation: spanIllustrator 4s;
+    -o-animation: spanIllustrator 4s;
+    position: absolute;
+    left: 75%;
+  }
+  span#photoshop {
+    animation: spanPhotoshop 4s;
+    -moz-animation: spanPhotoshop 4s;
+    -webkit-animation: spanPhotoshop 4s;
+    -o-animation: spanPhotoshop 4s;
+    position: absolute;
+    left: 63%;
+  }
+  span#features {
+    animation: spanFeatures 5s;
+    -moz-animation: spanFeatures 5s;
+    -webkit-animation: spanFeatures 5s;
+    -o-animation: spanFeatures 5s;
+    position: absolute;
+    left: 90%;
+  }
+  span#PHP {
+    animation: spanPHP 4s;
+    -moz-animation: spanPHP 4s;
+    -webkit-animation: spanPHP 4s;
+    -o-animation: spanPHP 4s;
+    position: absolute;
+    left: 72%;
+  }
+}
+
+// keyframes for illustrator
+@keyframes illustrator {
+  0% {
+    width: 0%;
+  }
+  100% {
+    width: 80%;
+  }
+}
+
+@-moz-keyframes illustrator {
+  0% {
+    width: 0%;
+  }
+  100% {
+    width: 80%;
+  }
+}
+
+@-webkit-keyframes illustrator {
+  0% {
+    width: 0%;
+  }
+  100% {
+    width: 80%;
+  }
+}
+
+@-o-keyframes illustrator {
+  0% {
+    width: 0%;
+  }
+  100% {
+    width: 80%;
+  }
+}
+// -----------------
+@keyframes spanIllustrator {
+  0% {
+    left: 0;
+  }
+  100% {
+    left: 75%;
+  }
+}
+
+@-moz-keyframes spanIllustrator {
+  0% {
+    left: 0;
+  }
+  100% {
+    left: 75%;
+  }
+}
+
+@-webkit-keyframes spanIllustrator {
+  0% {
+    left: 0;
+  }
+  100% {
+    left: 75%;
+  }
+}
+
+@-o-keyframes spanIllustrator {
+  0% {
+    left: 0;
+  }
+  100% {
+    left: 75%;
+  }
+}
+
+// keyframes for photoshop
+@keyframes photoshop {
+  0% {
+    width: 0%;
+  }
+  100% {
+    width: 68%;
+  }
+}
+
+@-moz-keyframes photoshop {
+  0% {
+    width: 0%;
+  }
+  100% {
+    width: 68%;
+  }
+}
+
+@-webkit-keyframes photoshop {
+  0% {
+    width: 0%;
+  }
+  100% {
+    width: 68%;
+  }
+}
+
+@-o-keyframes photoshop {
+  0% {
+    width: 0%;
+  }
+  100% {
+    width: 68%;
+  }
+}
+// -----------------
+@keyframes spanPhotoshop {
+  0% {
+    left: 0%;
+  }
+  100% {
+    left: 63%;
+  }
+}
+
+@-moz-keyframes spanPhotoshop {
+  0% {
+    left: 0%;
+  }
+  100% {
+    left: 63%;
+  }
+}
+
+@-webkit-keyframes spanPhotoshop {
+  0% {
+    left: 0%;
+  }
+  100% {
+    left: 63%;
+  }
+}
+
+@-o-keyframes spanPhotoshop {
+  0% {
+    left: 0%;
+  }
+  100% {
+    left: 63%;
+  }
+}
+// for feature
+@keyframes features {
+  0% {
+    width: 0%;
+  }
+  100% {
+    width: 96%;
+  }
+}
+
+@-moz-keyframes features {
+  0% {
+    width: 0%;
+  }
+  100% {
+    width: 96%;
+  }
+}
+
+@-webkit-keyframes features {
+  0% {
+    width: 0%;
+  }
+  100% {
+    width: 96%;
+  }
+}
+
+@-o-keyframes features {
+  0% {
+    width: 0%;
+  }
+  100% {
+    width: 96%;
+  }
+}
+// -----------
+@keyframes spanFeatures {
+  0% {
+    left: 0%;
+  }
+  100% {
+    left: 90%;
+  }
+}
+
+@-moz-keyframes spanFeatures {
+  0% {
+    left: 0%;
+  }
+  100% {
+    left: 90%;
+  }
+}
+
+@-webkit-keyframes spanFeatures {
+  0% {
+    left: 0%;
+  }
+  100% {
+    left: 90%;
+  }
+}
+
+@-o-keyframes spanFeatures {
+  0% {
+    left: 0%;
+  }
+  100% {
+    left: 90%;
+  }
+}
+
+// for PHP
+@keyframes php {
+  0% {
+    width: 0%;
+  }
+  100% {
+    width: 77%;
+  }
+}
+
+@-moz-keyframes php {
+  0% {
+    width: 0%;
+  }
+  100% {
+    width: 77%;
+  }
+}
+
+@-webkit-keyframes php {
+  0% {
+    width: 0%;
+  }
+  100% {
+    width: 77%;
+  }
+}
+
+@-o-keyframes php {
+  0% {
+    width: 0%;
+  }
+  100% {
+    width: 77%;
+  }
+}
+// -----------
+@keyframes spanPHP {
+  0% {
+    left: 0%;
+  }
+  100% {
+    left: 72%;
+  }
+}
+
+@-moz-keyframes spanPHP {
+  0% {
+    left: 0%;
+  }
+  100% {
+    left: 72%;
+  }
+}
+
+@-webkit-keyframes spanPHP {
+  0% {
+    left: 0%;
+  }
+  100% {
+    left: 72%;
+  }
+}
+
+@-o-keyframes spanPHP {
+  0% {
+    left: 0%;
+  }
+  100% {
+    left: 72%;
+  }
+}

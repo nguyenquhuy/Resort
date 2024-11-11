@@ -1,0 +1,150 @@
+/*contact*/
+.contact{
+	height: 500px;
+}
+.contact .big-map{
+	height: 100%;
+}
+
+/*contact*/
+
+
+
+/*member-contact*/
+.member-contact{
+	background-image: var(--lightBG);
+	background-repeat: repeat;
+	border-top: 1px solid transparent;
+}
+.member-contact .title{
+	width: 100%;
+	text-align: center;
+	font-size: 50px;
+	margin-top: 50px;
+	color: black;
+}
+.member-contact .icon-title{
+	width: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.member-contact .info{
+	margin-top: 50px;
+	color: var(--lightText);
+	padding-bottom: 50px;
+}
+.member-contact .info .item{
+	
+}
+.member-contact .info .item .title{
+	font-size: 30px;
+}
+.member-contact .info .contact .criteria{
+	font-size: 14px;
+	margin-top: 10px;
+}
+.member-contact .info .contact .criteria span{
+	color: #d7b38c;
+}
+.member-contact .info .contact input{
+	width: 100%;
+	height: 50px;
+	padding-left: 15px;
+	line-height: 50px;
+	background-color: rgb(0,0,0,0.3);
+	border: none;
+	border-radius: 5px;
+	margin-top: 20px;
+}
+.member-contact .info .contact textarea{
+	width: 100%;
+	resize: vertical;
+	min-height: 50px;
+	height: 150px;
+	max-height: 400px;
+	background-color: rgb(0,0,0,0.3);
+	border: none;
+	border-radius: 5px;
+	padding-left: 15px;
+	margin-top: 20px;
+}
+.member-contact .info .contact .policy{
+	margin-top: 10px;
+}
+.member-contact .info .contact .policy .checkbox{
+	width: 5%;
+	float: left;
+	height: 100px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.member-contact .info .contact .policy .words{
+	float: left;
+	width: 95%;
+}
+.member-contact .info .contact .policy .words p{
+	margin-left: 15px;
+	line-height: 25px;
+	font-size: 16px;
+	color: black;
+}
+.member-contact .info .contact .policy .words p a{
+	color: #d7b38c;
+	font-weight: bold;
+	text-decoration: none;
+}
+.member-contact .info .contact .policy button{
+	width: 100%;
+	height: 40px;
+	border-radius: 5px;
+	border: none;
+	background-color: rgb(0,0,0,0.4);
+	text-align: center;
+	text-transform: uppercase;
+	font-weight: bold;
+	color: var(--darkText);
+	user-select: none;
+	pointer-events: none;
+	opacity: 0.7;
+}
+.member-contact .info .contact .policy button:hover{
+	color: var(--lightText);
+	background-color: #d7b38c;
+	transition: all 0.5s;
+}
+.member-contact .info .contact .policy button:focus{
+	outline: none;
+}
+
+
+
+/*END member-contact*/
+
+
+/*contact info*/
+.contact-info .info .item .description{
+	text-align: center;
+	width: 100%;
+	line-height: 25px;
+	min-height: 50px;
+	max-height: 100px;
+	padding-bottom: 0 !important;
+}
+.contact-info .info .item .description a{
+	text-decoration: none;
+	color: black;
+}
+.contact-info .info .item .description i{
+	color: rgb(0,0,0,0.4);
+	text-decoration: none;
+	font-size: 30px;
+	margin-left: 5px;
+	margin-right: 5px;
+}
+.contact-info .info .item .description i:hover{
+	color: #d7b38c;
+}
+
+/*end contact info*/

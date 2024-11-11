@@ -1,0 +1,249 @@
+﻿@model IEnumerable<DATN.Models.Room>
+
+<!-- Template Main CSS File -->
+<link rel="stylesheet" href="~/FE2/css/style.css" />
+<link rel="stylesheet" href="~/FE2/css/roomsList.css" />
+<link rel="stylesheet" href="~/FE2/css/responsive.css" />
+
+<section class="main">
+    <div class="container">
+        <div class="row">
+            <div class="col-12 col-xl-9">
+                <div class="rooms">
+                    <div class="rooms__nav">
+                        <a href="#">Default</a>
+                        <a href="#">Date</a>
+                        <a href="#">Price Low to High</a>
+                        <a href="#">Price High to Low</a>
+                        <a href="#">Name (A-Z)</a>
+                        <a href="#">Name (Z-A)</a>
+                    </div>
+                    <div class="rooms__list">
+                        <div class="row">
+                            @foreach(var item in Model)
+                            {
+                                <div class="col-12 col-lg-6">
+                                    <div class="rooms__item">
+                                        <div class="rooms__img">
+                                            <a href="/DetailRoom/@item.ID">
+                                                <img src="./Images/Room/@item.Image"
+                                                     alt="rooms list" />
+                                                <div class="rooms__hover">
+                                                    <div class="rooms__hover-flex">
+                                                        <p>Starting from</p>
+                                                        <p>
+                                                            <span style="vertical-align: super">$</span><span style="font-size: 26px">@item.Price</span> /
+                                                            night
+                                                        </p>
+                                                    </div>
+                                                </div>
+                                            </a>
+                                        </div>
+                                        <div class="rooms__content">
+                                            <a href="single-room.html"><h1>@item.RoomType</h1></a>
+                                            <div class="rooms__line"></div>
+                                            <p class="rooms__padding">
+                                                Donec quam felis, ultricies nec, pellentesque eu,
+                                                pretium quis, sem. Nulla consequat massa quis enim.
+                                                Donec pede justo, fringilla vel, aliquet nec,
+                                                vulputate eget, arcu.
+                                            </p>
+                                            <a href="single-room.html"><button>Check Details</button></a>
+                                        </div>
+                                    </div>
+                                </div>
+                            }
+                            
+                        </div>
+                        <div class="rooms__pagination">
+                            <nav aria-label="Page navigation example">
+                                <ul class="pagination justify-content-center">
+                                    <li class="page-item disabled">
+                                        <a class="page-link" href="#" tabindex="-1">
+                                            <i class="far fa-chevron-left"></i>
+                                        </a>
+                                    </li>
+                                    <li class="page-item">
+                                        <a class="page-link" href="#">1</a>
+                                    </li>
+                                    <li class="page-item">
+                                        <a class="page-link" href="#">2</a>
+                                    </li>
+                                    <li class="page-item">
+                                        <a class="page-link" href="#">3</a>
+                                    </li>
+                                    <li class="page-item">
+                                        <a class="page-link" href="#">
+                                            <i class="far fa-chevron-right"></i>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </nav>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 col-xl-3">
+                <div class="rooms-filter">
+                    <h1>RESERVATION</h1>
+                    <div class="rooms-filter__checkbox">
+                        <div class="rooms-filter__list">
+                            <label for="casino">
+                                <input type="checkbox" name="" id="casino" /> Casino
+                            </label>
+                        </div>
+                        <div class="rooms-filter__list">
+                            <label for="elevator">
+                                <input type="checkbox" name="" id="elevator" /> Elevator
+                            </label>
+                        </div>
+                        <div class="rooms-filter__list">
+                            <label for="garage">
+                                <input type="checkbox" name="" id="garage" /> Garage Space
+                            </label>
+                        </div>
+                        <div class="rooms-filter__list">
+                            <label for="health">
+                                <input type="checkbox" name="" id="health" /> Health Club
+                            </label>
+                        </div>
+                        <div class="rooms-filter__list">
+                            <label for="minibar">
+                                <input type="checkbox" name="" id="minibar" /> Minibar
+                            </label>
+                        </div>
+                        <div class="rooms-filter__list">
+                            <label for="parking">
+                                <input type="checkbox" name="" id="parking" /> Parking
+                            </label>
+                        </div>
+                        <div class="rooms-filter__list">
+                            <label for="pet">
+                                <input type="checkbox" name="" id="pet" /> Pet Friendly
+                            </label>
+                        </div>
+                        <div class="rooms-filter__list">
+                            <label for="restaurant">
+                                <input type="checkbox" name="" id="restaurant" /> Restaurant
+                            </label>
+                        </div>
+                        <div class="rooms-filter__list">
+                            <label for="service">
+                                <input type="checkbox" name="" id="service" /> Room Service
+                            </label>
+                        </div>
+                        <div class="rooms-filter__list">
+                            <label for="safe">
+                                <input type="checkbox" name="" id="safe" /> Safe Deposit Box
+                            </label>
+                        </div>
+                        <div class="rooms-filter__list">
+                            <label for="sauna">
+                                <input type="checkbox" name="" id="sauna" /> Sauna
+                            </label>
+                        </div>
+                        <div class="rooms-filter__list">
+                            <label for="wifi">
+                                <input type="checkbox" name="" id="wifi" /> Wi-Fi
+                            </label>
+                        </div>
+                    </div>
+                    <div class="rooms-filter__choose">
+                        <div class="rooms-filter__chooseList">
+                            <label for="">CHOOSE A LOCATION</label>
+                            <select name="" id="">
+                                <option value="">All</option>
+                                <option value="">Alps</option>
+                                <option value="">Delaware</option>
+                                <option value="">Miami</option>
+                                <option value="">Milan</option>
+                            </select>
+                        </div>
+                        <div class="rooms-filter__chooseList">
+                            <label for="">ROOMS</label>
+                            <select name="" id="">
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                                <option value="5">5/option></option>
+                            </select>
+                        </div>
+                        <div class="rooms-filter__chooseList">
+                            <span class="rooms-calendar">
+                                <label for="">CHECK-IN:</label>
+                                <input type="text" name="checkIn" value="3/30/2021" />
+                            </span>
+                        </div>
+                        <div class="rooms-filter__chooseList">
+                            <span class="rooms-calendar">
+                                <label for="">CHECK-OUT:</label>
+                                <input type="text" name="checkIn" value="3/31/2021" />
+                            </span>
+                        </div>
+                    </div>
+                    <div class="rooms-filter__checkbox">
+                        <div class="rooms-filter__list">
+                            <label for="air">
+                                <input type="checkbox" name="" id="air" /> Air Conditioner
+                            </label>
+                        </div>
+                        <div class="rooms-filter__list">
+                            <label for="internet">
+                                <input type="checkbox" name="" id="internet" /> Free
+                                Internet
+                            </label>
+                        </div>
+                        <div class="rooms-filter__list">
+                            <label for="television">
+                                <input type="checkbox" name="" id="television" /> LCD
+                                Television
+                            </label>
+                        </div>
+                        <div class="rooms-filter__list">
+                            <label for="microwave">
+                                <input type="checkbox" name="" id="microwave" /> Microwave
+                            </label>
+                        </div>
+                    </div>
+                    <div class="rooms-filter__children d-flex justify-content-between">
+                        <div class="rooms-filter__children-item">
+                            <label for="">ADULTS</label>
+                            <select name="" id="">
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                                <option value="5">5</option>
+                            </select>
+                        </div>
+
+                        <div class="rooms-filter__children-item">
+                            <label for="">CHILDREN</label>
+                            <select name="" id="">
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                                <option value="5">5</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="rooms-priceRange">
+                        <p>Price from $0 to $<span id="price">100</span></p>
+                        <input type="range" class="form-range" min="0" max="100" value="100" id="input-rooms">
+                    </div>
+                    <div class="rooms-btn">
+                        <button type="submit">FILTER RESULT</button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    </div>
+</section>
+
+<!-- Main JS-->
+<script src="~/FE2/js/single-room.js"></script>
+<script src="~/FE2/js/main.js"></script>

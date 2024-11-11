@@ -1,0 +1,403 @@
+@import "./mixin.scss";
+.blog-title {
+  font-size: 16px;
+  line-height: 25px;
+  color: #000;
+  font-weight: 700px;
+  letter-spacing: 1px;
+}
+.blog-banner {
+  position: relative;
+  p {
+    font-size: 15px;
+    color: $hover-color;
+    font-style: italic;
+  }
+  h2 {
+    font-size: 35px;
+    color: #fff;
+  }
+  &__line {
+    background-color: $hover-color;
+    height: 1px;
+    width: 125px;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    margin-top: 15px;
+  }
+  &__center {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    position: absolute;
+    text-align: center;
+  }
+}
+
+.paralax {
+  background-image: url(../images/blog/blog-banner.jpeg);
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  min-height: 400px;
+}
+
+.main {
+  padding-top: 50px;
+
+  //   for main blog ----------------
+  &__blog-link {
+    padding-top: 20px;
+    color: $hover-color;
+    font-size: 16px;
+    font-style: italic;
+    a {
+      @include transition();
+      color: $hover-color;
+      &:hover {
+        color: #000;
+      }
+    }
+  }
+  &__blog-title {
+    padding: 20px 0;
+    a {
+      color: #000;
+      font-size: 25px;
+      line-height: 34px;
+      @include transition();
+      &:hover {
+        color: $hover-color;
+      }
+    }
+  }
+  &__line {
+    background-color: #000;
+    height: 1px;
+    width: 100px;
+  }
+  &__blog-desc {
+    padding: 10px 0;
+  }
+  &__blog-btn a {
+    font-size: 15px;
+    background-color: $main-color;
+    color: #fff;
+    padding: 10px 25px;
+    @include transition();
+    &:hover {
+      background-color: $hover-color;
+      color: #fff;
+    }
+  }
+  &__boss {
+    background-color: #f7f7f7;
+    margin: 30px 0;
+    @include center();
+  }
+  &__boss-content {
+    text-align: center;
+    padding: 30px;
+  }
+
+  //   for main sidebar ----------------
+  &__sidebar-search {
+    @include border-color();
+    @include d-flex();
+    align-items: center;
+    justify-content: space-between;
+    input,
+    button {
+      height: 46px;
+      border: none;
+      color: #999;
+    }
+    input {
+      width: 100%;
+      text-indent: 10px;
+    }
+    button {
+      width: 46px;
+      background-color: transparent;
+      @include transition();
+      &:hover {
+        color: $hover-color;
+      }
+    }
+  }
+  &__sidebar-author {
+    text-align: center;
+    padding: 40px 0;
+    img {
+      width: auto;
+      padding: 15px 0;
+    }
+    h1 {
+      font-size: 16px;
+      line-height: 25px;
+      color: #000;
+      font-weight: 700px;
+      letter-spacing: 1px;
+    }
+  }
+  &__sidebar-name {
+    font-style: italic;
+    span {
+      font-size: 18px;
+      color: #000;
+    }
+  }
+  &__line-relative {
+    position: relative;
+    @include d-flex();
+    justify-content: center;
+    .main__line {
+      position: absolute;
+      bottom: -7px;
+    }
+  }
+  &__sidebar-social {
+    font-size: 25px;
+    padding-top: 17px;
+    cursor: pointer;
+    a {
+      color: #999;
+      @include transition();
+      &:hover {
+        color: $hover-color;
+      }
+    }
+  }
+  &__sidebar-line {
+    width: 100%;
+    background-color: #d0d0d0;
+    height: 1px;
+    margin-bottom: 40px;
+  }
+  &__sidebar-categories {
+    padding-bottom: 40px;
+    h1 {
+      @extend .blog-title;
+    }
+    a {
+      color: #999;
+      font-size: 18px;
+      &:hover {
+        color: $hover-color;
+      }
+    }
+  }
+  &__sidebar-post {
+    padding-bottom: 40px;
+    h1 {
+      @extend .blog-title;
+    }
+  }
+  &__sidebar-postList {
+    padding: 10px 0;
+    a {
+      color: #000;
+      font-size: 18px;
+      @include transition();
+      &:hover {
+        color: $hover-color;
+      }
+    }
+    span {
+      font-size: 16px;
+      font-style: italic;
+      color: $hover-color;
+    }
+    img {
+      width: 120px;
+      @include transition();
+      &:hover {
+        opacity: 0.7;
+      }
+    }
+    @include d-flex();
+    align-items: center;
+  }
+  &__sidebar-postContent {
+    padding-left: 10px;
+  }
+  &__sidebar-tag {
+    padding-bottom: 40px;
+    h1 {
+      @extend .blog-title;
+    }
+    a {
+      font-size: 16px;
+      text-decoration: underline;
+      @include transition();
+      color: #999;
+      &:hover {
+        color: $hover-color;
+      }
+    }
+  }
+  &__sidebar-instagram {
+    h1 {
+      @extend .blog-title;
+    }
+    ul li {
+      width: 33.333333%;
+      float: left;
+      padding: 5px;
+      @include transition();
+      &:hover {
+        opacity: 0.7;
+      }
+    }
+  }
+  // for blog detail -----------------
+  blockquote {
+    position: relative;
+    &::after {
+      content: "”";
+      position: absolute;
+      top: 0;
+      left: 2px;
+      color: #1e1e1e;
+      font-family: "Nunito Sans", sans-serif;
+      font-size: 60px;
+      line-height: 1;
+      font-style: normal;
+      font-weight: 700;
+      letter-spacing: 1.5em;
+    }
+    em {
+      padding-left: 40px;
+      color: #000;
+    }
+  }
+  &__blog-share,
+  &__blog-shareSocial {
+    @include d-flex();
+    justify-content: space-between;
+    a {
+      color: #000;
+      @include transition();
+      &:hover {
+        color: $hover-color;
+      }
+    }
+  }
+  &__blog-shareSocialList {
+    svg {
+      color: #000;
+      margin-left: 5px;
+      @include transition();
+      &:hover {
+        color: $hover-color;
+      }
+    }
+  }
+  &__blogger {
+    text-align: center;
+    background-color: #f7f7f7;
+    padding: 15px;
+    margin: 40px 0;
+    img {
+      width: auto;
+      border-radius: 50%;
+      padding: 15px 0;
+    }
+  }
+  &__blog-comments {
+    padding-bottom: 50px;
+    img {
+      width: auto;
+      border-radius: 50%;
+    }
+    h1 {
+      @extend .blog-title;
+    }
+  }
+  &__detail-title {
+    @include d-flex();
+    align-items: center;
+    justify-content: space-between;
+  }
+  &__detail-reply {
+    font-size: 18px;
+    color: $main-color;
+    cursor: pointer;
+    font-weight: 600;
+    font-style: italic;
+    @include transition();
+    &:hover {
+      color: $hover-color;
+    }
+  }
+
+  &__detail-comments {
+    display: none;
+    padding: 20px 0;
+    label {
+      padding: 10px 0;
+      cursor: pointer;
+    }
+    button {
+      font-size: 15px;
+      background-color: $main-color;
+      color: #fff;
+      padding: 10px 25px;
+      @include transition();
+      border: none;
+      &:hover {
+        background-color: $hover-color;
+        color: #fff;
+      }
+    }
+  }
+  &__detail-commentsFor {
+    padding-bottom: 15px;
+    p {
+      font-size: 16px;
+      font-weight: 600;
+      color: #000;
+    }
+    span {
+      font-size: 15px;
+      color: $main-color;
+      font-style: italic;
+      cursor: pointer;
+      @include transition();
+      &:hover {
+        color: $hover-color;
+      }
+    }
+  }
+  &__detail-commentsInput {
+    textarea {
+      width: 100%;
+      height: 150px;
+      text-indent: 10px;
+      color: #999;
+      @include border-color();
+    }
+  }
+  &__detail-commentsAuthor {
+    @include d-flex();
+    justify-content: space-between;
+  }
+  &__detail-commentsList {
+    width: 49%;
+    input {
+      width: 100%;
+      height: 46px;
+      color: #999;
+      text-indent: 10px;
+      @include border-color();
+    }
+  }
+  &__comments-line {
+    background-color: #d0d0d0;
+    height: 1px;
+    width: 100%;
+    margin: 20px 0;
+  }
+}

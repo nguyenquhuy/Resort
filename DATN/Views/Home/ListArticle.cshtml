@@ -1,0 +1,151 @@
+﻿@model IEnumerable<DATN.Models.Article>
+
+
+<link rel="stylesheet" type="text/css" href="~/FE/css/check-article.css">
+<link rel="stylesheet" type="text/css" href="~/FE/css/shared.css">
+<link rel="stylesheet" type="text/css" href="~/FE/css/bootstrap.min.css">
+<link rel="stylesheet" type="text/css" href="~/FE/css/jquery-ui.css">
+<link rel="stylesheet" type="text/css" href="~/FE/css/css/all.css">
+<link rel="stylesheet" type="text/css" href="~/FE/slick/slick.css" />
+<link rel="stylesheet" type="text/css" href="~/FE/slick/slick-theme.css" />
+<link rel="stylesheet" type="text/css" href="~/FE/css/flaticon.css">
+<link rel="icon" type="image/png" href="~/FE/img/favicon.png">
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@300&display=swap" rel="stylesheet">
+<!-- portfolio -->
+<div class="portfolio container-fluid">
+	<div class="row">
+		<div class="container">
+			<div class="row">
+				@foreach(var item in Model)
+				{
+					<div class="col-xl-4 col-lg-4 col-md-4 col-sm-6 col-12 item">
+						<div class="image" style="background-image: url('@Url.Content("~/images/article/"+item.Image)');"></div>
+						<div class="info-layer">
+							<div class="detail">
+								<p class="title"><a href="/DetailArticle/@item.Id">@item.Title</a></p>
+								<p class="time">Dec 28,2020 <span><i class="fas fa-comment"></i> 32</span></p>
+							</div>
+						</div>
+					</div>
+				}				
+				<div class="col-xl-4 col-lg-4 col-md-4 col-sm-6 col-12 item">
+					<div class="image" style="background-image: url(img/scene5.jpg);"></div>
+					<div class="info-layer">
+						<div class="detail">
+							<p class="title"><a href="detail-article.html">Insider guide to 48 hours in London</a></p>
+							<p class="time">Dec 28,2020 <span><i class="fas fa-comment"></i> 32</span></p>
+						</div>
+					</div>
+				</div>
+				<div class="col-xl-4 col-lg-4 col-md-4 col-sm-6 col-12 item">
+					<div class="image" style="background-image: url(img/scene4.jpg);"></div>
+					<div class="info-layer">
+						<div class="detail">
+							<p class="title"><a href="detail-article.html">Insider guide to 48 hours in London</a></p>
+							<p class="time">Dec 28,2020 <span><i class="fas fa-comment"></i> 32</span></p>
+						</div>
+					</div>
+				</div>
+				<div class="col-xl-4 col-lg-4 col-md-4 col-sm-6 col-12 item">
+					<div class="image" style="background-image: url(img/scene3.jpg);"></div>
+					<div class="info-layer">
+						<div class="detail">
+							<p class="title"><a href="detail-article.html">Insider guide to 48 hours in London</a></p>
+							<p class="time">Dec 28,2020 <span><i class="fas fa-comment"></i> 32</span></p>
+						</div>
+					</div>
+				</div>
+				<div class="col-xl-4 col-lg-4 col-md-4 col-sm-6 col-12 item">
+					<div class="image" style="background-image: url(img/scene2.jpg);"></div>
+					<div class="info-layer">
+						<div class="detail">
+							<p class="title"><a href="detail-article.html">Insider guide to 48 hours in London</a></p>
+							<p class="time">Dec 28,2020 <span><i class="fas fa-comment"></i> 32</span></p>
+						</div>
+					</div>
+				</div>
+				<div class="col-xl-4 col-lg-4 col-md-4 col-sm-6 col-12 item">
+					<div class="image" style="background-image: url(img/scene1.jpg);"></div>
+					<div class="info-layer">
+						<div class="detail">
+							<p class="title"><a href="detail-article.html">Insider guide to 48 hours in London</a></p>
+							<p class="time">Dec 28,2020 <span><i class="fas fa-comment"></i> 32</span></p>
+						</div>
+					</div>
+				</div>
+				<div class="col-xl-4 col-lg-4 col-md-4 col-sm-6 col-12 item">
+					<div class="image" style="background-image: url(img/scene7.jpg);"></div>
+					<div class="info-layer">
+						<div class="detail">
+							<p class="title"><a href="detail-article.html">Insider guide to 48 hours in London</a></p>
+							<p class="time">Dec 28,2020 <span><i class="fas fa-comment"></i> 32</span></p>
+						</div>
+					</div>
+				</div>
+				<div class="col-xl-4 col-lg-4 col-md-4 col-sm-6 col-12 item">
+					<div class="image" style="background-image: url(img/scene8.jpg);"></div>
+					<div class="info-layer">
+						<div class="detail">
+							<p class="title"><a href="detail-article.html">Insider guide to 48 hours in London</a></p>
+							<p class="time">Dec 28,2020 <span><i class="fas fa-comment"></i> 32</span></p>
+						</div>
+					</div>
+				</div>
+				<div class="col-xl-4 col-lg-4 col-md-4 col-sm-6 col-12 item">
+					<div class="image" style="background-image: url(img/scene9.jpg);"></div>
+					<div class="info-layer">
+						<div class="detail">
+							<p class="title"><a href="detail-article.html">Insider guide to 48 hours in London</a></p>
+							<p class="time">Dec 28,2020 <span><i class="fas fa-comment"></i> 32</span></p>
+						</div>
+					</div>
+				</div>
+				<div class="col-xl-4 col-lg-4 col-md-4 col-sm-6 col-12 item">
+					<div class="image" style="background-image: url(img/scene10.jpg);"></div>
+					<div class="info-layer">
+						<div class="detail">
+							<p class="title"><a href="detail-article.html">Insider guide to 48 hours in London</a></p>
+							<p class="time">Dec 28,2020 <span><i class="fas fa-comment"></i> 32</span></p>
+						</div>
+					</div>
+				</div>
+				<div class="col-xl-4 col-lg-4 col-md-4 col-sm-6 col-12 item">
+					<div class="image" style="background-image: url(img/scene11.jpg);"></div>
+					<div class="info-layer">
+						<div class="detail">
+							<p class="title"><a href="detail-article.html">Insider guide to 48 hours in London</a></p>
+							<p class="time">Dec 28,2020 <span><i class="fas fa-comment"></i> 32</span></p>
+						</div>
+					</div>
+				</div>
+				<div class="col-xl-4 col-lg-4 col-md-4 col-sm-6 col-12 item">
+					<div class="image" style="background-image: url(img/scene12.jpg);"></div>
+					<div class="info-layer">
+						<div class="detail">
+							<p class="title"><a href="detail-article.html">Insider guide to 48 hours in London</a></p>
+							<p class="time">Dec 28,2020 <span><i class="fas fa-comment"></i> 32</span></p>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-12 pagination">
+					<div class="page-block active">1</div>
+					<div class="page-block">2</div>
+					<div class="page-block">3</div>
+					<div class="page-block"><i class="fa fa-angle-right"></i></div>
+					<div class="page-block"><i class="fa fa-angle-double-right"></i></div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- end portfolio -->
+
+	<script type="text/javascript" src="~/FE/js/jquery-3.4.1.min.js"></script>
+	<script type="text/javascript" src="~/FE/js/shared.js"></script>
+	<script type="text/javascript" src="~/FE/slick/slick.min.js"></script>
+	<script type="text/javascript" src="~/FE/js/jquery.waypoints.min.js"></script>
+	<script type="text/javascript" src="~/FE/js/jquery.counterup.js"></script>
+	<script type="text/javascript" src="~/FE/js/check-article.js"></script>

@@ -1,0 +1,58 @@
+.page404 {
+  background-image: url(../images/404/404.jpeg);
+  background-position: center 0;
+  background-size: cover;
+  background-repeat: no-repeat;
+  padding: 100px 15px 60px 15px;
+  text-align: center; }
+  .page404 h4 {
+    font-size: 14px;
+    font-style: italic;
+    color: #c59d5f;
+    padding: 10px 0; }
+  .page404 h1 {
+    font-size: 25px;
+    color: #fff;
+    padding-bottom: 10px; }
+  .page404 p {
+    font-size: 15px;
+    color: #999;
+    padding: 20px 0; }
+  .page404__search {
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative; }
+    .page404__search input,
+    .page404__search button {
+      height: 60px; }
+    .page404__search input {
+      width: calc(100% - 60px);
+      text-indent: 10px;
+      color: #999; }
+    .page404__search button {
+      border: none;
+      background-color: #000;
+      width: 60px; }
+      .page404__search button:hover {
+        background-color: #c59d5f; }
+      .page404__search button span {
+        color: #fff;
+        font-size: 25px; }
+        .page404__search button span::after {
+          content: "\f178";
+          font-family: "Font Awesome 5 Pro"; }
+    .page404__search label.error {
+      color: red;
+      font-size: 13px;
+      font-style: italic;
+      transform: translate(-50%, 100%);
+      position: absolute;
+      top: 50%;
+      left: 50%; }
+
+/*# sourceMappingURL=404.css.map */

@@ -1,0 +1,35 @@
+﻿@model DATN.Models.Account
+
+<h1>Update Account</h1>
+
+<form asp-action="Update" method="post">
+    <div class="form-group">
+        <label asp-for="Email">Email</label>
+        <input asp-for="Email" class="form-control" readonly /> <!-- Email is read-only -->
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Role">Role</label>
+        <select asp-for="Role" class="form-control">
+            <option value="User">User</option>
+            <option value="Admin">Admin</option>
+        </select>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Enabled">Enabled</label>
+        <div class="form-check">
+            <!-- Radio button for true (1) -->
+            <input asp-for="Enabled" type="radio" class="form-check-input" value="true" id="enableTrue" />
+            <label class="form-check-label" for="enableTrue">Yes</label>
+        </div>
+        <div class="form-check">
+            <!-- Radio button for false (0) -->
+            <input asp-for="Enabled" type="radio" class="form-check-input" value="false" id="enableFalse" />
+            <label class="form-check-label" for="enableFalse">No</label>
+        </div>
+    </div>
+
+    <button type="submit" class="btn btn-success">Update</button>
+    <a href="@Url.Action("Index", "AcessAm")" class="btn btn-secondary">Cancel</a>
+</form>

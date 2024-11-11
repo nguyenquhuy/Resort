@@ -1,0 +1,126 @@
+﻿@using DATN.Controllers
+@inject DATN.Models.Context.DATNDbContext DbContext
+@{
+	var roomTypes = GetDataController.GetRoomTypes(DbContext);
+	var rooms = GetDataController.GetRoom(DbContext);
+	var services = GetDataController.GetService(DbContext);
+	var resort = GetDataController.GetResort(DbContext);
+}
+
+
+<div class="container-fluid banner">
+	<div class="row banner-slide">
+		@foreach(var item in rooms.Take(3))
+		{
+			<div class="col-xl-12 col-lg-12 col-md-12 col-xs-12 col-12 banner-item" style="background-image: url('@Url.Content("~/images/room/"+item.Image)');">
+				<div class="title banner-word">
+					<p>@item.Name</p>
+				</div>
+				<div class="description banner-word">
+					<p>@item.Description</p>
+				</div>
+			</div>
+		}
+	</div>
+	<div class="prev-banner-box"><span><i class="fa fa-angle-left" id="prevBanner"></i></span></div>
+	<div class="next-banner-box"><span><i class="fa fa-angle-right" id="nextBanner"></i></span></div>
+	<form method="post" action="@Url.Action("Index", "Booking")">
+		<div class="col-xl-2 col-lg-4 col-md-6 col-sm-12 col-12 item item-sm">
+			<p>Room Type<span>*</span></p>
+			<div class="infos">
+				<select class="criteria" name="roomTypeId">
+					@foreach (var item in roomTypes)
+					{
+						<option value="@item.Id">@item.Name</option>
+					}
+				</select>
+			</div>
+		</div>
+		<div class="col-xl-2 col-lg-4 col-md-6 col-sm-12 col-12 item item-md">
+			<p>Check-in Date<span>*</span></p>
+			<div class="infos">
+				<input type="date" name="checkInDate" class="criteria" required>
+			</div>
+		</div>
+		<div class="col-xl-2 col-lg-4 col-md-6 col-sm-12 col-12 item item-lg">
+			<p>Check-out Date<span>*</span></p>
+			<div class="infos">
+				<input type="date" name="checkOutDate" class="criteria" required>
+			</div>
+		</div>
+		<div class="col-xl-2 col-lg-4 col-md-6 col-sm-12 col-12 item item-lg">
+			<p style="color: transparent;">A</p>
+			<div class="infos">
+				<input type="submit" value="TÌM KIẾM" class="criteria sub-btn">
+			</div>
+		</div>
+	</form>
+
+</div>
+<!-- end carousel banner -->
+<!-- welcome -->
+@Html.Raw(resort.Description)
+
+<!-- end welcome -->
+<!-- dining -->
+<div class="container-fluid dining">
+	<div class="container words">
+		<p class="title">Dịch vụ của chúng tôi</p>
+		<div class="icon-title">
+			<img src="~/FE/img/icon-title.png">
+		</div>
+	</div>
+	<div class="images container">
+		<div class="row dining-slide">
+			@foreach(var service in services)
+			{
+				<div class="col-12 dining-item" style="background-image: url('@Url.Content("~/images/service/"+service.Image)');">
+					<div class="info">
+						<p class="title">@service.Title</p>
+						<p class="detail">
+							@service.Description
+						</p>
+					</div>
+				</div>
+			}
+		</div>
+	</div>
+</div>
+<!-- end dining -->
+<!-- blogs -->
+<div class="container-fluid blogs">
+	<div class="container title">
+		<p>Hệ thống phòng nghỉ</p>
+		<div class="icon-title">
+			<img src="~/FE/img/icon-title.png">
+		</div>
+	</div>
+	<div class="container info">
+		<div class="row">
+			@foreach(var item in rooms.Take(4))
+			{
+				<div class="col-xl-3 col-lg-3 col-md-6 col-sm-6 col-12">
+					<div class="itemBox">
+						<div class="item">
+							<div class="img" style="background-image: url('@Url.Content("~/images/room/"+item.Image)');"></div>
+							<div class="slice"></div>
+							<p class="info-title">@item.Name</p>
+							<p class="time">@item.Price <span><i class="fas fa-comment"></i></span></p>
+							<div class="slice"></div>
+							<p class="detail">
+								@item.Description
+							</p>
+							<p class="more"><a href="/DetailRoom/@item.ID">Chi tiết</a></p>
+						</div>
+					</div>
+				</div>
+			}
+		</div>
+		<div class="blog-btn">
+			<a href="/ListRoom">
+				<input type="submit" name="" value="Tất cả phòng nghỉ">
+			</a>
+		</div>
+	</div>
+</div>
+<!-- end blogs -->

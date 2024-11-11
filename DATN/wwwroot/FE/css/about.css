@@ -1,0 +1,143 @@
+
+
+
+.welcome .words{
+	margin-top: 0px !important;
+}
+.welcome .short-des{
+	margin-top: 30px !important;
+}
+
+/*RESPONSIVE*/
+
+@media all and (max-width: 1200px){
+	
+}
+
+@media all and (max-width: 1199px){
+	
+}
+
+@media all and (max-width: 1023px){
+	.header-box .header-info{
+		display: none;
+	}
+	.header-box .header{
+		position: fixed;
+		top: 0;
+		width: 100%;
+		z-index: 3;
+	}
+	.header-box .header .forResLogo{
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
+	.header-box .header .menu{
+		display: none;
+	}
+	.header-box .header img{
+		transform: scale(1.2);
+	}
+	.header .headerBtn{
+		opacity: 1;
+		pointer-events: all;
+	}
+}
+
+@media all and (max-width: 992px){
+	.review .guest .review-slide .item .guest-info .name{
+		height: 40px;
+		line-height: 20px;
+		font-size: 16px;
+		font-weight: bold;
+	}
+	.review .guest .review-slide .item .guest-info .job{
+		height: 40px;
+		line-height: 20px;
+		font-size: 14px;	
+	}
+}
+
+@media all and (max-width: 991px){
+}
+
+@media all and (max-width: 768px){
+	.stats .info .itemBox{
+		margin-top: 30px;
+	}
+	.resHeader .hidden-drop-menu{
+		width: 45%;
+	}
+}
+@media all and (max-width: 767px){
+	.footer .info .category{
+		margin-top: 50px;
+	}
+	.footer .info .direction{
+		margin-top: 50px;
+	}
+	.stats .info .itemBox{
+		height: 280px;
+	}
+}
+
+@media all and (max-width: 576px){
+	.stats .info .itemBox{
+		margin-top: 15px;
+	}
+	.resHeader .hidden-drop-menu{
+		width: 60%;
+	}
+}
+
+@media all and (max-width: 575px){
+	
+}
+
+@media all and (max-width: 455px){
+	.introduce2{
+		height: 580px;
+	}
+	.introduce2 .title{
+		line-height: 70px;
+	}
+}
+
+@media all and (max-width: 425px){
+	.resHeader .hidden-drop-menu{
+		width: 100%;
+	}
+}
+
+@media all and (max-width: 375px){
+	.header-box .header img{
+		
+	}
+}
+
+@media all and (max-width: 320px){
+	.review .guest .review-slide .item .guest-info .guest-img{
+		width: 70px;
+		height: 70px;
+		right: 10px;
+	}
+}
+
+@media all and (max-width: 280px){
+	.review .guest .review-slide .item .guest-info .guest-img{
+		width: 60px;
+		height: 60px;
+		right: 5px;
+	}
+	.review .guest .review-slide .item .guest-info .name{
+		line-height: 20px;
+		font-size: 14px;
+		margin-left: -15px;
+	}
+	.review .guest .review-slide .item .guest-info .job{
+		line-height: 20px;
+		font-size: 12px;	
+		margin-left: -15px;
+	}
+}

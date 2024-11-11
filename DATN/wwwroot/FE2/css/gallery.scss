@@ -1,0 +1,73 @@
+@import "./mixin.scss";
+.gallery-banner {
+  background-image: url(../images/gallery/gallery-banner.jpeg);
+  background-position: center;
+  height: 300px;
+  position: relative;
+  p {
+    font-size: 15px;
+    color: $hover-color;
+    font-style: italic;
+  }
+  h2 {
+    font-size: 35px;
+    color: #fff;
+  }
+  &__line {
+    background-color: $hover-color;
+    height: 1px;
+    width: 125px;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    margin-top: 15px;
+  }
+  &__center {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    position: absolute;
+    text-align: center;
+  }
+}
+
+.gallery-description {
+  text-align: center;
+  padding: 50px 20px;
+  position: relative;
+  h2 {
+    font-size: 35px;
+    color: #000;
+  }
+
+  p {
+    font-size: 18px;
+    color: #999;
+    padding-top: 60px;
+  }
+  &__line {
+    background-color: #000;
+    height: 1px;
+    width: 125px;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    margin-top: 15px;
+  }
+}
+
+.gallery-image {
+  &__item {
+    position: relative;
+    cursor: pointer;
+    &:hover .grid-hover {
+      opacity: 1;
+    }
+  }
+  .grid-hover {
+    opacity: 1;
+    .grid-hover__text a {
+      color: $main-color;
+    }
+  }
+}

@@ -1,0 +1,33 @@
+﻿@model IEnumerable<DATN.Models.Comment>
+@{
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+<h2>Danh sách bình luận</h2>
+<table class="table">
+    <thead>
+        <tr>
+            <th>STT</th>
+            <th>Tên người dùng</th>
+            <th>Phòng</th>
+            <th>Nội dung</th>
+            <th>Trạng thái</th>
+            <th>Hành động</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var cmt in Model.Select((value, index) => new { value, index }))
+        {
+            <tr id="comment-@cmt.value.Id">
+                <td>@(cmt.index + 1)</td>
+                <td>@cmt.value.Account.Name</td>
+                <td>@cmt.value.Room.Name</td>
+                <td>@cmt.value.Content</td>
+                <td>@(cmt.value.Status ? "Hiện" : "Ẩn")</td>
+                <td>
+                    <a asp-action="Update" asp-route-id="@cmt.value.Id" class="btn btn-primary">Sửa</a>
+                    <a asp-action="Delete" asp-route-id="@cmt.value.Id" class="btn btn-danger">Xóa</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

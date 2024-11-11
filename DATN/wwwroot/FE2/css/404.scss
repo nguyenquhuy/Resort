@@ -1,0 +1,61 @@
+@import "./mixin.scss";
+.page404 {
+  background-image: url(../images/404/404.jpeg);
+  background-position: center 0;
+  background-size: cover;
+  background-repeat: no-repeat;
+  padding: 100px 15px 60px 15px;
+  text-align: center;
+  h4 {
+    font-size: 14px;
+    font-style: italic;
+    color: $hover-color;
+    padding: 10px 0;
+  }
+  h1 {
+    font-size: 25px;
+    color: #fff;
+    padding-bottom: 10px;
+  }
+  p {
+    font-size: 15px;
+    color: #999;
+    padding: 20px 0;
+  }
+  &__search {
+    @include center();
+    position: relative;
+    input,
+    button {
+      height: 60px;
+    }
+    input {
+      width: calc(100% - 60px);
+      text-indent: 10px;
+      color: #999;
+    }
+    button {
+      border: none;
+      background-color: #000;
+      width: 60px;
+      &:hover {
+        background-color: $hover-color;
+      }
+      span {
+        color: #fff;
+        font-size: 25px;
+        &::after {
+          content: "\f178";
+          font-family: "Font Awesome 5 Pro";
+        }
+      }
+    }
+    label.error {
+      @include error-validate();
+      transform: translate(-50%, 100%);
+      position: absolute;
+      top: 50%;
+      left: 50%;
+    }
+  }
+}

@@ -1,0 +1,102 @@
+
+/*ROOM CONTENT*/
+.room-content{
+	margin-top: 50px;
+	padding-bottom: 50px;
+}
+.room-item{
+	border: 15px solid transparent;
+}
+.room-item .room-img{
+	border: 15px solid white;
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: cover;
+}
+.room-item .room-info{
+	background-color: #faf9f8;
+}
+.room-item .room-info .title{
+	width: 90%;
+	margin-left: 5%;
+	text-align: left;
+	font-size: 22px;
+	font-weight: bold;
+	margin-top: 20px;
+	line-height: 26px;
+	height: 26px;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	text-transform: capitalize;
+}
+.room-item .room-info .slice{
+	width: 90%;
+	margin-left: 5%;
+	height: 1px;
+	background-color: #ccc;
+	margin-top: 10px;
+	margin-bottom: 10px;
+}
+.room-item .room-info .price{
+	font-size: 16px;
+	width: 90%;
+	margin-left: 5%;
+	line-height: 20px;
+	font-weight: bold;
+}
+.room-item .room-info .price span{
+	color: #d7b38c;
+}
+.room-item .room-info .price .num{
+	font-size: 20px;
+}
+.room-item .room-info .criteria{
+	font-size: 14px;
+	line-height: 20px;
+	width: 90%;
+	margin-left: 5%;
+	color: #555;
+}
+.room-item .room-info .criteria span{
+	color: #d7b38c;
+}
+.room-item .room-info button{
+	width: 70%;
+	margin-left: 5%;
+	height: 30px;
+	line-height: 30px;
+	text-align: center;
+	text-transform: capitalize;
+	border: 2px solid #555;
+	margin-bottom: 15px;
+}
+.room-item .room-info button:focus{
+	outline: none;
+}
+.room-item .room-info button a{
+	text-decoration: none;
+	color: black;
+}
+.room-item .room-info button:hover{
+	border-color: #d7b38c;
+	cursor: pointer;
+	transition: 0.3s;
+}
+.room-item .room-info button:hover a{
+	color: #d7b38c;
+	transition: 0.5s;
+}
+/*END ROOM CONTENT*/
+
+
+
+
+
+/*RESPONSIVE*/
+@media all and (max-width: 767px){
+	.room-item .room-img{
+		height: 300px;
+	}
+}
+/*END RESPONSIVE*/

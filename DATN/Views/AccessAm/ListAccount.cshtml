@@ -1,0 +1,38 @@
+﻿@model IEnumerable<DATN.Models.Account>
+
+@{
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+<h1>Danh sách người dùng</h1>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Email</th>
+            <th>Quyền hành</th>
+            <th>Tình trạng</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var account in Model)
+        {
+            <tr>
+                <td>@account.Email</td>
+                <td>@account.Role</td>
+                @if (account.Enabled == true)
+                {
+                    <td>Bình thường</td>
+                }
+                else
+                {
+                    <td>Bị vô hiệu</td>
+                }
+                <td>
+                    <!-- Update button -->
+                    <a href="@Url.Action("Update", "AccessAm", new { id = account.ID })" class="btn btn-primary">Cập nhật</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

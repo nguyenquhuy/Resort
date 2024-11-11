@@ -1,0 +1,28 @@
+﻿@model DATN.Models.Account
+
+<div class="row justify-content-center">
+    <div class="col-md-4">
+        <section>
+            <form id="account" method="post">
+                <h2 class="text-center">Đăng nhập</h2>
+                <hr />
+                <div asp-validation-summary="ModelOnly" class="text-danger" role="alert"></div>
+                <div class="form-floating mb-3">
+                    <label asp-for="Email" class="form-label">Email</label>
+                    <input asp-for="Email" class="form-control" autocomplete="email" aria-required="true" placeholder="name@example.com" />
+                    <span asp-validation-for="Email" class="text-danger"></span>
+                </div>
+                <div class="form-floating mb-3">
+                    <label asp-for="Password" class="form-label">Mật khẩu</label>
+                    <input asp-for="Password" class="form-control" autocomplete="current-password" aria-required="true" placeholder="Mật khẩu" />
+                    <span asp-validation-for="Password" class="text-danger"></span>
+                </div>
+                <div>
+                    <button id="login-submit" type="submit" class="w-100 btn btn-lg btn-primary">Đăng nhập</button>
+                </div>
+            </form>
+            <a class="nav-link text-dark" asp-area="" asp-controller="Account" asp-action="ForgotPassword">Quên mật khẩu</a>
+            <p>Bạn chưa có tài khoản? <a class="nav-link text-dark" asp-area="" asp-controller="Account" asp-action="ForgotPassword">Đăng ký ngay</a></p>
+        </section>
+    </div>
+</div>

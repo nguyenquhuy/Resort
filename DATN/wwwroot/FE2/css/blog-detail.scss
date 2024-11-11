@@ -1,0 +1,39 @@
+@import "./mixin.scss";
+
+.detail-banner {
+  position: relative;
+  p {
+    font-size: 15px;
+    color: $hover-color;
+    font-style: italic;
+  }
+  h2 {
+    font-size: 35px;
+    color: #fff;
+  }
+  &__line {
+    background-color: $hover-color;
+    height: 1px;
+    width: 125px;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    margin-top: 15px;
+  }
+  &__center {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    position: absolute;
+    text-align: center;
+  }
+}
+
+.paralax {
+  background-image: url(../images/blog/blog-banner.jpeg);
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  min-height: 400px;
+}

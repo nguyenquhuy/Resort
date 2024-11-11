@@ -1,0 +1,79 @@
+.testimonials-banner {
+  position: relative; }
+  .testimonials-banner p {
+    font-size: 15px;
+    color: #c59d5f;
+    font-style: italic; }
+  .testimonials-banner h2 {
+    font-size: 35px;
+    color: #fff; }
+  .testimonials-banner__line {
+    background-color: #c59d5f;
+    height: 1px;
+    width: 125px;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    margin-top: 15px; }
+  .testimonials-banner__center {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    position: absolute;
+    text-align: center; }
+
+.paralax {
+  background-image: url(../images/testimonial/testimonials-banner.jpeg);
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  min-height: 600px; }
+
+.testimonials-slick {
+  padding: 120px 0;
+  text-align: center; }
+  .testimonials-slick__item {
+    padding: 119px 40px 82px;
+    background-color: #fbfafa;
+    position: relative; }
+  .testimonials-slick img {
+    width: auto; }
+  .testimonials-slick__item-content h5 {
+    font-size: 16px;
+    color: #000;
+    text-transform: uppercase;
+    font-weight: 700; }
+  .testimonials-slick__item-content h6 {
+    font-size: 14px;
+    color: #ffb400;
+    font-style: italic; }
+  .testimonials-slick__item-content p {
+    font-size: 15px; }
+  .testimonials-slick__item-image {
+    position: absolute;
+    top: -100px;
+    left: 50%;
+    transform: translateX(-50%); }
+  .testimonials-slick__line {
+    background-color: #c59d5f;
+    height: 1px;
+    width: 125px;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    margin-top: 15px; }
+  .testimonials-slick .slick-slide {
+    padding-top: 100px;
+    margin: 0 10px; }
+  .testimonials-slick .testimonial-slick-social svg {
+    font-size: 30px;
+    color: #999;
+    -webkit-transition: 0.3s ease-in-out;
+    -moz-transition: 0.3s ease-in-out;
+    transition: 0.3s ease-in-out;
+    margin: 30px 5px 0; }
+    .testimonials-slick .testimonial-slick-social svg:hover {
+      color: #c59d5f; }
+
+/*# sourceMappingURL=testimonials.css.map */

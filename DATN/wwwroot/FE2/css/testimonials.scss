@@ -1,0 +1,98 @@
+@import "./mixin.scss";
+.testimonials-banner {
+  position: relative;
+  p {
+    font-size: 15px;
+    color: $hover-color;
+    font-style: italic;
+  }
+  h2 {
+    font-size: 35px;
+    color: #fff;
+  }
+  &__line {
+    background-color: $hover-color;
+    height: 1px;
+    width: 125px;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    margin-top: 15px;
+  }
+  &__center {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    position: absolute;
+    text-align: center;
+  }
+}
+
+.paralax {
+  background-image: url(../images/testimonial/testimonials-banner.jpeg);
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  min-height: 600px;
+}
+
+// testimonial slick
+.testimonials-slick {
+  padding: 120px 0;
+  text-align: center;
+  &__item {
+    padding: 119px 40px 82px;
+    background-color: #fbfafa;
+    position: relative;
+  }
+  img {
+    width: auto;
+  }
+  &__item-content {
+    h5 {
+      font-size: 16px;
+      color: #000;
+      text-transform: uppercase;
+      font-weight: 700;
+    }
+    h6 {
+      font-size: 14px;
+      color: $main-color;
+      font-style: italic;
+    }
+    p {
+      font-size: 15px;
+    }
+  }
+  &__item-image {
+    position: absolute;
+    top: -100px;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  &__line {
+    background-color: $hover-color;
+    height: 1px;
+    width: 125px;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    margin-top: 15px;
+  }
+  .slick-slide {
+    padding-top: 100px;
+    margin: 0 10px;
+  }
+  .testimonial-slick-social {
+    svg {
+      font-size: 30px;
+      color: #999;
+      @include transition();
+      margin: 30px 5px 0;
+      &:hover {
+        color: $hover-color;
+      }
+    }
+  }
+}

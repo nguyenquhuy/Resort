@@ -1,0 +1,105 @@
+.contact-banner {
+  background-image: url(../images/contact/contact-banner.jpeg);
+  background-position: center 0px;
+  height: 300px;
+  position: relative; }
+  .contact-banner p {
+    font-size: 15px;
+    color: #c59d5f;
+    font-style: italic; }
+  .contact-banner h2 {
+    font-size: 35px;
+    color: #000; }
+  .contact-banner__line {
+    background-color: #c59d5f;
+    height: 1px;
+    width: 125px;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    margin-top: 15px; }
+  .contact-banner__center {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    position: absolute;
+    text-align: center; }
+
+.contact-description {
+  text-align: center;
+  padding: 50px 20px;
+  position: relative; }
+  .contact-description h2 {
+    font-size: 35px;
+    color: #000; }
+  .contact-description p {
+    font-size: 18px;
+    color: #999;
+    padding-top: 60px; }
+  .contact-description__line {
+    background-color: #000;
+    height: 1px;
+    width: 125px;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    margin-top: 15px; }
+
+.contact-contact {
+  padding: 60px 0; }
+
+.contact-newsletter {
+  background-image: url(../images/contact/contact-newsletter.jpeg);
+  background-position: center 0;
+  background-size: cover;
+  background-repeat: no-repeat;
+  padding: 100px 15px 60px 15px;
+  text-align: center; }
+  .contact-newsletter h4 {
+    font-size: 14px;
+    font-style: italic;
+    color: #c59d5f;
+    padding: 10px 0; }
+  .contact-newsletter h1 {
+    font-size: 25px;
+    color: #fff;
+    padding-bottom: 10px; }
+  .contact-newsletter p {
+    font-size: 15px;
+    color: #999;
+    padding: 20px 0; }
+  .contact-newsletter__email {
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative; }
+    .contact-newsletter__email input,
+    .contact-newsletter__email button {
+      height: 60px; }
+    .contact-newsletter__email input {
+      width: calc(100% - 60px);
+      text-indent: 10px;
+      color: #999; }
+    .contact-newsletter__email button {
+      border: none;
+      background-color: #000;
+      width: 60px; }
+      .contact-newsletter__email button:hover {
+        background-color: #c59d5f; }
+      .contact-newsletter__email button span {
+        color: #fff;
+        font-size: 16px; }
+    .contact-newsletter__email label.error {
+      color: red;
+      font-size: 13px;
+      font-style: italic;
+      transform: translate(-50%, 100%);
+      position: absolute;
+      top: 50%;
+      left: 50%; }
+
+/*# sourceMappingURL=contact.css.map */

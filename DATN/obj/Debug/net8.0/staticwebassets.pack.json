@@ -1,0 +1,2009 @@
+{
+  "Files": [
+    {
+      "Id": "D:\\LTWNC\\DATN\\DATN\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\DATN.bundle.scp.css",
+      "PackagePath": "staticwebassets\\DATN.bundle.scp.css"
+    },
+    {
+      "Id": "D:\\LTWNC\\DATN\\DATN\\wwwroot\\FE2\\css\\404.css",
+      "PackagePath": "staticwebassets\\FE2\\css\\404.css"
+    },
+    {
+      "Id": "D:\\LTWNC\\DATN\\DATN\\wwwroot\\FE2\\css\\404.css.map",
+      "PackagePath": "staticwebassets\\FE2\\css\\404.css.map"
+    },
+    {
+      "Id": "D:\\LTWNC\\DATN\\DATN\\wwwroot\\FE2\\css\\404.scss",
+      "PackagePath": "staticwebassets\\FE2\\css\\404.scss"
+    },
+    {
+      "Id": "D:\\LTWNC\\DATN\\DATN\\wwwroot\\FE2\\css\\about.css",
+      "PackagePath": "staticwebassets\\FE2\\css\\about.css"
+    },
+    {
+      "Id": "D:\\LTWNC\\DATN\\DATN\\wwwroot\\FE2\\css\\about.css.map",
+      "PackagePath": "staticwebassets\\FE2\\css\\about.css.map"
+    },
+    {
+      "Id": "D:\\LTWNC\\DATN\\DATN\\wwwroot\\FE2\\css\\about.scss",
+      "PackagePath": "staticwebassets\\FE2\\css\\about.scss"
+    },
+    {
+      "Id": "D:\\LTWNC\\DATN\\DATN\\wwwroot\\FE2\\css\\blog-detail.css",
+      "PackagePath": "staticwebassets\\FE2\\css\\blog-detail.css"
+    },
+    {
+      "Id": "D:\\LTWNC\\DATN\\DATN\\wwwroot\\FE2\\css\\blog-detail.css.map",
+      "PackagePath": "staticwebassets\\FE2\\css\\blog-detail.css.map"
+    },
+    {
+      "Id": "D:\\LTWNC\\DATN\\DATN\\wwwroot\\FE2\\css\\blog-detail.scss",
+      "PackagePath": "staticwebassets\\FE2\\css\\blog-detail.scss"
+    },
+    {
+      "Id": "D:\\LTWNC\\DATN\\DATN\\wwwroot\\FE2\\css\\blog.css",
+      "PackagePath": "staticwebassets\\FE2\\css\\blog.css"
+    },
+    {
+      "Id": "D:\\LTWNC\\DATN\\DATN\\wwwroot\\FE2\\css\\blog.css.map",
+      "PackagePath": "staticwebassets\\FE2\\css\\blog.css.map"
+    },
+    {
+      "Id": "D:\\LTWNC\\DATN\\DATN\\wwwroot\\FE2\\css\\blog.scss",
+      "PackagePath": "staticwebassets\\FE2\\css\\blog.scss"
+    },
+    {
+      "Id": "D:\\LTWNC\\DATN\\DATN\\wwwroot\\FE2\\css\\contact.css",
+      "PackagePath": "staticwebassets\\FE2\\css\\contact.css"
+    },
+    {
+      "Id": "D:\\LTWNC\\DATN\\DATN\\wwwroot\\FE2\\css\\contact.css.map",
+      "PackagePath": "staticwebassets\\FE2\\css\\contact.css.map"
+    },
+    {
+      "Id": "D:\\LTWNC\\DATN\\DATN\\wwwroot\\FE2\\css\\contact.scss",
+      "PackagePath": "staticwebassets\\FE2\\css\\contact.scss"
+    },
+    {
+      "Id": "D:\\LTWNC\\DATN\\DATN\\wwwroot\\FE2\\css\\gallery.css",
+      "PackagePath": "staticwebassets\\FE2\\css\\gallery.css"
+    },
+    {
+      "Id": "D:\\LTWNC\\DATN\\DATN\\wwwroot\\FE2\\css\\gallery.css.map",
+      "PackagePath": "staticwebassets\\FE2\\css\\gallery.css.map"
+    },
+    {
+      "Id": "D:\\LTWNC\\DATN\\DATN\\wwwroot\\FE2\\css\\gallery.scss",
+      "PackagePath": "staticwebassets\\FE2\\css\\gallery.scss"
+    },
+    {
+      "Id": "D:\\LTWNC\\DATN\\DATN\\wwwroot\\FE2\\css\\getInTouch.css",
+      "PackagePath": "staticwebassets\\FE2\\css\\getInTouch.css"
+    },
+    {
+      "Id": "D:\\LTWNC\\DATN\\DATN\\wwwroot\\FE2\\css\\getInTouch.css.map",
+      "PackagePath": "staticwebassets\\FE2\\css\\getInTouch.css.map"
+    },
+    {
+      "Id": "D:\\LTWNC\\DATN\\DATN\\wwwroot\\FE2\\css\\getInTouch.scss",
+      "PackagePath": "staticwebassets\\FE2\\css\\getInTouch.scss"
+    },
+    {
+      "Id": "D:\\LTWNC\\DATN\\DATN\\wwwroot\\FE2\\css\\mixin.css",
+      "PackagePath": "staticwebassets\\FE2\\css\\mixin.css"
+    },
+    {
+      "Id": "D:\\LTWNC\\DATN\\DATN\\wwwroot\\FE2\\css\\mixin.css.map",
+      "PackagePath": "staticwebassets\\FE2\\css\\mixin.css.map"
+    },
+    {
+      "Id": "D:\\LTWNC\\DATN\\DATN\\wwwroot\\FE2\\css\\mixin.scss",
+      "PackagePath": "staticwebassets\\FE2\\css\\mixin.scss"
+    },
+    {
+      "Id": "D:\\LTWNC\\DATN\\DATN\\wwwroot\\FE2\\css\\responsive.css",
+      "PackagePath": "staticwebassets\\FE2\\css\\responsive.css"
+    },
+    {
+      "Id": "D:\\LTWNC\\DATN\\DATN\\wwwroot\\FE2\\css\\responsive.css.map",
+      "PackagePath": "staticwebassets\\FE2\\css\\responsive.css.map"
+    },
+    {
+      "Id": "D:\\LTWNC\\DATN\\DATN\\wwwroot\\FE2\\css\\responsive.scss",
+      "PackagePath": "staticwebassets\\FE2\\css\\responsive.scss"
+    },
+    {
+      "Id": "D:\\LTWNC\\DATN\\DATN\\wwwroot\\FE2\\css\\roomsList.css",
+      "PackagePath": "staticwebassets\\FE2\\css\\roomsList.css"
+    },
+    {
+      "Id": "D:\\LTWNC\\DATN\\DATN\\wwwroot\\FE2\\css\\roomsList.css.map",
+      "PackagePath": "staticwebassets\\FE2\\css\\roomsList.css.map"
+    },
+    {
+      "Id": "D:\\LTWNC\\DATN\\DATN\\wwwroot\\FE2\\css\\roomsList.scss",
+      "PackagePath": "staticwebassets\\FE2\\css\\roomsList.scss"
+    },
+    {
+      "Id": "D:\\LTWNC\\DATN\\DATN\\wwwroot\\FE2\\css\\singleRoom.css",
+      "PackagePath": "staticwebassets\\FE2\\css\\singleRoom.css"
+    },
+    {
+      "Id": "D:\\LTWNC\\DATN\\DATN\\wwwroot\\FE2\\css\\singleRoom.css.map",
+      "PackagePath": "staticwebassets\\FE2\\css\\singleRoom.css.map"
+    },
+    {
+      "Id": "D:\\LTWNC\\DATN\\DATN\\wwwroot\\FE2\\css\\singleRoom.scss",
+      "PackagePath": "staticwebassets\\FE2\\css\\singleRoom.scss"
+    },
+    {
+      "Id": "D:\\LTWNC\\DATN\\DATN\\wwwroot\\FE2\\css\\style.css",
+      "PackagePath": "staticwebassets\\FE2\\css\\style.css"
+    },
+    {
+      "Id": "D:\\LTWNC\\DATN\\DATN\\wwwroot\\FE2\\css\\style.css.map",
+      "PackagePath": "staticwebassets\\FE2\\css\\style.css.map"
+    },
+    {
+      "Id": "D:\\LTWNC\\DATN\\DATN\\wwwroot\\FE2\\css\\style.scss",
+      "PackagePath": "staticwebassets\\FE2\\css\\style.scss"
+    },
+    {
+      "Id": "D:\\LTWNC\\DATN\\DATN\\wwwroot\\FE2\\css\\testimonials.css",
+      "PackagePath": "staticwebassets\\FE2\\css\\testimonials.css"
+    },
+    {
+      "Id": "D:\\LTWNC\\DATN\\DATN\\wwwroot\\FE2\\css\\testimonials.css.map",
+      "PackagePath": "staticwebassets\\FE2\\css\\testimonials.css.map"
+    },
+    {
+      "Id": "D:\\LTWNC\\DATN\\DATN\\wwwroot\\FE2\\css\\testimonials.scss",
+      "PackagePath": "staticwebassets\\FE2\\css\\testimonials.scss"
+    },
+    {
+      "Id": "D:\\LTWNC\\DATN\\DATN\\wwwroot\\FE2\\images\\404\\404.jpeg",
+      "PackagePath": "staticwebassets\\FE2\\images\\404\\404.jpeg"
+    },
+    {
+      "Id": "D:\\LTWNC\\DATN\\DATN\\wwwroot\\FE2\\images\\about\\about-01.jpeg",
+      "PackagePath": "staticwebassets\\FE2\\images\\about\\about-01.jpeg"
+    },
+    {
+      "Id": "D:\\LTWNC\\DATN\\DATN\\wwwroot\\FE2\\images\\about\\about-02.png",
+      "PackagePath": "staticwebassets\\FE2\\images\\about\\about-02.png"
+    },
+    {
+      "Id": "D:\\LTWNC\\DATN\\DATN\\wwwroot\\FE2\\images\\about\\about-03.jpeg",
+      "PackagePath": "staticwebassets\\FE2\\images\\about\\about-03.jpeg"
+    },
+    {
+      "Id": "D:\\LTWNC\\DATN\\DATN\\wwwroot\\FE2\\images\\about\\about-04.jpeg",
+      "PackagePath": "staticwebassets\\FE2\\images\\about\\about-04.jpeg"
+    },
+    {
+      "Id": "D:\\LTWNC\\DATN\\DATN\\wwwroot\\FE2\\images\\about\\about-05.png",
+      "PackagePath": "staticwebassets\\FE2\\images\\about\\about-05.png"
+    },
+    {
+      "Id": "D:\\LTWNC\\DATN\\DATN\\wwwroot\\FE2\\images\\about\\about-banner.jpeg",
+      "PackagePath": "staticwebassets\\FE2\\images\\about\\about-banner.jpeg"
+    },
+    {
+      "Id": "D:\\LTWNC\\DATN\\DATN\\wwwroot\\FE2\\images\\about\\about-logo-01.png",
+      "PackagePath": "staticwebassets\\FE2\\images\\about\\about-logo-01.png"
+    },
+    {
+      "Id": "D:\\LTWNC\\DATN\\DATN\\wwwroot\\FE2\\images\\about\\about-logo-02.png",
+      "PackagePath": "staticwebassets\\FE2\\images\\about\\about-logo-02.png"
+    },
+    {
+      "Id": "D:\\LTWNC\\DATN\\DATN\\wwwroot\\FE2\\images\\about\\about-logo-03.png",
+      "PackagePath": "staticwebassets\\FE2\\images\\about\\about-logo-03.png"
+    },
+    {
+      "Id": "D:\\LTWNC\\DATN\\DATN\\wwwroot\\FE2\\images\\about\\about-logo-04.png",
+      "PackagePath": "staticwebassets\\FE2\\images\\about\\about-logo-04.png"
+    },
+    {
+      "Id": "D:\\LTWNC\\DATN\\DATN\\wwwroot\\FE2\\images\\banner\\banner-01.jpeg",
+      "PackagePath": "staticwebassets\\FE2\\images\\banner\\banner-01.jpeg"
+    },
+    {
+      "Id": "D:\\LTWNC\\DATN\\DATN\\wwwroot\\FE2\\images\\banner\\banner-02.jpeg",
+      "PackagePath": "staticwebassets\\FE2\\images\\banner\\banner-02.jpeg"
+    },
+    {
+      "Id": "D:\\LTWNC\\DATN\\DATN\\wwwroot\\FE2\\images\\blog\\blog-01.jpeg",
+      "PackagePath": "staticwebassets\\FE2\\images\\blog\\blog-01.jpeg"
+    },
+    {
+      "Id": "D:\\LTWNC\\DATN\\DATN\\wwwroot\\FE2\\images\\blog\\blog-02.jpeg",
+      "PackagePath": "staticwebassets\\FE2\\images\\blog\\blog-02.jpeg"
+    },
+    {
+      "Id": "D:\\LTWNC\\DATN\\DATN\\wwwroot\\FE2\\images\\blog\\blog-03.jpeg",
+      "PackagePath": "staticwebassets\\FE2\\images\\blog\\blog-03.jpeg"
+    },
+    {
+      "Id": "D:\\LTWNC\\DATN\\DATN\\wwwroot\\FE2\\images\\blog\\blog-04.jpeg",
+      "PackagePath": "staticwebassets\\FE2\\images\\blog\\blog-04.jpeg"
+    },
+    {
+      "Id": "D:\\LTWNC\\DATN\\DATN\\wwwroot\\FE2\\images\\blog\\blog-05.jpeg",
+      "PackagePath": "staticwebassets\\FE2\\images\\blog\\blog-05.jpeg"
+    },
+    {
+      "Id": "D:\\LTWNC\\DATN\\DATN\\wwwroot\\FE2\\images\\blog\\blog-06.jpeg",
+      "PackagePath": "staticwebassets\\FE2\\images\\blog\\blog-06.jpeg"
+    },
+    {
+      "Id": "D:\\LTWNC\\DATN\\DATN\\wwwroot\\FE2\\images\\blog\\blog-07.jpeg",
+      "PackagePath": "staticwebassets\\FE2\\images\\blog\\blog-07.jpeg"
+    },
+    {
+      "Id": "D:\\LTWNC\\DATN\\DATN\\wwwroot\\FE2\\images\\blog\\blog-08.jpeg",
+      "PackagePath": "staticwebassets\\FE2\\images\\blog\\blog-08.jpeg"
+    },
+    {
+      "Id": "D:\\LTWNC\\DATN\\DATN\\wwwroot\\FE2\\images\\blog\\blog-09.jpeg",
+      "PackagePath": "staticwebassets\\FE2\\images\\blog\\blog-09.jpeg"
+    },
+    {
+      "Id": "D:\\LTWNC\\DATN\\DATN\\wwwroot\\FE2\\images\\blog\\blog-10.jpeg",
+      "PackagePath": "staticwebassets\\FE2\\images\\blog\\blog-10.jpeg"
+    },
+    {
+      "Id": "D:\\LTWNC\\DATN\\DATN\\wwwroot\\FE2\\images\\blog\\blog-11.jpeg",
+      "PackagePath": "staticwebassets\\FE2\\images\\blog\\blog-11.jpeg"
+    },
+    {
+      "Id": "D:\\LTWNC\\DATN\\DATN\\wwwroot\\FE2\\images\\blog\\blog-12.jpeg",
+      "PackagePath": "staticwebassets\\FE2\\images\\blog\\blog-12.jpeg"
+    },
+    {
+      "Id": "D:\\LTWNC\\DATN\\DATN\\wwwroot\\FE2\\images\\blog\\blog-13.jpeg",
+      "PackagePath": "staticwebassets\\FE2\\images\\blog\\blog-13.jpeg"
+    },
+    {
+      "Id": "D:\\LTWNC\\DATN\\DATN\\wwwroot\\FE2\\images\\blog\\blog-14.jpeg",
+      "PackagePath": "staticwebassets\\FE2\\images\\blog\\blog-14.jpeg"
+    },
+    {
+      "Id": "D:\\LTWNC\\DATN\\DATN\\wwwroot\\FE2\\images\\blog\\blog-15.jpeg",
+      "PackagePath": "staticwebassets\\FE2\\images\\blog\\blog-15.jpeg"
+    },
+    {
+      "Id": "D:\\LTWNC\\DATN\\DATN\\wwwroot\\FE2\\images\\blog\\blog-avatar.png",
+      "PackagePath": "staticwebassets\\FE2\\images\\blog\\blog-avatar.png"
+    },
+    {
+      "Id": "D:\\LTWNC\\DATN\\DATN\\wwwroot\\FE2\\images\\blog\\blog-banner.jpeg",
+      "PackagePath": "staticwebassets\\FE2\\images\\blog\\blog-banner.jpeg"
+    },
+    {
+      "Id": "D:\\LTWNC\\DATN\\DATN\\wwwroot\\FE2\\images\\contact\\contact-banner.jpeg",
+      "PackagePath": "staticwebassets\\FE2\\images\\contact\\contact-banner.jpeg"
+    },
+    {
+      "Id": "D:\\LTWNC\\DATN\\DATN\\wwwroot\\FE2\\images\\contact\\contact-newsletter.jpeg",
+      "PackagePath": "staticwebassets\\FE2\\images\\contact\\contact-newsletter.jpeg"
+    },
+    {
+      "Id": "D:\\LTWNC\\DATN\\DATN\\wwwroot\\FE2\\images\\favicon.png",
+      "PackagePath": "staticwebassets\\FE2\\images\\favicon.png"
+    },
+    {
+      "Id": "D:\\LTWNC\\DATN\\DATN\\wwwroot\\FE2\\images\\footer\\footer-01.png",
+      "PackagePath": "staticwebassets\\FE2\\images\\footer\\footer-01.png"
+    },
+    {
+      "Id": "D:\\LTWNC\\DATN\\DATN\\wwwroot\\FE2\\images\\footer\\footer-02.png",
+      "PackagePath": "staticwebassets\\FE2\\images\\footer\\footer-02.png"
+    },
+    {
+      "Id": "D:\\LTWNC\\DATN\\DATN\\wwwroot\\FE2\\images\\footer\\footer-03.png",
+      "PackagePath": "staticwebassets\\FE2\\images\\footer\\footer-03.png"
+    },
+    {
+      "Id": "D:\\LTWNC\\DATN\\DATN\\wwwroot\\FE2\\images\\gallery\\gallery-01.jpeg",
+      "PackagePath": "staticwebassets\\FE2\\images\\gallery\\gallery-01.jpeg"
+    },
+    {
+      "Id": "D:\\LTWNC\\DATN\\DATN\\wwwroot\\FE2\\images\\gallery\\gallery-02.jpeg",
+      "PackagePath": "staticwebassets\\FE2\\images\\gallery\\gallery-02.jpeg"
+    },
+    {
+      "Id": "D:\\LTWNC\\DATN\\DATN\\wwwroot\\FE2\\images\\gallery\\gallery-03.jpeg",
+      "PackagePath": "staticwebassets\\FE2\\images\\gallery\\gallery-03.jpeg"
+    },
+    {
+      "Id": "D:\\LTWNC\\DATN\\DATN\\wwwroot\\FE2\\images\\gallery\\gallery-04.jpeg",
+      "PackagePath": "staticwebassets\\FE2\\images\\gallery\\gallery-04.jpeg"
+    },
+    {
+      "Id": "D:\\LTWNC\\DATN\\DATN\\wwwroot\\FE2\\images\\gallery\\gallery-05.jpeg",
+      "PackagePath": "staticwebassets\\FE2\\images\\gallery\\gallery-05.jpeg"
+    },
+    {
+      "Id": "D:\\LTWNC\\DATN\\DATN\\wwwroot\\FE2\\images\\gallery\\gallery-06.jpeg",
+      "PackagePath": "staticwebassets\\FE2\\images\\gallery\\gallery-06.jpeg"
+    },
+    {
+      "Id": "D:\\LTWNC\\DATN\\DATN\\wwwroot\\FE2\\images\\gallery\\gallery-07.jpeg",
+      "PackagePath": "staticwebassets\\FE2\\images\\gallery\\gallery-07.jpeg"
+    },
+    {
+      "Id": "D:\\LTWNC\\DATN\\DATN\\wwwroot\\FE2\\images\\gallery\\gallery-08.jpeg",
+      "PackagePath": "staticwebassets\\FE2\\images\\gallery\\gallery-08.jpeg"
+    },
+    {
+      "Id": "D:\\LTWNC\\DATN\\DATN\\wwwroot\\FE2\\images\\gallery\\gallery-09.jpeg",
+      "PackagePath": "staticwebassets\\FE2\\images\\gallery\\gallery-09.jpeg"
+    },
+    {
+      "Id": "D:\\LTWNC\\DATN\\DATN\\wwwroot\\FE2\\images\\gallery\\gallery-10.jpeg",
+      "PackagePath": "staticwebassets\\FE2\\images\\gallery\\gallery-10.jpeg"
+    },
+    {
+      "Id": "D:\\LTWNC\\DATN\\DATN\\wwwroot\\FE2\\images\\gallery\\gallery-11.jpeg",
+      "PackagePath": "staticwebassets\\FE2\\images\\gallery\\gallery-11.jpeg"
+    },
+    {
+      "Id": "D:\\LTWNC\\DATN\\DATN\\wwwroot\\FE2\\images\\gallery\\gallery-12.jpeg",
+      "PackagePath": "staticwebassets\\FE2\\images\\gallery\\gallery-12.jpeg"
+    },
+    {
+      "Id": "D:\\LTWNC\\DATN\\DATN\\wwwroot\\FE2\\images\\gallery\\gallery-banner.jpeg",
+      "PackagePath": "staticwebassets\\FE2\\images\\gallery\\gallery-banner.jpeg"
+    },
+    {
+      "Id": "D:\\LTWNC\\DATN\\DATN\\wwwroot\\FE2\\images\\getInTouch\\getInTouch-01.jpeg",
+      "PackagePath": "staticwebassets\\FE2\\images\\getInTouch\\getInTouch-01.jpeg"
+    },
+    {
+      "Id": "D:\\LTWNC\\DATN\\DATN\\wwwroot\\FE2\\images\\getInTouch\\getInTouch-banner.jpeg",
+      "PackagePath": "staticwebassets\\FE2\\images\\getInTouch\\getInTouch-banner.jpeg"
+    },
+    {
+      "Id": "D:\\LTWNC\\DATN\\DATN\\wwwroot\\FE2\\images\\home\\home-01.jpeg",
+      "PackagePath": "staticwebassets\\FE2\\images\\home\\home-01.jpeg"
+    },
+    {
+      "Id": "D:\\LTWNC\\DATN\\DATN\\wwwroot\\FE2\\images\\icon\\icon-01.png",
+      "PackagePath": "staticwebassets\\FE2\\images\\icon\\icon-01.png"
+    },
+    {
+      "Id": "D:\\LTWNC\\DATN\\DATN\\wwwroot\\FE2\\images\\icon\\icon-02.png",
+      "PackagePath": "staticwebassets\\FE2\\images\\icon\\icon-02.png"
+    },
+    {
+      "Id": "D:\\LTWNC\\DATN\\DATN\\wwwroot\\FE2\\images\\icon\\icon-03.png",
+      "PackagePath": "staticwebassets\\FE2\\images\\icon\\icon-03.png"
+    },
+    {
+      "Id": "D:\\LTWNC\\DATN\\DATN\\wwwroot\\FE2\\images\\icon\\icon-04.png",
+      "PackagePath": "staticwebassets\\FE2\\images\\icon\\icon-04.png"
+    },
+    {
+      "Id": "D:\\LTWNC\\DATN\\DATN\\wwwroot\\FE2\\images\\logo-home-1.png",
+      "PackagePath": "staticwebassets\\FE2\\images\\logo-home-1.png"
+    },
+    {
+      "Id": "D:\\LTWNC\\DATN\\DATN\\wwwroot\\FE2\\images\\logo-home-2.png",
+      "PackagePath": "staticwebassets\\FE2\\images\\logo-home-2.png"
+    },
+    {
+      "Id": "D:\\LTWNC\\DATN\\DATN\\wwwroot\\FE2\\images\\logo-home-3.png",
+      "PackagePath": "staticwebassets\\FE2\\images\\logo-home-3.png"
+    },
+    {
+      "Id": "D:\\LTWNC\\DATN\\DATN\\wwwroot\\FE2\\images\\masonry\\masonry-01.jpeg",
+      "PackagePath": "staticwebassets\\FE2\\images\\masonry\\masonry-01.jpeg"
+    },
+    {
+      "Id": "D:\\LTWNC\\DATN\\DATN\\wwwroot\\FE2\\images\\masonry\\masonry-02.jpeg",
+      "PackagePath": "staticwebassets\\FE2\\images\\masonry\\masonry-02.jpeg"
+    },
+    {
+      "Id": "D:\\LTWNC\\DATN\\DATN\\wwwroot\\FE2\\images\\masonry\\masonry-03.jpeg",
+      "PackagePath": "staticwebassets\\FE2\\images\\masonry\\masonry-03.jpeg"
+    },
+    {
+      "Id": "D:\\LTWNC\\DATN\\DATN\\wwwroot\\FE2\\images\\masonry\\masonry-04.jpeg",
+      "PackagePath": "staticwebassets\\FE2\\images\\masonry\\masonry-04.jpeg"
+    },
+    {
+      "Id": "D:\\LTWNC\\DATN\\DATN\\wwwroot\\FE2\\images\\masonry\\masonry-05.jpeg",
+      "PackagePath": "staticwebassets\\FE2\\images\\masonry\\masonry-05.jpeg"
+    },
+    {
+      "Id": "D:\\LTWNC\\DATN\\DATN\\wwwroot\\FE2\\images\\masonry\\masonry-06.jpeg",
+      "PackagePath": "staticwebassets\\FE2\\images\\masonry\\masonry-06.jpeg"
+    },
+    {
+      "Id": "D:\\LTWNC\\DATN\\DATN\\wwwroot\\FE2\\images\\mxh\\mxh-01.jpg",
+      "PackagePath": "staticwebassets\\FE2\\images\\mxh\\mxh-01.jpg"
+    },
+    {
+      "Id": "D:\\LTWNC\\DATN\\DATN\\wwwroot\\FE2\\images\\mxh\\mxh-02.jpg",
+      "PackagePath": "staticwebassets\\FE2\\images\\mxh\\mxh-02.jpg"
+    },
+    {
+      "Id": "D:\\LTWNC\\DATN\\DATN\\wwwroot\\FE2\\images\\mxh\\mxh-03.jpg",
+      "PackagePath": "staticwebassets\\FE2\\images\\mxh\\mxh-03.jpg"
+    },
+    {
+      "Id": "D:\\LTWNC\\DATN\\DATN\\wwwroot\\FE2\\images\\mxh\\mxh-04.jpg",
+      "PackagePath": "staticwebassets\\FE2\\images\\mxh\\mxh-04.jpg"
+    },
+    {
+      "Id": "D:\\LTWNC\\DATN\\DATN\\wwwroot\\FE2\\images\\mxh\\mxh-05.jpg",
+      "PackagePath": "staticwebassets\\FE2\\images\\mxh\\mxh-05.jpg"
+    },
+    {
+      "Id": "D:\\LTWNC\\DATN\\DATN\\wwwroot\\FE2\\images\\mxh\\mxh-06.jpg",
+      "PackagePath": "staticwebassets\\FE2\\images\\mxh\\mxh-06.jpg"
+    },
+    {
+      "Id": "D:\\LTWNC\\DATN\\DATN\\wwwroot\\FE2\\images\\roomlist\\roomlist-01.jpeg",
+      "PackagePath": "staticwebassets\\FE2\\images\\roomlist\\roomlist-01.jpeg"
+    },
+    {
+      "Id": "D:\\LTWNC\\DATN\\DATN\\wwwroot\\FE2\\images\\roomlist\\roomlist-02.jpeg",
+      "PackagePath": "staticwebassets\\FE2\\images\\roomlist\\roomlist-02.jpeg"
+    },
+    {
+      "Id": "D:\\LTWNC\\DATN\\DATN\\wwwroot\\FE2\\images\\roomlist\\roomlist-03.jpeg",
+      "PackagePath": "staticwebassets\\FE2\\images\\roomlist\\roomlist-03.jpeg"
+    },
+    {
+      "Id": "D:\\LTWNC\\DATN\\DATN\\wwwroot\\FE2\\images\\roomlist\\roomlist-04.jpeg",
+      "PackagePath": "staticwebassets\\FE2\\images\\roomlist\\roomlist-04.jpeg"
+    },
+    {
+      "Id": "D:\\LTWNC\\DATN\\DATN\\wwwroot\\FE2\\images\\roomlist\\roomlist-05.jpeg",
+      "PackagePath": "staticwebassets\\FE2\\images\\roomlist\\roomlist-05.jpeg"
+    },
+    {
+      "Id": "D:\\LTWNC\\DATN\\DATN\\wwwroot\\FE2\\images\\roomlist\\roomlist-06.jpeg",
+      "PackagePath": "staticwebassets\\FE2\\images\\roomlist\\roomlist-06.jpeg"
+    },
+    {
+      "Id": "D:\\LTWNC\\DATN\\DATN\\wwwroot\\FE2\\images\\single-room\\room-01.jpeg",
+      "PackagePath": "staticwebassets\\FE2\\images\\single-room\\room-01.jpeg"
+    },
+    {
+      "Id": "D:\\LTWNC\\DATN\\DATN\\wwwroot\\FE2\\images\\single-room\\room-slider.jpeg",
+      "PackagePath": "staticwebassets\\FE2\\images\\single-room\\room-slider.jpeg"
+    },
+    {
+      "Id": "D:\\LTWNC\\DATN\\DATN\\wwwroot\\FE2\\images\\testimonial\\testimonial-01.png",
+      "PackagePath": "staticwebassets\\FE2\\images\\testimonial\\testimonial-01.png"
+    },
+    {
+      "Id": "D:\\LTWNC\\DATN\\DATN\\wwwroot\\FE2\\images\\testimonial\\testimonial-02.png",
+      "PackagePath": "staticwebassets\\FE2\\images\\testimonial\\testimonial-02.png"
+    },
+    {
+      "Id": "D:\\LTWNC\\DATN\\DATN\\wwwroot\\FE2\\images\\testimonial\\testimonial-03.png",
+      "PackagePath": "staticwebassets\\FE2\\images\\testimonial\\testimonial-03.png"
+    },
+    {
+      "Id": "D:\\LTWNC\\DATN\\DATN\\wwwroot\\FE2\\images\\testimonial\\testimonial-04.png",
+      "PackagePath": "staticwebassets\\FE2\\images\\testimonial\\testimonial-04.png"
+    },
+    {
+      "Id": "D:\\LTWNC\\DATN\\DATN\\wwwroot\\FE2\\images\\testimonial\\testimonial-05.png",
+      "PackagePath": "staticwebassets\\FE2\\images\\testimonial\\testimonial-05.png"
+    },
+    {
+      "Id": "D:\\LTWNC\\DATN\\DATN\\wwwroot\\FE2\\images\\testimonial\\testimonial-06.png",
+      "PackagePath": "staticwebassets\\FE2\\images\\testimonial\\testimonial-06.png"
+    },
+    {
+      "Id": "D:\\LTWNC\\DATN\\DATN\\wwwroot\\FE2\\images\\testimonial\\testimonial-07.png",
+      "PackagePath": "staticwebassets\\FE2\\images\\testimonial\\testimonial-07.png"
+    },
+    {
+      "Id": "D:\\LTWNC\\DATN\\DATN\\wwwroot\\FE2\\images\\testimonial\\testimonial-08.png",
+      "PackagePath": "staticwebassets\\FE2\\images\\testimonial\\testimonial-08.png"
+    },
+    {
+      "Id": "D:\\LTWNC\\DATN\\DATN\\wwwroot\\FE2\\images\\testimonial\\testimonial-bg.jpeg",
+      "PackagePath": "staticwebassets\\FE2\\images\\testimonial\\testimonial-bg.jpeg"
+    },
+    {
+      "Id": "D:\\LTWNC\\DATN\\DATN\\wwwroot\\FE2\\images\\testimonial\\testimonials-banner.jpeg",
+      "PackagePath": "staticwebassets\\FE2\\images\\testimonial\\testimonials-banner.jpeg"
+    },
+    {
+      "Id": "D:\\LTWNC\\DATN\\DATN\\wwwroot\\FE2\\images\\wellcome.jpg",
+      "PackagePath": "staticwebassets\\FE2\\images\\wellcome.jpg"
+    },
+    {
+      "Id": "D:\\LTWNC\\DATN\\DATN\\wwwroot\\FE2\\js\\about.js",
+      "PackagePath": "staticwebassets\\FE2\\js\\about.js"
+    },
+    {
+      "Id": "D:\\LTWNC\\DATN\\DATN\\wwwroot\\FE2\\js\\jquery-3.5.1.min.js",
+      "PackagePath": "staticwebassets\\FE2\\js\\jquery-3.5.1.min.js"
+    },
+    {
+      "Id": "D:\\LTWNC\\DATN\\DATN\\wwwroot\\FE2\\js\\main.js",
+      "PackagePath": "staticwebassets\\FE2\\js\\main.js"
+    },
+    {
+      "Id": "D:\\LTWNC\\DATN\\DATN\\wwwroot\\FE2\\js\\single-room.js",
+      "PackagePath": "staticwebassets\\FE2\\js\\single-room.js"
+    },
+    {
+      "Id": "D:\\LTWNC\\DATN\\DATN\\wwwroot\\FE2\\plugins\\asRange\\asRange.css",
+      "PackagePath": "staticwebassets\\FE2\\plugins\\asRange\\asRange.css"
+    },
+    {
+      "Id": "D:\\LTWNC\\DATN\\DATN\\wwwroot\\FE2\\plugins\\asRange\\jquery-asRange.js",
+      "PackagePath": "staticwebassets\\FE2\\plugins\\asRange\\jquery-asRange.js"
+    },
+    {
+      "Id": "D:\\LTWNC\\DATN\\DATN\\wwwroot\\FE2\\plugins\\bootstrap-4.5.2\\css\\bootstrap.css",
+      "PackagePath": "staticwebassets\\FE2\\plugins\\bootstrap-4.5.2\\css\\bootstrap.css"
+    },
+    {
+      "Id": "D:\\LTWNC\\DATN\\DATN\\wwwroot\\FE2\\plugins\\bootstrap-4.5.2\\css\\bootstrap.css.map",
+      "PackagePath": "staticwebassets\\FE2\\plugins\\bootstrap-4.5.2\\css\\bootstrap.css.map"
+    },
+    {
+      "Id": "D:\\LTWNC\\DATN\\DATN\\wwwroot\\FE2\\plugins\\bootstrap-4.5.2\\css\\bootstrap.min.css",
+      "PackagePath": "staticwebassets\\FE2\\plugins\\bootstrap-4.5.2\\css\\bootstrap.min.css"
+    },
+    {
+      "Id": "D:\\LTWNC\\DATN\\DATN\\wwwroot\\FE2\\plugins\\bootstrap-4.5.2\\css\\bootstrap.min.css.map",
+      "PackagePath": "staticwebassets\\FE2\\plugins\\bootstrap-4.5.2\\css\\bootstrap.min.css.map"
+    },
+    {
+      "Id": "D:\\LTWNC\\DATN\\DATN\\wwwroot\\FE2\\plugins\\bootstrap-4.5.2\\js\\bootstrap.js",
+      "PackagePath": "staticwebassets\\FE2\\plugins\\bootstrap-4.5.2\\js\\bootstrap.js"
+    },
+    {
+      "Id": "D:\\LTWNC\\DATN\\DATN\\wwwroot\\FE2\\plugins\\bootstrap-4.5.2\\js\\bootstrap.js.map",
+      "PackagePath": "staticwebassets\\FE2\\plugins\\bootstrap-4.5.2\\js\\bootstrap.js.map"
+    },
+    {
+      "Id": "D:\\LTWNC\\DATN\\DATN\\wwwroot\\FE2\\plugins\\bootstrap-4.5.2\\js\\bootstrap.min.js",
+      "PackagePath": "staticwebassets\\FE2\\plugins\\bootstrap-4.5.2\\js\\bootstrap.min.js"
+    },
+    {
+      "Id": "D:\\LTWNC\\DATN\\DATN\\wwwroot\\FE2\\plugins\\bootstrap-4.5.2\\js\\bootstrap.min.js.map",
+      "PackagePath": "staticwebassets\\FE2\\plugins\\bootstrap-4.5.2\\js\\bootstrap.min.js.map"
+    },
+    {
+      "Id": "D:\\LTWNC\\DATN\\DATN\\wwwroot\\FE2\\plugins\\daterangepicker\\daterangepicker.css",
+      "PackagePath": "staticwebassets\\FE2\\plugins\\daterangepicker\\daterangepicker.css"
+    },
+    {
+      "Id": "D:\\LTWNC\\DATN\\DATN\\wwwroot\\FE2\\plugins\\daterangepicker\\daterangepicker.js",
+      "PackagePath": "staticwebassets\\FE2\\plugins\\daterangepicker\\daterangepicker.js"
+    },
+    {
+      "Id": "D:\\LTWNC\\DATN\\DATN\\wwwroot\\FE2\\plugins\\flexslider\\flexslider.css",
+      "PackagePath": "staticwebassets\\FE2\\plugins\\flexslider\\flexslider.css"
+    },
+    {
+      "Id": "D:\\LTWNC\\DATN\\DATN\\wwwroot\\FE2\\plugins\\flexslider\\jquery.flexslider.js",
+      "PackagePath": "staticwebassets\\FE2\\plugins\\flexslider\\jquery.flexslider.js"
+    },
+    {
+      "Id": "D:\\LTWNC\\DATN\\DATN\\wwwroot\\FE2\\plugins\\fontawesome\\all.css",
+      "PackagePath": "staticwebassets\\FE2\\plugins\\fontawesome\\all.css"
+    },
+    {
+      "Id": "D:\\LTWNC\\DATN\\DATN\\wwwroot\\FE2\\plugins\\fontawesome\\all.js",
+      "PackagePath": "staticwebassets\\FE2\\plugins\\fontawesome\\all.js"
+    },
+    {
+      "Id": "D:\\LTWNC\\DATN\\DATN\\wwwroot\\FE2\\plugins\\imagesloaded\\imagesloaded.js",
+      "PackagePath": "staticwebassets\\FE2\\plugins\\imagesloaded\\imagesloaded.js"
+    },
+    {
+      "Id": "D:\\LTWNC\\DATN\\DATN\\wwwroot\\FE2\\plugins\\masonry\\imagesloaded.pkgd.js",
+      "PackagePath": "staticwebassets\\FE2\\plugins\\masonry\\imagesloaded.pkgd.js"
+    },
+    {
+      "Id": "D:\\LTWNC\\DATN\\DATN\\wwwroot\\FE2\\plugins\\masonry\\imagesloaded.pkgd.min.js",
+      "PackagePath": "staticwebassets\\FE2\\plugins\\masonry\\imagesloaded.pkgd.min.js"
+    },
+    {
+      "Id": "D:\\LTWNC\\DATN\\DATN\\wwwroot\\FE2\\plugins\\masonry\\masonry.pkgd.js",
+      "PackagePath": "staticwebassets\\FE2\\plugins\\masonry\\masonry.pkgd.js"
+    },
+    {
+      "Id": "D:\\LTWNC\\DATN\\DATN\\wwwroot\\FE2\\plugins\\owlcarousel\\owl.carousel.min.css",
+      "PackagePath": "staticwebassets\\FE2\\plugins\\owlcarousel\\owl.carousel.min.css"
+    },
+    {
+      "Id": "D:\\LTWNC\\DATN\\DATN\\wwwroot\\FE2\\plugins\\owlcarousel\\owl.carousel.min.js",
+      "PackagePath": "staticwebassets\\FE2\\plugins\\owlcarousel\\owl.carousel.min.js"
+    },
+    {
+      "Id": "D:\\LTWNC\\DATN\\DATN\\wwwroot\\FE2\\plugins\\owlcarousel\\owl.theme.default.min.css",
+      "PackagePath": "staticwebassets\\FE2\\plugins\\owlcarousel\\owl.theme.default.min.css"
+    },
+    {
+      "Id": "D:\\LTWNC\\DATN\\DATN\\wwwroot\\FE2\\plugins\\rating\\fontawesome-stars.css",
+      "PackagePath": "staticwebassets\\FE2\\plugins\\rating\\fontawesome-stars.css"
+    },
+    {
+      "Id": "D:\\LTWNC\\DATN\\DATN\\wwwroot\\FE2\\plugins\\rating\\jquery.barrating.min.js",
+      "PackagePath": "staticwebassets\\FE2\\plugins\\rating\\jquery.barrating.min.js"
+    },
+    {
+      "Id": "D:\\LTWNC\\DATN\\DATN\\wwwroot\\FE2\\plugins\\rating\\rating.js",
+      "PackagePath": "staticwebassets\\FE2\\plugins\\rating\\rating.js"
+    },
+    {
+      "Id": "D:\\LTWNC\\DATN\\DATN\\wwwroot\\FE2\\plugins\\slick\\ajax-loader.gif",
+      "PackagePath": "staticwebassets\\FE2\\plugins\\slick\\ajax-loader.gif"
+    },
+    {
+      "Id": "D:\\LTWNC\\DATN\\DATN\\wwwroot\\FE2\\plugins\\slick\\config.rb",
+      "PackagePath": "staticwebassets\\FE2\\plugins\\slick\\config.rb"
+    },
+    {
+      "Id": "D:\\LTWNC\\DATN\\DATN\\wwwroot\\FE2\\plugins\\slick\\fonts\\slick.eot",
+      "PackagePath": "staticwebassets\\FE2\\plugins\\slick\\fonts\\slick.eot"
+    },
+    {
+      "Id": "D:\\LTWNC\\DATN\\DATN\\wwwroot\\FE2\\plugins\\slick\\fonts\\slick.svg",
+      "PackagePath": "staticwebassets\\FE2\\plugins\\slick\\fonts\\slick.svg"
+    },
+    {
+      "Id": "D:\\LTWNC\\DATN\\DATN\\wwwroot\\FE2\\plugins\\slick\\fonts\\slick.ttf",
+      "PackagePath": "staticwebassets\\FE2\\plugins\\slick\\fonts\\slick.ttf"
+    },
+    {
+      "Id": "D:\\LTWNC\\DATN\\DATN\\wwwroot\\FE2\\plugins\\slick\\fonts\\slick.woff",
+      "PackagePath": "staticwebassets\\FE2\\plugins\\slick\\fonts\\slick.woff"
+    },
+    {
+      "Id": "D:\\LTWNC\\DATN\\DATN\\wwwroot\\FE2\\plugins\\slick\\slick-theme.css",
+      "PackagePath": "staticwebassets\\FE2\\plugins\\slick\\slick-theme.css"
+    },
+    {
+      "Id": "D:\\LTWNC\\DATN\\DATN\\wwwroot\\FE2\\plugins\\slick\\slick-theme.less",
+      "PackagePath": "staticwebassets\\FE2\\plugins\\slick\\slick-theme.less"
+    },
+    {
+      "Id": "D:\\LTWNC\\DATN\\DATN\\wwwroot\\FE2\\plugins\\slick\\slick-theme.scss",
+      "PackagePath": "staticwebassets\\FE2\\plugins\\slick\\slick-theme.scss"
+    },
+    {
+      "Id": "D:\\LTWNC\\DATN\\DATN\\wwwroot\\FE2\\plugins\\slick\\slick.css",
+      "PackagePath": "staticwebassets\\FE2\\plugins\\slick\\slick.css"
+    },
+    {
+      "Id": "D:\\LTWNC\\DATN\\DATN\\wwwroot\\FE2\\plugins\\slick\\slick.js",
+      "PackagePath": "staticwebassets\\FE2\\plugins\\slick\\slick.js"
+    },
+    {
+      "Id": "D:\\LTWNC\\DATN\\DATN\\wwwroot\\FE2\\plugins\\slick\\slick.less",
+      "PackagePath": "staticwebassets\\FE2\\plugins\\slick\\slick.less"
+    },
+    {
+      "Id": "D:\\LTWNC\\DATN\\DATN\\wwwroot\\FE2\\plugins\\slick\\slick.min.js",
+      "PackagePath": "staticwebassets\\FE2\\plugins\\slick\\slick.min.js"
+    },
+    {
+      "Id": "D:\\LTWNC\\DATN\\DATN\\wwwroot\\FE2\\plugins\\slick\\slick.scss",
+      "PackagePath": "staticwebassets\\FE2\\plugins\\slick\\slick.scss"
+    },
+    {
+      "Id": "D:\\LTWNC\\DATN\\DATN\\wwwroot\\FE2\\plugins\\validation1.19.3\\jquery.validate.min.js",
+      "PackagePath": "staticwebassets\\FE2\\plugins\\validation1.19.3\\jquery.validate.min.js"
+    },
+    {
+      "Id": "D:\\LTWNC\\DATN\\DATN\\wwwroot\\FE2\\plugins\\webfonts\\fa-brands-400.eot",
+      "PackagePath": "staticwebassets\\FE2\\plugins\\webfonts\\fa-brands-400.eot"
+    },
+    {
+      "Id": "D:\\LTWNC\\DATN\\DATN\\wwwroot\\FE2\\plugins\\webfonts\\fa-brands-400.svg",
+      "PackagePath": "staticwebassets\\FE2\\plugins\\webfonts\\fa-brands-400.svg"
+    },
+    {
+      "Id": "D:\\LTWNC\\DATN\\DATN\\wwwroot\\FE2\\plugins\\webfonts\\fa-brands-400.ttf",
+      "PackagePath": "staticwebassets\\FE2\\plugins\\webfonts\\fa-brands-400.ttf"
+    },
+    {
+      "Id": "D:\\LTWNC\\DATN\\DATN\\wwwroot\\FE2\\plugins\\webfonts\\fa-brands-400.woff",
+      "PackagePath": "staticwebassets\\FE2\\plugins\\webfonts\\fa-brands-400.woff"
+    },
+    {
+      "Id": "D:\\LTWNC\\DATN\\DATN\\wwwroot\\FE2\\plugins\\webfonts\\fa-brands-400.woff2",
+      "PackagePath": "staticwebassets\\FE2\\plugins\\webfonts\\fa-brands-400.woff2"
+    },
+    {
+      "Id": "D:\\LTWNC\\DATN\\DATN\\wwwroot\\FE2\\plugins\\webfonts\\fa-duotone-900.eot",
+      "PackagePath": "staticwebassets\\FE2\\plugins\\webfonts\\fa-duotone-900.eot"
+    },
+    {
+      "Id": "D:\\LTWNC\\DATN\\DATN\\wwwroot\\FE2\\plugins\\webfonts\\fa-duotone-900.svg",
+      "PackagePath": "staticwebassets\\FE2\\plugins\\webfonts\\fa-duotone-900.svg"
+    },
+    {
+      "Id": "D:\\LTWNC\\DATN\\DATN\\wwwroot\\FE2\\plugins\\webfonts\\fa-duotone-900.ttf",
+      "PackagePath": "staticwebassets\\FE2\\plugins\\webfonts\\fa-duotone-900.ttf"
+    },
+    {
+      "Id": "D:\\LTWNC\\DATN\\DATN\\wwwroot\\FE2\\plugins\\webfonts\\fa-duotone-900.woff",
+      "PackagePath": "staticwebassets\\FE2\\plugins\\webfonts\\fa-duotone-900.woff"
+    },
+    {
+      "Id": "D:\\LTWNC\\DATN\\DATN\\wwwroot\\FE2\\plugins\\webfonts\\fa-duotone-900.woff2",
+      "PackagePath": "staticwebassets\\FE2\\plugins\\webfonts\\fa-duotone-900.woff2"
+    },
+    {
+      "Id": "D:\\LTWNC\\DATN\\DATN\\wwwroot\\FE2\\plugins\\webfonts\\fa-light-300.eot",
+      "PackagePath": "staticwebassets\\FE2\\plugins\\webfonts\\fa-light-300.eot"
+    },
+    {
+      "Id": "D:\\LTWNC\\DATN\\DATN\\wwwroot\\FE2\\plugins\\webfonts\\fa-light-300.svg",
+      "PackagePath": "staticwebassets\\FE2\\plugins\\webfonts\\fa-light-300.svg"
+    },
+    {
+      "Id": "D:\\LTWNC\\DATN\\DATN\\wwwroot\\FE2\\plugins\\webfonts\\fa-light-300.ttf",
+      "PackagePath": "staticwebassets\\FE2\\plugins\\webfonts\\fa-light-300.ttf"
+    },
+    {
+      "Id": "D:\\LTWNC\\DATN\\DATN\\wwwroot\\FE2\\plugins\\webfonts\\fa-light-300.woff",
+      "PackagePath": "staticwebassets\\FE2\\plugins\\webfonts\\fa-light-300.woff"
+    },
+    {
+      "Id": "D:\\LTWNC\\DATN\\DATN\\wwwroot\\FE2\\plugins\\webfonts\\fa-light-300.woff2",
+      "PackagePath": "staticwebassets\\FE2\\plugins\\webfonts\\fa-light-300.woff2"
+    },
+    {
+      "Id": "D:\\LTWNC\\DATN\\DATN\\wwwroot\\FE2\\plugins\\webfonts\\fa-regular-400.eot",
+      "PackagePath": "staticwebassets\\FE2\\plugins\\webfonts\\fa-regular-400.eot"
+    },
+    {
+      "Id": "D:\\LTWNC\\DATN\\DATN\\wwwroot\\FE2\\plugins\\webfonts\\fa-regular-400.svg",
+      "PackagePath": "staticwebassets\\FE2\\plugins\\webfonts\\fa-regular-400.svg"
+    },
+    {
+      "Id": "D:\\LTWNC\\DATN\\DATN\\wwwroot\\FE2\\plugins\\webfonts\\fa-regular-400.ttf",
+      "PackagePath": "staticwebassets\\FE2\\plugins\\webfonts\\fa-regular-400.ttf"
+    },
+    {
+      "Id": "D:\\LTWNC\\DATN\\DATN\\wwwroot\\FE2\\plugins\\webfonts\\fa-regular-400.woff",
+      "PackagePath": "staticwebassets\\FE2\\plugins\\webfonts\\fa-regular-400.woff"
+    },
+    {
+      "Id": "D:\\LTWNC\\DATN\\DATN\\wwwroot\\FE2\\plugins\\webfonts\\fa-regular-400.woff2",
+      "PackagePath": "staticwebassets\\FE2\\plugins\\webfonts\\fa-regular-400.woff2"
+    },
+    {
+      "Id": "D:\\LTWNC\\DATN\\DATN\\wwwroot\\FE2\\plugins\\webfonts\\fa-solid-900.eot",
+      "PackagePath": "staticwebassets\\FE2\\plugins\\webfonts\\fa-solid-900.eot"
+    },
+    {
+      "Id": "D:\\LTWNC\\DATN\\DATN\\wwwroot\\FE2\\plugins\\webfonts\\fa-solid-900.svg",
+      "PackagePath": "staticwebassets\\FE2\\plugins\\webfonts\\fa-solid-900.svg"
+    },
+    {
+      "Id": "D:\\LTWNC\\DATN\\DATN\\wwwroot\\FE2\\plugins\\webfonts\\fa-solid-900.ttf",
+      "PackagePath": "staticwebassets\\FE2\\plugins\\webfonts\\fa-solid-900.ttf"
+    },
+    {
+      "Id": "D:\\LTWNC\\DATN\\DATN\\wwwroot\\FE2\\plugins\\webfonts\\fa-solid-900.woff",
+      "PackagePath": "staticwebassets\\FE2\\plugins\\webfonts\\fa-solid-900.woff"
+    },
+    {
+      "Id": "D:\\LTWNC\\DATN\\DATN\\wwwroot\\FE2\\plugins\\webfonts\\fa-solid-900.woff2",
+      "PackagePath": "staticwebassets\\FE2\\plugins\\webfonts\\fa-solid-900.woff2"
+    },
+    {
+      "Id": "D:\\LTWNC\\DATN\\DATN\\wwwroot\\FE\\css\\Flaticon.eot",
+      "PackagePath": "staticwebassets\\FE\\css\\Flaticon.eot"
+    },
+    {
+      "Id": "D:\\LTWNC\\DATN\\DATN\\wwwroot\\FE\\css\\Flaticon.svg",
+      "PackagePath": "staticwebassets\\FE\\css\\Flaticon.svg"
+    },
+    {
+      "Id": "D:\\LTWNC\\DATN\\DATN\\wwwroot\\FE\\css\\Flaticon.ttf",
+      "PackagePath": "staticwebassets\\FE\\css\\Flaticon.ttf"
+    },
+    {
+      "Id": "D:\\LTWNC\\DATN\\DATN\\wwwroot\\FE\\css\\Flaticon.woff",
+      "PackagePath": "staticwebassets\\FE\\css\\Flaticon.woff"
+    },
+    {
+      "Id": "D:\\LTWNC\\DATN\\DATN\\wwwroot\\FE\\css\\Flaticon.woff2",
+      "PackagePath": "staticwebassets\\FE\\css\\Flaticon.woff2"
+    },
+    {
+      "Id": "D:\\LTWNC\\DATN\\DATN\\wwwroot\\FE\\css\\_flaticon.scss",
+      "PackagePath": "staticwebassets\\FE\\css\\_flaticon.scss"
+    },
+    {
+      "Id": "D:\\LTWNC\\DATN\\DATN\\wwwroot\\FE\\css\\about.css",
+      "PackagePath": "staticwebassets\\FE\\css\\about.css"
+    },
+    {
+      "Id": "D:\\LTWNC\\DATN\\DATN\\wwwroot\\FE\\css\\bootstrap-datepicker3.css",
+      "PackagePath": "staticwebassets\\FE\\css\\bootstrap-datepicker3.css"
+    },
+    {
+      "Id": "D:\\LTWNC\\DATN\\DATN\\wwwroot\\FE\\css\\bootstrap-iso.css",
+      "PackagePath": "staticwebassets\\FE\\css\\bootstrap-iso.css"
+    },
+    {
+      "Id": "D:\\LTWNC\\DATN\\DATN\\wwwroot\\FE\\css\\bootstrap.min.css",
+      "PackagePath": "staticwebassets\\FE\\css\\bootstrap.min.css"
+    },
+    {
+      "Id": "D:\\LTWNC\\DATN\\DATN\\wwwroot\\FE\\css\\check-article.css",
+      "PackagePath": "staticwebassets\\FE\\css\\check-article.css"
+    },
+    {
+      "Id": "D:\\LTWNC\\DATN\\DATN\\wwwroot\\FE\\css\\contact.css",
+      "PackagePath": "staticwebassets\\FE\\css\\contact.css"
+    },
+    {
+      "Id": "D:\\LTWNC\\DATN\\DATN\\wwwroot\\FE\\css\\css\\all.css",
+      "PackagePath": "staticwebassets\\FE\\css\\css\\all.css"
+    },
+    {
+      "Id": "D:\\LTWNC\\DATN\\DATN\\wwwroot\\FE\\css\\css\\all.min.css",
+      "PackagePath": "staticwebassets\\FE\\css\\css\\all.min.css"
+    },
+    {
+      "Id": "D:\\LTWNC\\DATN\\DATN\\wwwroot\\FE\\css\\css\\brands.css",
+      "PackagePath": "staticwebassets\\FE\\css\\css\\brands.css"
+    },
+    {
+      "Id": "D:\\LTWNC\\DATN\\DATN\\wwwroot\\FE\\css\\css\\brands.min.css",
+      "PackagePath": "staticwebassets\\FE\\css\\css\\brands.min.css"
+    },
+    {
+      "Id": "D:\\LTWNC\\DATN\\DATN\\wwwroot\\FE\\css\\css\\fontawesome.css",
+      "PackagePath": "staticwebassets\\FE\\css\\css\\fontawesome.css"
+    },
+    {
+      "Id": "D:\\LTWNC\\DATN\\DATN\\wwwroot\\FE\\css\\css\\fontawesome.min.css",
+      "PackagePath": "staticwebassets\\FE\\css\\css\\fontawesome.min.css"
+    },
+    {
+      "Id": "D:\\LTWNC\\DATN\\DATN\\wwwroot\\FE\\css\\css\\regular.css",
+      "PackagePath": "staticwebassets\\FE\\css\\css\\regular.css"
+    },
+    {
+      "Id": "D:\\LTWNC\\DATN\\DATN\\wwwroot\\FE\\css\\css\\regular.min.css",
+      "PackagePath": "staticwebassets\\FE\\css\\css\\regular.min.css"
+    },
+    {
+      "Id": "D:\\LTWNC\\DATN\\DATN\\wwwroot\\FE\\css\\css\\solid.css",
+      "PackagePath": "staticwebassets\\FE\\css\\css\\solid.css"
+    },
+    {
+      "Id": "D:\\LTWNC\\DATN\\DATN\\wwwroot\\FE\\css\\css\\solid.min.css",
+      "PackagePath": "staticwebassets\\FE\\css\\css\\solid.min.css"
+    },
+    {
+      "Id": "D:\\LTWNC\\DATN\\DATN\\wwwroot\\FE\\css\\css\\svg-with-js.css",
+      "PackagePath": "staticwebassets\\FE\\css\\css\\svg-with-js.css"
+    },
+    {
+      "Id": "D:\\LTWNC\\DATN\\DATN\\wwwroot\\FE\\css\\css\\svg-with-js.min.css",
+      "PackagePath": "staticwebassets\\FE\\css\\css\\svg-with-js.min.css"
+    },
+    {
+      "Id": "D:\\LTWNC\\DATN\\DATN\\wwwroot\\FE\\css\\css\\v4-shims.css",
+      "PackagePath": "staticwebassets\\FE\\css\\css\\v4-shims.css"
+    },
+    {
+      "Id": "D:\\LTWNC\\DATN\\DATN\\wwwroot\\FE\\css\\css\\v4-shims.min.css",
+      "PackagePath": "staticwebassets\\FE\\css\\css\\v4-shims.min.css"
+    },
+    {
+      "Id": "D:\\LTWNC\\DATN\\DATN\\wwwroot\\FE\\css\\detail-room.css",
+      "PackagePath": "staticwebassets\\FE\\css\\detail-room.css"
+    },
+    {
+      "Id": "D:\\LTWNC\\DATN\\DATN\\wwwroot\\FE\\css\\detail-team.css",
+      "PackagePath": "staticwebassets\\FE\\css\\detail-team.css"
+    },
+    {
+      "Id": "D:\\LTWNC\\DATN\\DATN\\wwwroot\\FE\\css\\flaticon.css",
+      "PackagePath": "staticwebassets\\FE\\css\\flaticon.css"
+    },
+    {
+      "Id": "D:\\LTWNC\\DATN\\DATN\\wwwroot\\FE\\css\\flaticon.html",
+      "PackagePath": "staticwebassets\\FE\\css\\flaticon.html"
+    },
+    {
+      "Id": "D:\\LTWNC\\DATN\\DATN\\wwwroot\\FE\\css\\gallery-grid.css",
+      "PackagePath": "staticwebassets\\FE\\css\\gallery-grid.css"
+    },
+    {
+      "Id": "D:\\LTWNC\\DATN\\DATN\\wwwroot\\FE\\css\\jquery-ui.css",
+      "PackagePath": "staticwebassets\\FE\\css\\jquery-ui.css"
+    },
+    {
+      "Id": "D:\\LTWNC\\DATN\\DATN\\wwwroot\\FE\\css\\our-team.css",
+      "PackagePath": "staticwebassets\\FE\\css\\our-team.css"
+    },
+    {
+      "Id": "D:\\LTWNC\\DATN\\DATN\\wwwroot\\FE\\css\\room-rate.css",
+      "PackagePath": "staticwebassets\\FE\\css\\room-rate.css"
+    },
+    {
+      "Id": "D:\\LTWNC\\DATN\\DATN\\wwwroot\\FE\\css\\shared.css",
+      "PackagePath": "staticwebassets\\FE\\css\\shared.css"
+    },
+    {
+      "Id": "D:\\LTWNC\\DATN\\DATN\\wwwroot\\FE\\css\\webfonts\\fa-brands-400.eot",
+      "PackagePath": "staticwebassets\\FE\\css\\webfonts\\fa-brands-400.eot"
+    },
+    {
+      "Id": "D:\\LTWNC\\DATN\\DATN\\wwwroot\\FE\\css\\webfonts\\fa-brands-400.svg",
+      "PackagePath": "staticwebassets\\FE\\css\\webfonts\\fa-brands-400.svg"
+    },
+    {
+      "Id": "D:\\LTWNC\\DATN\\DATN\\wwwroot\\FE\\css\\webfonts\\fa-brands-400.ttf",
+      "PackagePath": "staticwebassets\\FE\\css\\webfonts\\fa-brands-400.ttf"
+    },
+    {
+      "Id": "D:\\LTWNC\\DATN\\DATN\\wwwroot\\FE\\css\\webfonts\\fa-brands-400.woff",
+      "PackagePath": "staticwebassets\\FE\\css\\webfonts\\fa-brands-400.woff"
+    },
+    {
+      "Id": "D:\\LTWNC\\DATN\\DATN\\wwwroot\\FE\\css\\webfonts\\fa-brands-400.woff2",
+      "PackagePath": "staticwebassets\\FE\\css\\webfonts\\fa-brands-400.woff2"
+    },
+    {
+      "Id": "D:\\LTWNC\\DATN\\DATN\\wwwroot\\FE\\css\\webfonts\\fa-regular-400.eot",
+      "PackagePath": "staticwebassets\\FE\\css\\webfonts\\fa-regular-400.eot"
+    },
+    {
+      "Id": "D:\\LTWNC\\DATN\\DATN\\wwwroot\\FE\\css\\webfonts\\fa-regular-400.svg",
+      "PackagePath": "staticwebassets\\FE\\css\\webfonts\\fa-regular-400.svg"
+    },
+    {
+      "Id": "D:\\LTWNC\\DATN\\DATN\\wwwroot\\FE\\css\\webfonts\\fa-regular-400.ttf",
+      "PackagePath": "staticwebassets\\FE\\css\\webfonts\\fa-regular-400.ttf"
+    },
+    {
+      "Id": "D:\\LTWNC\\DATN\\DATN\\wwwroot\\FE\\css\\webfonts\\fa-regular-400.woff",
+      "PackagePath": "staticwebassets\\FE\\css\\webfonts\\fa-regular-400.woff"
+    },
+    {
+      "Id": "D:\\LTWNC\\DATN\\DATN\\wwwroot\\FE\\css\\webfonts\\fa-regular-400.woff2",
+      "PackagePath": "staticwebassets\\FE\\css\\webfonts\\fa-regular-400.woff2"
+    },
+    {
+      "Id": "D:\\LTWNC\\DATN\\DATN\\wwwroot\\FE\\css\\webfonts\\fa-solid-900.eot",
+      "PackagePath": "staticwebassets\\FE\\css\\webfonts\\fa-solid-900.eot"
+    },
+    {
+      "Id": "D:\\LTWNC\\DATN\\DATN\\wwwroot\\FE\\css\\webfonts\\fa-solid-900.svg",
+      "PackagePath": "staticwebassets\\FE\\css\\webfonts\\fa-solid-900.svg"
+    },
+    {
+      "Id": "D:\\LTWNC\\DATN\\DATN\\wwwroot\\FE\\css\\webfonts\\fa-solid-900.ttf",
+      "PackagePath": "staticwebassets\\FE\\css\\webfonts\\fa-solid-900.ttf"
+    },
+    {
+      "Id": "D:\\LTWNC\\DATN\\DATN\\wwwroot\\FE\\css\\webfonts\\fa-solid-900.woff",
+      "PackagePath": "staticwebassets\\FE\\css\\webfonts\\fa-solid-900.woff"
+    },
+    {
+      "Id": "D:\\LTWNC\\DATN\\DATN\\wwwroot\\FE\\css\\webfonts\\fa-solid-900.woff2",
+      "PackagePath": "staticwebassets\\FE\\css\\webfonts\\fa-solid-900.woff2"
+    },
+    {
+      "Id": "D:\\LTWNC\\DATN\\DATN\\wwwroot\\FE\\img\\banner-img1.jpg",
+      "PackagePath": "staticwebassets\\FE\\img\\banner-img1.jpg"
+    },
+    {
+      "Id": "D:\\LTWNC\\DATN\\DATN\\wwwroot\\FE\\img\\banner-img2.jpg",
+      "PackagePath": "staticwebassets\\FE\\img\\banner-img2.jpg"
+    },
+    {
+      "Id": "D:\\LTWNC\\DATN\\DATN\\wwwroot\\FE\\img\\banner-img3.jpg",
+      "PackagePath": "staticwebassets\\FE\\img\\banner-img3.jpg"
+    },
+    {
+      "Id": "D:\\LTWNC\\DATN\\DATN\\wwwroot\\FE\\img\\blog-img1.jpg",
+      "PackagePath": "staticwebassets\\FE\\img\\blog-img1.jpg"
+    },
+    {
+      "Id": "D:\\LTWNC\\DATN\\DATN\\wwwroot\\FE\\img\\booking-big-image.jpg",
+      "PackagePath": "staticwebassets\\FE\\img\\booking-big-image.jpg"
+    },
+    {
+      "Id": "D:\\LTWNC\\DATN\\DATN\\wwwroot\\FE\\img\\dark-wall.jpg",
+      "PackagePath": "staticwebassets\\FE\\img\\dark-wall.jpg"
+    },
+    {
+      "Id": "D:\\LTWNC\\DATN\\DATN\\wwwroot\\FE\\img\\dark-wall.webp",
+      "PackagePath": "staticwebassets\\FE\\img\\dark-wall.webp"
+    },
+    {
+      "Id": "D:\\LTWNC\\DATN\\DATN\\wwwroot\\FE\\img\\dining1.jpg",
+      "PackagePath": "staticwebassets\\FE\\img\\dining1.jpg"
+    },
+    {
+      "Id": "D:\\LTWNC\\DATN\\DATN\\wwwroot\\FE\\img\\dining2.jpg",
+      "PackagePath": "staticwebassets\\FE\\img\\dining2.jpg"
+    },
+    {
+      "Id": "D:\\LTWNC\\DATN\\DATN\\wwwroot\\FE\\img\\dining3.png",
+      "PackagePath": "staticwebassets\\FE\\img\\dining3.png"
+    },
+    {
+      "Id": "D:\\LTWNC\\DATN\\DATN\\wwwroot\\FE\\img\\favicon.ico",
+      "PackagePath": "staticwebassets\\FE\\img\\favicon.ico"
+    },
+    {
+      "Id": "D:\\LTWNC\\DATN\\DATN\\wwwroot\\FE\\img\\favicon.png",
+      "PackagePath": "staticwebassets\\FE\\img\\favicon.png"
+    },
+    {
+      "Id": "D:\\LTWNC\\DATN\\DATN\\wwwroot\\FE\\img\\greeting-img1.jpg",
+      "PackagePath": "staticwebassets\\FE\\img\\greeting-img1.jpg"
+    },
+    {
+      "Id": "D:\\LTWNC\\DATN\\DATN\\wwwroot\\FE\\img\\greeting-img2.jpg",
+      "PackagePath": "staticwebassets\\FE\\img\\greeting-img2.jpg"
+    },
+    {
+      "Id": "D:\\LTWNC\\DATN\\DATN\\wwwroot\\FE\\img\\greeting-img3.jpg",
+      "PackagePath": "staticwebassets\\FE\\img\\greeting-img3.jpg"
+    },
+    {
+      "Id": "D:\\LTWNC\\DATN\\DATN\\wwwroot\\FE\\img\\icon-title.png",
+      "PackagePath": "staticwebassets\\FE\\img\\icon-title.png"
+    },
+    {
+      "Id": "D:\\LTWNC\\DATN\\DATN\\wwwroot\\FE\\img\\introduce2.jpg",
+      "PackagePath": "staticwebassets\\FE\\img\\introduce2.jpg"
+    },
+    {
+      "Id": "D:\\LTWNC\\DATN\\DATN\\wwwroot\\FE\\img\\light-wall.jpg",
+      "PackagePath": "staticwebassets\\FE\\img\\light-wall.jpg"
+    },
+    {
+      "Id": "D:\\LTWNC\\DATN\\DATN\\wwwroot\\FE\\img\\light-wall.webp",
+      "PackagePath": "staticwebassets\\FE\\img\\light-wall.webp"
+    },
+    {
+      "Id": "D:\\LTWNC\\DATN\\DATN\\wwwroot\\FE\\img\\logo1.webp",
+      "PackagePath": "staticwebassets\\FE\\img\\logo1.webp"
+    },
+    {
+      "Id": "D:\\LTWNC\\DATN\\DATN\\wwwroot\\FE\\img\\logo2.webp",
+      "PackagePath": "staticwebassets\\FE\\img\\logo2.webp"
+    },
+    {
+      "Id": "D:\\LTWNC\\DATN\\DATN\\wwwroot\\FE\\img\\manage-member.jpg",
+      "PackagePath": "staticwebassets\\FE\\img\\manage-member.jpg"
+    },
+    {
+      "Id": "D:\\LTWNC\\DATN\\DATN\\wwwroot\\FE\\img\\room1.jpg",
+      "PackagePath": "staticwebassets\\FE\\img\\room1.jpg"
+    },
+    {
+      "Id": "D:\\LTWNC\\DATN\\DATN\\wwwroot\\FE\\img\\room2.jpg",
+      "PackagePath": "staticwebassets\\FE\\img\\room2.jpg"
+    },
+    {
+      "Id": "D:\\LTWNC\\DATN\\DATN\\wwwroot\\FE\\img\\room3.jpg",
+      "PackagePath": "staticwebassets\\FE\\img\\room3.jpg"
+    },
+    {
+      "Id": "D:\\LTWNC\\DATN\\DATN\\wwwroot\\FE\\img\\room4.jpg",
+      "PackagePath": "staticwebassets\\FE\\img\\room4.jpg"
+    },
+    {
+      "Id": "D:\\LTWNC\\DATN\\DATN\\wwwroot\\FE\\img\\room5.jpg",
+      "PackagePath": "staticwebassets\\FE\\img\\room5.jpg"
+    },
+    {
+      "Id": "D:\\LTWNC\\DATN\\DATN\\wwwroot\\FE\\img\\room6.jpg",
+      "PackagePath": "staticwebassets\\FE\\img\\room6.jpg"
+    },
+    {
+      "Id": "D:\\LTWNC\\DATN\\DATN\\wwwroot\\FE\\img\\scene1.jpg",
+      "PackagePath": "staticwebassets\\FE\\img\\scene1.jpg"
+    },
+    {
+      "Id": "D:\\LTWNC\\DATN\\DATN\\wwwroot\\FE\\img\\scene10.jpg",
+      "PackagePath": "staticwebassets\\FE\\img\\scene10.jpg"
+    },
+    {
+      "Id": "D:\\LTWNC\\DATN\\DATN\\wwwroot\\FE\\img\\scene11.jpg",
+      "PackagePath": "staticwebassets\\FE\\img\\scene11.jpg"
+    },
+    {
+      "Id": "D:\\LTWNC\\DATN\\DATN\\wwwroot\\FE\\img\\scene12.jpg",
+      "PackagePath": "staticwebassets\\FE\\img\\scene12.jpg"
+    },
+    {
+      "Id": "D:\\LTWNC\\DATN\\DATN\\wwwroot\\FE\\img\\scene2.jpg",
+      "PackagePath": "staticwebassets\\FE\\img\\scene2.jpg"
+    },
+    {
+      "Id": "D:\\LTWNC\\DATN\\DATN\\wwwroot\\FE\\img\\scene3.jpg",
+      "PackagePath": "staticwebassets\\FE\\img\\scene3.jpg"
+    },
+    {
+      "Id": "D:\\LTWNC\\DATN\\DATN\\wwwroot\\FE\\img\\scene4.jpg",
+      "PackagePath": "staticwebassets\\FE\\img\\scene4.jpg"
+    },
+    {
+      "Id": "D:\\LTWNC\\DATN\\DATN\\wwwroot\\FE\\img\\scene5.jpg",
+      "PackagePath": "staticwebassets\\FE\\img\\scene5.jpg"
+    },
+    {
+      "Id": "D:\\LTWNC\\DATN\\DATN\\wwwroot\\FE\\img\\scene6.jpg",
+      "PackagePath": "staticwebassets\\FE\\img\\scene6.jpg"
+    },
+    {
+      "Id": "D:\\LTWNC\\DATN\\DATN\\wwwroot\\FE\\img\\scene7.jpg",
+      "PackagePath": "staticwebassets\\FE\\img\\scene7.jpg"
+    },
+    {
+      "Id": "D:\\LTWNC\\DATN\\DATN\\wwwroot\\FE\\img\\scene8.jpg",
+      "PackagePath": "staticwebassets\\FE\\img\\scene8.jpg"
+    },
+    {
+      "Id": "D:\\LTWNC\\DATN\\DATN\\wwwroot\\FE\\img\\scene9.jpg",
+      "PackagePath": "staticwebassets\\FE\\img\\scene9.jpg"
+    },
+    {
+      "Id": "D:\\LTWNC\\DATN\\DATN\\wwwroot\\FE\\img\\testBG.jpg",
+      "PackagePath": "staticwebassets\\FE\\img\\testBG.jpg"
+    },
+    {
+      "Id": "D:\\LTWNC\\DATN\\DATN\\wwwroot\\FE\\img\\tourist1.jpg",
+      "PackagePath": "staticwebassets\\FE\\img\\tourist1.jpg"
+    },
+    {
+      "Id": "D:\\LTWNC\\DATN\\DATN\\wwwroot\\FE\\img\\tourist2.jpg",
+      "PackagePath": "staticwebassets\\FE\\img\\tourist2.jpg"
+    },
+    {
+      "Id": "D:\\LTWNC\\DATN\\DATN\\wwwroot\\FE\\img\\tourist3.jpg",
+      "PackagePath": "staticwebassets\\FE\\img\\tourist3.jpg"
+    },
+    {
+      "Id": "D:\\LTWNC\\DATN\\DATN\\wwwroot\\FE\\img\\tourist4.jpg",
+      "PackagePath": "staticwebassets\\FE\\img\\tourist4.jpg"
+    },
+    {
+      "Id": "D:\\LTWNC\\DATN\\DATN\\wwwroot\\FE\\img\\tourist5.jpg",
+      "PackagePath": "staticwebassets\\FE\\img\\tourist5.jpg"
+    },
+    {
+      "Id": "D:\\LTWNC\\DATN\\DATN\\wwwroot\\FE\\img\\tourist6.jpg",
+      "PackagePath": "staticwebassets\\FE\\img\\tourist6.jpg"
+    },
+    {
+      "Id": "D:\\LTWNC\\DATN\\DATN\\wwwroot\\FE\\img\\tourist7.jpg",
+      "PackagePath": "staticwebassets\\FE\\img\\tourist7.jpg"
+    },
+    {
+      "Id": "D:\\LTWNC\\DATN\\DATN\\wwwroot\\FE\\img\\tourist8.jpg",
+      "PackagePath": "staticwebassets\\FE\\img\\tourist8.jpg"
+    },
+    {
+      "Id": "D:\\LTWNC\\DATN\\DATN\\wwwroot\\FE\\js\\bootstrap-datepicker.min.js",
+      "PackagePath": "staticwebassets\\FE\\js\\bootstrap-datepicker.min.js"
+    },
+    {
+      "Id": "D:\\LTWNC\\DATN\\DATN\\wwwroot\\FE\\js\\bootstrap.min.js",
+      "PackagePath": "staticwebassets\\FE\\js\\bootstrap.min.js"
+    },
+    {
+      "Id": "D:\\LTWNC\\DATN\\DATN\\wwwroot\\FE\\js\\check-article.js",
+      "PackagePath": "staticwebassets\\FE\\js\\check-article.js"
+    },
+    {
+      "Id": "D:\\LTWNC\\DATN\\DATN\\wwwroot\\FE\\js\\detail-article.js",
+      "PackagePath": "staticwebassets\\FE\\js\\detail-article.js"
+    },
+    {
+      "Id": "D:\\LTWNC\\DATN\\DATN\\wwwroot\\FE\\js\\detail-room.js",
+      "PackagePath": "staticwebassets\\FE\\js\\detail-room.js"
+    },
+    {
+      "Id": "D:\\LTWNC\\DATN\\DATN\\wwwroot\\FE\\js\\detail-team.js",
+      "PackagePath": "staticwebassets\\FE\\js\\detail-team.js"
+    },
+    {
+      "Id": "D:\\LTWNC\\DATN\\DATN\\wwwroot\\FE\\js\\gallery-grid.js",
+      "PackagePath": "staticwebassets\\FE\\js\\gallery-grid.js"
+    },
+    {
+      "Id": "D:\\LTWNC\\DATN\\DATN\\wwwroot\\FE\\js\\jquery-3.4.1.min.js",
+      "PackagePath": "staticwebassets\\FE\\js\\jquery-3.4.1.min.js"
+    },
+    {
+      "Id": "D:\\LTWNC\\DATN\\DATN\\wwwroot\\FE\\js\\jquery-ui.js",
+      "PackagePath": "staticwebassets\\FE\\js\\jquery-ui.js"
+    },
+    {
+      "Id": "D:\\LTWNC\\DATN\\DATN\\wwwroot\\FE\\js\\jquery.counterup.js",
+      "PackagePath": "staticwebassets\\FE\\js\\jquery.counterup.js"
+    },
+    {
+      "Id": "D:\\LTWNC\\DATN\\DATN\\wwwroot\\FE\\js\\jquery.counterup.min.js",
+      "PackagePath": "staticwebassets\\FE\\js\\jquery.counterup.min.js"
+    },
+    {
+      "Id": "D:\\LTWNC\\DATN\\DATN\\wwwroot\\FE\\js\\jquery.waypoints.js",
+      "PackagePath": "staticwebassets\\FE\\js\\jquery.waypoints.js"
+    },
+    {
+      "Id": "D:\\LTWNC\\DATN\\DATN\\wwwroot\\FE\\js\\jquery.waypoints.min.js",
+      "PackagePath": "staticwebassets\\FE\\js\\jquery.waypoints.min.js"
+    },
+    {
+      "Id": "D:\\LTWNC\\DATN\\DATN\\wwwroot\\FE\\js\\our-team.js",
+      "PackagePath": "staticwebassets\\FE\\js\\our-team.js"
+    },
+    {
+      "Id": "D:\\LTWNC\\DATN\\DATN\\wwwroot\\FE\\js\\picker.date.js",
+      "PackagePath": "staticwebassets\\FE\\js\\picker.date.js"
+    },
+    {
+      "Id": "D:\\LTWNC\\DATN\\DATN\\wwwroot\\FE\\js\\popper.min.js",
+      "PackagePath": "staticwebassets\\FE\\js\\popper.min.js"
+    },
+    {
+      "Id": "D:\\LTWNC\\DATN\\DATN\\wwwroot\\FE\\js\\shared.js",
+      "PackagePath": "staticwebassets\\FE\\js\\shared.js"
+    },
+    {
+      "Id": "D:\\LTWNC\\DATN\\DATN\\wwwroot\\FE\\slick\\ajax-loader.gif",
+      "PackagePath": "staticwebassets\\FE\\slick\\ajax-loader.gif"
+    },
+    {
+      "Id": "D:\\LTWNC\\DATN\\DATN\\wwwroot\\FE\\slick\\config.rb",
+      "PackagePath": "staticwebassets\\FE\\slick\\config.rb"
+    },
+    {
+      "Id": "D:\\LTWNC\\DATN\\DATN\\wwwroot\\FE\\slick\\fonts\\slick.eot",
+      "PackagePath": "staticwebassets\\FE\\slick\\fonts\\slick.eot"
+    },
+    {
+      "Id": "D:\\LTWNC\\DATN\\DATN\\wwwroot\\FE\\slick\\fonts\\slick.svg",
+      "PackagePath": "staticwebassets\\FE\\slick\\fonts\\slick.svg"
+    },
+    {
+      "Id": "D:\\LTWNC\\DATN\\DATN\\wwwroot\\FE\\slick\\fonts\\slick.ttf",
+      "PackagePath": "staticwebassets\\FE\\slick\\fonts\\slick.ttf"
+    },
+    {
+      "Id": "D:\\LTWNC\\DATN\\DATN\\wwwroot\\FE\\slick\\fonts\\slick.woff",
+      "PackagePath": "staticwebassets\\FE\\slick\\fonts\\slick.woff"
+    },
+    {
+      "Id": "D:\\LTWNC\\DATN\\DATN\\wwwroot\\FE\\slick\\slick-theme.css",
+      "PackagePath": "staticwebassets\\FE\\slick\\slick-theme.css"
+    },
+    {
+      "Id": "D:\\LTWNC\\DATN\\DATN\\wwwroot\\FE\\slick\\slick-theme.less",
+      "PackagePath": "staticwebassets\\FE\\slick\\slick-theme.less"
+    },
+    {
+      "Id": "D:\\LTWNC\\DATN\\DATN\\wwwroot\\FE\\slick\\slick-theme.scss",
+      "PackagePath": "staticwebassets\\FE\\slick\\slick-theme.scss"
+    },
+    {
+      "Id": "D:\\LTWNC\\DATN\\DATN\\wwwroot\\FE\\slick\\slick.css",
+      "PackagePath": "staticwebassets\\FE\\slick\\slick.css"
+    },
+    {
+      "Id": "D:\\LTWNC\\DATN\\DATN\\wwwroot\\FE\\slick\\slick.js",
+      "PackagePath": "staticwebassets\\FE\\slick\\slick.js"
+    },
+    {
+      "Id": "D:\\LTWNC\\DATN\\DATN\\wwwroot\\FE\\slick\\slick.less",
+      "PackagePath": "staticwebassets\\FE\\slick\\slick.less"
+    },
+    {
+      "Id": "D:\\LTWNC\\DATN\\DATN\\wwwroot\\FE\\slick\\slick.min.js",
+      "PackagePath": "staticwebassets\\FE\\slick\\slick.min.js"
+    },
+    {
+      "Id": "D:\\LTWNC\\DATN\\DATN\\wwwroot\\FE\\slick\\slick.scss",
+      "PackagePath": "staticwebassets\\FE\\slick\\slick.scss"
+    },
+    {
+      "Id": "D:\\LTWNC\\DATN\\DATN\\wwwroot\\Images\\Account\\_MG_5905240206227.JPG",
+      "PackagePath": "staticwebassets\\Images\\Account\\_MG_5905240206227.JPG"
+    },
+    {
+      "Id": "D:\\LTWNC\\DATN\\DATN\\wwwroot\\Images\\Account\\_MG_5905240455655.JPG",
+      "PackagePath": "staticwebassets\\Images\\Account\\_MG_5905240455655.JPG"
+    },
+    {
+      "Id": "D:\\LTWNC\\DATN\\DATN\\wwwroot\\Images\\Account\\img_2242128013.jfif",
+      "PackagePath": "staticwebassets\\Images\\Account\\img_2242128013.jfif"
+    },
+    {
+      "Id": "D:\\LTWNC\\DATN\\DATN\\wwwroot\\Images\\Account\\one-piece-1048-2_QIQJ244627841.png",
+      "PackagePath": "staticwebassets\\Images\\Account\\one-piece-1048-2_QIQJ244627841.png"
+    },
+    {
+      "Id": "D:\\LTWNC\\DATN\\DATN\\wwwroot\\Images\\Account\\troll245356664.jfif",
+      "PackagePath": "staticwebassets\\Images\\Account\\troll245356664.jfif"
+    },
+    {
+      "Id": "D:\\LTWNC\\DATN\\DATN\\wwwroot\\Images\\Article\\296840188_629999278346090_7905040171821531268_n241532812.png",
+      "PackagePath": "staticwebassets\\Images\\Article\\296840188_629999278346090_7905040171821531268_n241532812.png"
+    },
+    {
+      "Id": "D:\\LTWNC\\DATN\\DATN\\wwwroot\\Images\\Article\\331764115_737140434557795_3819225516157092827_n240257096.jpg",
+      "PackagePath": "staticwebassets\\Images\\Article\\331764115_737140434557795_3819225516157092827_n240257096.jpg"
+    },
+    {
+      "Id": "D:\\LTWNC\\DATN\\DATN\\wwwroot\\Images\\Article\\331764115_737140434557795_3819225516157092827_n243518523.jpg",
+      "PackagePath": "staticwebassets\\Images\\Article\\331764115_737140434557795_3819225516157092827_n243518523.jpg"
+    },
+    {
+      "Id": "D:\\LTWNC\\DATN\\DATN\\wwwroot\\Images\\Article\\339964889_1260265371590680_768788703004417789_n243711604.jpg",
+      "PackagePath": "staticwebassets\\Images\\Article\\339964889_1260265371590680_768788703004417789_n243711604.jpg"
+    },
+    {
+      "Id": "D:\\LTWNC\\DATN\\DATN\\wwwroot\\Images\\Article\\anh_1240011185.png",
+      "PackagePath": "staticwebassets\\Images\\Article\\anh_1240011185.png"
+    },
+    {
+      "Id": "D:\\LTWNC\\DATN\\DATN\\wwwroot\\Images\\Article\\anh_1240825427.png",
+      "PackagePath": "staticwebassets\\Images\\Article\\anh_1240825427.png"
+    },
+    {
+      "Id": "D:\\LTWNC\\DATN\\DATN\\wwwroot\\Images\\Article\\anh_1240853682.png",
+      "PackagePath": "staticwebassets\\Images\\Article\\anh_1240853682.png"
+    },
+    {
+      "Id": "D:\\LTWNC\\DATN\\DATN\\wwwroot\\Images\\Article\\anh_1243024433.png",
+      "PackagePath": "staticwebassets\\Images\\Article\\anh_1243024433.png"
+    },
+    {
+      "Id": "D:\\LTWNC\\DATN\\DATN\\wwwroot\\Images\\Article\\dining1240024382.jpg",
+      "PackagePath": "staticwebassets\\Images\\Article\\dining1240024382.jpg"
+    },
+    {
+      "Id": "D:\\LTWNC\\DATN\\DATN\\wwwroot\\Images\\Article\\dining2245915261.jpg",
+      "PackagePath": "staticwebassets\\Images\\Article\\dining2245915261.jpg"
+    },
+    {
+      "Id": "D:\\LTWNC\\DATN\\DATN\\wwwroot\\Images\\Article\\troll240413876.jfif",
+      "PackagePath": "staticwebassets\\Images\\Article\\troll240413876.jfif"
+    },
+    {
+      "Id": "D:\\LTWNC\\DATN\\DATN\\wwwroot\\Images\\Article\\troll240748542.jfif",
+      "PackagePath": "staticwebassets\\Images\\Article\\troll240748542.jfif"
+    },
+    {
+      "Id": "D:\\LTWNC\\DATN\\DATN\\wwwroot\\Images\\Resort\\logo2245339069.webp",
+      "PackagePath": "staticwebassets\\Images\\Resort\\logo2245339069.webp"
+    },
+    {
+      "Id": "D:\\LTWNC\\DATN\\DATN\\wwwroot\\Images\\Room\\296840188_629999278346090_7905040171821531268_n244647463.png",
+      "PackagePath": "staticwebassets\\Images\\Room\\296840188_629999278346090_7905040171821531268_n244647463.png"
+    },
+    {
+      "Id": "D:\\LTWNC\\DATN\\DATN\\wwwroot\\Images\\Room\\296840188_629999278346090_7905040171821531268_n244815662.png",
+      "PackagePath": "staticwebassets\\Images\\Room\\296840188_629999278346090_7905040171821531268_n244815662.png"
+    },
+    {
+      "Id": "D:\\LTWNC\\DATN\\DATN\\wwwroot\\Images\\Room\\8e8686a9-e2d7-485c-acc1-4b605af0b8fd240012996.jpg",
+      "PackagePath": "staticwebassets\\Images\\Room\\8e8686a9-e2d7-485c-acc1-4b605af0b8fd240012996.jpg"
+    },
+    {
+      "Id": "D:\\LTWNC\\DATN\\DATN\\wwwroot\\Images\\Room\\8e8686a9-e2d7-485c-acc1-4b605af0b8fd245413015.jpg",
+      "PackagePath": "staticwebassets\\Images\\Room\\8e8686a9-e2d7-485c-acc1-4b605af0b8fd245413015.jpg"
+    },
+    {
+      "Id": "D:\\LTWNC\\DATN\\DATN\\wwwroot\\Images\\Room\\Premier(1)241232586.jpg",
+      "PackagePath": "staticwebassets\\Images\\Room\\Premier(1)241232586.jpg"
+    },
+    {
+      "Id": "D:\\LTWNC\\DATN\\DATN\\wwwroot\\Images\\Room\\_MG_5905244250661.JPG",
+      "PackagePath": "staticwebassets\\Images\\Room\\_MG_5905244250661.JPG"
+    },
+    {
+      "Id": "D:\\LTWNC\\DATN\\DATN\\wwwroot\\Images\\Room\\anh_1243026458.png",
+      "PackagePath": "staticwebassets\\Images\\Room\\anh_1243026458.png"
+    },
+    {
+      "Id": "D:\\LTWNC\\DATN\\DATN\\wwwroot\\Images\\Room\\anh_1244357653.png",
+      "PackagePath": "staticwebassets\\Images\\Room\\anh_1244357653.png"
+    },
+    {
+      "Id": "D:\\LTWNC\\DATN\\DATN\\wwwroot\\Images\\Room\\anh_1244954158.png",
+      "PackagePath": "staticwebassets\\Images\\Room\\anh_1244954158.png"
+    },
+    {
+      "Id": "D:\\LTWNC\\DATN\\DATN\\wwwroot\\Images\\Room\\images241152670.jfif",
+      "PackagePath": "staticwebassets\\Images\\Room\\images241152670.jfif"
+    },
+    {
+      "Id": "D:\\LTWNC\\DATN\\DATN\\wwwroot\\Images\\Room\\photay-05 (1)240924034.jpg",
+      "PackagePath": "staticwebassets\\Images\\Room\\photay-05 (1)240924034.jpg"
+    },
+    {
+      "Id": "D:\\LTWNC\\DATN\\DATN\\wwwroot\\Images\\Room\\photay-05240620840.jpg",
+      "PackagePath": "staticwebassets\\Images\\Room\\photay-05240620840.jpg"
+    },
+    {
+      "Id": "D:\\LTWNC\\DATN\\DATN\\wwwroot\\Images\\Room\\roomlist-01240010335.jpeg",
+      "PackagePath": "staticwebassets\\Images\\Room\\roomlist-01240010335.jpeg"
+    },
+    {
+      "Id": "D:\\LTWNC\\DATN\\DATN\\wwwroot\\Images\\Room\\scene3240856518.jpg",
+      "PackagePath": "staticwebassets\\Images\\Room\\scene3240856518.jpg"
+    },
+    {
+      "Id": "D:\\LTWNC\\DATN\\DATN\\wwwroot\\Images\\Room\\scene6240730478.jpg",
+      "PackagePath": "staticwebassets\\Images\\Room\\scene6240730478.jpg"
+    },
+    {
+      "Id": "D:\\LTWNC\\DATN\\DATN\\wwwroot\\Images\\Room\\troll240723381.jfif",
+      "PackagePath": "staticwebassets\\Images\\Room\\troll240723381.jfif"
+    },
+    {
+      "Id": "D:\\LTWNC\\DATN\\DATN\\wwwroot\\Images\\Room\\troll241146972.jfif",
+      "PackagePath": "staticwebassets\\Images\\Room\\troll241146972.jfif"
+    },
+    {
+      "Id": "D:\\LTWNC\\DATN\\DATN\\wwwroot\\Images\\Service\\anh_1241139636.png",
+      "PackagePath": "staticwebassets\\Images\\Service\\anh_1241139636.png"
+    },
+    {
+      "Id": "D:\\LTWNC\\DATN\\DATN\\wwwroot\\Images\\Service\\anh_1244753838.png",
+      "PackagePath": "staticwebassets\\Images\\Service\\anh_1244753838.png"
+    },
+    {
+      "Id": "D:\\LTWNC\\DATN\\DATN\\wwwroot\\Images\\Service\\dining1240132463.jpg",
+      "PackagePath": "staticwebassets\\Images\\Service\\dining1240132463.jpg"
+    },
+    {
+      "Id": "D:\\LTWNC\\DATN\\DATN\\wwwroot\\Images\\Service\\greeting-img2240014061.jpg",
+      "PackagePath": "staticwebassets\\Images\\Service\\greeting-img2240014061.jpg"
+    },
+    {
+      "Id": "D:\\LTWNC\\DATN\\DATN\\wwwroot\\RoomGallery\\00c6d967-31c2-42ca-b08b-44005702b400_anh_1.png",
+      "PackagePath": "staticwebassets\\RoomGallery\\00c6d967-31c2-42ca-b08b-44005702b400_anh_1.png"
+    },
+    {
+      "Id": "D:\\LTWNC\\DATN\\DATN\\wwwroot\\RoomGallery\\00c92cec-43cc-4512-9e7b-4676e5ac787d_339964889_1260265371590680_768788703004417789_n.jpg",
+      "PackagePath": "staticwebassets\\RoomGallery\\00c92cec-43cc-4512-9e7b-4676e5ac787d_339964889_1260265371590680_768788703004417789_n.jpg"
+    },
+    {
+      "Id": "D:\\LTWNC\\DATN\\DATN\\wwwroot\\RoomGallery\\01f7ee40-74b0-4574-a242-0d4b25e003d0-gallery-06.jpeg",
+      "PackagePath": "staticwebassets\\RoomGallery\\01f7ee40-74b0-4574-a242-0d4b25e003d0-gallery-06.jpeg"
+    },
+    {
+      "Id": "D:\\LTWNC\\DATN\\DATN\\wwwroot\\RoomGallery\\051931bf-3c6a-4160-9e46-ff7f9804b613-gallery-02.jpeg",
+      "PackagePath": "staticwebassets\\RoomGallery\\051931bf-3c6a-4160-9e46-ff7f9804b613-gallery-02.jpeg"
+    },
+    {
+      "Id": "D:\\LTWNC\\DATN\\DATN\\wwwroot\\RoomGallery\\06b47698-fcfb-46b2-a378-6adf7b141c0a_roomlist-04.jpeg",
+      "PackagePath": "staticwebassets\\RoomGallery\\06b47698-fcfb-46b2-a378-6adf7b141c0a_roomlist-04.jpeg"
+    },
+    {
+      "Id": "D:\\LTWNC\\DATN\\DATN\\wwwroot\\RoomGallery\\075f8a25-eb2b-431a-9fb0-281cef227850-roomlist-05.jpeg",
+      "PackagePath": "staticwebassets\\RoomGallery\\075f8a25-eb2b-431a-9fb0-281cef227850-roomlist-05.jpeg"
+    },
+    {
+      "Id": "D:\\LTWNC\\DATN\\DATN\\wwwroot\\RoomGallery\\0b330325-7a64-4a52-9293-8de183293fc9_roomlist-01.jpeg",
+      "PackagePath": "staticwebassets\\RoomGallery\\0b330325-7a64-4a52-9293-8de183293fc9_roomlist-01.jpeg"
+    },
+    {
+      "Id": "D:\\LTWNC\\DATN\\DATN\\wwwroot\\RoomGallery\\0e30ce26-2a66-42b2-a211-67776afa6400-anh_1.png",
+      "PackagePath": "staticwebassets\\RoomGallery\\0e30ce26-2a66-42b2-a211-67776afa6400-anh_1.png"
+    },
+    {
+      "Id": "D:\\LTWNC\\DATN\\DATN\\wwwroot\\RoomGallery\\111d28e1-101f-4eae-919f-0bfe44066559-339975403_3307805659437138_8273707306779321348_n.jpg",
+      "PackagePath": "staticwebassets\\RoomGallery\\111d28e1-101f-4eae-919f-0bfe44066559-339975403_3307805659437138_8273707306779321348_n.jpg"
+    },
+    {
+      "Id": "D:\\LTWNC\\DATN\\DATN\\wwwroot\\RoomGallery\\122da213-0ba4-404d-a97e-3693292247bb-339975403_3307805659437138_8273707306779321348_n.jpg",
+      "PackagePath": "staticwebassets\\RoomGallery\\122da213-0ba4-404d-a97e-3693292247bb-339975403_3307805659437138_8273707306779321348_n.jpg"
+    },
+    {
+      "Id": "D:\\LTWNC\\DATN\\DATN\\wwwroot\\RoomGallery\\13a13eb8-5323-4612-93f7-be63684a3a0b-339975403_3307805659437138_8273707306779321348_n.jpg",
+      "PackagePath": "staticwebassets\\RoomGallery\\13a13eb8-5323-4612-93f7-be63684a3a0b-339975403_3307805659437138_8273707306779321348_n.jpg"
+    },
+    {
+      "Id": "D:\\LTWNC\\DATN\\DATN\\wwwroot\\RoomGallery\\2590ade8-f3b3-4a26-baf9-8772b6657b4f-phuongdong-06.jpg",
+      "PackagePath": "staticwebassets\\RoomGallery\\2590ade8-f3b3-4a26-baf9-8772b6657b4f-phuongdong-06.jpg"
+    },
+    {
+      "Id": "D:\\LTWNC\\DATN\\DATN\\wwwroot\\RoomGallery\\2ac44d59-8395-47fa-ba1a-cb9e9af2a55f-339964889_1260265371590680_768788703004417789_n.jpg",
+      "PackagePath": "staticwebassets\\RoomGallery\\2ac44d59-8395-47fa-ba1a-cb9e9af2a55f-339964889_1260265371590680_768788703004417789_n.jpg"
+    },
+    {
+      "Id": "D:\\LTWNC\\DATN\\DATN\\wwwroot\\RoomGallery\\2e3ee66e-1783-480c-98ec-be8035de1447_339975403_3307805659437138_8273707306779321348_n.jpg",
+      "PackagePath": "staticwebassets\\RoomGallery\\2e3ee66e-1783-480c-98ec-be8035de1447_339975403_3307805659437138_8273707306779321348_n.jpg"
+    },
+    {
+      "Id": "D:\\LTWNC\\DATN\\DATN\\wwwroot\\RoomGallery\\3022cbcb-d260-49c9-9ccc-d355a1d0d395-339975403_3307805659437138_8273707306779321348_n.jpg",
+      "PackagePath": "staticwebassets\\RoomGallery\\3022cbcb-d260-49c9-9ccc-d355a1d0d395-339975403_3307805659437138_8273707306779321348_n.jpg"
+    },
+    {
+      "Id": "D:\\LTWNC\\DATN\\DATN\\wwwroot\\RoomGallery\\3224f794-b393-4b18-9855-116266e2ccda_296840188_629999278346090_7905040171821531268_n.png",
+      "PackagePath": "staticwebassets\\RoomGallery\\3224f794-b393-4b18-9855-116266e2ccda_296840188_629999278346090_7905040171821531268_n.png"
+    },
+    {
+      "Id": "D:\\LTWNC\\DATN\\DATN\\wwwroot\\RoomGallery\\354577b1-33a2-458f-804f-e230c9e6b545_anh_1.png",
+      "PackagePath": "staticwebassets\\RoomGallery\\354577b1-33a2-458f-804f-e230c9e6b545_anh_1.png"
+    },
+    {
+      "Id": "D:\\LTWNC\\DATN\\DATN\\wwwroot\\RoomGallery\\3d122e5d-d4cf-42a6-925d-da7c887b1959_339975403_3307805659437138_8273707306779321348_n.jpg",
+      "PackagePath": "staticwebassets\\RoomGallery\\3d122e5d-d4cf-42a6-925d-da7c887b1959_339975403_3307805659437138_8273707306779321348_n.jpg"
+    },
+    {
+      "Id": "D:\\LTWNC\\DATN\\DATN\\wwwroot\\RoomGallery\\41fa3738-5494-48e6-b4be-8fe8d49c2e90-331764115_737140434557795_3819225516157092827_n.jpg",
+      "PackagePath": "staticwebassets\\RoomGallery\\41fa3738-5494-48e6-b4be-8fe8d49c2e90-331764115_737140434557795_3819225516157092827_n.jpg"
+    },
+    {
+      "Id": "D:\\LTWNC\\DATN\\DATN\\wwwroot\\RoomGallery\\45851476-dab9-477a-a48a-853e4d140d44-anh_1.png",
+      "PackagePath": "staticwebassets\\RoomGallery\\45851476-dab9-477a-a48a-853e4d140d44-anh_1.png"
+    },
+    {
+      "Id": "D:\\LTWNC\\DATN\\DATN\\wwwroot\\RoomGallery\\4762c1cb-807b-446f-a826-3457dc8bf4d5-roomlist-06.jpeg",
+      "PackagePath": "staticwebassets\\RoomGallery\\4762c1cb-807b-446f-a826-3457dc8bf4d5-roomlist-06.jpeg"
+    },
+    {
+      "Id": "D:\\LTWNC\\DATN\\DATN\\wwwroot\\RoomGallery\\486ee483-c1e3-4ffc-aadd-bdbab78f91eb_339964889_1260265371590680_768788703004417789_n.jpg",
+      "PackagePath": "staticwebassets\\RoomGallery\\486ee483-c1e3-4ffc-aadd-bdbab78f91eb_339964889_1260265371590680_768788703004417789_n.jpg"
+    },
+    {
+      "Id": "D:\\LTWNC\\DATN\\DATN\\wwwroot\\RoomGallery\\4b5e5c4a-6085-4438-b170-75403fc799a1-phuongdong-02.jpg",
+      "PackagePath": "staticwebassets\\RoomGallery\\4b5e5c4a-6085-4438-b170-75403fc799a1-phuongdong-02.jpg"
+    },
+    {
+      "Id": "D:\\LTWNC\\DATN\\DATN\\wwwroot\\RoomGallery\\4e8b9590-e550-42a4-85cf-2fb1a01e3ef6-8e8686a9-e2d7-485c-acc1-4b605af0b8fd.jpg",
+      "PackagePath": "staticwebassets\\RoomGallery\\4e8b9590-e550-42a4-85cf-2fb1a01e3ef6-8e8686a9-e2d7-485c-acc1-4b605af0b8fd.jpg"
+    },
+    {
+      "Id": "D:\\LTWNC\\DATN\\DATN\\wwwroot\\RoomGallery\\5288c6d8-72a7-4b7c-b45e-d1c0a268b6f9-339964889_1260265371590680_768788703004417789_n.jpg",
+      "PackagePath": "staticwebassets\\RoomGallery\\5288c6d8-72a7-4b7c-b45e-d1c0a268b6f9-339964889_1260265371590680_768788703004417789_n.jpg"
+    },
+    {
+      "Id": "D:\\LTWNC\\DATN\\DATN\\wwwroot\\RoomGallery\\5650928c-d068-454b-a796-f32f1ed8ae41-anh_3.png",
+      "PackagePath": "staticwebassets\\RoomGallery\\5650928c-d068-454b-a796-f32f1ed8ae41-anh_3.png"
+    },
+    {
+      "Id": "D:\\LTWNC\\DATN\\DATN\\wwwroot\\RoomGallery\\574a7731-85f9-4044-99a7-bb701cc9f710-scene5.jpg",
+      "PackagePath": "staticwebassets\\RoomGallery\\574a7731-85f9-4044-99a7-bb701cc9f710-scene5.jpg"
+    },
+    {
+      "Id": "D:\\LTWNC\\DATN\\DATN\\wwwroot\\RoomGallery\\5e9ee45f-998a-4698-a6ff-62fd447e0bfe-scene1.jpg",
+      "PackagePath": "staticwebassets\\RoomGallery\\5e9ee45f-998a-4698-a6ff-62fd447e0bfe-scene1.jpg"
+    },
+    {
+      "Id": "D:\\LTWNC\\DATN\\DATN\\wwwroot\\RoomGallery\\708c6b36-ce03-40b1-ac68-87e20135f85b-roomlist-06.jpeg",
+      "PackagePath": "staticwebassets\\RoomGallery\\708c6b36-ce03-40b1-ac68-87e20135f85b-roomlist-06.jpeg"
+    },
+    {
+      "Id": "D:\\LTWNC\\DATN\\DATN\\wwwroot\\RoomGallery\\70c043ca-33aa-412c-8145-343a5ad1f511-anh_2.png",
+      "PackagePath": "staticwebassets\\RoomGallery\\70c043ca-33aa-412c-8145-343a5ad1f511-anh_2.png"
+    },
+    {
+      "Id": "D:\\LTWNC\\DATN\\DATN\\wwwroot\\RoomGallery\\7816d8ef-093b-449f-ab76-645ebdaaa6de-phuongdong-02 (1).jpg",
+      "PackagePath": "staticwebassets\\RoomGallery\\7816d8ef-093b-449f-ab76-645ebdaaa6de-phuongdong-02 (1).jpg"
+    },
+    {
+      "Id": "D:\\LTWNC\\DATN\\DATN\\wwwroot\\RoomGallery\\86302dd7-1d14-42af-acf4-bee03935b359-scene7.jpg",
+      "PackagePath": "staticwebassets\\RoomGallery\\86302dd7-1d14-42af-acf4-bee03935b359-scene7.jpg"
+    },
+    {
+      "Id": "D:\\LTWNC\\DATN\\DATN\\wwwroot\\RoomGallery\\886769a0-01a5-45db-8027-0f23e2c367f1-Premier(1).jpg",
+      "PackagePath": "staticwebassets\\RoomGallery\\886769a0-01a5-45db-8027-0f23e2c367f1-Premier(1).jpg"
+    },
+    {
+      "Id": "D:\\LTWNC\\DATN\\DATN\\wwwroot\\RoomGallery\\8a1b585d-18cc-4a45-a831-cbc10a3363b0_anh_1.png",
+      "PackagePath": "staticwebassets\\RoomGallery\\8a1b585d-18cc-4a45-a831-cbc10a3363b0_anh_1.png"
+    },
+    {
+      "Id": "D:\\LTWNC\\DATN\\DATN\\wwwroot\\RoomGallery\\8da8ddb8-b74d-4b44-937d-47527ab13a19-photay-05.jpg",
+      "PackagePath": "staticwebassets\\RoomGallery\\8da8ddb8-b74d-4b44-937d-47527ab13a19-photay-05.jpg"
+    },
+    {
+      "Id": "D:\\LTWNC\\DATN\\DATN\\wwwroot\\RoomGallery\\9bf4006d-3a06-443e-b31e-59f4e49f60d9-anh_1.png",
+      "PackagePath": "staticwebassets\\RoomGallery\\9bf4006d-3a06-443e-b31e-59f4e49f60d9-anh_1.png"
+    },
+    {
+      "Id": "D:\\LTWNC\\DATN\\DATN\\wwwroot\\RoomGallery\\a4537ef7-00b8-4f64-b5a1-02b706d91b11-339975403_3307805659437138_8273707306779321348_n.jpg",
+      "PackagePath": "staticwebassets\\RoomGallery\\a4537ef7-00b8-4f64-b5a1-02b706d91b11-339975403_3307805659437138_8273707306779321348_n.jpg"
+    },
+    {
+      "Id": "D:\\LTWNC\\DATN\\DATN\\wwwroot\\RoomGallery\\a50f5820-e2f1-4def-9516-612ff9d7073a-roomlist-04.jpeg",
+      "PackagePath": "staticwebassets\\RoomGallery\\a50f5820-e2f1-4def-9516-612ff9d7073a-roomlist-04.jpeg"
+    },
+    {
+      "Id": "D:\\LTWNC\\DATN\\DATN\\wwwroot\\RoomGallery\\aa0c3094-fcbb-46a2-9411-76462385cdca-photay-05 (2).jpg",
+      "PackagePath": "staticwebassets\\RoomGallery\\aa0c3094-fcbb-46a2-9411-76462385cdca-photay-05 (2).jpg"
+    },
+    {
+      "Id": "D:\\LTWNC\\DATN\\DATN\\wwwroot\\RoomGallery\\ac5d9606-650d-4372-a5cc-f4f8128c109b_8e8686a9-e2d7-485c-acc1-4b605af0b8fd.jpg",
+      "PackagePath": "staticwebassets\\RoomGallery\\ac5d9606-650d-4372-a5cc-f4f8128c109b_8e8686a9-e2d7-485c-acc1-4b605af0b8fd.jpg"
+    },
+    {
+      "Id": "D:\\LTWNC\\DATN\\DATN\\wwwroot\\RoomGallery\\b33bf62e-4fb2-400a-be1c-8694fd569b8d-_MG_5905.JPG",
+      "PackagePath": "staticwebassets\\RoomGallery\\b33bf62e-4fb2-400a-be1c-8694fd569b8d-_MG_5905.JPG"
+    },
+    {
+      "Id": "D:\\LTWNC\\DATN\\DATN\\wwwroot\\RoomGallery\\b6299ccc-842e-4411-895b-80c390d8406a-scene6.jpg",
+      "PackagePath": "staticwebassets\\RoomGallery\\b6299ccc-842e-4411-895b-80c390d8406a-scene6.jpg"
+    },
+    {
+      "Id": "D:\\LTWNC\\DATN\\DATN\\wwwroot\\RoomGallery\\b7f19237-e1a3-4d9f-847c-984c490a56c1-roomlist-03.jpeg",
+      "PackagePath": "staticwebassets\\RoomGallery\\b7f19237-e1a3-4d9f-847c-984c490a56c1-roomlist-03.jpeg"
+    },
+    {
+      "Id": "D:\\LTWNC\\DATN\\DATN\\wwwroot\\RoomGallery\\b8f8a1d9-cdc5-43be-99b3-472530aad23b-gallery-01.jpeg",
+      "PackagePath": "staticwebassets\\RoomGallery\\b8f8a1d9-cdc5-43be-99b3-472530aad23b-gallery-01.jpeg"
+    },
+    {
+      "Id": "D:\\LTWNC\\DATN\\DATN\\wwwroot\\RoomGallery\\ba1915a3-a5d6-4a75-bda3-a04b7914f83e_roomlist-02.jpeg",
+      "PackagePath": "staticwebassets\\RoomGallery\\ba1915a3-a5d6-4a75-bda3-a04b7914f83e_roomlist-02.jpeg"
+    },
+    {
+      "Id": "D:\\LTWNC\\DATN\\DATN\\wwwroot\\RoomGallery\\c0becb7b-a2d6-463b-a4a5-2418e6322b8f-phong-premier-la-gi.jpg",
+      "PackagePath": "staticwebassets\\RoomGallery\\c0becb7b-a2d6-463b-a4a5-2418e6322b8f-phong-premier-la-gi.jpg"
+    },
+    {
+      "Id": "D:\\LTWNC\\DATN\\DATN\\wwwroot\\RoomGallery\\c11a481e-a447-4190-aa67-b01cb5e4166a-scene2.jpg",
+      "PackagePath": "staticwebassets\\RoomGallery\\c11a481e-a447-4190-aa67-b01cb5e4166a-scene2.jpg"
+    },
+    {
+      "Id": "D:\\LTWNC\\DATN\\DATN\\wwwroot\\RoomGallery\\c11ef7cc-751c-4662-a09d-953808d87a91__MG_5905.JPG",
+      "PackagePath": "staticwebassets\\RoomGallery\\c11ef7cc-751c-4662-a09d-953808d87a91__MG_5905.JPG"
+    },
+    {
+      "Id": "D:\\LTWNC\\DATN\\DATN\\wwwroot\\RoomGallery\\c4c65b3e-38cd-4430-a59d-a2d4b3c54902_roomlist-03.jpeg",
+      "PackagePath": "staticwebassets\\RoomGallery\\c4c65b3e-38cd-4430-a59d-a2d4b3c54902_roomlist-03.jpeg"
+    },
+    {
+      "Id": "D:\\LTWNC\\DATN\\DATN\\wwwroot\\RoomGallery\\c5bbb5ec-36ba-4167-9e39-80175a98b7a8_anh_1.png",
+      "PackagePath": "staticwebassets\\RoomGallery\\c5bbb5ec-36ba-4167-9e39-80175a98b7a8_anh_1.png"
+    },
+    {
+      "Id": "D:\\LTWNC\\DATN\\DATN\\wwwroot\\RoomGallery\\c734d86a-0169-45d7-aa6a-b912c1e173b1_img_1.jfif",
+      "PackagePath": "staticwebassets\\RoomGallery\\c734d86a-0169-45d7-aa6a-b912c1e173b1_img_1.jfif"
+    },
+    {
+      "Id": "D:\\LTWNC\\DATN\\DATN\\wwwroot\\RoomGallery\\c9875556-df93-4421-ac32-5e6cade1baf1-_MG_5905.JPG",
+      "PackagePath": "staticwebassets\\RoomGallery\\c9875556-df93-4421-ac32-5e6cade1baf1-_MG_5905.JPG"
+    },
+    {
+      "Id": "D:\\LTWNC\\DATN\\DATN\\wwwroot\\RoomGallery\\ceb16c69-87b0-4678-98c7-01774ef9c57b-app.diagrams.net_ (1).png",
+      "PackagePath": "staticwebassets\\RoomGallery\\ceb16c69-87b0-4678-98c7-01774ef9c57b-app.diagrams.net_ (1).png"
+    },
+    {
+      "Id": "D:\\LTWNC\\DATN\\DATN\\wwwroot\\RoomGallery\\d3f536ce-2e49-4a3e-95db-2a6b9ffd71e5-app.diagrams.net_.png",
+      "PackagePath": "staticwebassets\\RoomGallery\\d3f536ce-2e49-4a3e-95db-2a6b9ffd71e5-app.diagrams.net_.png"
+    },
+    {
+      "Id": "D:\\LTWNC\\DATN\\DATN\\wwwroot\\RoomGallery\\d62024e0-f91d-45f0-8d2c-441056da64dc-photay-05 (1).jpg",
+      "PackagePath": "staticwebassets\\RoomGallery\\d62024e0-f91d-45f0-8d2c-441056da64dc-photay-05 (1).jpg"
+    },
+    {
+      "Id": "D:\\LTWNC\\DATN\\DATN\\wwwroot\\RoomGallery\\d7e97199-f2bf-4fd5-aea2-d8e13158eaab-scene4.jpg",
+      "PackagePath": "staticwebassets\\RoomGallery\\d7e97199-f2bf-4fd5-aea2-d8e13158eaab-scene4.jpg"
+    },
+    {
+      "Id": "D:\\LTWNC\\DATN\\DATN\\wwwroot\\RoomGallery\\d8d8e0de-8e97-4f7e-a324-8f00236e7495-339964889_1260265371590680_768788703004417789_n.jpg",
+      "PackagePath": "staticwebassets\\RoomGallery\\d8d8e0de-8e97-4f7e-a324-8f00236e7495-339964889_1260265371590680_768788703004417789_n.jpg"
+    },
+    {
+      "Id": "D:\\LTWNC\\DATN\\DATN\\wwwroot\\RoomGallery\\dd839970-ae3b-424a-90a9-0b4dccebf762-8e8686a9-e2d7-485c-acc1-4b605af0b8fd.jpg",
+      "PackagePath": "staticwebassets\\RoomGallery\\dd839970-ae3b-424a-90a9-0b4dccebf762-8e8686a9-e2d7-485c-acc1-4b605af0b8fd.jpg"
+    },
+    {
+      "Id": "D:\\LTWNC\\DATN\\DATN\\wwwroot\\RoomGallery\\de3b771a-79ee-4b39-a027-c5cb4cecae4e-anh_1.png",
+      "PackagePath": "staticwebassets\\RoomGallery\\de3b771a-79ee-4b39-a027-c5cb4cecae4e-anh_1.png"
+    },
+    {
+      "Id": "D:\\LTWNC\\DATN\\DATN\\wwwroot\\RoomGallery\\e6ecbe4c-a68e-41bd-b0b5-5bd34df45433-331764115_737140434557795_3819225516157092827_n.jpg",
+      "PackagePath": "staticwebassets\\RoomGallery\\e6ecbe4c-a68e-41bd-b0b5-5bd34df45433-331764115_737140434557795_3819225516157092827_n.jpg"
+    },
+    {
+      "Id": "D:\\LTWNC\\DATN\\DATN\\wwwroot\\RoomGallery\\ea4db1e8-803f-4ccf-96ba-9114dd5f5e61-images.jfif",
+      "PackagePath": "staticwebassets\\RoomGallery\\ea4db1e8-803f-4ccf-96ba-9114dd5f5e61-images.jfif"
+    },
+    {
+      "Id": "D:\\LTWNC\\DATN\\DATN\\wwwroot\\RoomGallery\\f0703ff2-1d3d-4055-9f45-73438ac3e92f__MG_5905.JPG",
+      "PackagePath": "staticwebassets\\RoomGallery\\f0703ff2-1d3d-4055-9f45-73438ac3e92f__MG_5905.JPG"
+    },
+    {
+      "Id": "D:\\LTWNC\\DATN\\DATN\\wwwroot\\RoomGallery\\f3501132-f2fc-4400-8ee4-2d2d2eaafdaf_anh_3.png",
+      "PackagePath": "staticwebassets\\RoomGallery\\f3501132-f2fc-4400-8ee4-2d2d2eaafdaf_anh_3.png"
+    },
+    {
+      "Id": "D:\\LTWNC\\DATN\\DATN\\wwwroot\\RoomGallery\\f39875d0-959c-4a59-b5b0-b6682b378b12-8e8686a9-e2d7-485c-acc1-4b605af0b8fd.jpg",
+      "PackagePath": "staticwebassets\\RoomGallery\\f39875d0-959c-4a59-b5b0-b6682b378b12-8e8686a9-e2d7-485c-acc1-4b605af0b8fd.jpg"
+    },
+    {
+      "Id": "D:\\LTWNC\\DATN\\DATN\\wwwroot\\RoomGallery\\f3d893af-d0f3-48c9-b908-905390a9822d-_MG_5905.JPG",
+      "PackagePath": "staticwebassets\\RoomGallery\\f3d893af-d0f3-48c9-b908-905390a9822d-_MG_5905.JPG"
+    },
+    {
+      "Id": "D:\\LTWNC\\DATN\\DATN\\wwwroot\\RoomGallery\\f63088d6-77ae-4e60-959b-663dac95ddda-anh_1.png",
+      "PackagePath": "staticwebassets\\RoomGallery\\f63088d6-77ae-4e60-959b-663dac95ddda-anh_1.png"
+    },
+    {
+      "Id": "D:\\LTWNC\\DATN\\DATN\\wwwroot\\RoomGallery\\f86b6161-ad1e-4ab5-9cfb-d5d8d75ed987_8e8686a9-e2d7-485c-acc1-4b605af0b8fd.jpg",
+      "PackagePath": "staticwebassets\\RoomGallery\\f86b6161-ad1e-4ab5-9cfb-d5d8d75ed987_8e8686a9-e2d7-485c-acc1-4b605af0b8fd.jpg"
+    },
+    {
+      "Id": "D:\\LTWNC\\DATN\\DATN\\wwwroot\\RoomGallery\\fa8776ad-cb46-49c3-b448-eac136db4080_anh_1.png",
+      "PackagePath": "staticwebassets\\RoomGallery\\fa8776ad-cb46-49c3-b448-eac136db4080_anh_1.png"
+    },
+    {
+      "Id": "D:\\LTWNC\\DATN\\DATN\\wwwroot\\css\\site.css",
+      "PackagePath": "staticwebassets\\css\\site.css"
+    },
+    {
+      "Id": "D:\\LTWNC\\DATN\\DATN\\wwwroot\\favicon.ico",
+      "PackagePath": "staticwebassets\\favicon.ico"
+    },
+    {
+      "Id": "D:\\LTWNC\\DATN\\DATN\\wwwroot\\js\\site.js",
+      "PackagePath": "staticwebassets\\js\\site.js"
+    },
+    {
+      "Id": "D:\\LTWNC\\DATN\\DATN\\wwwroot\\lib\\bootstrap\\LICENSE",
+      "PackagePath": "staticwebassets\\lib\\bootstrap"
+    },
+    {
+      "Id": "D:\\LTWNC\\DATN\\DATN\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css"
+    },
+    {
+      "Id": "D:\\LTWNC\\DATN\\DATN\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css.map"
+    },
+    {
+      "Id": "D:\\LTWNC\\DATN\\DATN\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css"
+    },
+    {
+      "Id": "D:\\LTWNC\\DATN\\DATN\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css.map"
+    },
+    {
+      "Id": "D:\\LTWNC\\DATN\\DATN\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css"
+    },
+    {
+      "Id": "D:\\LTWNC\\DATN\\DATN\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css.map"
+    },
+    {
+      "Id": "D:\\LTWNC\\DATN\\DATN\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css"
+    },
+    {
+      "Id": "D:\\LTWNC\\DATN\\DATN\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css.map"
+    },
+    {
+      "Id": "D:\\LTWNC\\DATN\\DATN\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css"
+    },
+    {
+      "Id": "D:\\LTWNC\\DATN\\DATN\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css.map"
+    },
+    {
+      "Id": "D:\\LTWNC\\DATN\\DATN\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css"
+    },
+    {
+      "Id": "D:\\LTWNC\\DATN\\DATN\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css.map"
+    },
+    {
+      "Id": "D:\\LTWNC\\DATN\\DATN\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css"
+    },
+    {
+      "Id": "D:\\LTWNC\\DATN\\DATN\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css.map"
+    },
+    {
+      "Id": "D:\\LTWNC\\DATN\\DATN\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css"
+    },
+    {
+      "Id": "D:\\LTWNC\\DATN\\DATN\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css.map"
+    },
+    {
+      "Id": "D:\\LTWNC\\DATN\\DATN\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css"
+    },
+    {
+      "Id": "D:\\LTWNC\\DATN\\DATN\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css.map"
+    },
+    {
+      "Id": "D:\\LTWNC\\DATN\\DATN\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css"
+    },
+    {
+      "Id": "D:\\LTWNC\\DATN\\DATN\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css.map"
+    },
+    {
+      "Id": "D:\\LTWNC\\DATN\\DATN\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css"
+    },
+    {
+      "Id": "D:\\LTWNC\\DATN\\DATN\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css.map"
+    },
+    {
+      "Id": "D:\\LTWNC\\DATN\\DATN\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css"
+    },
+    {
+      "Id": "D:\\LTWNC\\DATN\\DATN\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css.map"
+    },
+    {
+      "Id": "D:\\LTWNC\\DATN\\DATN\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.css"
+    },
+    {
+      "Id": "D:\\LTWNC\\DATN\\DATN\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.css.map"
+    },
+    {
+      "Id": "D:\\LTWNC\\DATN\\DATN\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.min.css"
+    },
+    {
+      "Id": "D:\\LTWNC\\DATN\\DATN\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.min.css.map"
+    },
+    {
+      "Id": "D:\\LTWNC\\DATN\\DATN\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css"
+    },
+    {
+      "Id": "D:\\LTWNC\\DATN\\DATN\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css.map"
+    },
+    {
+      "Id": "D:\\LTWNC\\DATN\\DATN\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css"
+    },
+    {
+      "Id": "D:\\LTWNC\\DATN\\DATN\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css.map"
+    },
+    {
+      "Id": "D:\\LTWNC\\DATN\\DATN\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js"
+    },
+    {
+      "Id": "D:\\LTWNC\\DATN\\DATN\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js.map"
+    },
+    {
+      "Id": "D:\\LTWNC\\DATN\\DATN\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js"
+    },
+    {
+      "Id": "D:\\LTWNC\\DATN\\DATN\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js.map"
+    },
+    {
+      "Id": "D:\\LTWNC\\DATN\\DATN\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js"
+    },
+    {
+      "Id": "D:\\LTWNC\\DATN\\DATN\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js.map"
+    },
+    {
+      "Id": "D:\\LTWNC\\DATN\\DATN\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js"
+    },
+    {
+      "Id": "D:\\LTWNC\\DATN\\DATN\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js.map"
+    },
+    {
+      "Id": "D:\\LTWNC\\DATN\\DATN\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.js"
+    },
+    {
+      "Id": "D:\\LTWNC\\DATN\\DATN\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.js.map"
+    },
+    {
+      "Id": "D:\\LTWNC\\DATN\\DATN\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.min.js"
+    },
+    {
+      "Id": "D:\\LTWNC\\DATN\\DATN\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.min.js.map"
+    },
+    {
+      "Id": "D:\\LTWNC\\DATN\\DATN\\wwwroot\\lib\\jquery-validation-unobtrusive\\LICENSE.txt",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation-unobtrusive\\LICENSE.txt"
+    },
+    {
+      "Id": "D:\\LTWNC\\DATN\\DATN\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js"
+    },
+    {
+      "Id": "D:\\LTWNC\\DATN\\DATN\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.min.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.min.js"
+    },
+    {
+      "Id": "D:\\LTWNC\\DATN\\DATN\\wwwroot\\lib\\jquery-validation\\LICENSE.md",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\LICENSE.md"
+    },
+    {
+      "Id": "D:\\LTWNC\\DATN\\DATN\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\additional-methods.js"
+    },
+    {
+      "Id": "D:\\LTWNC\\DATN\\DATN\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.min.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\additional-methods.min.js"
+    },
+    {
+      "Id": "D:\\LTWNC\\DATN\\DATN\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\jquery.validate.js"
+    },
+    {
+      "Id": "D:\\LTWNC\\DATN\\DATN\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.min.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\jquery.validate.min.js"
+    },
+    {
+      "Id": "D:\\LTWNC\\DATN\\DATN\\wwwroot\\lib\\jquery\\LICENSE.txt",
+      "PackagePath": "staticwebassets\\lib\\jquery\\LICENSE.txt"
+    },
+    {
+      "Id": "D:\\LTWNC\\DATN\\DATN\\wwwroot\\lib\\jquery\\dist\\jquery.js",
+      "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.js"
+    },
+    {
+      "Id": "D:\\LTWNC\\DATN\\DATN\\wwwroot\\lib\\jquery\\dist\\jquery.min.js",
+      "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.min.js"
+    },
+    {
+      "Id": "D:\\LTWNC\\DATN\\DATN\\wwwroot\\lib\\jquery\\dist\\jquery.min.map",
+      "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.min.map"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.DATN.Microsoft.AspNetCore.StaticWebAssets.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.build.DATN.props",
+      "PackagePath": "build\\DATN.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.buildMultiTargeting.DATN.props",
+      "PackagePath": "buildMultiTargeting\\DATN.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.buildTransitive.DATN.props",
+      "PackagePath": "buildTransitive\\DATN.props"
+    }
+  ],
+  "ElementsToRemove": []
+}

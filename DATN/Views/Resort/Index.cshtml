@@ -1,0 +1,40 @@
+﻿@model IEnumerable<DATN.Models.Resort>
+@{
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+<h2>Quản trị khu nghỉ dưỡng</h2>
+<a asp-action="Create" class="btn btn-success">Thêm mới</a>
+<table class="table">
+    <thead>
+        <tr>
+            <th>Tên khu nghỉ dưỡng</th>
+            <th>Hình ảnh</th>
+            <th>Địa chỉ</th>
+            <th>Số điện thoại</th>
+            <th>Đường dây nóng</th>
+            <th>FAX</th>
+            <th>Email</th>
+            <th>Hành động</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.Name</td>
+                <td><img src="~/Images/Resort/@item.Image" alt="Hình ảnh khu nghi duong" style="width:100px; height:auto;" /></td>
+                <td>@item.Address</td>
+                <td>@item.PhoneNumber</td>
+                <td>@item.Hotline</td>
+                <td>@item.FAX</td>
+                <td>@item.Email</td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@item.Id" class="btn btn-primary">Sửa</a>
+                    <a asp-action="Delete" asp-route-id="@item.Id" class="btn btn-danger">Xóa</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+

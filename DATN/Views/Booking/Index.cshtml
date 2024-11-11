@@ -1,0 +1,26 @@
+﻿@model List<Room>
+
+<form method="post" action="@Url.Action("Index", "Booking")">
+    <!-- Phần tìm kiếm như trên -->
+</form>
+
+@if (Model != null && Model.Any())
+{
+    <div class="available-rooms">
+        <h3>Danh sách phòng còn trống</h3>
+        <ul>
+            @foreach (var room in Model)
+            {
+                <li>
+                    <p>@room.Name</p>
+                    <p>Giá: @room.Price</p>
+                    <!-- Thêm thông tin chi tiết phòng nếu cần -->
+                </li>
+            }
+        </ul>
+    </div>
+}
+else
+{
+    <p>Không có phòng trống trong khoảng thời gian đã chọn.</p>
+}

@@ -1,0 +1,169 @@
+@import "./mixin.scss";
+
+.roomsList-breadcrumb {
+  margin: 51px 0 30px 0;
+  padding: 30px 0;
+  background-color: #f6f6f6;
+  position: relative;
+  h1 {
+    font-size: 16px;
+    margin-bottom: 0;
+    font-weight: 700;
+    line-height: 20px;
+    color: #000;
+  }
+}
+
+.rooms {
+  padding-bottom: 20px;
+  h1 {
+    font-size: 25px;
+    line-height: 34px;
+    color: #000;
+    @include transition();
+    &:hover {
+      color: $hover-color;
+    }
+  }
+  &__nav {
+    padding: 20px 0;
+    a {
+      color: #1e1e1e;
+      @include transition();
+      padding: 0 10px;
+      &:hover {
+        color: $hover-color;
+      }
+    }
+  }
+  &__img {
+    position: relative;
+    &:hover .rooms__hover {
+      opacity: 1;
+    }
+  }
+  &__content {
+    padding: 20px 0;
+  }
+  &__hover {
+    position: absolute;
+    color: #fff;
+    @include center();
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    background-color: #1e1e1e66;
+    opacity: 0;
+    @include transition();
+  }
+  &__hover-flex {
+    text-align: center;
+  }
+  &__line {
+    background-color: #1e1e1e;
+    height: 2px;
+    width: 100px;
+  }
+  p.rooms__padding {
+    margin: 15px 0;
+  }
+  button {
+    border: none;
+    padding: 10px 25px;
+    color: #fff;
+    background-color: $main-color;
+    @include transition();
+    &:hover {
+      background-color: $hover-color;
+    }
+  }
+}
+
+// for rooms filter
+.rooms-filter {
+  background-color: #333132;
+  padding-bottom: 20px;
+  margin-top: 67px;
+  h1 {
+    padding: 27px 0;
+    margin: 0 0 19px;
+    color: #fff;
+    border-bottom: 1px solid #555;
+    text-align: center;
+    font-size: 16px;
+  }
+  &__list {
+    padding: 0 15px;
+    margin-bottom: 7px;
+  }
+  &__chooseList {
+    padding: 0 15px;
+    margin-bottom: 15px;
+    label {
+      font-size: 13px;
+      cursor: pointer;
+    }
+    select,
+    input {
+      width: 100%;
+      height: 46px;
+      background-color: transparent;
+      color: #999;
+      text-indent: 10px;
+      border: 1px solid #555;
+    }
+    span.rooms-calendar {
+      position: relative;
+      &::after {
+        position: absolute;
+        position: absolute;
+        bottom: -3px;
+        right: 11px;
+        font-family: "Font Awesome 5 Pro";
+        z-index: 0;
+        content: "\f073";
+        font-size: 20px;
+        color: #c59d5f;
+      }
+    }
+  }
+  &__children {
+    padding: 0 15px;
+    margin-bottom: 15px;
+    select {
+      width: 100%;
+      height: 46px;
+      background-color: transparent;
+      color: #999;
+      text-indent: 10px;
+      border: 1px solid #555;
+    }
+  }
+  &__children-item {
+    width: 48%;
+  }
+}
+
+.rooms-priceRange {
+  padding: 0 15px;
+  margin-bottom: 15px;
+  input {
+    width: 100%;
+  }
+}
+
+.rooms-btn {
+  padding: 0 15px;
+  button {
+    border: none;
+    width: 100%;
+    padding: 10px 25px;
+    color: #fff;
+    background-color: $main-color;
+    @include transition();
+    &:hover {
+      background-color: $hover-color;
+    }
+  }
+}

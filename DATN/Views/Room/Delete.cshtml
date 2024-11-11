@@ -1,0 +1,114 @@
+﻿@model DATN.ViewModel.RoomGal
+
+@{
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<h1>Xóa phòng</h1>
+<hr />
+<form asp-action="Delete" enctype="multipart/form-data">
+    <div class="row">
+        <div class="col-md-4">
+
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="Room.ID" />
+            <div class="form-group">
+                <label asp-for="Room.Name" class="control-label"></label>
+                <input asp-for="Room.Name" class="form-control" disabled/>
+                <span asp-validation-for="Room.Name" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Room.Description" class="control-label"></label>
+                <textarea asp-for="Room.Description" class="form-control" cols="40" rows="5" disabled></textarea>
+                <span asp-validation-for="Room.Description" class="text-danger"></span>
+            </div>
+            <div>
+                <label asp-for="Room.RoomTypeId">Loại phòng:</label>
+                <select asp-for="Room.RoomTypeId" asp-items="ViewBag.RoomTypes" class="form-control" disabled></select>
+            </div>
+            <div class="form-group">
+                <label asp-for="Room.Price" class="control-label"></label>
+                <input asp-for="Room.Price" class="form-control" disabled/>
+                <span asp-validation-for="Room.Price" class="text-danger"></span>
+            </div>
+            @if (Model.Room.Image != null)
+            {
+                <img src="@("~/Images/Room/"+ Model.Room.Image )" asp-append-version="true" width="100px" height="100px" />
+            }
+            <div class="form-group">
+                <label class="label-control">Hình ảnh phòng</label>
+                <br />
+                @* <input asp-for="Room.ImageFile" id="Profileimg" accept="image/*" />
+                <span asp-validation-for="Room.ImageFile" class="text-danger"></span> *@
+                <img id="imgpreview" src="#" style="display:none" width="100px" height="100px" alt="Preview Img" />
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Xóa" class="btn btn-danger" />
+                <a asp-action="Index" class="btn btn-warning"><i class="fa-solid fa-arrow-left"></i> Trở lại</a>
+            </div>
+        </div>
+        <div class="col-md-8">
+            @foreach (var item in Model.Room.GalleryRooms)
+            {
+                <div class="detailed-image" style="display: inline-block; margin: 10px;">
+                    <!-- Ảnh hiện tại, có thể bấm vào để chọn ảnh mới -->
+                    <img src="@Url.Content("~/RoomGallery/" + item.Image)"
+                         id="image-preview-@item.ID"
+                         alt="Detailed Image"
+                         style="width: 150px; height: 150px; object-fit: cover;"
+                         data-image-id="@item.ID" />
+
+                </div>
+            }
+        </div>
+    </div>
+</form>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+    <script>
+        // Preview uploaded image
+        document.querySelectorAll('.detailed-image img').forEach(function (img) {
+            img.addEventListener('click', function () {
+                const imageId = img.getAttribute('data-image-id');
+                document.querySelector(`input[data-image-id="${imageId}"]`).click();
+            });
+        });
+
+        // Hiển thị bản xem trước khi người dùng chọn ảnh mới
+        document.querySelectorAll('.image-input').forEach(function (input) {
+            input.addEventListener('change', function (event) {
+                const imageId = input.getAttribute('data-image-id');
+                const file = event.target.files[0];
+                if (file) {
+                    const reader = new FileReader();
+                    reader.onload = function (e) {
+                        document.getElementById(`image-preview-${imageId}`).src = e.target.result;
+                    };
+                    reader.readAsDataURL(file);
+                }
+            });
+        });
+
+        // Handle delete image
+        $('.delete-image').click(function () {
+            var imageId = $(this).data('image-id');
+            if (confirm("Are you sure you want to delete this image?")) {
+                $.ajax({
+                    url: '@Url.Action("DeleteDetailedImage", "Room")',
+                    type: 'POST',
+                    data: { id: imageId },
+                    success: function (result) {
+                        // Reload the page or update the UI to reflect deletion
+                        location.reload();
+                    },
+                    error: function (xhr, status, error) {
+                        alert("Error deleting image: " + error);
+                    }
+                });
+            }
+        });
+    </script>
+}

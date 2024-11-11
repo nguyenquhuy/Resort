@@ -1,0 +1,70 @@
+﻿@model DATN.Models.Account
+@{
+    ViewData["Title"] = "Register";
+}
+
+<h1 class="text-center">@ViewData["Title"]</h1>
+
+<div class="row justify-content-center">
+    <!-- Centering the content -->
+    <div class="col-md-4">
+        <form id="registerForm" method="post" enctype="multipart/form-data">
+            <h2 class="text-center">Tạo tài khoản mới.</h2>
+            <hr />
+            <div asp-validation-summary="ModelOnly" class="text-danger" role="alert"></div>
+            <div class="form-floating mb-3">
+                <label asp-for="Email">Email</label>
+                <input asp-for="Email" class="form-control" autocomplete="email" aria-required="true" placeholder="email@example.com"/>
+                <span asp-validation-for="Email" class="text-danger"></span>
+            </div>
+            <div class="form-floating mb-3">
+                <label asp-for="Name">Họ tên</label>
+                <input asp-for="Name" class="form-control" autocomplete="name" aria-required="true" />
+                <span asp-validation-for="Name" class="text-danger"></span>
+            </div>
+            <div class="form-floating mb-3">
+                <label asp-for="CCCD">Căn cước công dân</label>
+                <input asp-for="CCCD" class="form-control" autocomplete="cccd" aria-required="true"  />
+                <span asp-validation-for="CCCD" class="text-danger"></span>
+            </div>
+            <div class="form-floating mb-3">
+                <label asp-for="PhoneNumber">Số điện thoại</label>
+                <input asp-for="PhoneNumber" class="form-control" autocomplete="phonenumber" aria-required="true"/>
+                <span asp-validation-for="PhoneNumber" class="text-danger"></span>
+            </div>
+            <div class="form-floating mb-3">
+                <label asp-for="Password">Mật khẩu</label>
+                <input asp-for="Password" class="form-control" autocomplete="new-password" aria-required="true" placeholder="password" type="password"/>
+                <span asp-validation-for="Password" class="text-danger"></span>
+            </div>
+            @* <div class="form-floating mb-3">
+                <input asp-for="Password" class="form-control" autocomplete="cf-new-password" aria-required="true" placeholder="confirm password" />
+                <label asp-for="Password">Xác nhận mật khẩu</label>
+                <span asp-validation-for="Password" class="text-danger"></span>
+            </div> *@
+            <div class="form-group">
+                <label asp-for="ImageFile" class="control-label"></label>
+                <br />
+                <input asp-for="ImageFile" id="ImageFile" type="file" accept="image/*" class="form-control-file" />
+                <span asp-validation-for="ImageFile" class="text-danger"></span>
+                <img id="imgPreview" src="#" style="display:none" width="100px" height="100px" alt="Preview" />
+            </div>
+            <button id="registerSubmit" type="submit" class="w-100 btn btn-lg btn-primary">Register</button>
+        </form>
+    </div>
+</div>
+
+<script>
+    $("#ImageFile").change(function () {
+        var input = this;
+        if (input.files && input.files[0]) {
+            var reader = new FileReader();
+
+            reader.onload = function (e) {
+                $('#imgPreview').attr('src', e.target.result).show();
+            };
+
+            reader.readAsDataURL(input.files[0]);
+        }
+    });
+</script>

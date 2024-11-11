@@ -1,0 +1,55 @@
+﻿@model DATN.ViewModel.BookRoom
+
+<form asp-action="SubmitReservation" method="post">
+    <h3>Reservation for @Model.Room.Name</h3>
+    <input type="hidden" asp-for="@Model.Room.ID"/>
+    <div>
+        <label asp-for="Booking.Name"></label>
+        <input asp-for="Booking.Name" />
+        <span asp-validation-for="Booking.Name"></span>
+    </div>
+
+    <div>
+        <label asp-for="Booking.Address"></label>
+        <input asp-for="Booking.Address" />
+        <span asp-validation-for="Booking.Address"></span>
+    </div>
+
+    <div>
+        <label asp-for="Booking.Phone"></label>
+        <input asp-for="Booking.Phone" />
+        <span asp-validation-for="Booking.Phone"></span>
+    </div>
+
+    <div>
+        <label asp-for="Booking.Adult"></label>
+        <input asp-for="Booking.Adult" />
+        <span asp-validation-for="Booking.Adult"></span>
+    </div>
+
+    <div>
+        <label asp-for="Booking.Child"></label>
+        <input asp-for="Booking.Child" />
+        <span asp-validation-for="Booking.Child"></span>
+    </div>
+
+    <div>
+        <label asp-for="Booking.Email"></label>
+        <input asp-for="Booking.Email" />
+        <span asp-validation-for="Booking.Email"></span>
+    </div>
+
+    <div>
+        <label asp-for="Booking.CheckIn"></label>
+        <input asp-for="Booking.CheckIn" type="date" />
+        <span asp-validation-for="Booking.CheckIn"></span>
+    </div>
+
+    <div>
+        <label asp-for="Booking.CheckOut"></label>
+        <input asp-for="Booking.CheckOut" type="date" />
+        <span asp-validation-for="Booking.CheckOut"></span>
+    </div>
+
+    <input type="submit">Submit Reservation</input>
+</form>

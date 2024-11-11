@@ -1,0 +1,37 @@
+$main-color: #ffb400;
+$hover-color: #c59d5f;
+@mixin border-color {
+  border: 1px solid #d0d0d0;
+}
+@mixin transition() {
+  -webkit-transition: 0.3s ease-in-out;
+  -moz-transition: 0.3s ease-in-out;
+  transition: 0.3s ease-in-out;
+}
+@mixin error-validate() {
+  color: red;
+  font-size: 13px;
+  font-style: italic;
+}
+@mixin d-flex {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+}
+@mixin center {
+  @include d-flex();
+  justify-content: center;
+  align-items: center;
+}
+@mixin border-radius($radius) {
+  -webkit-border-radius: $radius;
+  -moz-border-radius: $radius;
+  -ms-border-radius: $radius;
+  border-radius: $radius;
+}
+@mixin link-hover {
+  padding-left: 5px;
+  padding-right: 0;
+}

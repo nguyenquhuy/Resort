@@ -1,0 +1,126 @@
+/*PORTFOLIO*/
+.portfolio{
+	margin-top: 50px;
+	padding-bottom: 50px;
+}
+.portfolio .item{
+	border: 15px solid transparent;
+	height: 250px;
+	position: relative;
+	/*background-repeat: no-repeat;
+	background-position: center;
+	background-size: cover;*/
+}
+.portfolio .item .image{
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: cover;
+	z-index: 3;
+}
+.portfolio .item .info-layer{
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-color: rgb(0,0,0,0.6);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	animation-duration: 0.3s;
+	animation-timing-function: linear;
+	animation-fill-mode: forwards;
+	opacity: 0;
+	pointer-events: none;
+	z-index: 4;
+}
+@keyframes infoShow{
+	0%{
+		top: 0;
+		left: 0;
+		opacity: 0;
+		pointer-events: none;
+	}
+	100%{
+		top: 15px;
+		left: 15px;
+		opacity: 1;
+		pointer-events: all;
+	}
+}
+@keyframes infoHide{
+	0%{
+		top: 15px;
+		left: 15px;
+		opacity: 1;
+		pointer-events: all;
+	}
+	100%{
+		top: 0;
+		left: 0;
+		opacity: 0;
+		pointer-events: none;
+	}
+}
+.portfolio .item .info-layer .detail{
+	width: 100%;
+}
+.portfolio .item .info-layer p{
+	line-height: 25px;
+	width: 100%;
+	text-align: center;
+	color: white;
+}
+.portfolio .item .info-layer .title{
+	font-size: 20px;
+	max-height: 75px;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	/*white-space: nowrap;*/
+}
+.portfolio .item .info-layer .title a{
+	color: white;
+	text-decoration: none;
+}
+.portfolio .item .info-layer a:hover{
+	color: #d7b38c;
+}
+.portfolio .item .info-layer .time{
+	font-size: 16px;
+	cursor: pointer;
+}
+.portfolio .item .info-layer .time span{
+	margin-left: 10px;
+}
+.portfolio .pagination{
+	margin-top: 50px;
+	height: 45px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.portfolio .pagination .page-block{
+	width: 45px;
+	height: 45px;
+	line-height: 45px;
+	text-align: center;
+	background-color: white;
+	margin-right: 5px;
+	margin-left: 5px;
+	font-weight: bold;
+	font-size: 20px;
+	cursor: pointer;
+}
+.portfolio .pagination .page-block:hover{
+	color: #d7b38c;
+}
+.portfolio .pagination .active{
+	color: #d7b38c;
+}
+
+/*END PORTFOLIO*/

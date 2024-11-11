@@ -1,0 +1,161 @@
+﻿@using DATN.Controllers
+@inject DATN.Models.Context.DATNDbContext DbContext
+
+@{
+    var resort = GetDataController.GetResort(DbContext);
+}
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Interface</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <style>
+        .sidebar {
+            background-color: #f8f9fa;
+            padding: 15px;
+            min-height: 86vh;
+        }
+
+            .sidebar a {
+                color: #333;
+                display: block;
+                padding: 10px;
+                text-decoration: none;
+            }
+
+                .sidebar a:hover {
+                    background-color: #ddd;
+                }
+
+        .submenu a {
+            padding-left: 30px;
+            font-size: 0.9em;
+            display: flex;
+            align-items: center;
+        }
+
+        .submenu .fa-caret-right {
+            margin-right: 8px;
+            font-size: 0.8em;
+            color: #666;
+        }
+
+        .header {
+            background-color: #333;
+            color: white;
+            padding: 10px 15px;
+        }
+
+            .header a {
+                color: white;
+                margin-right: 20px;
+                text-decoration: none;
+            }
+
+        .admin-actions {
+            display: flex;
+            align-items: center;
+        }
+
+        .exit-btn i {
+            margin-right: 5px;
+        }
+
+        .footer {
+            background-color: #f1f1f1;
+            color: #666;
+            font-size: 0.9em;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+            border-top: 1px solid #ddd;
+        }
+    </style>
+    </style>
+</head>
+
+<body>
+    <!-- Header -->
+    <div class="header d-flex justify-content-between">
+        <div>
+            <a href="/"><img src="@("~/Images/Resort/" + resort.Image)" asp-append-version="true" width="75px" height="75px" /></a>
+        </div>
+        <div class="admin-actions">
+            <span>Xin chào: admin</span>
+            <a href="#" class="exit-btn ml-3" title="Thoát">
+                <i class="fas fa-sign-out-alt"></i> Thoát
+            </a>
+        </div>
+    </div>
+
+    <div class="container-fluid">
+        <div class="row">
+            <!-- Sidebar -->
+            <nav class="col-md-3 col-lg-2 d-md-block sidebar">
+                <h3>Administrator</h3>
+                <a href="/AccessAm">Trang chủ Admin</a>
+
+                <!-- Collapsible Menu for Quản trị Danh mục -->
+                <a href="#categoryManagement" data-toggle="collapse" aria-expanded="false" class="d-flex align-items-center collapsed">
+                    <i class="fas fa-folder mr-2"></i> Quản trị Danh mục
+                    <i class="fas fa-caret-down ml-auto"></i>
+                </a>
+                <div class="collapse submenu" id="categoryManagement">
+                    <a href="/Room"><i class="fas fa-caret-right"></i> Phòng</a>
+                    <a href="/Article"><i class="fas fa-caret-right"></i> Bài viết</a>
+                    <a href="RoomTypes"><i class="fas fa-caret-right"></i> Loại phòng</a>
+                    <a href="/Service"><i class="fas fa-caret-right"></i> Dịch vụ</a>
+                </div>
+
+                <!-- Collapsible Menu for Quản trị giao diện -->
+                <a href="#interfaceManagement" data-toggle="collapse" aria-expanded="false" class="d-flex align-items-center collapsed">
+                    <i class="fas fa-paint-brush mr-2"></i> Quản trị giao diện
+                    <i class="fas fa-caret-down ml-auto"></i>
+                </a>
+                <div class="collapse submenu" id="interfaceManagement">
+                    <a href="#"><i class="fas fa-caret-right"></i> Hình ảnh</a>
+                    <a href="#"><i class="fas fa-caret-right"></i> Slide</a>
+                    <a href="/Resort"><i class="fas fa-caret-right"></i> Thông tin</a>
+                </div>
+
+                <!-- Collapsible Menu for Quản trị thông tin -->
+                <a href="#informationManagement" data-toggle="collapse" aria-expanded="false" class="d-flex align-items-center collapsed">
+                    <i class="fas fa-info-circle mr-2"></i> Quản trị thông tin
+                    <i class="fas fa-caret-down ml-auto"></i>
+                </a>
+                <div class="collapse submenu" id="informationManagement">
+                    <a href="#"><i class="fas fa-caret-right"></i> Danh sách đơn hàng</a>
+                    <a href="/Comments"><i class="fas fa-caret-right"></i> Đánh giá của khách hàng</a>
+                </div>
+
+                <!-- Collapsible Menu for Cấu Hình User -->
+                <a href="#userConfiguration" data-toggle="collapse" aria-expanded="false" class="d-flex align-items-center collapsed">
+                    <i class="fas fa-user-cog mr-2"></i> Cấu Hình User
+                    <i class="fas fa-caret-down ml-auto"></i>
+                </a>
+                <div class="collapse submenu" id="userConfiguration">
+                    <a href="/ListAccount"><i class="fas fa-caret-right"></i> Danh sách người dùng</a>
+                    <a href="/Account/Info"><i class="fas fa-caret-right"></i> Thông tin người dùng</a>
+                </div>
+            </nav>
+
+            <!-- Main Content -->
+            <main class="col-md-9 ml-sm-auto col-lg-10 content">
+                @RenderBody()
+            </main>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer text-center py-3">
+        <span>&copy; 2024. All rights reserved.</span>
+    </footer>
+    @RenderSection("Scripts", required: false)
+</body>
+</html>
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>

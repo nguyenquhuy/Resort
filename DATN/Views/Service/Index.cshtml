@@ -1,0 +1,46 @@
+﻿@model IEnumerable<DATN.Models.Service>
+
+@{
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<h1>Trang dịch vụ</h1>
+
+<p>
+    <a asp-action="Create" class="btn btn-primary"><i class="fa-solid fa-book"></i>Thêm dịch vụ</a>
+</p>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>STT</th>
+            <th>Ảnh</th>
+            <th>Tiêu đề</th>
+            <th>Mô tả</th>
+            <th>Giá</th>
+            <th>Hành động</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.Select((value, index) => new { value, index }))
+        {
+            <tr>
+                <td>@(item.index + 1)</td> <!-- Display Serial Number -->
+                <td><img src="~/Images/Service/@item.value.Image" alt="Hình ảnh dịch vụ" style="width:100px; height:auto;" /></td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.value.Title)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.value.Description)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.value.Price)
+                </td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@item.value.Id" class="btn btn-primary">Sửa</a>
+                    <a asp-action="Delete" asp-route-id="@item.value.Id" class="btn btn-danger">Xóa</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

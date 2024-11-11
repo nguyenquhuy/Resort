@@ -1,0 +1,103 @@
+@import "./mixin.scss";
+.getInTouch-banner {
+  position: relative;
+  p {
+    font-size: 15px;
+    color: $hover-color;
+    font-style: italic;
+  }
+  h2 {
+    font-size: 35px;
+    color: #fff;
+  }
+  &__line {
+    background-color: $hover-color;
+    height: 1px;
+    width: 125px;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    margin-top: 15px;
+  }
+  &__center {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    position: absolute;
+    text-align: center;
+  }
+}
+
+.paralax {
+  background-image: url(../images/getInTouch/getInTouch-banner.jpeg);
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  min-height: 600px;
+}
+
+.getInTouch-icon {
+  padding: 100px 0 85px 0;
+  .getInTouch__item {
+    text-align: center;
+    position: relative;
+    padding-bottom: 15px;
+    svg {
+      color: #000;
+      height: 70px;
+      width: 70px;
+      border-radius: 50%;
+      padding: 15px;
+      @include transition();
+      &:hover {
+        background-color: #000;
+        color: #fff;
+      }
+    }
+  }
+  &__center {
+    h2 {
+      font-weight: 700;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      color: #1e1e1e;
+      line-height: 20px;
+      font-size: 16px;
+    }
+    .getInTouch-padding {
+      padding-top: 10px;
+      a {
+        color: #999;
+        &:hover {
+          color: $hover-color;
+        }
+      }
+    }
+  }
+  &__line {
+    background-color: $hover-color;
+    height: 1px;
+    width: 70px;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 105px;
+  }
+}
+
+// for contact
+.getInTouch-contact {
+  padding: 100px 0;
+  img {
+    width: auto;
+  }
+  h3 {
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: #1e1e1e;
+    line-height: 20px;
+    font-size: 16px;
+  }
+}

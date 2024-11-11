@@ -1,0 +1,115 @@
+﻿@using DATN.Controllers
+@model DATN.Models.Article
+@inject DATN.Models.Context.DATNDbContext DbContext
+@using System.Globalization
+@{
+	var articles = GetDataController.GetArticle(DbContext);
+	var vietnamCulture = new CultureInfo("vi-VN");
+}
+<link rel="stylesheet" type="text/css" href="~/FE/css/detail-room.css">
+<style>
+	.content-wrapper {
+		display: flex;
+		flex-direction: column;
+		height: 100%;
+		position: relative;
+	}
+
+	.view-all-container {
+		position: absolute;
+		bottom: 20px; /* Adjust this value to control distance from the bottom */
+		width: 100%;
+		display: flex;
+		justify-content: center;
+	}
+
+	.view-all-link {
+		font-size: 16px; /* Adjust font size as needed */
+		color: #007bff; /* Adjust color as needed */
+		text-decoration: none;
+	}
+
+		.view-all-link:hover {
+			text-decoration: underline;
+		}
+
+</style>
+<!-- page title -->
+<div class="page-title container-fluid">
+	<div class="container" style="position: relative;">
+		<p class="title">@Model.Title</p>
+		<p class="page-tree">
+			<span class="home"><a href="/">Home</a></span>
+			<span><i class="fa fa-angle-right"></i></span>
+			<span><a href="/DetailArticle/@Model.Id">@Model.Title</a></span>
+		</p>
+	</div>
+</div>
+<!-- end page title -->
+<!-- detail room -->
+<div class="detail-room container-fluid">
+	<div class="row">
+		<div class="container">
+			<div class="row">
+				<div class="left col-xl-8 col-lg-8 col-md-12">
+					<div class="row" style="width: 100%;">
+						<div class="room-img left-item">
+							<img src="~/Images/Article/@Model.Image" class="bg-replace">
+							<div class="zoom-layer">
+								<div class="zoom-btn">
+									<i class="far fa-eye"></i>
+								</div>
+							</div>
+							<div class="img-popup" id="img-popup">
+								<div class="img-box" id="img-box">
+									<img src="">
+								</div>
+								<div class="close-popup">
+									<i class="fas fa-times"></i>
+								</div>
+							</div>
+						</div>
+						<div class="criteria left-item">
+							<div class="row">
+								<div class="col-12">
+									<p class="description">
+										@Html.Raw(Model.Content)
+									</p>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="right col-xl-4 col-lg-4 col-md-12">
+					<div class="row" style="width: 100%;">
+						<div class="post right-item col-12">
+							<p class="title">Bài viết khác</p>
+							@foreach (var item in articles.Where(s => s.Id != Model.Id).Take(2))
+							{
+								<div class="item">
+									<div class="row" style="margin-left: 0; margin-right: 0;">
+										<div class="col-4 image" style="background-image: url('@Url.Content("~/images/article/"+item.Image)');"></div>
+										<div class="col-8">
+											<p class="article"><a href="#">@item.Title</a></p>
+											<p class="time"><span class="date">@item.CreatedDate.ToString("dd MMMM yyyy", vietnamCulture)</span></p>
+										</div>
+									</div>
+								</div>
+							}
+						</div>
+						<!-- Centered link at the bottom -->
+						<div class="view-all-container">
+							<a href="/ListArticle" class="view-all-link">Xem tất cả</a>
+						</div>
+					</div>
+				</div>
+
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- detail room -->
+
+<script type="text/javascript" src="~/FE/js/jquery-3.4.1.min.js"></script>
+<script type="text/javascript" src="~/FE/js/detail-room.js"></script>

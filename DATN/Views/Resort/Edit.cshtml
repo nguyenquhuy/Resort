@@ -1,0 +1,123 @@
+﻿@model DATN.Models.Resort
+
+@{
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<h1>Chỉnh sửa thông tin khu nghỉ dưỡng</h1>
+
+<hr />
+<form asp-action="Edit" asp-controller="Resort" enctype="multipart/form-data">
+    <div class="row">
+        <!-- Cột bên trái: Chứa các mục khác như Title, Description, ImageFile -->
+        <div class="col-md-6">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="Id" />
+            <div class="form-group">
+                <label asp-for="Name" class="control-label"></label>
+                <input asp-for="Name" class="form-control" />
+                <span asp-validation-for="Name" class="text-danger"></span>
+            </div>
+            <div>
+                <label asp-for="Address" class="control-label"></label>
+                <input asp-for="Address" class="form-control" />
+                <span asp-validation-for="Address" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for=" PhoneNumber" class="control-label"></label>
+                <input asp-for=" PhoneNumber" class="form-control" />
+                <span asp-validation-for=" PhoneNumber" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for=" Hotline" class="control-label"></label>
+                <input asp-for=" Hotline" class="form-control" />
+                <span asp-validation-for=" Hotline" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for=" Email" class="control-label"></label>
+                <input asp-for=" Email" class="form-control" />
+                <span asp-validation-for=" Email" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for=" FAX" class="control-label"></label>
+                <input asp-for=" FAX" class="form-control" />
+                <span asp-validation-for=" FAX" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for=" FrameMap" class="control-label"></label>
+                <input asp-for=" FrameMap" class="form-control" />
+                <span asp-validation-for=" FrameMap" class="text-danger"></span>
+            </div>
+            @if (Model.Image != null)
+            {
+                <img src="@("~/Images/Resort/"+ Model.Image )" asp-append-version="true" width="50px" height="50px" />
+            }
+            <div class="form-group">
+                <label asp-for=" Image" class="control-label"></label>
+                <br />
+                <input asp-for=" IFormFile" id="ImageFile" type="file" accept="image/*" class="form-control-file" />
+                <span asp-validation-for=" IFormFile" class="text-danger"></span>
+                <img id="imgPreview" src="#" style="display:none" width="100px" height="100px" alt="Preview" />
+            </div>
+        </div>
+        <!-- Cột bên phải: Chứa phần CKEditor cho Content -->
+        <div class="col-md-6">
+            <div class="form-group">
+                <label asp-for="Name" class="control-label"></label>
+                <textarea asp-for="Description" class="form-control" id="editor" rows="20"></textarea>
+                <span asp-validation-for="Description" class="text-danger"></span>
+            </div>
+        </div>
+    </div>
+    <!-- Nút Thêm mới dưới cùng -->
+    <div class="form-group">
+        <input type="submit" value="Lưu" class="btn btn-primary" />
+        <a asp-action="Index" class="btn btn-warning"><i class="fa-solid fa-arrow-left"></i> Trở lại</a>
+    </div>
+</form>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+    <script src="https://cdn.ckeditor.com/4.16.2/full/ckeditor.js"></script> <!-- Sử dụng CKEditor 4 -->
+    <script>
+        // Khởi tạo CKEditor với các tùy chọn cho thanh công cụ chi tiết
+        CKEDITOR.replace('editor', {
+            toolbar: [
+                { name: 'document', items: ['Source', '-', 'NewPage', 'Preview', '-', 'Templates'] },
+                { name: 'clipboard', items: ['Cut', 'Copy', 'Paste', 'PasteText', 'PasteFromWord', '-', 'Undo', 'Redo'] },
+                { name: 'editing', items: ['Find', 'Replace', '-', 'SelectAll', '-', 'Scayt'] },
+                '/',
+                { name: 'basicstyles', items: ['Bold', 'Italic', 'Underline', 'Strike', 'Subscript', 'Superscript', '-', 'RemoveFormat'] },
+                { name: 'paragraph', items: ['NumberedList', 'BulletedList', '-', 'Outdent', 'Indent', '-', 'Blockquote', 'CreateDiv', '-', 'JustifyLeft', 'JustifyCenter', 'JustifyRight', 'JustifyBlock', '-', 'BidiLtr', 'BidiRtl', 'Language'] },
+                { name: 'links', items: ['Link', 'Unlink', 'Anchor'] },
+                { name: 'insert', items: ['Image', 'Table', 'HorizontalRule', 'SpecialChar', 'PageBreak'] },
+                '/',
+                { name: 'styles', items: ['Styles', 'Format', 'Font', 'FontSize'] },
+                { name: 'colors', items: ['TextColor', 'BGColor'] },
+                { name: 'tools', items: ['Maximize', 'ShowBlocks'] }
+            ],
+            height: 300, // Chiều cao của CKEditor
+            removePlugins: 'elementspath', // Loại bỏ đường dẫn phần tử ở cuối CKEditor
+            resize_enabled: false // Không cho phép thay đổi kích thước CKEditor
+        });
+
+        // Hiển thị bản xem trước của hình ảnh tải lên
+        $("#ImageFile").change(function () {
+            var input = this;
+            if (input.files && input.files[0]) {
+                var reader = new FileReader();
+
+                reader.onload = function (e) {
+                    $('#imgPreview').attr('src', e.target.result).show();
+                };
+
+                reader.readAsDataURL(input.files[0]);
+            }
+        });
+    </script>
+}
+
+
+

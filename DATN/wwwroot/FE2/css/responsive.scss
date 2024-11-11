@@ -1,0 +1,165 @@
+@media (min-width: 426px) {
+  .home-wellcome {
+    .home-tabs {
+      a {
+        width: 33.33%;
+        text-align: center;
+      }
+    }
+  }
+}
+
+@media (min-width: 481px) {
+  .home-filter__item {
+    width: 50%;
+    float: left;
+    padding: 0 10px;
+  }
+}
+
+@media (min-width: 681px) {
+  .home-filter-inner {
+    padding: 30px 60px;
+    .home-filter__item {
+      width: 33.333333%;
+      float: left;
+      padding: 0 10px;
+    }
+    button {
+      width: calc(100% - 20px);
+      margin-left: 10px;
+    }
+  }
+  .gallery-image__item {
+    width: 50%;
+    float: left;
+  }
+  .page404 h1 {
+    font-size: 40px;
+  }
+  .page404__search input,
+  .contact-newsletter input {
+    width: 500px;
+  }
+  //fix footer in gallery page
+
+  .gallery-footer {
+    padding-top: 60px;
+  }
+}
+
+@media (min-width: 720px) {
+  .banner {
+    .banner__item-text {
+      p {
+        font-size: 17px;
+      }
+      h1 {
+        font-size: 63px;
+      }
+    }
+  }
+}
+
+@media (min-width: 992px) {
+  .cake__position {
+    position: relative;
+    img {
+      position: absolute;
+      width: 100%;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+    }
+  }
+}
+
+@media (min-width: 1140px) {
+  .banner {
+    .banner__item-text {
+      p {
+        font-size: 20px;
+      }
+      h1 {
+        font-size: 90px;
+      }
+    }
+  }
+}
+
+@media (min-width: 1025px) {
+  .home-filter-inner {
+    margin-bottom: 0;
+    padding: 40px 60px;
+    .home-filter__item {
+      width: 14%;
+      float: left;
+      padding: 0 2px;
+    }
+    button {
+      width: 15%;
+      margin-left: 9px;
+      height: 42px;
+      line-height: 42px;
+      margin-top: 28px;
+      padding: 0;
+    }
+  }
+  .gallery-image__item {
+    width: 33.333333%;
+    float: left;
+  }
+  .gallery-image {
+    .grid-hover {
+      opacity: 0;
+    }
+  }
+  .about-vintage__flex {
+    display: flex;
+  }
+  .hospitality {
+    display: flex;
+    &__item {
+      img {
+        width: auto;
+      }
+      width: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+  }
+}
+
+@media (min-width: 1201px) {
+  .gallery-image__item {
+    width: 25%;
+    float: left;
+  }
+}
+
+// MAX WIDTH ----------------------------->
+@media (max-width: 575px) {
+  .company {
+    padding-bottom: 15px;
+  }
+  .grid-item {
+    width: 50%;
+  }
+  .grid-item-2 {
+    width: 100%;
+  }
+}
+
+@media (max-width: 767px) {
+  .cake__position img {
+    width: 100%;
+  }
+}
+@media (max-width: 991px) {
+  .home-wellcome {
+    .home-tabs {
+      padding-top: 15px;
+    }
+  }
+}

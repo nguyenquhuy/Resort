@@ -1,0 +1,62 @@
+﻿@model DATN.Models.Account
+
+@{
+    ViewData["Title"] = "User Info";
+}
+
+<h2>User Info</h2>
+<form id="profile-form" method="post" enctype="multipart/form-data">
+    <div class="row">
+        <div class="col-md-6">
+            <div asp-validation-summary="ModelOnly" class="text-danger" role="alert"></div>
+            <div class="form-floating mb-3">
+                <label asp-for="Email" class="form-label"></label>
+                <input asp-for="Email" class="form-control" placeholder="Please choose your username." disabled />                
+            </div>
+            <div class="form-floating mb-3">
+                <label asp-for="Name" class="form-label"></label>
+                <input asp-for="Name" class="form-control" placeholder="Họ tên" />                
+            </div>
+            <div class="form-floating mb-3">
+                <label asp-for="CCCD" class="form-label"></label>
+                <input asp-for="CCCD" class="form-control" placeholder="Căn cước công dân" />                
+            </div>
+            <div class="form-floating mb-3">
+                <label asp-for="PhoneNumber" class="form-label"></label>
+                <input asp-for="PhoneNumber" class="form-control" placeholder="Số điện thoại" />
+            </div>
+            <button id="update-profile-button" type="submit" class="w-100 btn btn-lg btn-primary">Lưu</button>
+        </div>
+        <div class="col-md-6">
+            @if (Model.Avatar != null)
+            {
+                <img id="profileImage" src="@("~/Images/Account/" + Model.Avatar)" asp-append-version="true" width="70%" height="70%" style="cursor:pointer;" alt="Profile Image" />
+            }
+            <div class="form-group" style="display:none;">
+                <input asp-for="ImageFile" id="ImageFile" accept="image/*" name="ImageFile" />
+                <span asp-validation-for="ImageFile" class="text-danger"></span>
+            </div>
+        </div>
+    </div>
+</form>
+
+<!-- Add jQuery before your script -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+    // Click on the image to trigger file input
+    $('#profileImage').click(function () {
+        $('#ImageFile').click();
+    });
+
+    // Display preview when an image is selected
+    $('#ImageFile').change(function () {
+        var input = this;
+        if (input.files && input.files[0]) {
+            var reader = new FileReader();
+            reader.onload = function (e) {
+                $('#profileImage').attr('src', e.target.result); // Update current image
+            };
+            reader.readAsDataURL(input.files[0]);
+        }
+    });
+</script>

@@ -1,0 +1,85 @@
+.getInTouch-banner {
+  position: relative; }
+  .getInTouch-banner p {
+    font-size: 15px;
+    color: #c59d5f;
+    font-style: italic; }
+  .getInTouch-banner h2 {
+    font-size: 35px;
+    color: #fff; }
+  .getInTouch-banner__line {
+    background-color: #c59d5f;
+    height: 1px;
+    width: 125px;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    margin-top: 15px; }
+  .getInTouch-banner__center {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    position: absolute;
+    text-align: center; }
+
+.paralax {
+  background-image: url(../images/getInTouch/getInTouch-banner.jpeg);
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  min-height: 600px; }
+
+.getInTouch-icon {
+  padding: 100px 0 85px 0; }
+  .getInTouch-icon .getInTouch__item {
+    text-align: center;
+    position: relative;
+    padding-bottom: 15px; }
+    .getInTouch-icon .getInTouch__item svg {
+      color: #000;
+      height: 70px;
+      width: 70px;
+      border-radius: 50%;
+      padding: 15px;
+      -webkit-transition: 0.3s ease-in-out;
+      -moz-transition: 0.3s ease-in-out;
+      transition: 0.3s ease-in-out; }
+      .getInTouch-icon .getInTouch__item svg:hover {
+        background-color: #000;
+        color: #fff; }
+  .getInTouch-icon__center h2 {
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: #1e1e1e;
+    line-height: 20px;
+    font-size: 16px; }
+  .getInTouch-icon__center .getInTouch-padding {
+    padding-top: 10px; }
+    .getInTouch-icon__center .getInTouch-padding a {
+      color: #999; }
+      .getInTouch-icon__center .getInTouch-padding a:hover {
+        color: #c59d5f; }
+  .getInTouch-icon__line {
+    background-color: #c59d5f;
+    height: 1px;
+    width: 70px;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 105px; }
+
+.getInTouch-contact {
+  padding: 100px 0; }
+  .getInTouch-contact img {
+    width: auto; }
+  .getInTouch-contact h3 {
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: #1e1e1e;
+    line-height: 20px;
+    font-size: 16px; }
+
+/*# sourceMappingURL=getInTouch.css.map */

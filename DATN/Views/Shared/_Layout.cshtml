@@ -1,0 +1,368 @@
+﻿@using System.Security.Claims
+@using DATN.Controllers
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Index - LakeInn</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<!-- CSS -->
+	<link rel="stylesheet" type="text/css" href="~/FE/css/shared.css">
+	<link rel="stylesheet" type="text/css" href="~/FE/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="~/FE/css/jquery-ui.css">
+	<link rel="stylesheet" type="text/css" href="~/FE/css/css/all.css">
+	<link rel="stylesheet" type="text/css" href="~/FE/slick/slick.css" />
+	<link rel="stylesheet" type="text/css" href="~/FE/slick/slick-theme.css" />
+	<link rel="stylesheet" type="text/css" href="~/FE/css/bootstrap-datepicker3.css">
+	<link rel="stylesheet" type="text/css" href="~/FE/css/flaticon.css">
+	<link rel="icon" type="image/png" href="~/FE/img/favicon.png">
+	<link rel="preconnect" href="https://fonts.gstatic.com">
+	<link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@300&display=swap" rel="stylesheet">
+</head>
+<body>
+	<!-- back to top -->
+	<div class="backToTop">
+		<i class="fa fa-angle-up"></i>
+	</div>
+	<!-- end back to top -->
+	<!-- preloader -->
+	@* <div id="preloader">
+		<div class="lds-dual-ring"></div>
+	</div> *@
+	<!-- preloader -->
+	<!-- header -->
+	<div class="container-fluid header-box">
+		<div class="row header-info">
+			<div class="container">
+				<div class="row" style="position: relative;">
+					<p class="info">
+						<span>
+							<a href="#"><i class="fa fa-phone"></i> 0242 111 7777</a>
+						</span>
+						<span>
+							<a href="#"><i class="fas fa-envelope"></i> huyn0202pl@gmail.com</a>
+						</span>
+					</p>
+					<p class="icon">
+						<a href="#"><i class="fab fa-tripadvisor"></i></a>
+						<a href="#"><i class="fab fa-facebook"></i></a>
+						<a href="#"><i class="fab fa-instagram"></i></a>
+						<a href="#"><i class="fab fa-twitter"></i></a>
+					</p>
+				</div>
+			</div>
+		</div>
+		<div class="row header">
+			<div class="container">
+				<div class="row forResLogo" style="position: relative;">
+					<a href="index.html"></a>
+					<div class="menu">
+						<li class="current-page">
+							<a href="/" class="title">Home</a>
+							<div class="drop-menu">
+								<div class="col-12 item first"><a href="/">Home 1</a></div>
+								<div class="col-12 item"><a href="#">Home 2</a></div>
+							</div>
+						</li>
+						<li>
+							<a href="#" class="title">Feature</a>
+							<div class="drop-menu">
+								<div class="col-12 item first">
+									<a href="#">Pages<span><i class="fa fa-angle-right"></i></span></a>
+									<div class="drop-child-menu each">
+										<div class="col-12 item"><a href="about.html">About</a></div>
+										<div class="col-12 item"><a href="our-team.html">Team</a></div>
+										<div class="col-12 item"><a href="#">Members</a></div>
+										<div class="col-12 item"><a href="contact.html">Contact</a></div>
+									</div>
+								</div>
+								<div class="col-12 item"><a href="#">Typography</a></div>
+								<div class="col-12 item"><a href="#">Shortcode</a></div>
+								<div class="col-12 item"><a href="#">Video Tutorials</a></div>
+								<div class="col-12 item"><a href="#">Supports</a></div>
+								<div class="col-12 item"><a href="#">404</a></div>
+							</div>
+						</li>
+						<li>
+							<a href="/ListRoom" class="title">Room & Rates</a>
+						</li>
+						<li>
+							<a href="#" class="title">Blog</a>
+							<div class="drop-menu">
+								<div class="col-12 item first"><a href="#">Classic</a></div>
+								<div class="col-12 item">
+									<a href="#">Mansory<span><i class="fa fa-angle-right"></i></span></a>
+									<div class="drop-child-menu each">
+										<div class="col-12 item"><a href="#">Mansory columns 2</a></div>
+										<div class="col-12 item"><a href="#">Mansory columns 3</a></div>
+									</div>
+								</div>
+								<div class="col-12 item">
+									<a href="#">Portfolio<span><i class="fa fa-angle-right"></i></span></a>
+									<div class="drop-child-menu each">
+										<div class="col-12 item"><a href="#">Portfolio columns 2</a></div>
+										<div class="col-12 item"><a href="check-article.html">Portfolio columns 3</a></div>
+									</div>
+								</div>
+								<div class="col-12 item"><a href="#">Post Format</a></div>
+							</div>
+						</li>
+						<li>
+							<a href="#" class="title">Gallery</a>
+							<div class="drop-menu">
+								<div class="col-12 item first"><a href="gallery-grid.html">Grids</a></div>
+								<div class="col-12 item"><a href="#">Mansory</a></div>
+								<div class="col-12 item"><a href="#">Cobbles</a></div>
+							</div>
+						</li>
+						<li>
+							<a href="#" class="title">Shop</a>
+						</li>
+					</div>
+					<!-- res header button -->
+					<div class="headerBtn">
+						<div class="box" id="box1">
+							<div class="line1 line"></div>
+							<div class="line2 line"></div>
+							<div class="line3 line"></div>
+						</div>
+						<div class="box" id="box2">
+							<div class="line4 line"></div>
+							<div class="line5 line"></div>
+							<div class="line6 line"></div>
+						</div>
+						<div class="box" id="box3">
+							<div class="line7 line"></div>
+							<div class="line8 line"></div>
+							<div class="line9 line"></div>
+						</div>
+					</div>
+					<!-- end res header button -->
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- end header -->
+	<!-- resHeader -->
+	<div class="resHeader container-fluid" id="resHeader">
+		<div class="row">
+			<div class="hidden-drop-menu" id="dropMenu">
+				<div class="col-12 itemBox">
+					<div class="pre-hid">Home <span><i class="fa fa-angle-down"></i></span></div>
+					<div class="hid-item container">
+						<div class="row">
+							<div class="child-menu each">
+								<div class="col-12">
+									<div class="hid-child"><a href="index.html">Home 1</a></div>
+								</div>
+								<div class="col-12">
+									<div class="hid-child"><a href="#">Home 2</a></div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="col-12 itemBox">
+					<div class="pre-hid">Features <span><i class="fa fa-angle-down"></i></span></div>
+					<div class="hid-item container">
+						<div class="row">
+							<div class="child-menu each">
+								<div class="col-12">
+									<div class="hid-child pre-hid-child">Pages <span><i class="fa fa-angle-down"></i></span></div>
+									<div class="hid-item container">
+										<div class="row">
+											<div class="grandchild-menu each">
+												<div class="col-12">
+													<div class="hid-child">
+														<a href="about.html">about</a>
+													</div>
+												</div>
+												<div class="col-12">
+													<div class="hid-child"><a href="our-team.html">team</a></div>
+												</div>
+												<div class="col-12">
+													<div class="hid-child"><a href="#">team members</a></div>
+												</div>
+												<div class="col-12">
+													<div class="hid-child"><a href="contact.html">contact</a></div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="col-12">
+									<div class="hid-child">
+										<a href="#">typography</a>
+									</div>
+								</div>
+								<div class="col-12">
+									<div class="hid-child">
+										<a href="#">short codes</a>
+									</div>
+								</div>
+								<div class="col-12">
+									<div class="hid-child">
+										<a href="#">video tutorials</a>
+									</div>
+								</div>
+								<div class="col-12">
+									<div class="hid-child">
+										<a href="#">supports</a>
+									</div>
+								</div>
+								<div class="col-12">
+									<div class="hid-child">
+										<a href="#">404</a>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="col-12 itemBox  ">
+					<div class="pre-hid"><a href="/ListRoom">room & rate</a></div>
+				</div>
+				<div class="col-12 itemBox  ">
+					<div class="pre-hid">blog <span><i class="fa fa-angle-down"></i></span></div>
+					<div class="hid-item container">
+						<div class="row">
+							<div class="child-menu each">
+								<div class="col-12">
+									<div class="hid-child"><a href="#">classic</a></div>
+								</div>
+								<div class="col-12">
+									<div class="hid-child pre-hid-child"><a href="#">mansory <span><i class="fa fa-angle-down"></i></span></a></div>
+									<div class="hid-item container">
+										<div class="row">
+											<div class="grandchild-menu each">
+												<div class="col-12">
+													<div class="hid-child"><a href="#">mansory columns 2</a></div>
+												</div>
+												<div class="col-12">
+													<div class="hid-child"><a href="#">mansory columns 3</a></div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="col-12">
+									<div class="hid-child pre-hid-child"><a href="#">portfolio <span><i class="fa fa-angle-down"></i></span></a></div>
+									<div class="hid-item container">
+										<div class="row">
+											<div class="grandchild-menu each">
+												<div class="col-12">
+													<div class="hid-child"><a href="#">portfolio columns 2</a></div>
+												</div>
+												<div class="col-12">
+													<div class="hid-child"><a href="check-article.html">portfolio columns 3</a></div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="col-12">
+									<div class="hid-child"><a href="#">post formats</a></div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="col-12 itemBox  ">
+					<div class="pre-hid">Gallery <span><i class="fa fa-angle-down"></i></span></div>
+					<div class="hid-item container">
+						<div class="row">
+							<div class="child-menu each">
+								<div class="col-12">
+									<div class="hid-child"><a href="gallery-grid.html">grid</a></div>
+								</div>
+								<div class="col-12">
+									<div class="hid-child"><a href="#">mansory</a></div>
+								</div>
+								<div class="col-12">
+									<div class="hid-child"><a href="#">cobbles</a></div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="col-12 itemBox  ">
+					<div class="pre-hid hid-item"><a href="/ListService">Service</a></div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- end resHeader -->
+    <div class="container">
+        <main role="main" class="pb-3">
+            @RenderBody()
+        </main>
+    </div>
+
+	<!-- footer -->
+	<div class="container-fluid footer">
+		<div class="row info">
+			<div class="container">
+				<div class="row">
+					<div class="col-xl-4 col-lg-4 col-md-4 col-sm-12 col-12 item contact">
+						<p class="title">Contact Us</p>
+						<p class="criteria">Your Email<span>*</span></p>
+						<input type="email" name="">
+						<p class="criteria">Your Name<span>*</span></p>
+						<input type="name" name="">
+						<p class="criteria">Message<span>*</span></p>
+						<textarea></textarea>
+						<div class="policy">
+							<div class="checkbox">
+								<input type="checkbox" name="" id="check-policy">
+							</div>
+							<div class="words">
+								<p>I agree that my submitted data is being collected and stored. For further details on handling user data, see our</br><span><a href="#">Privacy Policy</a></span></p>
+							</div>
+							<button class="condition-policy">send message</button>
+						</div>
+					</div>
+					<div class="col-xl-4 col-lg-4 col-md-4 col-sm-12 col-12 item category">
+						<p class="title">Categories</p>
+						<li><a href="#">Restaurant and Inn</a></li>
+						<li><a href="#">The Gallery</a></li>
+						<li><a href="#">The Bedrooms</a></li>
+						<li><a href="#">The Menus</a></li>
+						<li><a href="#">The Lastest</a></li>
+						<li><a href="#">The Story</a></li>
+						<li><a href="#">The Detail</a></li>
+						<p class="title" style="margin-top: 50px;">Connect</p>
+						<p class="icon">
+							<a href="#"><i class="fab fa-tripadvisor"></i></a>
+							<a href="#"><i class="fab fa-facebook"></i></a>
+							<a href="#"><i class="fab fa-instagram"></i></a>
+							<a href="#"><i class="fab fa-twitter"></i></a>
+						</p>
+					</div>
+					<div class="col-xl-4 col-lg-4 col-md-4 col-sm-12 col-12 item direction">
+						<p class="title">Get Directions</p>
+						<div class="map">
+							<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14878.996082580214!2d105.85309715000001!3d21.2021269!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x313503dbfc31473f%3A0xcf83ccf9a5eb258c!2zUGjDuSBM4buXLCBTw7NjIFPGoW4sIEjDoCBO4buZaQ!5e0!3m2!1svi!2s!4v1729579984977!5m2!1svi!2s" width="100%" height="100%" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+						</div>
+						<p class="address">Sóc sơn Hà Nội</p>
+						<p class="address">Tel: 0242 111 7777</p>
+						<p class="address">Email: huyn0202pl@gmail.com</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- end footer -->
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+    <!-- JS -->
+	@* <script type="text/javascript" src="~/FE/js/jquery-3.4.1.min.js"></script> *@
+	<script type="text/javascript" src="~/FE/js/shared.js"></script>
+	<script type="text/javascript" src="~/FE/slick/slick.min.js"></script>
+	<script type="text/javascript" src="~/FE/js/bootstrap-datepicker.min.js"></script>
+	<script type="text/javascript" src="~/FE/js/jquery.waypoints.min.js"></script>
+	<script type="text/javascript" src="~/FE/js/jquery.counterup.js"></script>
+</body>
+</html>

@@ -66,6 +66,22 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxSZXNldFBhc3N3b3JkU3VjY2Vzcy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
+[D:/LTWNC/DATN/DATN/Views/Amenity/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQW1lbml0eVxDcmVhdGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/LTWNC/DATN/DATN/Views/Amenity/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQW1lbml0eVxEZWxldGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/LTWNC/DATN/DATN/Views/Amenity/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQW1lbml0eVxFZGl0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/LTWNC/DATN/DATN/Views/Amenity/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQW1lbml0eVxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
 [D:/LTWNC/DATN/DATN/Views/Article/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQXJ0aWNsZVxDcmVhdGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
@@ -82,8 +98,20 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQXJ0aWNsZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
+[D:/LTWNC/DATN/DATN/Views/Booking/Detail.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQm9va2luZ1xEZXRhaWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/LTWNC/DATN/DATN/Views/Booking/DetailBooking.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQm9va2luZ1xEZXRhaWxCb29raW5nLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
 [D:/LTWNC/DATN/DATN/Views/Booking/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQm9va2luZ1xJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/LTWNC/DATN/DATN/Views/Booking/ListBooking.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQm9va2luZ1xMaXN0Qm9va2luZy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
 [D:/LTWNC/DATN/DATN/Views/Booking/MakeReservation.cshtml]
@@ -104,6 +132,10 @@ build_metadata.AdditionalFiles.CssScope =
 
 [D:/LTWNC/DATN/DATN/Views/Error/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRXJyb3JcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/LTWNC/DATN/DATN/Views/Home/About.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxBYm91dC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
 [D:/LTWNC/DATN/DATN/Views/Home/DetailArticle.cshtml]

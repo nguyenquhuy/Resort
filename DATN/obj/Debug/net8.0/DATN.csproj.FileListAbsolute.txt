@@ -269,3 +269,4 @@ D:\LTWNC\DATN\DATN\bin\Debug\net8.0\runtimes\win\lib\net7.0\Microsoft.Win32.Syst
 D:\LTWNC\DATN\DATN\bin\Debug\net8.0\runtimes\win\lib\net7.0\System.Drawing.Common.dll
 D:\LTWNC\DATN\DATN\bin\Debug\net8.0\runtimes\win\lib\net7.0\System.Security.Cryptography.ProtectedData.dll
 D:\LTWNC\DATN\DATN\bin\Debug\net8.0\runtimes\win\lib\net7.0\System.Windows.Extensions.dll
+D:\LTWNC\DATN\DATN\obj\Debug\net8.0\DATN.sourcelink.json

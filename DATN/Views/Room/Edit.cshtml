@@ -31,12 +31,14 @@
                 <input asp-for="Room.Price" class="form-control" />
                 <span asp-validation-for="Room.Price" class="text-danger"></span>
             </div>
-
+            <div class="form-group">
+                <label asp-for="SelectedAmenities" class="control-label ">Tiện nghi</label>
+                <select asp-for="SelectedAmenities" asp-items="Model.Room.MultiCategoryList" class="form-control js-example-basic-multiple" multiple></select>
+            </div>
             @if (Model.Room.Image != null)
             {
                 <img src="@("~/Images/Room/" + Model.Room.Image)" asp-append-version="true" width="50px" height="50px" />
-            }
-
+            }            
             <div class="form-group">
                 <label class="label-control">Hình ảnh phòng</label>
                 <input asp-for="Room.ImageFile" id="Profileimg" accept="image/*" />
@@ -51,6 +53,11 @@
         </div>
 
         <div class="col-md-8">
+            <div class="form-group">
+                <label class="text-danger">Nội dung chi tiết</label>
+                <textarea asp-for="Room.MetaDescription" class="form-control" id="editor" rows="10"></textarea>
+                <span asp-validation-for="Room.MetaDescription" class="text-danger"></span>
+            </div>
             <label class="control-label">Hình ảnh chi tiết</label>
             <br />
 
@@ -108,6 +115,33 @@
         await Html.RenderPartialAsync("_ValidationScriptsPartial");
     }
     <script>
+        $(document).ready(function () {
+            $('.js-example-basic-multiple').select2();
+        });
+
+    </script>
+    <script src="https://cdn.ckeditor.com/4.16.2/full/ckeditor.js"></script> <!-- Sử dụng CKEditor 4 -->
+    <script>
+        // Khởi tạo CKEditor với các tùy chọn cho thanh công cụ chi tiết
+        CKEDITOR.replace('editor', {
+            toolbar: [
+                { name: 'document', items: ['Source', '-', 'NewPage', 'Preview', '-', 'Templates'] },
+                { name: 'clipboard', items: ['Cut', 'Copy', 'Paste', 'PasteText', 'PasteFromWord', '-', 'Undo', 'Redo'] },
+                { name: 'editing', items: ['Find', 'Replace', '-', 'SelectAll', '-', 'Scayt'] },
+                '/',
+                { name: 'basicstyles', items: ['Bold', 'Italic', 'Underline', 'Strike', 'Subscript', 'Superscript', '-', 'RemoveFormat'] },
+                { name: 'paragraph', items: ['NumberedList', 'BulletedList', '-', 'Outdent', 'Indent', '-', 'Blockquote', 'CreateDiv', '-', 'JustifyLeft', 'JustifyCenter', 'JustifyRight', 'JustifyBlock', '-', 'BidiLtr', 'BidiRtl', 'Language'] },
+                { name: 'links', items: ['Link', 'Unlink', 'Anchor'] },
+                { name: 'insert', items: ['Image', 'Table', 'HorizontalRule', 'SpecialChar', 'PageBreak'] },
+                '/',
+                { name: 'styles', items: ['Styles', 'Format', 'Font', 'FontSize'] },
+                { name: 'colors', items: ['TextColor', 'BGColor'] },
+                { name: 'tools', items: ['Maximize', 'ShowBlocks'] }
+            ],
+            height: 300, // Chiều cao của CKEditor
+            removePlugins: 'elementspath', // Loại bỏ đường dẫn phần tử ở cuối CKEditor
+            resize_enabled: false // Không cho phép thay đổi kích thước CKEditor
+        });
         // Preview uploaded image
         document.querySelectorAll('.detailed-image img').forEach(function (img) {
             img.addEventListener('click', function () {

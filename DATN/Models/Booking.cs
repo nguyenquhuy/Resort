@@ -38,8 +38,13 @@ namespace DATN.Models
         public int Adult { get; set; }
         [DisplayName("Tổng tiền")]
         public double Total { get; set; }
+
+        [ForeignKey("Account")]
+        public int? AccountId { get; set; }
+        public Account Account { get; set; }
         // Navigation property
         public ICollection<BookingRoom> BookingRooms { get; set; } = new List<BookingRoom>();
+        public ICollection<BookingService> BookingServices { get; set; } = new List<BookingService>();
     }
 
     public class BookingRoom
@@ -50,6 +55,18 @@ namespace DATN.Models
         public Booking Booking { get; set; }
         [ForeignKey("Room")]
         public int RoomId { get; set; }
-        public Room Room { get; set; }
+        public Room Room { get; set; }        
+        public int Quantity { get; set; }  
+    }
+
+    public class BookingService
+    {
+        public int Id { get; set; }
+        [ForeignKey("Booking")]
+        public int BookingId { get; set; }
+        public Booking Booking { get; set; }
+        [ForeignKey("Service")]
+        public int ServiceId { get; set; }
+        public Service service { get; set; }
     }
 }

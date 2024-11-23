@@ -1,26 +1,168 @@
-﻿@model List<Room>
+﻿@model IEnumerable<DATN.Models.Room>
 
-<form method="post" action="@Url.Action("Index", "Booking")">
-    <!-- Phần tìm kiếm như trên -->
-</form>
-
-@if (Model != null && Model.Any())
-{
-    <div class="available-rooms">
-        <h3>Danh sách phòng còn trống</h3>
-        <ul>
-            @foreach (var room in Model)
-            {
-                <li>
-                    <p>@room.Name</p>
-                    <p>Giá: @room.Price</p>
-                    <!-- Thêm thông tin chi tiết phòng nếu cần -->
-                </li>
-            }
-        </ul>
+<style>
+    .sticky-button {
+        position: -webkit-sticky;
+        position: sticky;
+        top: 200px; /* Adjust this value as needed */
+        margin:auto;
+    }
+</style>
+<!-- page title -->
+<div class="page-title container-fluid">
+    <div class="container" style="position: relative;">
+        <p class="title">Đặt phòng</p>
+        <p class="page-tree">
+            <span class="home"><a href="index.html">Trang chủ</a></span>
+            <span><i class="fa fa-angle-right"></i></span>
+            <span>Đặt phòng</span>
+        </p>
     </div>
-}
-else
-{
-    <p>Không có phòng trống trong khoảng thời gian đã chọn.</p>
-}
+</div>
+<!-- end page title -->
+<div class="container">
+    <!-- Search Filters (Horizontal layout above the room listings) -->
+    <div class="row mb-4">
+        <div class="col-md-12">
+            <form method="post" action="@Url.Action("Index", "Booking")">
+                <div class="form-row">
+                    <div class="form-group col-md-3">
+                        <label>Loại phòng</label>
+                        <select class="form-control" name="roomTypeId">
+                            <option value="">Tất cả phòng</option>
+                            @foreach (var item in ViewBag.RoomTypes)
+                            {
+                                <option value="@item.Id">@item.Name</option>
+                            }
+                        </select>
+                    </div>
+                    <div class="form-group col-md-3">
+                        <label>Ngày đặt phòng</label>
+                        <input type="date" name="checkInDate" id="checkInDate" class="form-control" value="@ViewBag.CheckInDate?.ToString("yyyy-MM-dd")" />
+                    </div>
+                    <div class="form-group col-md-3">
+                        <label>Ngày nhận phòng</label>
+                        <input type="date" name="checkOutDate" id="checkOutDate" class="form-control" value="@ViewBag.CheckOutDate?.ToString("yyyy-MM-dd")" />
+                    </div>
+                    <div class="form-group col-md-3 d-flex align-items-end">
+                        <button type="submit" class="btn btn-primary w-100">TÌM KIẾM</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Room Listings below the search form -->
+    <form method="post" action="@Url.Action("MakeReservation", "Booking")">
+        <div class="row">
+            <div class="col-md-9">
+                @foreach (var room in Model)
+                {
+                    <div class="room-summary mb-4 p-3 border rounded">
+                        <div class="row">
+                            <!-- Room Image on the left -->
+                            <div class="col-md-4">
+                                <img src="~/Images/Room/@room.Image" alt="Room Image" class="room-image img-fluid" />
+                            </div>
+
+                            <!-- Room Information on the right -->
+                            <div class="col-md-5">
+                                <h3>@room.Name</h3>
+                                <p>Loại phòng: @room.RoomType?.Name</p>
+                                <p>Giá: @room.Price.ToString("#,##0 VND")</p>
+                                <button type="button" class="btn btn-secondary toggle-details" onclick="toggleRoomDetails(@room.ID)">Chi tiết phòng</button>
+                            </div>
+
+                            <!-- Quantity Selector for Each Room -->
+                            <div class="col-md-3">
+                                <select name="quantities[@room.ID]" class="quantity-selector form-control" data-price="@room.Price" onchange="calculateTotal()">
+                                    <option value="0">0</option>
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5</option>
+                                </select>
+                            </div>
+                            <!-- Hidden Inputs for RoomId -->
+                            <input type="hidden" name="bookRoomID" value="@room.ID" />
+                            <!-- Room Details (hidden by default) -->
+                            <div id="details-@room.ID" class="room-details mt-3" style="display: none;">
+                                <p>@room.Description</p>
+                                <br />
+                                <h4>Tiện nghi</h4>
+                                <div class="row">
+                                    @foreach (var item in room.RoomAmenities)
+                                    {
+                                        <div class="col-md-3 col-12 mb-2">
+                                            <span class="checkmark">-</span> @item.Amenity.Name
+                                        </div>
+                                    }
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                }
+
+                <!-- Include the search dates as hidden inputs to send with the form -->
+                <input type="hidden" name="checkInDate" value="@ViewBag.CheckInDate?.ToString("yyyy-MM-dd")" />
+                <input type="hidden" name="checkOutDate" value="@ViewBag.CheckOutDate?.ToString("yyyy-MM-dd")" />
+                <input type="hidden" id="totalAmount" name="totalAmount" value="0" /> <!-- This holds the calculated total amount -->
+            </div>
+
+            <!-- Sticky "Đặt phòng" Button on the Right -->
+            <div class="col-md-3">
+                <div class="sticky-button">
+                    <input type="submit" value="Đặt phòng" class="btn btn-primary w-100"></input>
+                    <p>Giá: <span id="displayTotal">0 VND</span></p>
+                    <p>Bạn ở: <span id="displayNights">0</span> đêm</p>
+                </div>
+
+            </div>
+        </div>
+    </form>
+
+</div>
+
+
+
+<script>
+    function calculateTotal() {
+        let totalAmount = 0;
+
+        // Lấy ngày nhận phòng và ngày trả phòng từ hidden inputs
+        const checkInDate = new Date(document.querySelector('input[name="checkInDate"]').value);
+        const checkOutDate = new Date(document.querySelector('input[name="checkOutDate"]').value);
+
+        // Tính số đêm (nếu dữ liệu hợp lệ)
+        const oneDay = 24 * 60 * 60 * 1000; // Số mili-giây trong 1 ngày
+        const numberOfNights = Math.max(0, Math.round((checkOutDate - checkInDate) / oneDay));
+
+        // Hiển thị số đêm ở
+        document.getElementById('displayNights').innerText = numberOfNights;
+
+        // Lặp qua từng selector để tính tổng tiền
+        document.querySelectorAll('.quantity-selector').forEach(function (selector) {
+            const quantity = parseInt(selector.value); // Số lượng phòng đã chọn
+            const price = parseFloat(selector.getAttribute('data-price')); // Giá tiền phòng
+
+            // Nếu có số lượng và số đêm hợp lệ, thêm vào tổng tiền
+            if (quantity > 0 && numberOfNights > 0) {
+                totalAmount += quantity * price * numberOfNights;
+            }
+        });
+
+        // Hiển thị tổng tiền và đặt giá trị vào input ẩn
+        document.getElementById('displayTotal').innerText = totalAmount.toLocaleString() + " VND";
+        document.getElementById('totalAmount').value = totalAmount;
+    }
+
+
+
+    function toggleRoomDetails(roomId) {
+        const details = document.getElementById(`details-${roomId}`);
+        details.style.display = details.style.display === "none" ? "block" : "none";
+    }
+
+</script>
+

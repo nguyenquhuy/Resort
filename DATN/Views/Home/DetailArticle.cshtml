@@ -33,15 +33,31 @@
 			text-decoration: underline;
 		}
 
+	.service-image {
+		max-width: 100%;
+		border-radius: 8px;
+	}
+
+	.service-description {
+		font-size: 1.2rem;
+		line-height: 1.6;
+	}
+
+	.article-container {
+		margin-top: 30px;
+	}
+
 </style>
 <!-- page title -->
 <div class="page-title container-fluid">
 	<div class="container" style="position: relative;">
 		<p class="title">@Model.Title</p>
 		<p class="page-tree">
-			<span class="home"><a href="/">Home</a></span>
+			<span class="home"><a href="/">Trang chủ</a></span>
 			<span><i class="fa fa-angle-right"></i></span>
-			<span><a href="/DetailArticle/@Model.Id">@Model.Title</a></span>
+			<span><a href="/ListArticle">Bài viết</a></span>
+			<span><i class="fa fa-angle-right"></i></span>
+			<span><a href="#">@Model.Title</a></span>
 		</p>
 	</div>
 </div>
@@ -51,7 +67,7 @@
 	<div class="row">
 		<div class="container">
 			<div class="row">
-				<div class="left col-xl-8 col-lg-8 col-md-12">
+				<div class="left col-xl-12 col-lg-12 col-md-12">
 					<div class="row" style="width: 100%;">
 						<div class="room-img left-item">
 							<img src="~/Images/Article/@Model.Image" class="bg-replace">
@@ -69,18 +85,10 @@
 								</div>
 							</div>
 						</div>
-						<div class="criteria left-item">
-							<div class="row">
-								<div class="col-12">
-									<p class="description">
-										@Html.Raw(Model.Content)
-									</p>
-								</div>
-							</div>
-						</div>
+						
 					</div>
 				</div>
-				<div class="right col-xl-4 col-lg-4 col-md-12">
+@* 				<div class="right col-xl-4 col-lg-4 col-md-12">
 					<div class="row" style="width: 100%;">
 						<div class="post right-item col-12">
 							<p class="title">Bài viết khác</p>
@@ -102,9 +110,17 @@
 							<a href="/ListArticle" class="view-all-link">Xem tất cả</a>
 						</div>
 					</div>
+				</div> *@
 				</div>
-
+			<div class="criteria left-item">
+				<div class="row">
+					<div class="col-12">
+						<p class="description">
+							@Html.Raw(Model.Content)
+						</p>
+					</div>
 				</div>
+			</div>
 			</div>
 		</div>
 	</div>

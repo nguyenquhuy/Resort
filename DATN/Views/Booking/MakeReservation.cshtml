@@ -1,55 +1,130 @@
-﻿@model DATN.ViewModel.BookRoom
-
-<form asp-action="SubmitReservation" method="post">
-    <h3>Reservation for @Model.Room.Name</h3>
-    <input type="hidden" asp-for="@Model.Room.ID"/>
-    <div>
-        <label asp-for="Booking.Name"></label>
-        <input asp-for="Booking.Name" />
-        <span asp-validation-for="Booking.Name"></span>
+﻿@using System.Security.Claims
+@model List<(string RoomName, int Quantity, decimal Price, int roomID)>
+@{
+    var checkin = @ViewBag.CheckInDate.ToString("dd/MM/yyyy");
+    var checkout = @ViewBag.CheckOutDate.ToString("dd/MM/yyyy");
+    var total = @ViewBag.TotalPrice;
+    var night = @ViewBag.NumberOfNights;
+    var nameClaim = User.Claims.FirstOrDefault(c => c.Type == ClaimTypes.Authentication)?.Value ?? "";
+    var emailClaim = User.Claims.FirstOrDefault(c => c.Type == ClaimTypes.Name)?.Value ?? "";
+    var addressClaim = User.Claims.FirstOrDefault(c => c.Type == ClaimTypes.StreetAddress)?.Value ?? "";
+    var phoneClaim = User.Claims.FirstOrDefault(c => c.Type == ClaimTypes.MobilePhone)?.Value ?? "";
+}
+<div class="page-title container-fluid">
+    <div class="container" style="position: relative;">
+        <p class="title">Thông tin đặt phòng</p>
+        <p class="page-tree">
+            <span class="home"><a href="/">Trang chủ</a></span>
+            <span><i class="fa fa-angle-right"></i></span>
+            <span>Đặt phòng</span>
+            <span><i class="fa fa-angle-right"></i></span>
+            <span>Thông tin đặt phòng</span>
+        </p>
     </div>
+</div>
+<div class="container mt-4">
 
-    <div>
-        <label asp-for="Booking.Address"></label>
-        <input asp-for="Booking.Address" />
-        <span asp-validation-for="Booking.Address"></span>
+    <div class="row mt-4">
+        <!-- Booking Information -->
+        <div class="col-md-6 mb-4">
+            <div class="card shadow-sm border-0">
+                <div class="card-header bg-primary text-white">
+                    <h5 class="mb-0">Thông tin đặt phòng của bạn</h5>
+                </div>
+                <div class="card-body">
+                    <ul class="list-group list-group-flush">
+                        @foreach (var room in Model)
+                        {
+                            <li class="list-group-item">
+                                @if (room.Quantity > 1)
+                                {
+                                    <strong>@room.Quantity x</strong> @room.RoomName
+                                    <span class="text-muted">- @room.Price.ToString("#,##0 VND")</span>
+                                }
+                                else
+                                {
+                                    @room.RoomName
+                                    <span class="text-muted">- @room.Price.ToString("#,##0 VND")</span>
+                                }
+                            </li>
+                        }
+                    </ul>
+                    <p class="mt-3"><strong>Ngày nhận phòng:</strong> @ViewBag.CheckInDate.ToString("dd/MM/yyyy")</p>
+                    <p><strong>Ngày trả phòng:</strong> @ViewBag.CheckOutDate.ToString("dd/MM/yyyy")</p>
+                    <p><strong>Tổng tiền:</strong> <span class="text-danger">@ViewBag.TotalPrice.ToString("#,##0 VND")</span></p>
+                    <h3>Bạn ở: <strong>@night đêm</strong></h3>
+                </div>
+            </div>
+        </div>
+
+        <!-- Personal Information Form -->
+        <div class="col-md-6 mb-4">
+            <form method="post" action="@Url.Action("SubmitReservation", "Booking")">
+                <!-- Personal Information -->
+                <div class="card shadow-sm border-0 mb-4">
+                    <div class="card-header bg-primary text-white">
+                        <h5 class="mb-0">Thông tin của bạn</h5>
+                    </div>
+                    <div class="card-body">
+                        <div class="form-group">
+                            <label for="Name">Họ và tên</label>
+                            <input type="text" name="name" class="form-control" value="@nameClaim" required />
+                        </div>
+                        <div class="form-group">
+                            <label for="Address">Địa chỉ</label>
+                            <input type="text" name="address" class="form-control" value="@addressClaim" required />
+                        </div>
+                        <div class="form-group">
+                            <label for="Email">Email</label>
+                            <input type="email" name="email" class="form-control" value="@emailClaim" required />
+                        </div>
+                        <div class="form-group">
+                            <label for="Phone">Số điện thoại</label>
+                            <input type="text" name="phone" class="form-control" value="@phoneClaim" required />
+                        </div>
+                        <div class="form-group">
+                            <label for="Child">Trẻ em</label>
+                            <input type="number" name="child" class="form-control" min="0" />
+                        </div>
+                        <div class="form-group">
+                            <label for="Adult">Người lớn</label>
+                            <input type="number" name="adult" class="form-control" min="1" required />
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Services Section -->
+                <div class="card shadow-sm border-0">
+                    <div class="card-header bg-secondary text-white">
+                        <h5 class="mb-0">Dịch vụ</h5>
+                    </div>
+                    <div class="card-body">
+                        @foreach (var service in ViewBag.Services as List<Service>)
+                        {
+                            <div class="form-check">
+                                <input type="checkbox" class="form-check-input" id="service_@service.Id" name="selectedServices" value="@service.Id" />
+                                <label class="form-check-label" for="service_@service.Id">@service.Title</label>
+                            </div>
+                        }
+                    </div>
+                </div>
+
+                <!-- Hidden Inputs -->
+                <input type="hidden" name="checkin" value="@checkin" />
+                <input type="hidden" name="checkout" value="@checkout" />
+                <input type="hidden" name="total" value="@total" />
+                @foreach (var room in Model)
+                {
+                    <input type="hidden" name="quantities[@room.roomID]" value="@room.Quantity" />
+                }
+
+                <!-- Submit Button -->
+                <button type="submit" class="btn btn-primary w-100 mt-4">Đặt phòng</button>
+            </form>
+        </div>
     </div>
+</div>
 
-    <div>
-        <label asp-for="Booking.Phone"></label>
-        <input asp-for="Booking.Phone" />
-        <span asp-validation-for="Booking.Phone"></span>
-    </div>
 
-    <div>
-        <label asp-for="Booking.Adult"></label>
-        <input asp-for="Booking.Adult" />
-        <span asp-validation-for="Booking.Adult"></span>
-    </div>
 
-    <div>
-        <label asp-for="Booking.Child"></label>
-        <input asp-for="Booking.Child" />
-        <span asp-validation-for="Booking.Child"></span>
-    </div>
 
-    <div>
-        <label asp-for="Booking.Email"></label>
-        <input asp-for="Booking.Email" />
-        <span asp-validation-for="Booking.Email"></span>
-    </div>
-
-    <div>
-        <label asp-for="Booking.CheckIn"></label>
-        <input asp-for="Booking.CheckIn" type="date" />
-        <span asp-validation-for="Booking.CheckIn"></span>
-    </div>
-
-    <div>
-        <label asp-for="Booking.CheckOut"></label>
-        <input asp-for="Booking.CheckOut" type="date" />
-        <span asp-validation-for="Booking.CheckOut"></span>
-    </div>
-
-    <input type="submit">Submit Reservation</input>
-</form>

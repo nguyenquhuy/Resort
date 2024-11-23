@@ -1,6 +1,6 @@
 ﻿@model DATN.Models.Account
 @{
-    ViewData["Title"] = "Register";
+    ViewData["Title"] = "Đăng ký tài khoản";
 }
 
 <h1 class="text-center">@ViewData["Title"]</h1>
@@ -14,7 +14,7 @@
             <div asp-validation-summary="ModelOnly" class="text-danger" role="alert"></div>
             <div class="form-floating mb-3">
                 <label asp-for="Email">Email</label>
-                <input asp-for="Email" class="form-control" autocomplete="email" aria-required="true" placeholder="email@example.com"/>
+                <input asp-for="Email" class="form-control" autocomplete="email" aria-required="true" placeholder="email@email.com"/>
                 <span asp-validation-for="Email" class="text-danger"></span>
             </div>
             <div class="form-floating mb-3">
@@ -34,7 +34,7 @@
             </div>
             <div class="form-floating mb-3">
                 <label asp-for="Password">Mật khẩu</label>
-                <input asp-for="Password" class="form-control" autocomplete="new-password" aria-required="true" placeholder="password" type="password"/>
+                <input asp-for="Password" class="form-control" autocomplete="new-password" aria-required="true" placeholder="Mật khẩu" type="password"/>
                 <span asp-validation-for="Password" class="text-danger"></span>
             </div>
             @* <div class="form-floating mb-3">
@@ -43,13 +43,13 @@
                 <span asp-validation-for="Password" class="text-danger"></span>
             </div> *@
             <div class="form-group">
-                <label asp-for="ImageFile" class="control-label"></label>
+                <label class="control-label">Ảnh đại diện</label>
                 <br />
                 <input asp-for="ImageFile" id="ImageFile" type="file" accept="image/*" class="form-control-file" />
                 <span asp-validation-for="ImageFile" class="text-danger"></span>
                 <img id="imgPreview" src="#" style="display:none" width="100px" height="100px" alt="Preview" />
             </div>
-            <button id="registerSubmit" type="submit" class="w-100 btn btn-lg btn-primary">Register</button>
+            <button id="registerSubmit" type="submit" class="w-100 btn btn-lg btn-primary">Đăng ký</button>
         </form>
     </div>
 </div>

@@ -6,6 +6,7 @@
     var comments = GetDataController.GetCommentsWithUser(DbContext, Model.Room.ID);
     var vietnamCulture = new CultureInfo("vi-VN");
     var userIdClaim = User.FindFirst("UserId")?.Value;
+    var roomame = GetDataController.GetRoomAmenity(DbContext, Model.Room.ID);
 }
 
 <link rel="stylesheet" href="~/FE2/css/style.css" />
@@ -14,6 +15,18 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 <link rel="stylesheet" type="text/css" href="~/FE/css/gallery-grid.css">
 <link rel="stylesheet" type="text/css" href="~/FE/css/detail-room.css">
+<div class="page-title container-fluid">
+    <div class="container" style="position: relative;">
+        <p class="title">@Model.Room.Name</p>
+        <p class="page-tree">
+            <span class="home"><a href="/">Trang chủ</a></span>
+            <span><i class="fa fa-angle-right"></i></span>
+            <span><a href="/ListRoom">Phòng</a></span>
+            <span><i class="fa fa-angle-right"></i></span>
+            <span><a href="#">@Model.Room.Name</a></span>
+        </p>
+    </div>
+</div>
 <section class="main">
     <div class="container">
         <div class="row">
@@ -55,12 +68,25 @@
                         <div class="col-12 col-md-8">
                             <div class="tab-content">
                                 <div id="detail" class="tab-pane fade in active show">
-                                    <div class="information">
-                                        <h1>INFORMATION</h1>
+                                    <div class="information">                                        
                                         <p>
-                                            @Model.Room.Description
+                                            @Html.Raw(Model.Room.MetaDescription)
                                         </p>
                                         <div class="information__line"></div>
+                                        <h1>Chi tiết phòng</h1>
+                                        <p>Tên phòng: @Model.Room.Name</p>
+                                        <p>Loại phòng: @Model.Room.RoomType.Name<p>
+                                        <p>Giá: @Model.Room.Price.ToString("#,##0 VND")</p>
+                                        <div class="information__line"></div>
+                                        <h1>Tiện nghi</h1>
+                                        <div class="row">
+                                            @foreach (var item in roomame)
+                                            {
+                                                <div class="col-md-6 col-12 mb-2">
+                                                    <span class="checkmark">✓</span> @item.Name
+                                                </div>
+                                            }
+                                        </div>
                                     </div>
                                 </div>
                                 <div id="review" class="tab-pane fade">
@@ -103,44 +129,53 @@
                                     <div class="review__postComments">
                                         <h1>THÊM BÌNH LUẬN</h1>
                                     </div>
-                                    <div class="review__input">
-                                        <form id="commentForm">
-                                            <textarea name="content" placeholder="Your comment..." rows="5" required></textarea>
-                                            <input type="hidden" name="roomId" value="@Model.Room.ID" />
-                                            <button type="submit" class="add-comment">SUBMIT</button>
-                                        </form>
-                                    </div>
+                                    @if (!User.Identity.IsAuthenticated)
+                                    {
+                                        <p>Bạn cần đăng nhập mới có thể đánh giá. <a href="/Account/Login">Đăng nhập ngay</a></p>
+                                    }
+                                    else
+                                    {
+                                        <div class="review__input">
+                                            <form id="commentForm">
+                                                <textarea name="content" placeholder="Đánh giá của bạn..." rows="5" required></textarea>
+                                                <input type="hidden" name="roomId" value="@Model.Room.ID" />
+                                                <button type="submit" class="add-comment">Thêm</button>
+                                            </form>
+                                        </div>
+                                    }                                    
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-            <form asp-action="MakeReservation" asp-controller="Booking">
-                <div class="col-12 col-xl-3">
+            
+            <div class="col-12 col-xl-3">
+                <form asp-action="MakeReservation" asp-controller="Booking">
                     <div class="reservation">
                         <input type="hidden" name="roomId" asp-for="@Model.Room.ID"/>
-                        <div class="reservation__title">RESERVATION</div>
+                        <div class="reservation__title">Đặt phòng</div>
                         <div class="reservation__input">
                             <div class="reservation__input-list">
                                 <span class="reservation-calendar">
-                                    <label for="">CHECK-IN:</label>
+                                    <label for="">Ngày nhận phòng:</label>
                                     <input type="text" name="checkIn" value="3/30/2021" />
                                 </span>
                             </div>
                             <div class="reservation__input-list">
                                 <span class="reservation-calendar">
-                                    <label for="">CHECK-OUT:</label>
+                                    <label for="">Ngày trả phòng:</label>
                                     <input type="text" name="checkIn" value="3/30/2021" />
                                 </span>
                             </div>
                         </div>
                         <div class="reservation__btn">
-                            <input type="submit" value="ĐẶt phòng này"/>
+                            <input type="submit" value="Đặt phòng này"/>
                         </div>
                     </div>
-                </div>
-            </form>
+                </form>
+            </div>
+            
             
         </div>
     </div>

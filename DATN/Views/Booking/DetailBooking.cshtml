@@ -1,0 +1,129 @@
+﻿@model Booking
+
+
+<div class="container mt-4">
+    <div class="page-title text-center mb-4">
+        <h1 class="text-uppercase">Chi tiết đơn đặt</h1>
+        <p>
+            <a href="/" class="text-decoration-none">Trang chủ</a>
+            <span class="mx-2 text-muted">/</span>
+            <span class="fw-bold">Chi tiết đơn đặt</span>
+        </p>
+    </div>
+
+    <p>
+        <span class="fw-bold">Mã đơn:</span>
+        <span class="badge bg-info text-dark">@Model.Id</span>
+    </p>
+
+
+    <div class="card shadow mb-4">
+        <div class="card-header bg-primary text-white">
+            <h3 class="mb-0">Thông tin khách hàng</h3>
+        </div>
+        <div class="card-body">
+            <table class="table table-borderless mb-0">
+                <tbody>
+                    <tr>
+                        <th>Họ và tên</th>
+                        <td>@Model.Name</td>
+                    </tr>
+                    <tr>
+                        <th>Địa chỉ</th>
+                        <td>@Model.Address</td>
+                    </tr>
+                    <tr>
+                        <th>Email</th>
+                        <td>@Model.Email</td>
+                    </tr>
+                    <tr>
+                        <th>Số điện thoại</th>
+                        <td>@Model.Phone</td>
+                    </tr>
+                    <tr>
+                        <th>Ngày nhận phòng</th>
+                        <td>@Model.CheckIn?.ToString("dd/MM/yyyy")</td>
+                    </tr>
+                    <tr>
+                        <th>Ngày trả phòng</th>
+                        <td>@Model.CheckOut?.ToString("dd/MM/yyyy")</td>
+                    </tr>
+                    <tr>
+                        <th>Trẻ em</th>
+                        <td>@Model.Child</td>
+                    </tr>
+                    <tr>
+                        <th>Người lớn</th>
+                        <td>@Model.Adult</td>
+                    </tr>
+                    <tr>
+                        <th>Tổng tiền</th>
+                        <td class="text-danger fw-bold">@Model.Total.ToString("#,##0 VND")</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <div class="row">
+        <!-- Phòng đã đặt -->
+        <div class="col-md-6">
+            <div class="card shadow mb-4">
+                <div class="card-header bg-secondary text-white">
+                    <h4 class="mb-0">Phòng đã đặt</h4>
+                </div>
+                <div class="card-body">
+                    @foreach (var bookingRoom in Model.BookingRooms)
+                    {
+                        <div class="d-flex mb-3">
+                            <img src="~/Images/Room/@bookingRoom.Room.Image" alt="@bookingRoom.Room.Name" class="img-thumbnail" style="width: 100px; height: 100px; object-fit: cover;">
+                            <div class="ms-3">
+                                <h6 class="mb-1">@bookingRoom.Room.Name</h6>
+                                <p class="text-muted mb-0">Số lượng: @bookingRoom.Quantity</p>
+                                <p class="mb-1">Giá: @bookingRoom.Room.Price.ToString("#,##0 VND")/đêm</p>
+                            </div>
+                        </div>
+                    }
+                </div>
+            </div>
+        </div>
+
+        <!-- Dịch vụ đã đặt -->
+        <div class="col-md-6">
+            <div class="card shadow mb-4">
+                <div class="card-header bg-secondary text-white">
+                    <h4 class="mb-0">Dịch vụ đã đặt</h4>
+                </div>
+                <div class="card-body">
+                    @foreach (var bookingService in Model.BookingServices)
+                    {
+                        <div class="d-flex mb-3">
+                            <img src="~/Images/Service/@bookingService.service.Image" alt="@bookingService.service.Title" class="img-thumbnail" style="width: 100px; height: 100px; object-fit: cover;">
+                            <div class="ms-3">
+                                <h6 class="mb-1">@bookingService.service.Title</h6>
+                                <p class="mb-1">Giá: @bookingService.service.Price.ToString("#,##0 VND")</p>
+                            </div>
+                        </div>
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Action Buttons -->
+    <div class="mt-4 text-center">
+        @if (Model.CheckIn.HasValue && Model.CheckIn.Value > DateTime.Now)
+        {
+            @* <a asp-action="EditBooking" asp-route-id="@Model.Id" class="btn btn-primary me-2">Sửa</a> *@
+            <form asp-action="DeleteBooking" asp-route-id="@Model.Id" method="post" class="d-inline"
+                  onsubmit="return confirm('Bạn có chắc chắn muốn hủy đơn đặt phòng này không?');">
+                <button type="submit" class="btn btn-danger">Hủy đơn đặt phòng này</button>
+            </form>
+        }
+        else
+        {
+            @* <button class="btn btn-primary me-2" disabled>Sửa</button> *@
+            <button class="btn btn-danger" disabled>Hủy đơn đặt phòng này</button>
+        }
+    </div>
+</div>

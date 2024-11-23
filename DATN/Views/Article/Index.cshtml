@@ -24,21 +24,21 @@
         </tr>
     </thead>
     <tbody>
-        @foreach (var item in Model)
+        @foreach (var item in Model.Select((value, index) => new { value, index }))
         {
             <tr>
                 <td>
-                    @Html.DisplayFor(modelItem => item.Id)
+                    @(item.index + 1)
                 </td>
                 <td>
-                    <img src="~/Images/Article/@item.Image" alt="Hình ảnh bài viết" style="width:100px; height:auto;" />
+                    <img src="~/Images/Article/@item.value.Image" alt="Hình ảnh bài viết" style="width:100px; height:auto;" />
                 </td>
                 <td>
-                    @Html.DisplayFor(modelItem => item.Title)
+                    @Html.DisplayFor(modelItem => item.value.Title)
                 </td>
                 <td>
-                    <a asp-action="Edit" asp-route-id="@item.Id" class="btn btn-primary">Sửa</a>
-                    <a asp-action="Delete" asp-route-id="@item.Id" class="btn btn-danger">Xóa</a>
+                    <a asp-action="Edit" asp-route-id="@item.value.Id" class="btn btn-primary">Sửa</a>
+                    <a asp-action="Delete" asp-route-id="@item.value.Id" class="btn btn-danger">Xóa</a>
                 </td>
             </tr>
         }

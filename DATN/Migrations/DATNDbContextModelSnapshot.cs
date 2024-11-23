@@ -30,6 +30,11 @@ namespace DATN.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("ID"));
 
+                    b.Property<string>("Address")
+                        .IsRequired()
+                        .HasMaxLength(250)
+                        .HasColumnType("nvarchar(250)");
+
                     b.Property<string>("Avatar")
                         .HasColumnType("nvarchar(max)");
 
@@ -66,6 +71,23 @@ namespace DATN.Migrations
                     b.ToTable("Account");
                 });
 
+            modelBuilder.Entity("DATN.Models.Amenity", b =>
+                {
+                    b.Property<int>("ID")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("ID"));
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("ID");
+
+                    b.ToTable("Amenity");
+                });
+
             modelBuilder.Entity("DATN.Models.Article", b =>
                 {
                     b.Property<int>("Id")
@@ -73,6 +95,9 @@ namespace DATN.Migrations
                         .HasColumnType("int");
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<int>("AccountId")
+                        .HasColumnType("int");
 
                     b.Property<string>("Content")
                         .IsRequired()
@@ -95,6 +120,8 @@ namespace DATN.Migrations
 
                     b.HasKey("Id");
 
+                    b.HasIndex("AccountId");
+
                     b.ToTable("Articles");
                 });
 
@@ -105,6 +132,9 @@ namespace DATN.Migrations
                         .HasColumnType("int");
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<int?>("AccountId")
+                        .HasColumnType("int");
 
                     b.Property<string>("Address")
                         .IsRequired()
@@ -147,6 +177,8 @@ namespace DATN.Migrations
 
                     b.HasKey("Id");
 
+                    b.HasIndex("AccountId");
+
                     b.ToTable("Booking");
                 });
 
@@ -161,6 +193,9 @@ namespace DATN.Migrations
                     b.Property<int>("BookingId")
                         .HasColumnType("int");
 
+                    b.Property<int>("Quantity")
+                        .HasColumnType("int");
+
                     b.Property<int>("RoomId")
                         .HasColumnType("int");
 
@@ -171,6 +206,29 @@ namespace DATN.Migrations
                     b.HasIndex("RoomId");
 
                     b.ToTable("BookingRoom");
+                });
+
+            modelBuilder.Entity("DATN.Models.BookingService", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<int>("BookingId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("ServiceId")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("BookingId");
+
+                    b.HasIndex("ServiceId");
+
+                    b.ToTable("BookingService");
                 });
 
             modelBuilder.Entity("DATN.Models.Comment", b =>
@@ -310,6 +368,10 @@ namespace DATN.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<string>("MetaDescription")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<string>("Name")
                         .IsRequired()
                         .HasMaxLength(250)
@@ -319,6 +381,10 @@ namespace DATN.Migrations
                         .IsRequired()
                         .HasMaxLength(20)
                         .HasColumnType("nvarchar(20)");
+
+                    b.Property<string>("Privacy")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
 
@@ -335,12 +401,16 @@ namespace DATN.Migrations
 
                     b.Property<string>("Description")
                         .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                        .HasMaxLength(300)
+                        .HasColumnType("nvarchar(300)");
 
                     b.Property<string>("Image")
                         .IsRequired()
-                        .HasMaxLength(300)
-                        .HasColumnType("nvarchar(300)");
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("MetaDescription")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Name")
                         .IsRequired()
@@ -361,6 +431,29 @@ namespace DATN.Migrations
                     b.HasIndex("RoomTypeId");
 
                     b.ToTable("Rooms");
+                });
+
+            modelBuilder.Entity("DATN.Models.RoomAmenity", b =>
+                {
+                    b.Property<int>("ID")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("ID"));
+
+                    b.Property<int>("AmenityId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("RoomId")
+                        .HasColumnType("int");
+
+                    b.HasKey("ID");
+
+                    b.HasIndex("AmenityId");
+
+                    b.HasIndex("RoomId");
+
+                    b.ToTable("RoomAmenity");
                 });
 
             modelBuilder.Entity("DATN.Models.RoomType", b =>
@@ -416,6 +509,26 @@ namespace DATN.Migrations
                     b.ToTable("Services");
                 });
 
+            modelBuilder.Entity("DATN.Models.Article", b =>
+                {
+                    b.HasOne("DATN.Models.Account", "Account")
+                        .WithMany()
+                        .HasForeignKey("AccountId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Account");
+                });
+
+            modelBuilder.Entity("DATN.Models.Booking", b =>
+                {
+                    b.HasOne("DATN.Models.Account", "Account")
+                        .WithMany()
+                        .HasForeignKey("AccountId");
+
+                    b.Navigation("Account");
+                });
+
             modelBuilder.Entity("DATN.Models.BookingRoom", b =>
                 {
                     b.HasOne("DATN.Models.Booking", "Booking")
@@ -433,6 +546,25 @@ namespace DATN.Migrations
                     b.Navigation("Booking");
 
                     b.Navigation("Room");
+                });
+
+            modelBuilder.Entity("DATN.Models.BookingService", b =>
+                {
+                    b.HasOne("DATN.Models.Booking", "Booking")
+                        .WithMany("BookingServices")
+                        .HasForeignKey("BookingId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("DATN.Models.Service", "service")
+                        .WithMany()
+                        .HasForeignKey("ServiceId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Booking");
+
+                    b.Navigation("service");
                 });
 
             modelBuilder.Entity("DATN.Models.Comment", b =>
@@ -476,14 +608,37 @@ namespace DATN.Migrations
                     b.Navigation("RoomType");
                 });
 
+            modelBuilder.Entity("DATN.Models.RoomAmenity", b =>
+                {
+                    b.HasOne("DATN.Models.Amenity", "Amenity")
+                        .WithMany()
+                        .HasForeignKey("AmenityId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("DATN.Models.Room", "Room")
+                        .WithMany("RoomAmenities")
+                        .HasForeignKey("RoomId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Amenity");
+
+                    b.Navigation("Room");
+                });
+
             modelBuilder.Entity("DATN.Models.Booking", b =>
                 {
                     b.Navigation("BookingRooms");
+
+                    b.Navigation("BookingServices");
                 });
 
             modelBuilder.Entity("DATN.Models.Room", b =>
                 {
                     b.Navigation("GalleryRooms");
+
+                    b.Navigation("RoomAmenities");
                 });
 #pragma warning restore 612, 618
         }

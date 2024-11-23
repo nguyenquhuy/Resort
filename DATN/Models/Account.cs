@@ -18,6 +18,10 @@ namespace DATN.Models
         [MaxLength(250, ErrorMessage = "Tối đa 250 ký tự")]
         [Required(ErrorMessage = "Vui lòng nhập họ tên")]
         public string? Name { get; set; }
+        [DisplayName("Địa chỉ")]
+        [MaxLength(250, ErrorMessage = "Tối đa 250 ký tự")]
+        [Required(ErrorMessage = "Vui lòng nhập địa chỉ")]
+        public string? Address { get; set; }
         [Required(ErrorMessage = "Vui lòng nhập mật khẩu")]
         [MinLength(8, ErrorMessage = "Mật khẩu phải tối thiểu có 8 ký tự")]
         [DisplayName("Mật khẩu")]

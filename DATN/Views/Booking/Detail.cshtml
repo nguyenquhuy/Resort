@@ -1,0 +1,87 @@
+﻿@model Booking
+@{
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+<h1>Thông tin của mã đơn @Model.Id</h1>
+<div>
+    <table class="table">
+        <tr>
+            <th>Họ và tên</th>
+            <td>@Model.Name</td>
+        </tr>
+        <tr>
+            <th>Địa chỉ</th>
+            <td>@Model.Address</td>
+        </tr>
+        <tr>
+            <th>Email</th>
+            <td>@Model.Email</td>
+        </tr>
+        <tr>
+            <th>Số điện thoại</th>
+            <td>@Model.Phone</td>
+        </tr>
+        <tr>
+            <th>Ngày nhận phòng</th>
+            <td>@Model.CheckIn?.ToString("dd/MM/yyyy")</td>
+        </tr>
+        <tr>
+            <th>Ngày trả phòng</th>
+            <td>@Model.CheckOut?.ToString("dd/MM/yyyy")</td>
+        </tr>
+        <tr>
+            <th>Trẻ em</th>
+            <td>@Model.Child</td>
+        </tr>
+        <tr>
+            <th>Người lớn</th>
+            <td>@Model.Adult</td>
+        </tr>        
+        <tr>
+            <th>Phòng đặt</th>
+            <td>
+                @{
+                    var roomNames = Model.BookingRooms
+                    .Where(br => br != null && br.Room != null)
+                    .Select(br => $"{br.Quantity} x {br.Room.Name}")
+                    .ToList();
+
+                    var roomList = string.Join(", ", roomNames);
+                }
+                @if (string.IsNullOrEmpty(roomList))
+                {
+                    <p>Không đặt phòng nào</p>
+                }
+                else
+                {
+                    <p>@roomList</p>
+                }
+            </td>
+        </tr>
+        <tr>
+            <th>Dịch vụ đặt</th>
+            <td>
+                @{
+                    var serviceTitles = Model.BookingServices
+                    .Where(bs => bs != null && bs.service != null)
+                    .Select(bs => bs.service.Title)
+                    .ToList();
+
+                    var serviceList = string.Join(", ", serviceTitles);
+                }
+                @if (string.IsNullOrEmpty(serviceList))
+                {
+                    <p>Không sử dụng dịch vụ</p>
+                }
+                else
+                {
+                    <p>@serviceList</p>
+                }
+            </td>
+        </tr>
+        <tr border="1">
+            <th>Tổng tiền</th>
+            <td>@Model.Total.ToString("#,##0 VND")</td>
+        </tr>
+    </table>
+</div>

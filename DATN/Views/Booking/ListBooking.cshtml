@@ -1,0 +1,66 @@
+﻿@model IEnumerable<DATN.Models.Booking>
+@{
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+<h2>Danh sách đơn đặt phòng</h2>
+<table class="table">
+    <thead>
+        <tr>
+            <th>Tên người đặt</th>
+            <th>Thông tin đặt phòng</th>
+            <th>Dịch vụ đăng ký</th>
+            <th>Tổng tiền</th>
+            <th>Hành động</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var book in Model)
+        {
+            <tr>
+                <td>@book.Name</td>
+                <td>
+                    @{
+                        var roomNames = book.BookingRooms
+                        .Where(br => br != null && br.Room != null)
+                        .Select(br => $"{br.Quantity} x {br.Room.Name}")
+                        .ToList();
+
+                        var roomList = string.Join(", ", roomNames);
+                    }
+                    @if (string.IsNullOrEmpty(roomList))
+                    {
+                        <p>Không đặt phòng nào</p>
+                    }
+                    else
+                    {
+                        <p>@roomList</p>
+                    }
+                </td>
+
+                <td>
+                    @{
+                        var serviceTitles = book.BookingServices
+                        .Where(bs => bs != null && bs.service != null)
+                        .Select(bs => bs.service.Title)
+                        .ToList();
+
+                        var serviceList = string.Join(", ", serviceTitles);
+                    }
+                    @if (string.IsNullOrEmpty(serviceList))
+                    {
+                        <p>Không sử dụng dịch vụ</p>
+                    }
+                    else
+                    {
+                        <p>@serviceList</p>
+                    }
+                </td>
+
+                <td>@book.Total.ToString("#,##0 VND")</td>
+                <td>
+                    <a asp-action="Detail" asp-route-id="@book.Id" class="btn btn-primary">Chi tiết</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

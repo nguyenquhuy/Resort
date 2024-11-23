@@ -24,5 +24,8 @@ namespace DATN.Models.Context
         public DbSet<Comment> Comments { get; set; }
         public DbSet<Booking> Booking { get; set; }
         public DbSet<BookingRoom> BookingRoom { get; set; }
+        public DbSet<BookingService> BookingService { get; set; }
+        public DbSet<Amenity> Amenity { get; set; }
+        public DbSet<RoomAmenity> RoomAmenity { get;set; }
     }
 }

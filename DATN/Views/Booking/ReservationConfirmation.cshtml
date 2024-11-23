@@ -1,5 +1,80 @@
-﻿@*
-    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-*@
-@{
-}
+﻿@model DATN.Models.Booking
+
+<div class="container my-5">
+    <div class="text-center mb-4">
+        <h2 class="fw-bold">Thông Tin Đặt Phòng</h2>
+        <p class="text-muted">Cảm ơn bạn <strong>@Model.Name</strong> đã đặt phòng!</p>
+        <p class="text-muted">Xác nhận đã được gửi đến email: <strong>@Model.Email</strong></p>
+    </div>
+
+    <!-- Booking Details -->
+    <div class="row mb-5">
+        <div class="col-md-6">
+            <div class="card shadow-sm">
+                <div class="card-header bg-primary text-white">
+                    <h5>Chi tiết đặt phòng</h5>
+                </div>
+                <div class="card-body">
+                    <p><strong>Ngày nhận phòng:</strong> @Model.CheckIn?.ToString("dd/MM/yyyy")</p>
+                    <p><strong>Ngày trả phòng:</strong> @Model.CheckOut?.ToString("dd/MM/yyyy")</p>
+                    <p><strong>Số người lớn:</strong> @Model.Adult</p>
+                    <p><strong>Số trẻ em:</strong> @Model.Child</p>
+                    <p><strong>Tổng tiền:</strong> <span class="text-danger fw-bold">@Model.Total.ToString("#,##0 VND")</span></p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Room Details with Images -->
+        <div class="col-md-6">
+            <div class="card shadow-sm">
+                <div class="card-header bg-success text-white">
+                    <h5>Phòng đã đặt</h5>
+                </div>
+                <div class="card-body">
+                    @foreach (var room in Model.BookingRooms)
+                    {
+                        <div class="d-flex mb-3">
+                            <img src="~/Images/Room/@room.Room.Image" alt="@room.Room.Name" class="img-thumbnail" style="width: 100px; height: 100px; object-fit: cover;">
+                            <div class="ms-3">
+                                <h6 class="mb-1">@room.Room.Name</h6>
+                                <p class="text-muted mb-0">Số lượng: @room.Quantity</p>
+                                <p class="mb-1">Giá: @room.Room.Price.ToString("#,##0 VND")/đêm</p>
+                            </div>
+                        </div>
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Registered Services -->
+    <div class="row">
+        <div class="col-12">
+            <div class="card shadow-sm">
+                <div class="card-header bg-warning text-dark">
+                    <h5>Dịch vụ đã đăng ký</h5>
+                </div>
+                <div class="card-body">
+                    @if (Model.BookingServices?.Any() == true)
+                    {
+                        @foreach (var service in Model.BookingServices)
+                        {
+                            <div class="d-flex mb-3">
+                                <img src="~/Images/Service/@service.service.Image" alt="@service.service.Title" class="img-thumbnail" style="width: 80px; height: 80px; object-fit: cover;">
+                                <div class="ms-3">
+                                    <h6 class="mb-1">@service.service.Title</h6>
+                                    <p class="text-muted mb-0">@service.service.Description</p>
+                                    <p class="mb-1">Giá: @service.service.Price.ToString("#,##0 VND")</p>
+                                </div>
+                            </div>
+                        }
+                    }
+                    else
+                    {
+                        <p class="text-muted">Bạn không đăng ký thêm dịch vụ nào.</p>
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -4,57 +4,83 @@
 <link rel="stylesheet" href="~/FE2/css/style.css" />
 <link rel="stylesheet" href="~/FE2/css/roomsList.css" />
 <link rel="stylesheet" href="~/FE2/css/responsive.css" />
+<style>
+    .rooms__item {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        height: 100%;
+        border: 1px solid #ddd;
+        padding: 15px;
+        background-color: #fff;
+        transition: transform 0.3s ease;
+    }
 
+        .rooms__item:hover {
+            transform: scale(1.05);
+        }
+
+    .rooms__content {
+        flex-grow: 1;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+
+</style>
+<!-- page title -->
+<div class="page-title container-fluid">
+    <div class="container" style="position: relative;">
+        <p class="title">Phòng</p>
+        <p class="page-tree">
+            <span class="home"><a href="/">Trang chủ</a></span>
+            <span><i class="fa fa-angle-right"></i></span>
+            <span><a href="#">Phòng</a></span>
+        </p>
+    </div>
+</div>
+<!-- end page title -->
 <section class="main">
     <div class="container">
         <div class="row">
-            <div class="col-12 col-xl-9">
+            <div class="col-12 col-xl-12">
                 <div class="rooms">
                     <div class="rooms__nav">
-                        <a href="#">Default</a>
-                        <a href="#">Date</a>
-                        <a href="#">Price Low to High</a>
-                        <a href="#">Price High to Low</a>
-                        <a href="#">Name (A-Z)</a>
-                        <a href="#">Name (Z-A)</a>
+                        <a href="#">Mặc định</a>
+                        <a href="#">Giá(Cao-Thấp)</a>
+                        <a href="#">Giá(Thấp-cao)</a>
                     </div>
                     <div class="rooms__list">
                         <div class="row">
-                            @foreach(var item in Model)
+                            @foreach (var item in Model)
                             {
-                                <div class="col-12 col-lg-6">
+                                <div class="col-12 col-lg-4 d-flex mt-1">
                                     <div class="rooms__item">
+                                        <!-- Hình ảnh -->
                                         <div class="rooms__img">
                                             <a href="/DetailRoom/@item.ID">
-                                                <img src="./Images/Room/@item.Image"
-                                                     alt="rooms list" />
+                                                <img src="./Images/Room/@item.Image" alt="rooms list" />
                                                 <div class="rooms__hover">
                                                     <div class="rooms__hover-flex">
-                                                        <p>Starting from</p>
-                                                        <p>
-                                                            <span style="vertical-align: super">$</span><span style="font-size: 26px">@item.Price</span> /
-                                                            night
-                                                        </p>
+                                                        <p>Giá chỉ từ </p>
+                                                        <p><span style="font-size: 26px">@item.Price.ToString("#,##0 VND")</span></p>
                                                     </div>
                                                 </div>
                                             </a>
                                         </div>
+
+                                        <!-- Nội dung -->
                                         <div class="rooms__content">
-                                            <a href="single-room.html"><h1>@item.RoomType</h1></a>
-                                            <div class="rooms__line"></div>
-                                            <p class="rooms__padding">
-                                                Donec quam felis, ultricies nec, pellentesque eu,
-                                                pretium quis, sem. Nulla consequat massa quis enim.
-                                                Donec pede justo, fringilla vel, aliquet nec,
-                                                vulputate eget, arcu.
-                                            </p>
-                                            <a href="single-room.html"><button>Check Details</button></a>
+                                            <h3>@item.Name</h3>
+                                            <p>@item.Description</p>
+                                            <p class="fw-bold"><span>@item.Price.ToString("#,##0 VND")</span></p>
+                                            <a href="/DetailRoom/@item.ID" class="btn btn-warning text-white">Chi tiết</a>
                                         </div>
                                     </div>
                                 </div>
                             }
-                            
                         </div>
+
                         <div class="rooms__pagination">
                             <nav aria-label="Page navigation example">
                                 <ul class="pagination justify-content-center">
@@ -83,7 +109,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-12 col-xl-3">
+            @* <div class="col-12 col-xl-3">
                 <div class="rooms-filter">
                     <h1>RESERVATION</h1>
                     <div class="rooms-filter__checkbox">
@@ -238,7 +264,7 @@
                     </div>
                 </div>
 
-            </div>
+            </div> *@
         </div>
     </div>
     </div>

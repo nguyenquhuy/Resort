@@ -4,17 +4,28 @@
 <link rel="stylesheet" href="~/FE2/css/style.css" />
 <link rel="stylesheet" href="~/FE2/css/roomsList.css" />
 <link rel="stylesheet" href="~/FE2/css/responsive.css" />
-
+<!-- page title -->
+<div class="page-title container-fluid">
+    <div class="container" style="position: relative;">
+        <p class="title">Dịch vụ</p>
+        <p class="page-tree">
+            <span class="home"><a href="/">Trang chủ</a></span>
+            <span><i class="fa fa-angle-right"></i></span>
+            <span><a href="#">Dịch vụ</a></span>
+        </p>
+    </div>
+</div>
+<!-- end page title -->
 <section class="main">
     <div class="container">
         <div class="row">
-            <div class="col-12 col-xl-9">
+            <div class="col-12 col-xl-12">
                 <div class="rooms">
                     <div class="rooms__list">
                         <div class="row">
                             @foreach (var item in Model)
                             {
-                                <div class="col-12 col-lg-6">
+                                <div class="col-12 col-lg-4">
                                     <div class="rooms__item">
                                         <div class="rooms__img">
                                             <a href="/DetailService/@item.Id">
@@ -24,10 +35,11 @@
                                         </div>
                                         <div class="rooms__content">
                                             <div class="rooms__line"></div>
+                                            <h3>@item.Title</h3>
                                             <p class="rooms__padding">
                                                 @item.Description
                                             </p>
-                                            <a href="single-room.html"><button>Check Details</button></a>
+                                            <a href="/DetailService/@item.Id"><button>Xem chi tiết</button></a>
                                         </div>
                                     </div>
                                 </div>

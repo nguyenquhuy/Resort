@@ -27,6 +27,8 @@ namespace DATN.Controllers
             _hostEnvironment = hostEnvironment;
         }
 
+
+
         [HttpGet]
         public IActionResult Login()
         {
@@ -64,6 +66,8 @@ namespace DATN.Controllers
                 new Claim(ClaimTypes.Authentication, user.Name),
                 new Claim(ClaimTypes.Name, user.Email),
                 new Claim(ClaimTypes.Role, user.Role),
+                new Claim(ClaimTypes.StreetAddress, user.Address),
+                new Claim(ClaimTypes.MobilePhone, user.PhoneNumber),
                 new Claim("UserId", user.ID.ToString()) // Add User ID as a claim
             };
 
@@ -116,7 +120,7 @@ namespace DATN.Controllers
             user.Name = model.Name;
             user.CCCD = model.CCCD;
             user.PhoneNumber = model.PhoneNumber;
-
+            user.Address = model.Address;
             string wwwRootPath = _hostEnvironment.WebRootPath;
 
             // Check if a new image is uploaded
@@ -224,7 +228,7 @@ namespace DATN.Controllers
 
             // Send reset email
             var body = $"<p>Để thay đổi mật khẩu của bạn, nhấn vào <a href='{resetPasswordUrl}'>đây</a></p>";
-            await _emailService.SendEmailAsync(email, "Password Reset", body);
+            await _emailService.SendEmailAsync(email, "THAY ĐỔI MẬT KHẨU", body);
 
             // Redirect to confirmation page
             return RedirectToAction("ForgotPasswordConfirmation");

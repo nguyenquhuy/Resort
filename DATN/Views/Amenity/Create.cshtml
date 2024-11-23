@@ -1,0 +1,27 @@
+﻿@model DATN.Models.Amenity
+
+@{
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<h1>Thêm tiện nghi</h1>
+
+<hr />
+<form asp-action="Create" enctype="multipart/form-data">
+    <div class="row">
+        <!-- Cột bên trái: Chứa các mục khác như Title, Description, ImageFile -->
+        <div class="col-md-12">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+            <div class="form-group">
+                <label asp-for="Name" class="control-label"></label>
+                <input asp-for="Name" class="form-control" />
+                <span asp-validation-for="Name" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Thêm" class="btn btn-primary" />
+                <a asp-action="Index" class="btn btn-warning"><i class="fa-solid fa-arrow-left"></i> Trở lại</a>
+            </div>
+        </div>
+    </div>
+</form>

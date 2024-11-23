@@ -9,12 +9,12 @@
                 <div asp-validation-summary="ModelOnly" class="text-danger" role="alert"></div>
                 <div class="form-floating mb-3">
                     <label asp-for="Email" class="form-label">Email</label>
-                    <input asp-for="Email" class="form-control" autocomplete="email" aria-required="true" placeholder="name@example.com" />
+                    <input asp-for="Email" class="form-control" autocomplete="email" aria-required="true" placeholder="name@email.com" />
                     <span asp-validation-for="Email" class="text-danger"></span>
                 </div>
                 <div class="form-floating mb-3">
                     <label asp-for="Password" class="form-label">Mật khẩu</label>
-                    <input asp-for="Password" class="form-control" autocomplete="current-password" aria-required="true" placeholder="Mật khẩu" />
+                    <input asp-for="Password" class="form-control" autocomplete="current-password" aria-required="true" placeholder="Mật khẩu" type="password"/>
                     <span asp-validation-for="Password" class="text-danger"></span>
                 </div>
                 <div>
@@ -22,7 +22,7 @@
                 </div>
             </form>
             <a class="nav-link text-dark" asp-area="" asp-controller="Account" asp-action="ForgotPassword">Quên mật khẩu</a>
-            <p>Bạn chưa có tài khoản? <a class="nav-link text-dark" asp-area="" asp-controller="Account" asp-action="ForgotPassword">Đăng ký ngay</a></p>
+            <p>Bạn chưa có tài khoản? <a asp-area="" asp-controller="Account" asp-action="Register">Đăng ký ngay</a></p>
         </section>
     </div>
 </div>

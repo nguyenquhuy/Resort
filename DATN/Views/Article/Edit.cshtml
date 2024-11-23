@@ -29,7 +29,7 @@
             <div class="form-group">
                 <label class="text-danger">Ảnh</label>
                 <br />
-                <input asp-for="ImageFile" id="Profileimg" accept="image/*" />
+                <input asp-for="ImageFile" id="Profileimg" accept="image/*" data-val="false"/>
                 <span asp-validation-for="ImageFile" class="text-danger"></span>
                 <img id="imgpreview" src="#" style="display:none" width="60px" height="80px" alt="Ảnh" />
             </div>        

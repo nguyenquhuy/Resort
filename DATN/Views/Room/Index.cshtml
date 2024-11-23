@@ -10,7 +10,6 @@
             <th>Tên phòng</th>
             <th>Loại phòng</th>
             <th>Giá</th>
-            <th>Trạng thái</th>
             <th>Hình ảnh</th>
             <th>Hành động</th>
         </tr>
@@ -22,7 +21,6 @@
                 <td>@room.Name</td>
                 <td>@room.RoomType.Name</td>
                 <td>@room.Price</td>
-                <td>@(room.Status ? "Đang sử dụng" : "Còn trống")</td>
                 <td><img src="~/Images/Room/@room.Image" alt="Hình ảnh phòng" style="width:100px; height:auto;" /></td>
                 <td>
                     <a asp-action="Edit" asp-route-id="@room.ID" class="btn btn-primary">Sửa</a> 

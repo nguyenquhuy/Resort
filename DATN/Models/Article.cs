@@ -22,5 +22,7 @@ namespace DATN.Models
         [NotMapped]
         [DisplayName("Thêm hình ảnh")]
         public IFormFile? ImageFile { get; set; }
-    }
+		public int? AccountId { get; set; }
+		public Account Account { get; set; }
+	}
 }

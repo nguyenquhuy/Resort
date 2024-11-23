@@ -13,6 +13,14 @@
     <title>Admin Interface</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <!-- Thêm Select2 CSS và JavaScript -->
+    <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
+
+    <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+
     <style>
         .sidebar {
             background-color: #f8f9fa;
@@ -107,8 +115,9 @@
                 <div class="collapse submenu" id="categoryManagement">
                     <a href="/Room"><i class="fas fa-caret-right"></i> Phòng</a>
                     <a href="/Article"><i class="fas fa-caret-right"></i> Bài viết</a>
-                    <a href="RoomTypes"><i class="fas fa-caret-right"></i> Loại phòng</a>
+                    <a href="/RoomTypes"><i class="fas fa-caret-right"></i> Loại phòng</a>
                     <a href="/Service"><i class="fas fa-caret-right"></i> Dịch vụ</a>
+                    <a href="/Amenity"><i class="fas fa-caret-right"></i> Tiện nghi</a>
                 </div>
 
                 <!-- Collapsible Menu for Quản trị giao diện -->
@@ -117,8 +126,8 @@
                     <i class="fas fa-caret-down ml-auto"></i>
                 </a>
                 <div class="collapse submenu" id="interfaceManagement">
-                    <a href="#"><i class="fas fa-caret-right"></i> Hình ảnh</a>
-                    <a href="#"><i class="fas fa-caret-right"></i> Slide</a>
+                   @*  <a href="#"><i class="fas fa-caret-right"></i> Hình ảnh</a>
+                    <a href="#"><i class="fas fa-caret-right"></i> Slide</a> *@
                     <a href="/Resort"><i class="fas fa-caret-right"></i> Thông tin</a>
                 </div>
 
@@ -128,7 +137,7 @@
                     <i class="fas fa-caret-down ml-auto"></i>
                 </a>
                 <div class="collapse submenu" id="informationManagement">
-                    <a href="#"><i class="fas fa-caret-right"></i> Danh sách đơn hàng</a>
+                    <a href="/Booking/ListBooking"><i class="fas fa-caret-right"></i> Danh sách đơn hàng</a>
                     <a href="/Comments"><i class="fas fa-caret-right"></i> Đánh giá của khách hàng</a>
                 </div>
 
@@ -138,7 +147,7 @@
                     <i class="fas fa-caret-down ml-auto"></i>
                 </a>
                 <div class="collapse submenu" id="userConfiguration">
-                    <a href="/ListAccount"><i class="fas fa-caret-right"></i> Danh sách người dùng</a>
+                    <a href="/AccessAm/ListAccount"><i class="fas fa-caret-right"></i> Danh sách người dùng</a>
                     <a href="/Account/Info"><i class="fas fa-caret-right"></i> Thông tin người dùng</a>
                 </div>
             </nav>
@@ -155,7 +164,8 @@
         <span>&copy; 2024. All rights reserved.</span>
     </footer>
     @RenderSection("Scripts", required: false)
+
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
 </html>
-<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+

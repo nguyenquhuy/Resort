@@ -29,6 +29,12 @@ namespace DATN.Models
 		[DisplayName("Mô tả")]
 		[Required(ErrorMessage = "Vui lòng nhập mô tả")]
 		public string Description { get; set; }
+		[DisplayName("Mô tả chi tiết")]
+		[Required(ErrorMessage = "Vui lòng nhập mô tả chi tiết")]
+		public string? MetaDescription { get; set; }
+		[DisplayName("Điều khoản thanh toán")]
+		[Required(ErrorMessage = "Vui lòng nhập điều khoản thanh toán")]
+		public string? Privacy { get; set; }
 		[DisplayName("Đường dây nóng")]
 		[MaxLength(20, ErrorMessage = "Tối đa 20 ký tự")]
 		[Required(ErrorMessage = "Vui lòng nhập đường dây nóng")]

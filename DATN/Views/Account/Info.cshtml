@@ -1,21 +1,27 @@
-﻿@model DATN.Models.Account
-
+﻿@using DATN.Controllers
+@model DATN.Models.Account
+@inject DATN.Models.Context.DATNDbContext DbContext
 @{
-    ViewData["Title"] = "User Info";
+    ViewData["Title"] = "Thông tin tài khoản";
+    var accountBook = GetDataController.GetBookingByUser(DbContext, Model.ID);
 }
 
-<h2>User Info</h2>
+<h2>Thông tin tài khoản</h2>
 <form id="profile-form" method="post" enctype="multipart/form-data">
     <div class="row">
         <div class="col-md-6">
             <div asp-validation-summary="ModelOnly" class="text-danger" role="alert"></div>
             <div class="form-floating mb-3">
                 <label asp-for="Email" class="form-label"></label>
-                <input asp-for="Email" class="form-control" placeholder="Please choose your username." disabled />                
+                <input asp-for="Email" class="form-control" disabled />                
             </div>
             <div class="form-floating mb-3">
                 <label asp-for="Name" class="form-label"></label>
                 <input asp-for="Name" class="form-control" placeholder="Họ tên" />                
+            </div>
+            <div class="form-floating mb-3">
+                <label asp-for="Address" class="form-label"></label>
+                <input asp-for="Address" class="form-control" placeholder="Địa chỉ" />
             </div>
             <div class="form-floating mb-3">
                 <label asp-for="CCCD" class="form-label"></label>
@@ -39,6 +45,56 @@
         </div>
     </div>
 </form>
+<div>
+    <h2>Các đơn đặt phòng của bạn</h2>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>STT</th>
+                <th>Đơn đặt</th>
+                <th>Giá</th>
+                <th>Hành động</th>
+            </tr>
+        </thead>
+        <tbody>
+            @if (accountBook != null && accountBook.Any())
+            {
+                int stt = 1; // Counter for STT
+                foreach (var item in accountBook)
+                {
+                    <tr>
+                        <td>@stt</td>
+                        <td>
+                            <!-- Display each room's quantity and name in the booking -->
+                            @foreach (var bookingRoom in item.BookingRooms)
+                            {
+                                <div>
+                                    @bookingRoom.Quantity x
+                                    <a href="/DetailRoom/@bookingRoom.Room.ID">
+                                        @bookingRoom.Room.Name <!-- Accessing Room name here -->
+                                    </a>
+                                </div>
+                            }
+                        </td>
+                        <td>@item.Total.ToString("#,##0 VND")</td>
+                        <td><a href="/Booking/DetailBooking/@item.Id" class="btn btn-primary">Chi tiết</a></td>
+                    </tr>
+                    stt++;
+                }
+                
+            }
+            else
+            {
+                <tr>
+                    <td colspan="4" class="text-center">Không có đơn đặt phòng nào.</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
+
+
+
 
 <!-- Add jQuery before your script -->
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>

@@ -34,9 +34,21 @@ namespace DATN.Controllers
         //Chi tiết phòng
         public IActionResult DetailRoom(int? id)
         {
+            if (id == null)
+            {
+                return NotFound();
+            }
 
-            // Fetch the room details
-            var room = _context.Rooms.Find(id);
+            // Fetch the room details along with the RoomType
+            var room = _context.Rooms
+                                .Include(r => r.RoomType) // Nạp RoomType cùng với Room
+                                .FirstOrDefault(r => r.ID == id);  // Sử dụng FirstOrDefault thay vì Find để đảm bảo không trả về null
+
+            // Check if room is null
+            if (room == null)
+            {
+                return NotFound();
+            }
 
             // Fetch the gallery images for the room
             var galleryImages = _context.GalleryRooms
@@ -52,8 +64,8 @@ namespace DATN.Controllers
             };
 
             return View(viewModel);
-
         }
+
 
         //Danh sách bài viết
         public IActionResult ListArticle()
@@ -101,6 +113,12 @@ namespace DATN.Controllers
                 return NotFound();
             }
             return View(services);
+        }
+
+        public IActionResult About()
+        {
+            var name = "About";
+            return View(_context.Articles.FirstOrDefault(a=>a.Title==name));
         }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]

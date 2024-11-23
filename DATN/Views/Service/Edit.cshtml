@@ -35,7 +35,7 @@
             <div class="form-group">
                 <label asp-for="ImageFile" class="control-label"></label>
                 <br />
-                <input asp-for="ImageFile" id="Profileimg" accept="image/*" />
+                <input asp-for="ImageFile" id="Profileimg" accept="image/*" data-val="false"/>
                 <span asp-validation-for="ImageFile" class="text-danger"></span>
 
                 <!-- Hiển thị hình ảnh hiện tại nếu đã có -->

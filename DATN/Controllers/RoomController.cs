@@ -23,6 +23,7 @@ namespace DATN.Controllers
         public async Task<IActionResult> Index()
         {
             var rooms = await _context.Rooms.Include(r => r.RoomType).ToListAsync();
+            ViewBag.Amenities = new SelectList(_context.Amenity, "ID", "Name");
             return View(rooms);
         }
 
@@ -32,13 +33,13 @@ namespace DATN.Controllers
             RoomGal rg = new RoomGal();
             // Populate RoomTypes for dropdown
             ViewBag.RoomTypes = new SelectList(await _context.RoomTypes.ToListAsync(), "Id", "Name");
-
+            ViewBag.Amenities = new SelectList(await _context.Amenity.ToListAsync(), "ID", "Name");
             return View(rg);
         }
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create(RoomGal rg)
+        public async Task<IActionResult> Create(RoomGal rg, List<int> SelectedAmenities)
         {
             string wwwRootPath = _hostEnvironment.WebRootPath;
             string fileName = Path.GetFileNameWithoutExtension(rg.Room.ImageFile.FileName);
@@ -52,8 +53,21 @@ namespace DATN.Controllers
             rg.Room.Status = false;
             _context.Add(rg.Room);
             await _context.SaveChangesAsync();
+            // Add selected amenities to RoomAmenities
+            if (SelectedAmenities != null && SelectedAmenities.Any())
+            {
+                foreach (var amenityId in SelectedAmenities)
+                {
+                    _context.RoomAmenity.Add(new RoomAmenity
+                    {
+                        RoomId = rg.Room.ID,
+                        AmenityId = amenityId
+                    });
+                }
+                await _context.SaveChangesAsync();
+            }
 
-            if(rg.Images.Count > 0)
+            if (rg.Images.Count > 0)
             {
                 foreach (var item in rg.Images)
                 {
@@ -91,6 +105,9 @@ namespace DATN.Controllers
         public async Task<IActionResult> Edit(int id)
         {
             var room = await _context.Rooms.Include(r => r.GalleryRooms).FirstOrDefaultAsync(r => r.ID == id);
+            var selectedAmenity = _context.RoomAmenity.Where(a=>a.RoomId==id).Select(a=>a.AmenityId).ToList();
+            MultiSelectList multiAmenityList = new MultiSelectList(_context.Amenity.AsQueryable(), "ID", "Name", selectedAmenity);
+            room.MultiCategoryList = multiAmenityList;
             if (room == null)
             {
                 return NotFound();
@@ -99,9 +116,10 @@ namespace DATN.Controllers
             var viewModel = new RoomGal
             {
                 Room = room,
-                Images = new List<IFormFile>()
+                Images = new List<IFormFile>(),
+                
             };
-
+            
             ViewBag.RoomTypes = new SelectList(await _context.RoomTypes.ToListAsync(), "Id", "Name", room.RoomTypeId);
             return View(viewModel);
         }
@@ -129,7 +147,16 @@ namespace DATN.Controllers
             room.Description = viewModel.Room.Description;
             room.Price = viewModel.Room.Price;
             room.RoomTypeId = viewModel.Room.RoomTypeId;
-
+            room.MetaDescription = viewModel.Room.MetaDescription;
+            var amenityRemove = _context.RoomAmenity.Where(ra => ra.RoomId == id && !viewModel.SelectedAmenities.Contains(ra.AmenityId));
+            _context.RoomAmenity.RemoveRange(amenityRemove);
+            foreach(var amenity in viewModel.SelectedAmenities)
+            {
+                if(!_context.RoomAmenity.Any(ra=>ra.RoomId==id && ra.AmenityId == amenity))
+                {
+                    _context.RoomAmenity.Add(new RoomAmenity { RoomId = id, AmenityId = amenity });
+                }
+            }
             // Handle main room image update
             if (viewModel.Room.ImageFile != null)
             {
@@ -205,6 +232,9 @@ namespace DATN.Controllers
         public async Task<IActionResult> Delete(int? id)
         {
             var room = await _context.Rooms.Include(r => r.GalleryRooms).FirstOrDefaultAsync(r => r.ID == id);
+            var selectedAmenity = _context.RoomAmenity.Where(a => a.RoomId == id).Select(a => a.AmenityId).ToList();
+            MultiSelectList multiAmenityList = new MultiSelectList(_context.Amenity.AsQueryable(), "ID", "Name", selectedAmenity);
+            room.MultiCategoryList = multiAmenityList;
             if (room == null)
             {
                 return NotFound();
@@ -254,7 +284,11 @@ namespace DATN.Controllers
 
                     _context.GalleryRooms.Remove(galleryImage); // Remove gallery image record
                 }
-
+                var roomAme = _context.RoomAmenity.Where(r => r.RoomId == id);
+                foreach(var roomAmes in roomAme)
+                {
+                    _context.Remove(roomAmes);
+                }
                 _context.Rooms.Remove(room); // Remove room record
                 await _context.SaveChangesAsync();
             }

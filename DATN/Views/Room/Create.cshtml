@@ -11,9 +11,7 @@
     <div class="row">
         <!-- Cột bên trái: Chứa các mục khác như Title, Description, ImageFile -->
         <div class="col-md-6">
-
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-
             <div class="form-group">
                 <label asp-for="Room.Name" class="control-label"></label>
                 <input asp-for="Room.Name" class="form-control" />
@@ -33,6 +31,15 @@
                 <label asp-for="Room.Price" class="control-label"></label>
                 <input asp-for="Room.Price" class="form-control" />
                 <span asp-validation-for="Room.Price" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label for="amenities">Tiện nghi:</label>
+                <select class="form-control js-example-basic-multiple" name="SelectedAmenities" multiple="multiple">
+                    @foreach (var amenity in ViewBag.Amenities)
+                    {
+                        <option value="@amenity.Value">@amenity.Text</option>
+                    }
+                </select>
             </div>
             <div class="form-group">
                 <label class="label-control">Hình ảnh phòng</label>
@@ -56,13 +63,27 @@
             </div>
 
         </div>
+        <div class="col-md-6">
+            <div class="form-group">
+                <label class="text-danger">Nội dung chi tiết</label>
+                <textarea asp-for="Room.MetaDescription" class="form-control" id="editor" rows="10"></textarea>
+                <span asp-validation-for="Room.MetaDescription" class="text-danger"></span>
+            </div>
+        </div>
     </div>
 </form>
+
 
 @section Scripts {
     @{
         await Html.RenderPartialAsync("_ValidationScriptsPartial");
     }
+    <script>
+        $(document).ready(function () {
+            $('.js-example-basic-multiple').select2();
+        });
+
+    </script>
     <script src="https://cdn.ckeditor.com/4.16.2/full/ckeditor.js"></script> <!-- Sử dụng CKEditor 4 -->
     <script>
         // Khởi tạo CKEditor với các tùy chọn cho thanh công cụ chi tiết
@@ -99,6 +120,7 @@
                 reader.readAsDataURL(input.files[0]);
             }
         });
+        
     </script>
 }
 

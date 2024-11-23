@@ -7,6 +7,7 @@
 	var vietnamCulture = new CultureInfo("vi-VN");
 	var currentServiceId = Model.Id;
 }
+
 <style>
 	.content-wrapper {
 		display: flex;
@@ -33,8 +34,33 @@
 			text-decoration: underline;
 		}
 
+	.service-container {
+		margin-top: 50px;
+	}
+
+	.service-image {
+		max-width: 100%;
+		border-radius: 8px;
+	}
+
+	.service-description {
+		font-size: 1.2rem;
+		line-height: 1.6;
+	}
 </style>
 <link rel="stylesheet" type="text/css" href="~/FE/css/detail-room.css">
+<div class="page-title container-fluid">
+	<div class="container" style="position: relative;">
+		<p class="title">@Model.Title</p>
+		<p class="page-tree">
+			<span class="home"><a href="/">Trang chủ</a></span>
+			<span><i class="fa fa-angle-right"></i></span>
+			<span><a href="/ListService">Dịch vụ</a></span>
+			<span><i class="fa fa-angle-right"></i></span>
+			<span><a href="#">@Model.Title</a></span>
+		</p>
+	</div>
+</div>
 <!-- detail room -->
 <div class="detail-room container-fluid">
 	<div class="row">
@@ -69,8 +95,8 @@
 						</div>
 					</div>
 				</div>
-				<div class="right col-xl-4 col-lg-4 col-md-12">
-					<div class="row" style="width: 100%;">
+				<div class="right col-xl-4 col-lg-4 col-md-12" style="background-color:transparent;">
+					<div class="row">
 						<div class="slice"></div>
 						<div class="post right-item col-12">
 							<p class="title">Dịch vụ khác</p>
@@ -86,11 +112,11 @@
 									</div>
 								</div>
 							}
+							<div class="view-all-container">
+								<a href="/ListService" class="view-all-link">Xem tất cả</a>
+							</div>
 						</div>
-						<!-- Centered link at the bottom -->
-						<div class="view-all-container">
-							<a href="/ListService" class="view-all-link">Xem tất cả</a>
-						</div>
+						<!-- Centered link at the bottom -->						
 						</div>						
 					</div>
 				</div>

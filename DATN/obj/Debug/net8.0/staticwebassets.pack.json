@@ -1357,10 +1357,6 @@
       "PackagePath": "staticwebassets\\Images\\Article\\339964889_1260265371590680_768788703004417789_n243711604.jpg"
     },
     {
-      "Id": "D:\\LTWNC\\DATN\\DATN\\wwwroot\\Images\\Article\\anh_1240011185.png",
-      "PackagePath": "staticwebassets\\Images\\Article\\anh_1240011185.png"
-    },
-    {
       "Id": "D:\\LTWNC\\DATN\\DATN\\wwwroot\\Images\\Article\\anh_1240825427.png",
       "PackagePath": "staticwebassets\\Images\\Article\\anh_1240825427.png"
     },
@@ -1373,12 +1369,24 @@
       "PackagePath": "staticwebassets\\Images\\Article\\anh_1243024433.png"
     },
     {
+      "Id": "D:\\LTWNC\\DATN\\DATN\\wwwroot\\Images\\Article\\banner-img3241619935.jpg",
+      "PackagePath": "staticwebassets\\Images\\Article\\banner-img3241619935.jpg"
+    },
+    {
       "Id": "D:\\LTWNC\\DATN\\DATN\\wwwroot\\Images\\Article\\dining1240024382.jpg",
       "PackagePath": "staticwebassets\\Images\\Article\\dining1240024382.jpg"
     },
     {
       "Id": "D:\\LTWNC\\DATN\\DATN\\wwwroot\\Images\\Article\\dining2245915261.jpg",
       "PackagePath": "staticwebassets\\Images\\Article\\dining2245915261.jpg"
+    },
+    {
+      "Id": "D:\\LTWNC\\DATN\\DATN\\wwwroot\\Images\\Article\\khu-vuc-spa-tan-da-resort241314353.jpg",
+      "PackagePath": "staticwebassets\\Images\\Article\\khu-vuc-spa-tan-da-resort241314353.jpg"
+    },
+    {
+      "Id": "D:\\LTWNC\\DATN\\DATN\\wwwroot\\Images\\Article\\thiet-ke-khu-resort-9-hecta-dat-mui-ven-bien-kien-truc-nha-san-lac-an-resort-2243137668.jpg",
+      "PackagePath": "staticwebassets\\Images\\Article\\thiet-ke-khu-resort-9-hecta-dat-mui-ven-bien-kien-truc-nha-san-lac-an-resort-2243137668.jpg"
     },
     {
       "Id": "D:\\LTWNC\\DATN\\DATN\\wwwroot\\Images\\Article\\troll240413876.jfif",
@@ -1389,8 +1397,8 @@
       "PackagePath": "staticwebassets\\Images\\Article\\troll240748542.jfif"
     },
     {
-      "Id": "D:\\LTWNC\\DATN\\DATN\\wwwroot\\Images\\Resort\\logo2245339069.webp",
-      "PackagePath": "staticwebassets\\Images\\Resort\\logo2245339069.webp"
+      "Id": "D:\\LTWNC\\DATN\\DATN\\wwwroot\\Images\\Resort\\logo4243623451.png",
+      "PackagePath": "staticwebassets\\Images\\Resort\\logo4243623451.png"
     },
     {
       "Id": "D:\\LTWNC\\DATN\\DATN\\wwwroot\\Images\\Room\\296840188_629999278346090_7905040171821531268_n244647463.png",
@@ -1461,6 +1469,14 @@
       "PackagePath": "staticwebassets\\Images\\Room\\troll241146972.jfif"
     },
     {
+      "Id": "D:\\LTWNC\\DATN\\DATN\\wwwroot\\Images\\Service\\Grand-Opera-trung-tam-hoi-nghi-hoi-thao-flamingo-cat-ba244132041.jpg",
+      "PackagePath": "staticwebassets\\Images\\Service\\Grand-Opera-trung-tam-hoi-nghi-hoi-thao-flamingo-cat-ba244132041.jpg"
+    },
+    {
+      "Id": "D:\\LTWNC\\DATN\\DATN\\wwwroot\\Images\\Service\\T2A8350242502837.jpg",
+      "PackagePath": "staticwebassets\\Images\\Service\\T2A8350242502837.jpg"
+    },
+    {
       "Id": "D:\\LTWNC\\DATN\\DATN\\wwwroot\\Images\\Service\\anh_1241139636.png",
       "PackagePath": "staticwebassets\\Images\\Service\\anh_1241139636.png"
     },
@@ -1469,12 +1485,16 @@
       "PackagePath": "staticwebassets\\Images\\Service\\anh_1244753838.png"
     },
     {
+      "Id": "D:\\LTWNC\\DATN\\DATN\\wwwroot\\Images\\Service\\cac-dich-vu-cua-resort-3-min245329546.png",
+      "PackagePath": "staticwebassets\\Images\\Service\\cac-dich-vu-cua-resort-3-min245329546.png"
+    },
+    {
       "Id": "D:\\LTWNC\\DATN\\DATN\\wwwroot\\Images\\Service\\dining1240132463.jpg",
       "PackagePath": "staticwebassets\\Images\\Service\\dining1240132463.jpg"
     },
     {
-      "Id": "D:\\LTWNC\\DATN\\DATN\\wwwroot\\Images\\Service\\greeting-img2240014061.jpg",
-      "PackagePath": "staticwebassets\\Images\\Service\\greeting-img2240014061.jpg"
+      "Id": "D:\\LTWNC\\DATN\\DATN\\wwwroot\\Images\\Service\\la-bella-spa-cua-sun-spa-resort-5-sao-dong-hoi-quang-binh-1244503279.jpg",
+      "PackagePath": "staticwebassets\\Images\\Service\\la-bella-spa-cua-sun-spa-resort-5-sao-dong-hoi-quang-binh-1244503279.jpg"
     },
     {
       "Id": "D:\\LTWNC\\DATN\\DATN\\wwwroot\\RoomGallery\\00c6d967-31c2-42ca-b08b-44005702b400_anh_1.png",

@@ -6,57 +6,89 @@
 	var services = GetDataController.GetService(DbContext);
 	var resort = GetDataController.GetResort(DbContext);
 }
-
+<style>
+	.alert-container {
+		position: fixed;
+		top: 20px;
+		right: 20px;
+		z-index: 1050; /* Ensure it is above other elements */
+		width: 300px;
+	}
+</style>
+@if (TempData["SuccessMessage"] != null || TempData["ErrorMessage"] != null)
+{
+	<div id="tempMessage" class="alert-container">
+		@if (TempData["SuccessMessage"] != null)
+		{
+			<div class="alert alert-success alert-dismissible fade show" role="alert">
+				@TempData["SuccessMessage"]
+			</div>
+		}
+		@if (TempData["ErrorMessage"] != null)
+		{
+			<div class="alert alert-danger alert-dismissible fade show" role="alert">
+				@TempData["ErrorMessage"]
+			</div>
+		}
+	</div>
+}
 
 <div class="container-fluid banner">
 	<div class="row banner-slide">
-		@foreach(var item in rooms.Take(3))
+		@foreach(var item in rooms)
 		{
 			<div class="col-xl-12 col-lg-12 col-md-12 col-xs-12 col-12 banner-item" style="background-image: url('@Url.Content("~/images/room/"+item.Image)');">
 				<div class="title banner-word">
-					<p>@item.Name</p>
+					<p> </p>
 				</div>
 				<div class="description banner-word">
-					<p>@item.Description</p>
+					<p> </p>
 				</div>
 			</div>
 		}
 	</div>
 	<div class="prev-banner-box"><span><i class="fa fa-angle-left" id="prevBanner"></i></span></div>
 	<div class="next-banner-box"><span><i class="fa fa-angle-right" id="nextBanner"></i></span></div>
-	<form method="post" action="@Url.Action("Index", "Booking")">
-		<div class="col-xl-2 col-lg-4 col-md-6 col-sm-12 col-12 item item-sm">
-			<p>Room Type<span>*</span></p>
-			<div class="infos">
-				<select class="criteria" name="roomTypeId">
-					@foreach (var item in roomTypes)
-					{
-						<option value="@item.Id">@item.Name</option>
-					}
-				</select>
-			</div>
-		</div>
-		<div class="col-xl-2 col-lg-4 col-md-6 col-sm-12 col-12 item item-md">
-			<p>Check-in Date<span>*</span></p>
-			<div class="infos">
-				<input type="date" name="checkInDate" class="criteria" required>
-			</div>
-		</div>
-		<div class="col-xl-2 col-lg-4 col-md-6 col-sm-12 col-12 item item-lg">
-			<p>Check-out Date<span>*</span></p>
-			<div class="infos">
-				<input type="date" name="checkOutDate" class="criteria" required>
-			</div>
-		</div>
-		<div class="col-xl-2 col-lg-4 col-md-6 col-sm-12 col-12 item item-lg">
-			<p style="color: transparent;">A</p>
-			<div class="infos">
-				<input type="submit" value="TÌM KIẾM" class="criteria sub-btn">
+	<form method="post" asp-controller="Booking">
+		<div class="booking">
+			<div class="row" style="background-color: #faf9f8">
+				<div class="col-xl-3 col-lg-4 col-md-6 col-sm-12 col-12 item item-sm">
+					<p>Loại phòng<span>*</span></p>
+					<div class="infos">
+						<select class="criteria">
+							<option value="">Tất cả</option>
+							@foreach(var item in roomTypes)
+							{
+								<option>@item.Name</option>
+							}
+						</select>
+					</div>
+				</div>
+				<div class="col-xl-3 col-lg-4 col-md-6 col-sm-12 col-12 item item-md">
+					<p>Thời gian nhận phòng<span>*</span></p>
+					<div class="infos">
+						<input type="date" name="checkInDate" class="criteria" required>
+					</div>
+				</div>
+				<div class="col-xl-3 col-lg-4 col-md-6 col-sm-12 col-12 item item-lg">
+					<p>Thời gian trả phòng<span>*</span></p>
+					<div class="infos">
+						<input type="date" name="checkOutDate" class="criteria" required>
+					</div>
+				</div>
+				<div class="col-xl-3 col-lg-4 col-md-6 col-sm-12 col-12 item item-lg">
+					<p style="color: transparent;">A</p>
+					<div class="infos">
+						<input type="submit" name="" value="ĐẶT PHÒNG NGAY" class="criteria sub-btn">
+					</div>
+				</div>
+
 			</div>
 		</div>
 	</form>
-
+	
 </div>
+
 <!-- end carousel banner -->
 <!-- welcome -->
 @Html.Raw(resort.Description)
@@ -105,7 +137,8 @@
 							<div class="img" style="background-image: url('@Url.Content("~/images/room/"+item.Image)');"></div>
 							<div class="slice"></div>
 							<p class="info-title">@item.Name</p>
-							<p class="time">@item.Price <span><i class="fas fa-comment"></i></span></p>
+							<p class="time">@item.Price.ToString("#,##0 VND") <span><i class="fas fa-comment"></i> @item.CommentCount</span></p>
+
 							<div class="slice"></div>
 							<p class="detail">
 								@item.Description
@@ -124,3 +157,19 @@
 	</div>
 </div>
 <!-- end blogs -->
+
+<div class="container-fluid check">
+	<div class="container check-items">
+	</div>
+</div>
+
+<script>
+	setTimeout(() => {
+		const alertBox = document.getElementById('tempMessage');
+		if (alertBox) {
+			alertBox.style.transition = 'opacity 0.5s ease';
+			alertBox.style.opacity = 0;
+			setTimeout(() => alertBox.remove(), 500);
+		}
+	}, 5000); // 5 seconds
+</script>

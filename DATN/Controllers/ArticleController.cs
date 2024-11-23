@@ -30,6 +30,10 @@ namespace DATN.Controllers
         [HttpPost]
         public async Task<IActionResult> Create(Article article)
         {
+            var userIdClaim = User.FindFirst("UserId");
+            int? userId = userIdClaim != null && int.TryParse(userIdClaim.Value, out int parsedUserId)
+                ? parsedUserId
+                : (int?)null;
             string wwwRootPath = _hostEnvironment.WebRootPath;
             string fileName = Path.GetFileNameWithoutExtension(article.ImageFile.FileName);
             string extension = Path.GetExtension(article.ImageFile.FileName);
@@ -40,6 +44,7 @@ namespace DATN.Controllers
                 await article.ImageFile.CopyToAsync(fileStream);
             }
             article.CreatedDate = DateTime.Now;
+            article.AccountId = userId;
             _context.Add(article);
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
@@ -70,69 +75,66 @@ namespace DATN.Controllers
                 return NotFound();
             }
 
-            if (ModelState.IsValid)
-            {
-                try
-                {
-                    // Lấy thông tin bài viết từ cơ sở dữ liệu để truy cập ảnh cũ
-                    var existingArticle = await _context.Articles.AsNoTracking().FirstOrDefaultAsync(a => a.Id == id);
-                    if (existingArticle == null)
-                    {
-                        return NotFound();
-                    }
+			try
+			{
+				// Lấy thông tin bài viết từ cơ sở dữ liệu để truy cập ảnh cũ
+				var existingArticle = await _context.Articles.AsNoTracking().FirstOrDefaultAsync(a => a.Id == id);
+				if (existingArticle == null)
+				{
+					return NotFound();
+				}
 
-                    string wwwRootPath = _hostEnvironment.WebRootPath;
+				string wwwRootPath = _hostEnvironment.WebRootPath;
 
-                    // Kiểm tra xem có ảnh mới được tải lên không
-                    if (article.ImageFile != null)
-                    {
-                        // Đường dẫn của ảnh cũ
-                        string oldImagePath = Path.Combine(wwwRootPath + "/Images/Article/", existingArticle.Image);
+				// Kiểm tra xem có ảnh mới được tải lên không
+				if (article.ImageFile != null)
+				{
+					// Đường dẫn của ảnh cũ
+					string oldImagePath = Path.Combine(wwwRootPath + "/Images/Article/", existingArticle.Image);
 
-                        // Xóa ảnh cũ nếu tồn tại
-                        if (System.IO.File.Exists(oldImagePath))
-                        {
-                            System.IO.File.Delete(oldImagePath);
-                        }
+					// Xóa ảnh cũ nếu tồn tại
+					if (System.IO.File.Exists(oldImagePath))
+					{
+						System.IO.File.Delete(oldImagePath);
+					}
 
-                        // Tạo tên file mới cho ảnh
-                        string fileName = Path.GetFileNameWithoutExtension(article.ImageFile.FileName);
-                        string extension = Path.GetExtension(article.ImageFile.FileName);
-                        article.Image = fileName = fileName + DateTime.Now.ToString("yymmssfff") + extension;
-                        string newPath = Path.Combine(wwwRootPath + "/Images/Article/", fileName);
+					// Tạo tên file mới cho ảnh
+					string fileName = Path.GetFileNameWithoutExtension(article.ImageFile.FileName);
+					string extension = Path.GetExtension(article.ImageFile.FileName);
+					article.Image = fileName = fileName + DateTime.Now.ToString("yymmssfff") + extension;
+					string newPath = Path.Combine(wwwRootPath + "/Images/Article/", fileName);
 
-                        // Lưu ảnh mới vào thư mục
-                        using (var fileStream = new FileStream(newPath, FileMode.Create))
-                        {
-                            await article.ImageFile.CopyToAsync(fileStream);
-                        }
-                    }
-                    else
-                    {
-                        // Nếu không có ảnh mới, giữ lại tên ảnh cũ
-                        article.Image = existingArticle.Image;
-                    }
+					// Lưu ảnh mới vào thư mục
+					using (var fileStream = new FileStream(newPath, FileMode.Create))
+					{
+						await article.ImageFile.CopyToAsync(fileStream);
+					}
+				}
+				else
+				{
+					// Nếu không có ảnh mới, giữ lại tên ảnh cũ
+					article.Image = existingArticle.Image;
+				}
 
-                    // Cập nhật bài viết vào cơ sở dữ liệu
-                    article.CreatedDate = existingArticle.CreatedDate; // Giữ lại ngày tạo ban đầu
-                    _context.Update(article);
-                    await _context.SaveChangesAsync();
-                }
-                catch (DbUpdateConcurrencyException)
-                {
-                    if (!Exists(article.Id))
-                    {
-                        return NotFound();
-                    }
-                    else
-                    {
-                        throw;
-                    }
-                }
-                return RedirectToAction(nameof(Index));
-            }
-            return View(article);
-        }
+				// Cập nhật bài viết vào cơ sở dữ liệu
+				article.CreatedDate = existingArticle.CreatedDate; // Giữ lại ngày tạo ban đầu
+                article.AccountId = existingArticle.AccountId;
+				_context.Update(article);
+				await _context.SaveChangesAsync();
+			}
+			catch (DbUpdateConcurrencyException)
+			{
+				if (!Exists(article.Id))
+				{
+					return NotFound();
+				}
+				else
+				{
+					throw;
+				}
+			}
+			return RedirectToAction(nameof(Index));
+		}
 
         [HttpGet]
         public async Task<IActionResult> Delete(int? id)

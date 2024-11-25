@@ -1,5 +1,6 @@
 ﻿using DATN.Models;
 using DATN.Models.Context;
+using DATN.Models.Services;
 using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.EntityFrameworkCore;
 
@@ -17,7 +18,7 @@ builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationSc
         options.AccessDeniedPath = "/Error";  // Trang báo lỗi khi không đủ quyền
     });
 
-
+builder.Services.AddSingleton<IVnPayService, VnPayService>();
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.

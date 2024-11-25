@@ -1,11 +1,13 @@
 ﻿using DATN.Migrations;
 using DATN.Models;
 using DATN.Models.Context;
+using DATN.Models.Services;
 using DATN.ViewModel;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
+using Newtonsoft.Json;
 using System;
 
 namespace DATN.Controllers
@@ -14,14 +16,17 @@ namespace DATN.Controllers
     {
         private readonly DATNDbContext _context;
         private readonly EmailService _emailService;
+        private readonly IVnPayService _vnPayService;
 
-        public BookingController(DATNDbContext context, EmailService emailService)
+        public BookingController(DATNDbContext context, EmailService emailService, IVnPayService vnPayService)
         {
             _context = context;
             _emailService = emailService;
+            _vnPayService = vnPayService;
         }
 
 
+        //Danh sách đặt phòng Admin
         public IActionResult ListBooking() 
         {
             var booking = _context.Booking
@@ -34,6 +39,7 @@ namespace DATN.Controllers
             return View(booking);
         }
 
+        //Chi tiết đặt phòng admin
         public IActionResult Detail(int id) 
         {
             if(id == 0)
@@ -56,6 +62,7 @@ namespace DATN.Controllers
 
         }
 
+        //Trang tìm kiếm phòng trống
         [HttpPost]
         public async Task<IActionResult> Index(int? roomTypeId, DateTime? checkInDate, DateTime? checkOutDate)
         {
@@ -93,6 +100,7 @@ namespace DATN.Controllers
             return View(availableRooms);
         }
 
+        //Điền thông tin đặt phòng
         [HttpPost]
         public IActionResult MakeReservation(DateTime checkInDate, DateTime checkOutDate, Dictionary<int, int> quantities)
         {
@@ -137,6 +145,7 @@ namespace DATN.Controllers
             return View(roomsToBook);
         }
 
+        //Xác nhận và thanh toán
         [HttpPost]
         public async Task<IActionResult> SubmitReservation(string name, string address, string email, string phone, int child, int adult,  Dictionary<int, int> quantities, string checkin, string checkout, double total, List<int> selectedServices)
         {
@@ -163,7 +172,8 @@ namespace DATN.Controllers
                     }
                 }
             }
-            var book = new Booking
+
+            var reservationData = new ReservationData
             {
                 Name = name,
                 Address = address,
@@ -171,84 +181,137 @@ namespace DATN.Controllers
                 Phone = phone,
                 Child = child,
                 Adult = adult,
-                CreatedAt = DateTime.Now,
-                CheckIn = checkinDate,
-                CheckOut = checkoutDate,
-                Total = totals,
-                AccountId = userId,
+                Quantities = quantities,
+                CheckIn = checkin,
+                CheckOut = checkout,
+                Totals = totals,
+                SelectedServices = selectedServices,
+                UserId = userId
             };
-            _context.Add(book);
-            _context.SaveChanges();
 
-            // Lưu thông tin phòng đã đặt
-            foreach (var quantity in quantities)
+            TempData["ReservationData"] = JsonConvert.SerializeObject(reservationData);
+
+            var vnPayModel = new VnPaymentRequestModel
             {
-                var room = _context.Rooms.FirstOrDefault(r => r.ID == quantity.Key);
-                if (room != null)
+                Amount = totals,
+                CreatedDate = DateTime.Now,
+                Description = $"{name} thanh toán tiền đặt phòng",
+                FullName = name,
+                OrderId = new Random().Next(1000, 100000),
+            };
+
+            return Redirect(_vnPayService.CreatePaymentUrl(HttpContext, vnPayModel));
+        }
+
+        //Thanh toán và trả kết quả thanh toán
+        public async Task<IActionResult> PaymentCallback(string vnp_ResponseCode, string vnp_TxnRef)
+        {
+            if (vnp_ResponseCode == "00") // Thanh toán thành công
+            {
+                // Lấy dữ liệu từ TempData
+                var reservationDataJson = TempData["ReservationData"]?.ToString();
+                if (string.IsNullOrEmpty(reservationDataJson))
                 {
-                    var bookingRoom = new BookingRoom
-                    {
-                        BookingId = book.Id,
-                        RoomId = room.ID,
-                        Quantity = quantity.Value,
-                    };
-                    _context.BookingRoom.Add(bookingRoom);
+                    return RedirectToAction("Error", "Home");
                 }
-            }
 
-            // Lưu các dịch vụ đã chọn
-            if (selectedServices != null)
-            {
-                foreach (var serviceId in selectedServices)
+                var reservationData = JsonConvert.DeserializeObject<ReservationData>(reservationDataJson);
+
+                // Chuyển đổi chuỗi thành DateTime
+                DateTime checkinDate = DateTime.ParseExact(reservationData.CheckIn, "dd/MM/yyyy", null);
+                DateTime checkoutDate = DateTime.ParseExact(reservationData.CheckOut, "dd/MM/yyyy", null);
+
+                // Lưu thông tin đặt phòng vào cơ sở dữ liệu
+                var booking = new Booking
+                {
+                    Name = reservationData.Name,
+                    Address = reservationData.Address,
+                    Email = reservationData.Email,
+                    Phone = reservationData.Phone,
+                    Child = reservationData.Child,
+                    Adult = reservationData.Adult,
+                    CreatedAt = DateTime.Now,
+                    CheckIn = checkinDate,
+                    CheckOut = checkoutDate,
+                    Total = reservationData.Totals,
+                    AccountId = reservationData.UserId
+                };
+                _context.Add(booking);
+                _context.SaveChanges();
+
+                // Lưu thông tin phòng
+                foreach (var quantity in reservationData.Quantities)
+                {
+                    var room = _context.Rooms.FirstOrDefault(r => r.ID == quantity.Key);
+                    if (room != null)
+                    {
+                        var bookingRoom = new BookingRoom
+                        {
+                            BookingId = booking.Id,
+                            RoomId = room.ID,
+                            Quantity = quantity.Value
+                        };
+                        _context.BookingRoom.Add(bookingRoom);
+                    }
+                }
+
+                // Lưu các dịch vụ
+                foreach (var serviceId in reservationData.SelectedServices)
                 {
                     var service = _context.Services.FirstOrDefault(s => s.Id == serviceId);
                     if (service != null)
                     {
                         var bookingService = new BookingService
                         {
-                            BookingId = book.Id,
-                            ServiceId = service.Id,
+                            BookingId = booking.Id,
+                            ServiceId = service.Id
                         };
                         _context.BookingService.Add(bookingService);
                     }
                 }
+
+                _context.SaveChanges();
+
+                // Gửi email xác nhận
+                var bookingURL = Url.Action("DetailBooking", "Booking", new { id = booking.Id }, Request.Scheme);
+                var body = $@"
+            <div style='font-family: Arial, sans-serif; color: #333; line-height: 1.6;'>
+                <h2 style='color: #4CAF50; text-align: center;'>Cảm ơn bạn đã đặt phòng tại Trường Sinh Resort</h2>
+                <p>Xin chào <strong>{booking.Name}</strong>,</p>
+                <p>Chúng tôi rất vui mừng xác nhận đơn đặt phòng của bạn tại Trường Sinh Resort. Chúng tôi đã gửi chi tiết đặt phòng của bạn vào tài khoản này.</p>
+                <p>Mã đơn của bạn là <strong>{booking.Id}</strong>. Để xem chi tiết đặt phòng, vui lòng nhấp vào liên kết dưới đây:</p>
+                <p style='text-align: center;'>
+                    <a href='{bookingURL}' 
+                       style='background-color: #4CAF50; color: white; text-decoration: none; padding: 10px 20px; font-size: 16px; border-radius: 5px;'>
+                        Xem chi tiết đặt phòng
+                    </a>
+                </p>
+                <p style='margin-top: 20px;'>Nếu bạn có bất kỳ câu hỏi nào hoặc cần hỗ trợ, vui lòng liên hệ với chúng tôi qua email hoặc số điện thoại bên dưới.</p>
+                <p style='color: #555; font-size: 14px;'>Trân trọng,<br>Đội ngũ Trường Sinh Resort</p>
+                <hr style='border: none; border-top: 1px solid #ddd; margin: 20px 0;'>
+                <footer style='text-align: center; font-size: 12px; color: #777;'>
+                    <p>Trường Sinh Resort | Email: support@truongsinhresort.com | SĐT: 0123 456 789</p>
+                    <p>&copy; 2024 Trường Sinh Resort. Tất cả các quyền được bảo lưu.</p>
+                </footer>
+            </div>";
+
+                await _emailService.SendEmailAsync(reservationData.Email, "Đơn Đặt Phòng Của Bạn", body);
+
+                return RedirectToAction("ReservationConfirmation", new { id = booking.Id });
             }
 
-            _context.SaveChanges();
-            var bookingURL = Url.Action("DetailBooking", "Booking", new { id = book.Id }, Request.Scheme);
-            var body = $@"
-                <div style='font-family: Arial, sans-serif; color: #333; line-height: 1.6;'>
-                    <h2 style='color: #4CAF50; text-align: center;'>Cảm ơn bạn đã đặt phòng tại Trường Sinh Resort</h2>
-                    <p>Xin chào <strong>{book.Name}</strong>,</p>
-                    <p>Chúng tôi rất vui mừng xác nhận đơn đặt phòng của bạn tại Trường Sinh Resort. Chúng tôi đã gửi chi tiết đặt phòng của bạn vào tài khoản này.</p>
-                    <p>Mã đơn của bạn là <strong>{book.Id}</strong>. Để xem chi tiết đặt phòng, vui lòng nhấp vào liên kết dưới đây:</p>
-                    <p style='text-align: center;'>
-                        <a href='{bookingURL}' 
-                           style='background-color: #4CAF50; color: white; text-decoration: none; padding: 10px 20px; font-size: 16px; border-radius: 5px;'>
-                            Xem chi tiết đặt phòng
-                        </a>
-                    </p>
-                    <p style='margin-top: 20px;'>Nếu bạn có bất kỳ câu hỏi nào hoặc cần hỗ trợ, vui lòng liên hệ với chúng tôi qua email hoặc số điện thoại bên dưới.</p>
-                    <p style='color: #555; font-size: 14px;'>Trân trọng,<br>Đội ngũ Trường Sinh Resort</p>
-                    <hr style='border: none; border-top: 1px solid #ddd; margin: 20px 0;'>
-                    <footer style='text-align: center; font-size: 12px; color: #777;'>
-                        <p>Trường Sinh Resort | Email: support@truongsinhresort.com | SĐT: 0123 456 789</p>
-                        <p>&copy; 2024 Trường Sinh Resort. Tất cả các quyền được bảo lưu.</p>
-                    </footer>
-                </div>";
-            await _emailService.SendEmailAsync(email, "Đơn Đặt Phòng Của Bạn", body);
-
-            return RedirectToAction("ReservationConfirmation", new { id = book.Id });
-
+            // Nếu thanh toán thất bại
+            return RedirectToAction("PaymentFailed", "Home");
         }
 
+        //Chi tiết đặt phòng user
         public IActionResult DetailBooking(int id)
         {
             var booking = _context.Booking
                                   .Include(b => b.BookingRooms)
                                   .ThenInclude(br => br.Room)
-                                  .Include(s=>s.BookingServices)
-                                  .ThenInclude(bs=>bs.service)
+                                  .Include(s => s.BookingServices)
+                                  .ThenInclude(bs => bs.service)
                                   .FirstOrDefault(b => b.Id == id);
 
             if (booking == null)
@@ -259,6 +322,8 @@ namespace DATN.Controllers
             return View(booking);
         }
 
+
+        //Đặt phòng thành công
         public IActionResult ReservationConfirmation(int id)
         {
             var booking = _context.Booking
@@ -276,6 +341,7 @@ namespace DATN.Controllers
             return View(booking);
         }
 
+        //Hủy đặt phòng
         public IActionResult DeleteBooking(int id)
         {
             // Retrieve the booking

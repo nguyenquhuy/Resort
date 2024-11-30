@@ -3,6 +3,37 @@
     Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
 }
 <h2>Danh sách phòng</h2>
+<form method="get" class="mb-3">
+    <div class="form-row align-items-end">
+        <!-- Dòng căn hàng ngang -->
+        <!-- Checkbox: Còn trống -->
+        <div class="col-md-3">
+            <div class="form-check">
+                <input type="checkbox" class="form-check-input" id="Available" name="available" value="true" @(ViewBag.Available ? "checked" : "") />
+                <label class="form-check-label" for="Available">Chỉ xem phòng còn trống</label>
+            </div>
+        </div>
+
+        <!-- Date picker: Check-in date -->
+        <div class="col-md-3">
+            <label for="CheckInDate">Ngày bắt đầu</label>
+            <input type="date" id="CheckInDate" name="checkInDate" value="@ViewBag.CheckInDate" class="form-control" />
+        </div>
+
+        <!-- Date picker: Check-out date -->
+        <div class="col-md-3">
+            <label for="CheckOutDate">Ngày kết thúc</label>
+            <input type="date" id="CheckOutDate" name="checkOutDate" value="@ViewBag.CheckOutDate" class="form-control" />
+        </div>
+
+        <!-- Submit button -->
+        <div class="col-md-3">
+            <button type="submit" class="btn btn-primary btn-block">Lọc</button>
+        </div>
+    </div>
+</form>
+
+
 <a asp-action="Create" class="btn btn-success">Thêm phòng mới</a>
 <table class="table">
     <thead>
@@ -11,6 +42,7 @@
             <th>Loại phòng</th>
             <th>Giá</th>
             <th>Hình ảnh</th>
+            <th>Trạng thái</th> <!-- New column for room status -->
             <th>Hành động</th>
         </tr>
     </thead>
@@ -22,13 +54,15 @@
                 <td>@room.RoomType.Name</td>
                 <td>@room.Price</td>
                 <td><img src="~/Images/Room/@room.Image" alt="Hình ảnh phòng" style="width:100px; height:auto;" /></td>
+                <td>@room.Status</td> <!-- Display room status -->
                 <td>
-                    <a asp-action="Edit" asp-route-id="@room.ID" class="btn btn-primary">Sửa</a> 
+                    <a asp-action="Edit" asp-route-id="@room.ID" class="btn btn-primary">Sửa</a>
                     <a asp-action="Delete" asp-route-id="@room.ID" class="btn btn-danger">Xóa</a>
                 </td>
             </tr>
         }
     </tbody>
 </table>
+
 
 

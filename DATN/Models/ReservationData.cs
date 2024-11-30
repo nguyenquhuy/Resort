@@ -12,6 +12,7 @@
         public string CheckIn { get; set; }
         public string CheckOut { get; set; }
         public double Totals { get; set; }
+        public double depositMoney { get; set; }
         public List<int> SelectedServices { get; set; }
         public int? UserId { get; set; }
     }

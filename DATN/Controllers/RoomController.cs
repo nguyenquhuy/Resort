@@ -20,12 +20,72 @@ namespace DATN.Controllers
             _hostEnvironment = hostEnvironment;
         }
 
-        public async Task<IActionResult> Index()
+        public async Task<IActionResult> Index(DateTime? checkInDate, DateTime? checkOutDate, bool available = false)
         {
             var rooms = await _context.Rooms.Include(r => r.RoomType).ToListAsync();
             ViewBag.Amenities = new SelectList(_context.Amenity, "ID", "Name");
+            ViewBag.Available = available;
+            ViewBag.CheckInDate = checkInDate?.ToString("yyyy-MM-dd");
+            ViewBag.CheckOutDate = checkOutDate?.ToString("yyyy-MM-dd");
+
+            if (checkInDate.HasValue && checkOutDate.HasValue)
+            {
+                foreach (var room in rooms)
+                {
+                    var bookingRooms = _context.BookingRoom
+                        .Where(br => br.RoomId == room.ID)
+                        .Select(br => br.Booking)
+                        .ToList();
+
+                    bool isRoomAvailable = true;
+
+                    foreach (var bookingRoom in bookingRooms)
+                    {
+                        var checkInDateOnly = checkInDate?.Date;
+                        var checkOutDateOnly = checkOutDate?.Date;
+                        var bookingCheckInDateOnly = bookingRoom.CheckIn?.Date;
+                        var bookingCheckOutDateOnly = bookingRoom.CheckOut?.Date;
+
+                        if (checkInDateOnly < bookingCheckOutDateOnly && checkOutDateOnly > bookingCheckInDateOnly)
+                        {
+                            room.Status = bookingRoom.Status == "Chưa nhận phòng"
+                                          ? "Chờ nhận phòng"
+                                          : "Đang sử dụng";
+
+                            isRoomAvailable = false;
+                            break;
+                        }
+                    }
+
+                    if (isRoomAvailable)
+                    {
+                        room.Status = "Còn trống";
+                    }
+                }
+
+                // Lọc chỉ các phòng trống nếu checkbox được chọn
+                if (available)
+                {
+                    rooms = rooms.Where(r => r.Status == "Còn trống").ToList();
+                }
+            }
+            else
+            {
+                foreach (var room in rooms)
+                {
+                    room.Status = "Còn trống";
+                }
+
+                if (available)
+                {
+                    rooms = rooms.Where(r => r.Status == "Còn trống").ToList();
+                }
+            }
+
             return View(rooms);
         }
+
+
 
         [HttpGet]
         public async Task<IActionResult> Create()
@@ -50,7 +110,6 @@ namespace DATN.Controllers
             {
                 await rg.Room.ImageFile.CopyToAsync(fileStream);
             }
-            rg.Room.Status = false;
             _context.Add(rg.Room);
             await _context.SaveChangesAsync();
             // Add selected amenities to RoomAmenities

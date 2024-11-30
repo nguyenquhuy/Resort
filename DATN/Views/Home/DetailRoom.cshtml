@@ -6,7 +6,7 @@
     var comments = GetDataController.GetCommentsWithUser(DbContext, Model.Room.ID);
     var vietnamCulture = new CultureInfo("vi-VN");
     var userIdClaim = User.FindFirst("UserId")?.Value;
-    var roomame = GetDataController.GetRoomAmenity(DbContext, Model.Room.ID);
+    var roomame = GetDataController.GetRoomAmenity(DbContext, Model.Room.ID);   
 }
 
 <link rel="stylesheet" href="~/FE2/css/style.css" />
@@ -15,6 +15,7 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 <link rel="stylesheet" type="text/css" href="~/FE/css/gallery-grid.css">
 <link rel="stylesheet" type="text/css" href="~/FE/css/detail-room.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
 <div class="page-title container-fluid">
     <div class="container" style="position: relative;">
         <p class="title">@Model.Room.Name</p>
@@ -149,28 +150,30 @@
                     </div>
                 </div>
             </div>
-            
+
             <div class="col-12 col-xl-3">
-                <form asp-action="MakeReservation" asp-controller="Booking">
-                    <div class="reservation">
-                        <input type="hidden" name="roomId" asp-for="@Model.Room.ID"/>
+                <form asp-action="MakeReservation" asp-controller="Booking" id="reservationForm">
+                    <div class="reservation" >
+                        <input type="hidden" name="roomId" asp-for="@Model.Room.ID" />
                         <div class="reservation__title">Đặt phòng</div>
-                        <div class="reservation__input">
-                            <div class="reservation__input-list">
-                                <span class="reservation-calendar">
-                                    <label for="">Ngày nhận phòng:</label>
-                                    <input type="text" name="checkIn" value="3/30/2021" />
-                                </span>
-                            </div>
-                            <div class="reservation__input-list">
-                                <span class="reservation-calendar">
-                                    <label for="">Ngày trả phòng:</label>
-                                    <input type="text" name="checkIn" value="3/30/2021" />
-                                </span>
-                            </div>
+                        <div class="reservation__input-list">
+                            <span class="reservation-calendar">
+                                <label for="">Ngày nhận phòng:</label>
+                                <input type="text" id="checkIn" name="checkInDate"/>
+                            </span>
+                        </div>
+                        <div class="reservation__input-list">
+                            <span class="reservation-calendar">
+                                <label for="">Ngày trả phòng:</label>
+                                <input type="text" id="checkOut" name="checkOutDate"/>
+                            </span>
+                        </div>
+                        <div class="reservation__input-list">
+                            <label for="">Số lượng phòng:</label>
+                            <input type="number" name="quantities[@Model.Room.ID]" min="1" max="1" value="1" />
                         </div>
                         <div class="reservation__btn">
-                            <input type="submit" value="Đặt phòng này"/>
+                            <input type="submit" value="Đặt phòng này" />
                         </div>
                     </div>
                 </form>
@@ -182,7 +185,6 @@
 </section>
 
 <script src="~/FE2/js/jquery-3.5.1.min.js"></script>
-<script type="text/javascript" src="~/FE/js/jquery-3.4.1.min.js"></script>
 <script type="text/javascript"
         src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.1/umd/popper.min.js"></script>
@@ -196,6 +198,7 @@
 <script src="~/FE2/plugins/rating/jquery.barrating.min.js"></script>
 <script src="~/FE2/plugins/slick/slick.js"></script>
 <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
 <!-- Main JS-->
 <script src="~/FE2/js/main.js"></script>
 <script src="~/FE2/js/single-room.js"></script>
@@ -291,9 +294,79 @@
                 console.error("Lỗi xóa bình luận:", error);
             });
     }
-
-
-
 </script>
+<script>
+    $(document).ready(function () {
+        // Get the booked dates passed from the controller
+        var bookedDates = @Html.Raw(Json.Serialize(ViewBag.BookedDates));
+
+        // Prepare an array of disabled dates using moment.js for comparison
+        var disabledDates = bookedDates.map(function (date) {
+            return moment(date, "DD/MM/YYYY"); // Convert each date string to moment object
+        });
+
+
+        // Function to check if a date is in the disabledDates array
+        function isDateDisabled(date) {
+            return disabledDates.some(function (disabledDate) {
+                return date.isSame(disabledDate, 'day'); // Compare by day only
+            });
+        }
+
+        // Initialize the checkIn date picker
+        $('#checkIn').daterangepicker({
+            singleDatePicker: true, // Only select one date
+            minDate: new Date(), // Prevent past dates
+            dateLimit: { days: 365 }, // Limit to 365 days ahead
+            isInvalidDate: function (date) {
+                // Disable dates in the bookedDates array
+                return isDateDisabled(date);
+            },
+            locale: {
+                dateFormat: 'dd/mm/yy' // Date format
+            }
+        });
+
+        // Initialize the checkOut date picker
+        $('#checkOut').daterangepicker({
+            singleDatePicker: true, // Only select one date
+            minDate: new Date(), // Prevent past dates
+            dateLimit: { days: 365 }, // Limit to 365 days ahead
+            isInvalidDate: function (date) {
+                // Disable dates in the bookedDates array
+                return isDateDisabled(date);
+            },
+            locale: {
+                dateFormat: 'dd/mm/yy' // Date format
+            }
+        });
+
+        // Ensure that the checkOut date is after the checkIn date
+        $('#checkIn').on('apply.daterangepicker', function (ev, picker) {
+            var checkInDate = picker.startDate;
+
+            // Reinitialize the checkOut picker with updated minDate
+            $('#checkOut').daterangepicker({
+                minDate: checkInDate, // Ensure checkOut is after checkIn
+                singleDatePicker: true,
+                isInvalidDate: function (date) {
+                    // Disable dates in the bookedDates array
+                    return isDateDisabled(date);
+                },
+                locale: {
+                    dateFormat: 'dd/mm/yy' // Date format
+                }
+            });
+        });
+    });
+</script>
+
+
+
+
+
+
+
+
 
 

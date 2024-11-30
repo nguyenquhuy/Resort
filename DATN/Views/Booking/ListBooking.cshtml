@@ -3,13 +3,58 @@
     Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
 }
 <h2>Danh sách đơn đặt phòng</h2>
-<table class="table">
+<a asp-action="Create" asp-controller="Booking" class="btn btn-success">Thêm mới</a>
+<!-- Form lọc -->
+<form method="get" asp-action="ListBooking" class="row g-3 align-items-center">
+    <div class="col-auto">
+        <label class="form-label mb-0">Trạng thái:</label>
+    </div>
+    <div class="col-auto">
+        <div class="d-flex gap-3">
+            <div>
+                <input type="radio" name="Status" value="All" id="All" checked />
+                <label for="All">Tất cả</label>
+            </div>
+            <div>
+                <input type="radio" name="Status" value="Đã nhận phòng" id="CheckedIn" />
+                <label for="CheckedIn">Đã nhận phòng</label>
+            </div>
+            <div>
+                <input type="radio" name="Status" value="Chưa nhận phòng" id="NotCheckedIn" />
+                <label for="NotCheckedIn">Chưa nhận phòng</label>
+            </div>
+            <div>
+                <input type="radio" name="Status" value="Hủy đặt phòng" id="Cancelled" />
+                <label for="Cancelled">Hủy đặt phòng</label>
+            </div>
+        </div>
+    </div>
+    <div class="col-auto">
+        <label for="startDate" class="form-label mb-0">Ngày bắt đầu:</label>
+    </div>
+    <div class="col-auto">
+        <input type="date" name="StartDate" id="startDate" class="form-control form-control-sm" />
+    </div>
+    <div class="col-auto">
+        <label for="endDate" class="form-label mb-0">Ngày kết thúc:</label>
+    </div>
+    <div class="col-auto">
+        <input type="date" name="EndDate" id="endDate" class="form-control form-control-sm" />
+    </div>
+    <div class="col-auto">
+        <button type="submit" class="btn btn-primary btn-sm">Lọc</button>
+    </div>
+</form>
+
+<!-- Bảng danh sách đơn đặt phòng -->
+<table class="table table-bordered table-hover mt-3">
     <thead>
         <tr>
             <th>Tên người đặt</th>
             <th>Thông tin đặt phòng</th>
             <th>Dịch vụ đăng ký</th>
             <th>Tổng tiền</th>
+            <th>Trạng thái</th>
             <th>Hành động</th>
         </tr>
     </thead>
@@ -24,7 +69,6 @@
                         .Where(br => br != null && br.Room != null)
                         .Select(br => $"{br.Quantity} x {br.Room.Name}")
                         .ToList();
-
                         var roomList = string.Join(", ", roomNames);
                     }
                     @if (string.IsNullOrEmpty(roomList))
@@ -36,14 +80,12 @@
                         <p>@roomList</p>
                     }
                 </td>
-
                 <td>
                     @{
                         var serviceTitles = book.BookingServices
                         .Where(bs => bs != null && bs.service != null)
                         .Select(bs => bs.service.Title)
                         .ToList();
-
                         var serviceList = string.Join(", ", serviceTitles);
                     }
                     @if (string.IsNullOrEmpty(serviceList))
@@ -55,10 +97,57 @@
                         <p>@serviceList</p>
                     }
                 </td>
-
                 <td>@book.Total.ToString("#,##0 VND")</td>
                 <td>
-                    <a asp-action="Detail" asp-route-id="@book.Id" class="btn btn-primary">Chi tiết</a>
+                    @{
+                        var now = DateTime.Now;
+                        if (book.Status == "Chưa nhận phòng")
+                        {
+                            if (book.CheckIn.HasValue && book.CheckIn > now)
+                            {
+                                var timeSpan = book.CheckIn.Value - now;
+                                <span style="color: orange;">Chưa nhận phòng</span>
+
+                                <br />
+                                <span style="color: orange;">Còn: @timeSpan.Days ngày, @timeSpan.Hours giờ, @timeSpan.Minutes phút</span>
+                            }
+                            else
+                            {
+                                <span style="color: red;">Đã quá hạn nhận phòng</span>
+                            }
+                        }
+                        else if (book.Status == "Đã nhận phòng")
+                        {
+                            if (book.CheckOut.HasValue && book.CheckOut > now)
+                            {
+                                var timeSpan = book.CheckOut.Value - now;
+                                <span style="color: green;">Đã nhận phòng</span>
+
+                                <br />
+                                <span style="color: green;">Còn: @timeSpan.Days ngày, @timeSpan.Hours giờ</span>
+                            }
+                            else
+                            {
+                                var overdueTime = now - (book.CheckOut ?? now);
+                                <span style="color: red;">Quá hạn</span>
+
+                                <br />
+                                <span style="color: red;">Quá hạn: @overdueTime.Days ngày, @overdueTime.Hours giờ</span>
+                            }
+                        }
+                        else
+                        {
+                            <span>@book.Status</span>
+                        }
+                    }
+                </td>
+
+                <td>
+                    <div class="btn-group">
+                        <a asp-action="Detail" asp-route-id="@book.Id" class="btn btn-info btn-sm">Chi tiết</a>
+                        <a asp-action="Edit" asp-route-id="@book.Id" class="btn btn-warning btn-sm">Cập nhật</a>
+                        @* <a asp-action="Delete" asp-route-id="@book.Id" class="btn btn-danger btn-sm">Xóa</a> *@
+                    </div>
                 </td>
             </tr>
         }

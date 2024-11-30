@@ -68,6 +68,7 @@ namespace DATN.Controllers
                 new Claim(ClaimTypes.Role, user.Role),
                 new Claim(ClaimTypes.StreetAddress, user.Address),
                 new Claim(ClaimTypes.MobilePhone, user.PhoneNumber),
+                new Claim(ClaimTypes.UserData, user.CCCD),
                 new Claim("UserId", user.ID.ToString()) // Add User ID as a claim
             };
 

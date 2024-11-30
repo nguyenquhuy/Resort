@@ -1,0 +1,200 @@
+﻿@model Booking
+
+@{
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+    ViewData["Title"] = "Chỉnh sửa đơn đặt phòng";
+}
+
+<h1>@ViewData["Title"]</h1>
+
+<form asp-action="Edit">
+    <div class="row">
+        <!-- Cột trái: Thông tin đơn đặt phòng -->
+        <div class="col-md-6">
+            <div class="form-group">
+                <label asp-for="Name" class="control-label"></label>
+                <input asp-for="Name" class="form-control" readonly />
+                <span asp-validation-for="Name" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Address" class="control-label"></label>
+                <input asp-for="Address" class="form-control" readonly />
+                <span asp-validation-for="Address" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Email" class="control-label"></label>
+                <input asp-for="Email" class="form-control" readonly />
+                <span asp-validation-for="Email" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Phone" class="control-label"></label>
+                <input asp-for="Phone" class="form-control" readonly />
+                <span asp-validation-for="Phone" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="CCCD" class="control-label"></label>
+                <input asp-for="CCCD" class="form-control" readonly />
+                <span asp-validation-for="CCCD" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Child" class="control-label"></label>
+                <input asp-for="Child" class="form-control" readonly />
+                <span asp-validation-for="Child" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Adult" class="control-label"></label>
+                <input asp-for="Adult" class="form-control" readonly />
+                <span asp-validation-for="Adult" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="CreatedAt" class="control-label"></label>
+                <input asp-for="CreatedAt" class="form-control" readonly />
+                <span asp-validation-for="CreatedAt" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="CheckIn" class="control-label"></label>
+                <input asp-for="CheckIn" class="form-control" readonly />
+                <span asp-validation-for="CheckIn" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="CheckOut" class="control-label"></label>
+                <input asp-for="CheckOut" class="form-control" readonly />
+                <span asp-validation-for="CheckOut" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label class="control-label">Đã cọc</label>
+                <input asp-for="depositMoney" class="form-control" readonly />
+                <span asp-validation-for="depositMoney" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Total" class="control-label"></label>
+                <input asp-for="Total" class="form-control" readonly />
+                <span asp-validation-for="Total" class="text-danger"></span>
+            </div>
+        </div>
+
+        <!-- Cột phải: Trạng thái và thanh toán -->
+        <div class="col-md-6">
+            <div class="mb-3">
+                <label for="Payment" class="form-label">Thanh toán</label>
+                <select asp-for="Payment" class="form-control">
+                    <option value="Đã đặt cọc" checked=@(Model.Payment == "Đã đặt cọc" ? "selected" : "")>Đã đặt cọc</option>
+                    <option value="Đã thanh toán" checked=@(Model.Payment == "Đã thanh toán" ? "selected" : "")>Đã thanh toán</option>
+                    <option value="Đã hoàn tiền" checked=@(Model.Payment == "Đã hoàn tiền" ? "selected" : "")>Đã hoàn tiền</option>
+                </select>
+            </div>
+
+            <div class="mb-3">
+                <label for="Status" class="form-label">Trạng thái</label>
+                <select asp-for="Status" class="form-control">
+                    <option value="Chưa nhận phòng" checked=@(Model.Status == "Chưa nhận phòng" ? "selected" : "")>Chưa nhận phòng</option>
+                    <option value="Đã nhận phòng" checked=@(Model.Status == "Đã nhận phòng" ? "selected" : "")>Đã nhận phòng</option>
+                    <option value="Đã trả phòng" checked=@(Model.Status == "Đã trả phòng" ? "selected" : "")>Đã trả phòng</option>
+                    <option value="Hủy đặt phòng" checked=@(Model.Status == "Hủy đặt phòng" ? "selected" : "")>Hủy đặt phòng</option>
+                </select>
+            </div>
+
+            <div class="card shadow-sm">
+                <div class="card-header bg-success text-white">
+                    <h5>Phòng đã đặt</h5>
+                </div>
+                <div class="card-body">
+                    @foreach (var room in Model.BookingRooms)
+                    {
+                        <div class="d-flex mb-3">
+                            <img src="~/Images/Room/@room.Room.Image" alt="@room.Room.Name" class="img-thumbnail" style="width: 100px; height: 100px; object-fit: cover;">
+                            <div class="ms-3">
+                                <h6 class="mb-1">@room.Room.Name</h6>
+                                <p class="text-muted mb-0">Số lượng: @room.Quantity</p>
+                                <p class="mb-1">Giá: @room.Room.Price.ToString("#,##0 VND")/đêm</p>
+                            </div>
+                        </div>
+                    }
+                </div>
+            </div>
+
+            <div class="card shadow-sm">
+                <div class="card-header bg-warning text-dark">
+                    <h5>Dịch vụ đã đăng ký</h5>
+                </div>
+                <div class="card-body">
+                    @if (Model.BookingServices?.Any() == true)
+                    {
+                        @foreach (var service in Model.BookingServices)
+                        {
+                            <div class="d-flex mb-3">
+                                <img src="~/Images/Service/@service.service.Image" alt="@service.service.Title" class="img-thumbnail" style="width: 80px; height: 80px; object-fit: cover;">
+                                <div class="ms-3">
+                                    <h6 class="mb-1">@service.service.Title</h6>
+                                    <p class="text-muted mb-0">@service.service.Description</p>
+                                    <p class="mb-1">Giá: @service.service.Price.ToString("#,##0 VND")</p>
+                                </div>
+                            </div>
+                        }
+                    }
+                    else
+                    {
+                        <p class="text-muted">Bạn không đăng ký thêm dịch vụ nào.</p>
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="form-check my-3">
+        <input type="checkbox" id="additionalBooking" class="form-check-input" />
+        <label for="additionalBooking" class="form-check-label">Đăng ký thêm</label>
+    </div>
+
+    <div id="additionalBookingSection" style="display: none;">
+        <!-- Danh sách phòng trống -->
+        <div class="card shadow-sm mb-4">
+            <div class="card-header bg-info text-white">
+                <h5>Danh sách phòng trống</h5>
+            </div>
+            <div class="card-body">
+                @foreach (var room in ViewBag.AvailableRooms as List<Room>)
+                {
+                    <div class="form-check mb-2">
+                        <input type="checkbox" class="form-check-input" name="AdditionalRooms" value="@room.ID" id="room_@room.ID" />
+                        <label class="form-check-label" for="room_@room.ID">
+                            @room.Name - Giá: @room.Price.ToString("#,##0 VND")/đêm
+                        </label>
+                    </div>
+                }
+            </div>
+        </div>
+
+        <!-- Danh sách dịch vụ -->
+        <div class="card shadow-sm mb-4">
+            <div class="card-header bg-secondary text-white">
+                <h5>Danh sách dịch vụ</h5>
+            </div>
+            <div class="card-body">
+                @if (ViewBag.Services != null)
+                {
+                    foreach (var service in ViewBag.Services)
+                    {
+                        <div>
+                            <label>
+                                <input type="checkbox" name="AdditionalServices" value="@service.Id" />
+                                @service.Title - @service.Price.ToString("#,##0 VND")
+                            </label>
+                        </div>
+                    }
+                }
+            </div>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <input type="submit" value="Lưu" class="btn btn-warning"/>
+        <a asp-action="ListBooking" class="btn btn-warning"><i class="fa-solid fa-arrow-left"></i> Trở lại</a>
+    </div>
+</form>
+
+<script>
+    document.getElementById("additionalBooking").addEventListener("change", function () {
+        document.getElementById("additionalBookingSection").style.display = this.checked ? "block" : "none";
+    });
+</script>

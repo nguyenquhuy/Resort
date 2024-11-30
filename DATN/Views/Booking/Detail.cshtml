@@ -1,87 +1,139 @@
 ﻿@model Booking
+
 @{
     Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
 }
-<h1>Thông tin của mã đơn @Model.Id</h1>
-<div>
-    <table class="table">
-        <tr>
-            <th>Họ và tên</th>
-            <td>@Model.Name</td>
-        </tr>
-        <tr>
-            <th>Địa chỉ</th>
-            <td>@Model.Address</td>
-        </tr>
-        <tr>
-            <th>Email</th>
-            <td>@Model.Email</td>
-        </tr>
-        <tr>
-            <th>Số điện thoại</th>
-            <td>@Model.Phone</td>
-        </tr>
-        <tr>
-            <th>Ngày nhận phòng</th>
-            <td>@Model.CheckIn?.ToString("dd/MM/yyyy")</td>
-        </tr>
-        <tr>
-            <th>Ngày trả phòng</th>
-            <td>@Model.CheckOut?.ToString("dd/MM/yyyy")</td>
-        </tr>
-        <tr>
-            <th>Trẻ em</th>
-            <td>@Model.Child</td>
-        </tr>
-        <tr>
-            <th>Người lớn</th>
-            <td>@Model.Adult</td>
-        </tr>        
-        <tr>
-            <th>Phòng đặt</th>
-            <td>
-                @{
-                    var roomNames = Model.BookingRooms
-                    .Where(br => br != null && br.Room != null)
-                    .Select(br => $"{br.Quantity} x {br.Room.Name}")
-                    .ToList();
 
-                    var roomList = string.Join(", ", roomNames);
-                }
-                @if (string.IsNullOrEmpty(roomList))
-                {
-                    <p>Không đặt phòng nào</p>
-                }
-                else
-                {
-                    <p>@roomList</p>
-                }
-            </td>
-        </tr>
-        <tr>
-            <th>Dịch vụ đặt</th>
-            <td>
-                @{
-                    var serviceTitles = Model.BookingServices
-                    .Where(bs => bs != null && bs.service != null)
-                    .Select(bs => bs.service.Title)
-                    .ToList();
+<h1>Đơn đặt phòng số @Model.Id</h1>
 
-                    var serviceList = string.Join(", ", serviceTitles);
-                }
-                @if (string.IsNullOrEmpty(serviceList))
-                {
-                    <p>Không sử dụng dịch vụ</p>
-                }
-                else
-                {
-                    <p>@serviceList</p>
-                }
-            </td>
-        </tr>
-        <tr border="1">
-            <th>Tổng tiền</th>
-            <td>@Model.Total.ToString("#,##0 VND")</td>
-        </tr>
-    </table>
-</div>
+<form asp-action="Edit">
+    <div class="row">
+        <!-- Cột trái: Thông tin đơn đặt phòng -->
+        <div class="col-md-6">
+            <div class="form-group">
+                <label asp-for="Name" class="control-label"></label>
+                <input asp-for="Name" class="form-control" readonly />
+                <span asp-validation-for="Name" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Address" class="control-label"></label>
+                <input asp-for="Address" class="form-control" readonly />
+                <span asp-validation-for="Address" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Email" class="control-label"></label>
+                <input asp-for="Email" class="form-control" readonly />
+                <span asp-validation-for="Email" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Phone" class="control-label"></label>
+                <input asp-for="Phone" class="form-control" readonly />
+                <span asp-validation-for="Phone" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="CCCD" class="control-label"></label>
+                <input asp-for="CCCD" class="form-control" readonly />
+                <span asp-validation-for="CCCD" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Child" class="control-label"></label>
+                <input asp-for="Child" class="form-control" readonly />
+                <span asp-validation-for="Child" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Adult" class="control-label"></label>
+                <input asp-for="Adult" class="form-control" readonly />
+                <span asp-validation-for="Adult" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="CreatedAt" class="control-label"></label>
+                <input asp-for="CreatedAt" class="form-control" readonly />
+                <span asp-validation-for="CreatedAt" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="CheckIn" class="control-label"></label>
+                <input asp-for="CheckIn" class="form-control" readonly />
+                <span asp-validation-for="CheckIn" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="CheckOut" class="control-label"></label>
+                <input asp-for="CheckOut" class="form-control" readonly />
+                <span asp-validation-for="CheckOut" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label class="control-label">Đã cọc</label>
+                <input asp-for="depositMoney" class="form-control" readonly />
+                <span asp-validation-for="depositMoney" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Total" class="control-label"></label>
+                <input asp-for="Total" class="form-control" readonly />
+                <span asp-validation-for="Total" class="text-danger"></span>
+            </div>
+        </div>
+
+        <!-- Cột phải: Trạng thái và thanh toán -->
+        <div class="col-md-6">
+            <div class="mb-3">
+                <label asp-for="Payment" class="control-label"></label>
+                <input asp-for="Payment" class="form-control" readonly />
+                <span asp-validation-for="Payment" class="text-danger"></span>
+            </div>
+
+            <div class="mb-3">
+                <label asp-for="Status" class="control-label"></label>
+                <input asp-for="Status" class="form-control" readonly />
+                <span asp-validation-for="Status" class="text-danger"></span>
+            </div>
+
+            <div class="card shadow-sm">
+                <div class="card-header bg-success text-white">
+                    <h5>Phòng đã đặt</h5>
+                </div>
+                <div class="card-body">
+                    @foreach (var room in Model.BookingRooms)
+                    {
+                        <div class="d-flex mb-3">
+                            <img src="~/Images/Room/@room.Room.Image" alt="@room.Room.Name" class="img-thumbnail" style="width: 100px; height: 100px; object-fit: cover;">
+                            <div class="ms-3">
+                                <h6 class="mb-1">@room.Room.Name</h6>
+                                <p class="text-muted mb-0">Số lượng: @room.Quantity</p>
+                                <p class="mb-1">Giá: @room.Room.Price.ToString("#,##0 VND")/đêm</p>
+                            </div>
+                        </div>
+                    }
+                </div>
+            </div>
+
+            <div class="card shadow-sm">
+                <div class="card-header bg-warning text-dark">
+                    <h5>Dịch vụ đã đăng ký</h5>
+                </div>
+                <div class="card-body">
+                    @if (Model.BookingServices?.Any() == true)
+                    {
+                        @foreach (var service in Model.BookingServices)
+                        {
+                            <div class="d-flex mb-3">
+                                <img src="~/Images/Service/@service.service.Image" alt="@service.service.Title" class="img-thumbnail" style="width: 80px; height: 80px; object-fit: cover;">
+                                <div class="ms-3">
+                                    <h6 class="mb-1">@service.service.Title</h6>
+                                    <p class="text-muted mb-0">@service.service.Description</p>
+                                    <p class="mb-1">Giá: @service.service.Price.ToString("#,##0 VND")</p>
+                                </div>
+                            </div>
+                        }
+                    }
+                    else
+                    {
+                        <p class="text-muted">Bạn không đăng ký thêm dịch vụ nào.</p>
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="form-group">
+        <a asp-action="ListBooking" class="btn btn-warning"><i class="fa-solid fa-arrow-left"></i> Trở lại</a>
+    </div>
+</form>
+

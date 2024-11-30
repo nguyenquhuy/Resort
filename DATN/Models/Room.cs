@@ -38,8 +38,8 @@ namespace DATN.Models
         [NotMapped]
         public IFormFile? ImageFile { get; set; } // Exclude from database
 
-        [DisplayName("Trạng thái hiển thị")]
-        public bool Status { get; set; }
+        [DisplayName("Trạng thái")]
+        public string? Status { get; set; }
         [NotMapped]
         public int[] CategoryIds { get; set; }
         [NotMapped]

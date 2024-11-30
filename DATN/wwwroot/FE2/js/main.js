@@ -261,21 +261,63 @@ $(function () {
 });
 
 //  daterangepicker -------------------------------------->
+//$(function () {
+//    var checkInPicker = $('input[name="checkInDate"]');
+//    var checkOutPicker = $('input[name="checkOutDate"]');
 
-$(function () {
-  $('input[name="checkIn"]').daterangepicker({
-    singleDatePicker: true,
-    startDate: new Date(),
-    showDropdowns: true,
-    timePicker: true,
-    timePicker24Hour: true,
-    timePickerIncrement: 10,
-    autoUpdateInput: true,
-    locale: {
-      format: "DD/MM/YYYY",
-    },
-  });
-});
+//    checkInPicker.daterangepicker({
+//        singleDatePicker: true,
+//        startDate: new Date(),
+//        showDropdowns: true,
+//        autoUpdateInput: true,
+//        autoApply: true,
+//        locale: {
+//            format: "dd/mm/yyyy",
+//        }
+//    }, function (start) {
+//        var checkInDate = start.toDate();
+//        var checkOutDate = checkOutPicker.data('daterangepicker').startDate.toDate();
+
+//        // Ensure check-out date is not before check-in date
+//        if (checkInDate > checkOutDate) {
+//            checkOutPicker.data('daterangepicker').setStartDate(checkInDate);
+//            checkOutPicker.val(start.format('DD/MM/YYYY'));
+//    });
+
+//    checkOutPicker.daterangepicker({
+//        singleDatePicker: true,
+//        startDate: new Date(),
+//        showDropdowns: true,
+//        autoUpdateInput: true,
+//        autoApply: true,
+//        locale: {
+//            format: "dd/mm/yyyy",
+//        }
+//    }, function (start) {
+//        var checkOutDate = start.toDate();
+//        var checkInDate = checkInPicker.data('daterangepicker').startDate.toDate();
+
+//        // Ensure check-in date is not after check-out date
+//        if (checkOutDate < checkInDate) {
+//            checkInPicker.data('daterangepicker').setStartDate(checkOutDate);
+//            checkInPicker.val(start.format('DD/MM/YYYY'));
+//        }
+//    });
+//});
+//$(function () {
+//  $('input[name="checkIn"]').daterangepicker({
+//    singleDatePicker: true,
+//    startDate: new Date(),
+//    showDropdowns: true,
+//    timePicker: true,
+//    timePicker24Hour: true,
+//    timePickerIncrement: 10,
+//    autoUpdateInput: true,
+//    locale: {
+//      format: "DD/MM/YYYY",
+//    },
+//  });
+//});
 
 // toggle comment in blog detail page
 $("#reply-01").click(function () {

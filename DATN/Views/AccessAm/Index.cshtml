@@ -1,4 +1,108 @@
-﻿<!-- Alert Box -->
+﻿@using System.Text.Json
 @{
     Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
 }
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<style>
+    .card {
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        border-radius: 10px;
+    }
+
+    .card-text {
+        font-size: 2.5rem;
+        font-weight: bold;
+        color: #007bff;
+    }
+</style>
+
+<!-- Form chọn năm -->
+<form method="get" id="filterForm">
+    <div class="form-group">
+        <label for="year">Chọn năm:</label>
+        <select id="year" name="year" class="form-control" asp-items="@(new SelectList(Enumerable.Range(2000, DateTime.Now.Year - 2000 + 1).Reverse(), ViewBag.SelectedYear))" onchange="document.getElementById('filterForm').submit();">
+        </select>
+    </div>
+</form>
+
+
+
+
+<div class="row mt-4">
+    <!-- Tổng số phòng -->
+    <div class="col-md-4">
+        <div class="card text-center">
+            <div class="card-body">
+                <h5 class="card-title">Tổng số phòng</h5>
+                <p class="card-text display-4">@ViewBag.TotalRooms</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Số phòng đã đặt trong năm -->
+    <div class="col-md-4">
+        <div class="card text-center">
+            <div class="card-body">
+                <h5 class="card-title">Số phòng đã đặt trong năm</h5>
+                <p class="card-text display-4">@ViewBag.BookedRooms</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Số dịch vụ đã đặt trong năm -->
+    <div class="col-md-4">
+        <div class="card text-center">
+            <div class="card-body">
+                <h5 class="card-title">Số dịch vụ đã đặt trong năm</h5>
+                <p class="card-text display-4">@ViewBag.BookedServices</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!-- Card chứa biểu đồ -->
+<div class="card">
+    <div class="card-header">
+        <h3 class="card-title">Biểu đồ doanh thu theo tháng</h3>
+    </div>
+    <div class="card-body">
+        <canvas id="revenueChart" width="400" height="200"></canvas>
+    </div>
+</div>
+
+
+
+<script>
+    // Lấy dữ liệu từ ViewBag
+    const data = @Html.Raw(JsonSerializer.Serialize(ViewBag.RevenueByMonth));
+    const parsedData = Array.isArray(data) ? data : JSON.parse(data);
+
+    const labels = parsedData.map(item => `Tháng ${item.Month}`);
+    const values = parsedData.map(item => item.TotalRevenue);
+
+    // Tạo biểu đồ
+    const ctx = document.getElementById('revenueChart').getContext('2d');
+    new Chart(ctx, {
+        type: 'bar',
+        data: {
+            labels: labels,
+            datasets: [{
+                label: 'Doanh thu (VND)',
+                data: values,
+                backgroundColor: 'rgba(54, 162, 235, 0.5)',
+                borderColor: 'rgba(54, 162, 235, 1)',
+                borderWidth: 1
+            }]
+        },
+        options: {
+            scales: {
+                y: {
+                    beginAtZero: true
+                }
+            }
+        }
+    });
+
+
+</script>

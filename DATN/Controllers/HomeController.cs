@@ -41,10 +41,9 @@ namespace DATN.Controllers
 
             // Fetch the room details along with the RoomType
             var room = _context.Rooms
-                                .Include(r => r.RoomType) // Nạp RoomType cùng với Room
-                                .FirstOrDefault(r => r.ID == id);  // Sử dụng FirstOrDefault thay vì Find để đảm bảo không trả về null
+                                .Include(r => r.RoomType)
+                                .FirstOrDefault(r => r.ID == id);
 
-            // Check if room is null
             if (room == null)
             {
                 return NotFound();
@@ -55,16 +54,45 @@ namespace DATN.Controllers
                                         .Where(g => g.RoomId == id)
                                         .ToList();
 
+            // Fetch bookings for the room and convert to list first
+            var bookings = _context.BookingRoom
+                                   .Where(br => br.RoomId == id)
+                                   .Include(br => br.Booking)
+                                   .Where(br => br.Booking.CheckOut >= DateTime.Now)
+                                   .ToList(); // Fetch data into memory
+
+            // Generate the list of booked date ranges
+            var bookedDates = bookings
+                .Where(br => br.Booking.CheckIn.HasValue && br.Booking.CheckOut.HasValue)
+                .SelectMany(br => GenerateDateRange(br.Booking.CheckIn.Value, br.Booking.CheckOut.Value))
+                .Select(date => date.ToString("dd-MM-yyyy"))
+                .ToList();
+
             // Create and initialize the ViewModel
             var viewModel = new RoomGal
             {
                 Room = room,
-                RoomGalleries = galleryImages ?? new List<GalleryRooms>(), // Ensure RoomGalleries is not null
-                Images = new List<IFormFile>() // Initialize Images if necessary
+                RoomGalleries = galleryImages ?? new List<GalleryRooms>(),
+                Images = new List<IFormFile>()
             };
+
+            // Pass the booked dates to the View
+            ViewBag.BookedDates = bookedDates;
 
             return View(viewModel);
         }
+
+        // Helper function to generate a range of dates
+        private static IEnumerable<DateTime> GenerateDateRange(DateTime checkIn, DateTime checkOut)
+        {
+            for (var date = checkIn; date <= checkOut; date = date.AddDays(1))
+            {
+                yield return date;
+            }
+        }
+
+
+
 
 
         //Danh sách bài viết

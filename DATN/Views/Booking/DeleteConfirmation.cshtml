@@ -1,0 +1,80 @@
+﻿@model DATN.Models.Booking
+
+<div class="container my-5">
+    <div class="text-center mb-4">
+        <h2 class="fw-bold text-danger">Đặt Phòng Đã Hủy</h2>
+        <p class="text-muted">Xin chào <strong>@Model.Name</strong>,</p>
+        <p class="text-muted">Đơn đặt phòng của bạn đã bị hủy. Nếu bạn có bất kỳ thắc mắc nào, xin vui lòng liên hệ với chúng tôi qua email.</p>
+    </div>
+
+    <!-- Booking Details -->
+    <div class="row mb-5">
+        <div class="col-md-6">
+            <div class="card shadow-sm">
+                <div class="card-header bg-danger text-white">
+                    <h5>Chi tiết đặt phòng (Đã hủy)</h5>
+                </div>
+                <div class="card-body">
+                    <p><strong>Ngày nhận phòng:</strong> <span style="text-decoration: line-through;">@Model.CheckIn?.ToString("dd/MM/yyyy")</span></p>
+                    <p><strong>Ngày trả phòng:</strong> <span style="text-decoration: line-through;">@Model.CheckOut?.ToString("dd/MM/yyyy")</span></p>
+                    <p><strong>Số người lớn:</strong> <span style="text-decoration: line-through;">@Model.Adult</span></p>
+                    <p><strong>Số trẻ em:</strong> <span style="text-decoration: line-through;">@Model.Child</span></p>
+                    <p><strong>Tổng tiền:</strong> <span style="text-decoration: line-through;" class="text-danger fw-bold">@Model.Total.ToString("#,##0 VND")</span></p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Room Details with Images -->
+        <div class="col-md-6">
+            <div class="card shadow-sm">
+                <div class="card-header bg-secondary text-white">
+                    <h5>Phòng đã đặt (Đã hủy)</h5>
+                </div>
+                <div class="card-body">
+                    @foreach (var room in Model.BookingRooms)
+                    {
+                        <div class="d-flex mb-3">
+                            <img src="~/Images/Room/@room.Room.Image" alt="@room.Room.Name" class="img-thumbnail" style="width: 100px; height: 100px; object-fit: cover; opacity: 0.5;">
+                            <div class="ms-3">
+                                <h6 class="mb-1" style="text-decoration: line-through;">@room.Room.Name</h6>
+                                <p class="text-muted mb-0"><span style="text-decoration: line-through;">Số lượng: @room.Quantity</span></p>
+                                <p class="mb-1"><span style="text-decoration: line-through;">Giá: @room.Room.Price.ToString("#,##0 VND")/đêm</span></p>
+                            </div>
+                        </div>
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Registered Services -->
+    <div class="row">
+        <div class="col-12">
+            <div class="card shadow-sm">
+                <div class="card-header bg-dark text-white">
+                    <h5>Dịch vụ đã đăng ký (Đã hủy)</h5>
+                </div>
+                <div class="card-body">
+                    @if (Model.BookingServices?.Any() == true)
+                    {
+                        @foreach (var service in Model.BookingServices)
+                        {
+                            <div class="d-flex mb-3">
+                                <img src="~/Images/Service/@service.service.Image" alt="@service.service.Title" class="img-thumbnail" style="width: 80px; height: 80px; object-fit: cover; opacity: 0.5;">
+                                <div class="ms-3">
+                                    <h6 class="mb-1" style="text-decoration: line-through;">@service.service.Title</h6>
+                                    <p class="text-muted mb-0" style="text-decoration: line-through;">@service.service.Description</p>
+                                    <p class="mb-1" style="text-decoration: line-through;">Giá: @service.service.Price.ToString("#,##0 VND")</p>
+                                </div>
+                            </div>
+                        }
+                    }
+                    else
+                    {
+                        <p class="text-muted">Bạn không đăng ký thêm dịch vụ nào.</p>
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

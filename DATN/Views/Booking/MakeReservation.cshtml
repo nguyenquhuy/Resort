@@ -9,6 +9,7 @@
     var emailClaim = User.Claims.FirstOrDefault(c => c.Type == ClaimTypes.Name)?.Value ?? "";
     var addressClaim = User.Claims.FirstOrDefault(c => c.Type == ClaimTypes.StreetAddress)?.Value ?? "";
     var phoneClaim = User.Claims.FirstOrDefault(c => c.Type == ClaimTypes.MobilePhone)?.Value ?? "";
+    var CCCDClaim = User.Claims.FirstOrDefault(c => c.Type == ClaimTypes.UserData)?.Value ?? "";
 }
 <div class="page-title container-fluid">
     <div class="container" style="position: relative;">
@@ -83,6 +84,10 @@
                             <input type="text" name="phone" class="form-control" value="@phoneClaim" required />
                         </div>
                         <div class="form-group">
+                            <label for="Phone">Căn cước công dân</label>
+                            <input type="text" name="cccd" class="form-control" value="@CCCDClaim" required />
+                        </div>
+                        <div class="form-group">
                             <label for="Child">Trẻ em</label>
                             <input type="number" name="child" class="form-control" min="0" />
                         </div>
@@ -103,7 +108,7 @@
                         {
                             <div class="form-check">
                                 <input type="checkbox" class="form-check-input" id="service_@service.Id" name="selectedServices" value="@service.Id" />
-                                <label class="form-check-label" for="service_@service.Id">@service.Title</label>
+                                <label class="form-check-label" for="service_@service.Id">@service.Title <span> - @service.Price.ToString("#,##0 VND")</span></label>
                             </div>
                         }
                     </div>

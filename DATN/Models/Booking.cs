@@ -24,6 +24,10 @@ namespace DATN.Models
         [Required(ErrorMessage = "Vui lòng nhập số điện thoại")]
         [RegularExpression(@"^\d{10,11}$", ErrorMessage = "Số điện thoại chỉ được chứa số và có độ dài từ 10 đến 11 ký tự")]
         public string Phone { get; set; }
+        [DisplayName("Căn cước công dân")]
+        [Required(ErrorMessage = "Vui lòng nhập số căn cước công dân")]
+        [RegularExpression(@"^\d{12}$", ErrorMessage = "Số điện thoại chỉ được chứa số và có độ 12 ký tự")]
+        public string? CCCD { get; set; }
         [DisplayName("Ngày nhận phòng")]
         [Required(ErrorMessage = "Vui lòng chọn ngày nhận phòng")]
         public DateTime? CheckIn { get; set; }
@@ -42,6 +46,18 @@ namespace DATN.Models
         [ForeignKey("Account")]
         public int? AccountId { get; set; }
         public Account Account { get; set; }
+        [DisplayName("Thanh toán")]
+        public string? Payment { get; set; }
+        [DisplayName("Tình trạng")]
+        public string? Status { get; set; }
+        [DisplayName("Ngày cập nhật đơn")]
+        public DateTime? UpdatedAt { get; set; }
+        [ForeignKey("UpdatedByAccount")]
+        public int? UpdatedByAccountId { get; set; }
+        [DisplayName("Người cập nhật")]
+        public Account UpdatedByAccount { get; set; }
+
+        public double? depositMoney { get; set; }        
         // Navigation property
         public ICollection<BookingRoom> BookingRooms { get; set; } = new List<BookingRoom>();
         public ICollection<BookingService> BookingServices { get; set; } = new List<BookingService>();
@@ -57,6 +73,7 @@ namespace DATN.Models
         public int RoomId { get; set; }
         public Room Room { get; set; }        
         public int Quantity { get; set; }  
+        public double? Price { get; set; }
     }
 
     public class BookingService
@@ -68,5 +85,6 @@ namespace DATN.Models
         [ForeignKey("Service")]
         public int ServiceId { get; set; }
         public Service service { get; set; }
+        public double? Price { get; set; }
     }
 }

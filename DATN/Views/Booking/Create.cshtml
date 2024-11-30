@@ -1,0 +1,160 @@
+﻿@model DATN.ViewModel.BookingViewModel
+
+@{
+    ViewData["Title"] = "Tạo Đặt Phòng";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<h2>Tạo Đặt Phòng</h2>
+<hr width="100%"/>
+<!-- Form để tạo booking -->
+<form asp-action="Create" method="post">
+    <div class="row">
+        <!-- Thông tin cá nhân -->
+        <div class="col-md-6">
+            <h3>Thông Tin Cá Nhân</h3>
+            <div class="form-group">
+                <label asp-for="Booking.Name"></label>
+                <input asp-for="Booking.Name" class="form-control" />
+                <span asp-validation-for="Booking.Name" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Booking.Email"></label>
+                <input asp-for="Booking.Email" class="form-control" />
+                <span asp-validation-for="Booking.Email" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Booking.Phone"></label>
+                <input asp-for="Booking.Phone" class="form-control" />
+                <span asp-validation-for="Booking.Phone" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Booking.Address"></label>
+                <input asp-for="Booking.Address" class="form-control" />
+                <span asp-validation-for="Booking.Address" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Booking.CCCD"></label>
+                <input asp-for="Booking.CCCD" class="form-control" />
+                <span asp-validation-for="Booking.CCCD" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Booking.Adult"></label>
+                <input asp-for="Booking.Adult" class="form-control" />
+                <span asp-validation-for="Booking.Adult" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Booking.Child"></label>
+                <input asp-for="Booking.Child" class="form-control" />
+                <span asp-validation-for="Booking.Child" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="CheckIn">Ngày Nhận Phòng</label>
+                <input asp-for="CheckIn" class="form-control" type="date" />
+                <span asp-validation-for="CheckIn" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="CheckOut">Ngày Trả Phòng</label>
+                <input asp-for="CheckOut" class="form-control" type="date" />
+                <span asp-validation-for="CheckOut" class="text-danger"></span>
+            </div>
+        </div>
+        <!-- Lọc và chọn phòng -->
+        <div class="col-md-6">
+            <h3>Danh Sách Phòng</h3>
+            <button type="button" class="btn btn-primary" id="btnFilterRooms">Lọc Phòng Trống</button>
+            <div id="availableRooms">
+                <!-- Danh sách phòng trống sẽ được tải vào đây bằng AJAX -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Chọn trạng thái -->
+    <div class="row mt-4">
+        <div class="col-md-6">
+            <h3>Trạng Thái Đặt Phòng</h3>
+            <div class="form-group">
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="Booking.Status" value="Chưa Nhận Phòng" id="status1" checked />
+                    <label class="form-check-label" for="status1">Chưa Nhận Phòng</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="Booking.Status" value="Đã Nhận Phòng" id="status2" />
+                    <label class="form-check-label" for="status2">Đã Nhận Phòng</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="Booking.Status" value="Đã Trả Phòng" id="status3" />
+                    <label class="form-check-label" for="status3">Đã Trả Phòng</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="Booking.Status" value="Hủy Đặt Phòng" id="status4" />
+                    <label class="form-check-label" for="status4">Hủy Đặt Phòng</label>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-6">
+            <h3>Trạng Thái Thanh Toán</h3>
+            <div class="form-group">
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="Booking.Payment" value="Đã Đặt Cọc" id="payment1" checked />
+                    <label class="form-check-label" for="payment1">Đã Đặt Cọc</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="Booking.Payment" value="Đã Thanh Toán" id="payment2" />
+                    <label class="form-check-label" for="payment2">Đã Thanh Toán</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="Booking.Payment" value="Đã Hoàn Tiền" id="payment3" />
+                    <label class="form-check-label" for="payment3">Đã Hoàn Tiền</label>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Chọn dịch vụ -->
+    <div class="row mt-4">
+        <div class="col-md-12">
+            <h3>Đăng ký dịch Vụ</h3>
+            <div class="form-group">
+                @foreach (var service in Model.Services)
+                {
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" name="SelectedServiceIds" value="@service.Id" />
+                        <label class="form-check-label">@service.Title <span> - @service.Price.ToString("#,##0 VND")</span> </label>
+                    </div>
+                }
+            </div>
+        </div>
+    </div>
+
+    <!-- Nút Lưu -->
+    <div class="form-group mt-4">
+        <button type="submit" class="btn btn-success">Đặt Phòng</button>
+        <a asp-action="ListBooking" class="btn btn-warning"><i class="fa-solid fa-arrow-left"></i> Trở lại</a>
+    </div>
+</form>
+
+@section Scripts {
+    <script>
+        // Sự kiện bấm nút Lọc Phòng Trống
+        $("#btnFilterRooms").on("click", function () {
+            var checkIn = $("#CheckIn").val();
+            var checkOut = $("#CheckOut").val();
+
+            if (!checkIn || !checkOut) {
+                alert("Vui lòng nhập ngày nhận phòng và ngày trả phòng.");
+                return;
+            }
+
+            // Gửi AJAX đến server để lấy danh sách phòng trống
+            $.get('/Booking/FilterRooms', { checkIn: checkIn, checkOut: checkOut })
+                .done(function (data) {
+                    $("#availableRooms").html(data);
+                })
+                .fail(function () {
+                    alert("Lỗi khi lọc danh sách phòng trống.");
+                });
+        });
+    </script>
+}

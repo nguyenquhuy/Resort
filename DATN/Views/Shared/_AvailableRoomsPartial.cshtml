@@ -1,0 +1,25 @@
+﻿@model List<Room>
+
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>Chọn</th>
+            <th>Tên Phòng</th>
+            <th>Giá</th>
+            <th>Mô Tả</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var room in Model)
+        {
+            <tr>
+                <td>
+                    <input type="checkbox" name="SelectedRoomIds" value="@room.ID" />
+                </td>
+                <td>@room.Name</td>
+                <td>@room.Price.ToString("#,##0 VND")</td>
+                <td>@room.Description</td>
+            </tr>
+        }
+    </tbody>
+</table>

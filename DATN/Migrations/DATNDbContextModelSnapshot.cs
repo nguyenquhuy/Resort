@@ -96,7 +96,7 @@ namespace DATN.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
-                    b.Property<int>("AccountId")
+                    b.Property<int?>("AccountId")
                         .HasColumnType("int");
 
                     b.Property<string>("Content")
@@ -144,6 +144,10 @@ namespace DATN.Migrations
                     b.Property<int>("Adult")
                         .HasColumnType("int");
 
+                    b.Property<string>("CCCD")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<DateTime?>("CheckIn")
                         .IsRequired()
                         .HasColumnType("datetime2");
@@ -168,16 +172,33 @@ namespace DATN.Migrations
                         .HasMaxLength(250)
                         .HasColumnType("nvarchar(250)");
 
+                    b.Property<string>("Payment")
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<string>("Phone")
                         .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Status")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<double>("Total")
                         .HasColumnType("float");
 
+                    b.Property<DateTime?>("UpdatedAt")
+                        .HasColumnType("datetime2");
+
+                    b.Property<int?>("UpdatedByAccountId")
+                        .HasColumnType("int");
+
+                    b.Property<double?>("depositMoney")
+                        .HasColumnType("float");
+
                     b.HasKey("Id");
 
                     b.HasIndex("AccountId");
+
+                    b.HasIndex("UpdatedByAccountId");
 
                     b.ToTable("Booking");
                 });
@@ -192,6 +213,9 @@ namespace DATN.Migrations
 
                     b.Property<int>("BookingId")
                         .HasColumnType("int");
+
+                    b.Property<double?>("Price")
+                        .HasColumnType("float");
 
                     b.Property<int>("Quantity")
                         .HasColumnType("int");
@@ -218,6 +242,9 @@ namespace DATN.Migrations
 
                     b.Property<int>("BookingId")
                         .HasColumnType("int");
+
+                    b.Property<double?>("Price")
+                        .HasColumnType("float");
 
                     b.Property<int>("ServiceId")
                         .HasColumnType("int");
@@ -423,8 +450,8 @@ namespace DATN.Migrations
                     b.Property<int>("RoomTypeId")
                         .HasColumnType("int");
 
-                    b.Property<bool>("Status")
-                        .HasColumnType("bit");
+                    b.Property<string>("Status")
+                        .HasColumnType("nvarchar(max)");
 
                     b.HasKey("ID");
 
@@ -513,9 +540,7 @@ namespace DATN.Migrations
                 {
                     b.HasOne("DATN.Models.Account", "Account")
                         .WithMany()
-                        .HasForeignKey("AccountId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("AccountId");
 
                     b.Navigation("Account");
                 });
@@ -526,7 +551,13 @@ namespace DATN.Migrations
                         .WithMany()
                         .HasForeignKey("AccountId");
 
+                    b.HasOne("DATN.Models.Account", "UpdatedByAccount")
+                        .WithMany()
+                        .HasForeignKey("UpdatedByAccountId");
+
                     b.Navigation("Account");
+
+                    b.Navigation("UpdatedByAccount");
                 });
 
             modelBuilder.Entity("DATN.Models.BookingRoom", b =>
